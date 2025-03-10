@@ -14,6 +14,6 @@ I’ll be adding more cheatsheets here over time! :sparkles:
 
 Stay updated with my latest cheatsheets and web development tips by following me on [X (Twitter) @RitikaAgrawal08](https://x.com/RitikaAgrawal08).
 
-If you enjoy my content and would like to support my work, feel free to [buy me a coffee](buymeacoffee.com/ritikaagrawal08). Your support means a lot and helps me create more useful resources!
+If you enjoy my content and would like to support my work, feel free to [buy me a coffee](https://buymeacoffee.com/ritikaagrawal08). Your support means a lot and helps me create more useful resources!
 
 Thanks so much! Happy Coding! :computer: :sparkles:
