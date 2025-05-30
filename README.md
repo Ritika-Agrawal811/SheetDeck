@@ -9,6 +9,7 @@ I’ll be adding more cheatsheets here over time! :sparkles:
 - HTML
 - CSS
 - JavaScript
+- React
 
 ### Support Me ☕️
 
