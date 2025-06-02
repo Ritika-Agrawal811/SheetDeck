@@ -1,0 +1,56 @@
+{
+    "html": [
+        {
+            "id": "html-boilerplate",
+            "title": "Boilerplate",
+            "tag": "HTML",
+            "category": "concepts",
+            "image": "/html-cheatsheets/concepts/html-boilerplate.jpg"
+        },
+        {
+            "id": "html-container-vs-empty-tags",
+            "title": "Container VS Empty Tags",
+            "tag": "HTML",
+            "category": "concepts",
+            "image": "/html-cheatsheets/concepts/container-vs-empty-tags.jpg"
+        },
+        {
+            "id": "html-target-attribute",
+            "title": "target Attribute",
+            "tag": "HTML",
+            "category": "attributes",
+            "image": "/html-cheatsheets/attributes/target.png"
+        },
+        {
+            "id": "html-download-attribute",
+            "title": "download Attribute",
+            "tag": "HTML",
+            "category": "attributes",
+            "image": "/html-cheatsheets/attributes/download.jpg"
+        },
+        {
+            "id": "html-lang-attribute",
+            "title": "lang Attribute",
+            "tag": "HTML",
+            "category": "attributes",
+            "image": "/html-cheatsheets/attributes/lang.jpg"
+        },
+        {
+            "id": "html-inputmode-attribute",
+            "title": "inputmode Attribute",
+            "tag": "HTML",
+            "category": "attributes",
+            "image": "/html-cheatsheets/attributes/inputmode.jpg"
+        },
+        {
+            "id": "html-picture-element",
+            "title": "<picture> Element",
+            "tag": "HTML",
+            "category": "elements",
+            "image": "/html-cheatsheets/elements/picture.png"
+        }
+    ],
+    "css": [],
+    "javascript": [],
+    "react": []
+}
