@@ -32,7 +32,7 @@ const TopicsLoop = () => {
                         return (
                             <motion.p
                                 key={`${topic}-${index}`}
-                                className={clsx('w-[calc(100%/4)]', 'inline-flex justify-center items-center gap-4')}
+                                className={clsx('w-[calc(100%/4)]', 'inline-flex justify-center items-center gap-10')}
                             >
                                 <span className={clsx('w-2 h-2', 'inline-block rounded-full bg-zinc-900')}></span>
                                 {topic}
