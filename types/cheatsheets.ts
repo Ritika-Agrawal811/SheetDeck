@@ -1,6 +1,6 @@
 type Tags = 'HTML' | 'CSS' | 'JavaScript' | 'React';
 
-type Categories = 'concepts' | 'attributes' | 'elements';
+type Categories = 'concepts' | 'attributes' | 'elements' | 'properties' | 'pseudo-classes' | 'selectors';
 
 export type Cheatsheet = {
     id: string;
