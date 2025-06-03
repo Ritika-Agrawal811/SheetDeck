@@ -1,0 +1,335 @@
+{
+    "html": {
+        "concepts": [
+            {
+                "id": "html-boilerplate",
+                "title": "Boilerplate",
+                "tag": "HTML",
+                "category": "concepts",
+                "image": "/html-cheatsheets/concepts/html-boilerplate.jpg"
+            },
+            {
+                "id": "html-container-vs-empty-tags",
+                "title": "Container VS Empty Tags",
+                "tag": "HTML",
+                "category": "concepts",
+                "image": "/html-cheatsheets/concepts/container-vs-empty-tags.jpg"
+            }
+        ],
+        "attributes": [
+            {
+                "id": "html-target-attribute",
+                "title": "target Attribute",
+                "tag": "HTML",
+                "category": "attributes",
+                "image": "/html-cheatsheets/attributes/target.png"
+            },
+            {
+                "id": "html-download-attribute",
+                "title": "download Attribute",
+                "tag": "HTML",
+                "category": "attributes",
+                "image": "/html-cheatsheets/attributes/download.jpg"
+            },
+            {
+                "id": "html-lang-attribute",
+                "title": "lang Attribute",
+                "tag": "HTML",
+                "category": "attributes",
+                "image": "/html-cheatsheets/attributes/lang.jpg"
+            },
+            {
+                "id": "html-inputmode-attribute",
+                "title": "inputmode Attribute",
+                "tag": "HTML",
+                "category": "attributes",
+                "image": "/html-cheatsheets/attributes/inputmode.jpg"
+            }
+        ],
+        "elements": [
+            {
+                "id": "html-picture-element",
+                "title": "<picture> Element",
+                "tag": "HTML",
+                "category": "elements",
+                "image": "/html-cheatsheets/elements/picture.png"
+            }
+        ]
+    },
+    "css": {
+        "concepts": [
+            {
+                "id": "css-variables",
+                "title": "CSS Variables",
+                "tag": "CSS",
+                "category": "concepts",
+                "image": "/css-cheatsheets/concepts/css-variables.png"
+            },
+            {
+                "id": "css-hsl-colors",
+                "title": "HSL Colors",
+                "tag": "CSS",
+                "category": "concepts",
+                "image": "/css-cheatsheets/concepts/hsl-colors.jpg"
+            },
+            {
+                "id": "css-rulesets",
+                "title": "Rulesets",
+                "tag": "CSS",
+                "category": "concepts",
+                "image": "/css-cheatsheets/concepts/rulesets.jpg"
+            },
+            {
+                "id": "css-var-function",
+                "title": "var() Function",
+                "tag": "CSS",
+                "category": "concepts",
+                "image": "/css-cheatsheets/concepts/var-function.jpg"
+            }
+        ],
+        "properties": [
+            {
+                "id": "css-accent-color-property",
+                "title": "accent-color Property",
+                "tag": "CSS",
+                "category": "properties",
+                "image": "/css-cheatsheets/properties/accent-color.png"
+            },
+            {
+                "id": "css-border-property",
+                "title": "border Property",
+                "tag": "CSS",
+                "category": "properties",
+                "image": "/css-cheatsheets/properties/border.jpg"
+            },
+            {
+                "id": "css-box-shadow-property",
+                "title": "box-shadow Property",
+                "tag": "CSS",
+                "category": "properties",
+                "image": "/css-cheatsheets/properties/box-shadow.jpg"
+            },
+            {
+                "id": "css-box-shadow-vs-drop-shadow",
+                "title": "box-shadow VS drop-shadow",
+                "tag": "CSS",
+                "category": "properties",
+                "image": "/css-cheatsheets/properties/box-shadow-vs-drop-shadow.jpg"
+            },
+            {
+                "id": "css-margin-property",
+                "title": "margin Property",
+                "tag": "CSS",
+                "category": "properties",
+                "image": "/css-cheatsheets/properties/margin.jpg"
+            }
+        ],
+        "pseudo-classes": [
+            {
+                "id": "css-active-pseudo-class",
+                "title": ":active Pseudo Class",
+                "tag": "CSS",
+                "category": "pseudo-classes",
+                "image": "/css-cheatsheets/pseudo-classes/active.jpg"
+            },
+            {
+                "id": "css-focus-within-pseudo-class",
+                "title": ":focus-within Pseudo Class",
+                "tag": "CSS",
+                "category": "pseudo-classes",
+                "image": "/css-cheatsheets/pseudo-classes/focus-within.png"
+            },
+            {
+                "id": "css-not-pseudo-class",
+                "title": ":not Pseudo Class",
+                "tag": "CSS",
+                "category": "pseudo-classes",
+                "image": "/css-cheatsheets/pseudo-classes/not.jpg"
+            },
+            {
+                "id": "css-nth-child-pseudo-class",
+                "title": ":nth-child Pseudo Class",
+                "tag": "CSS",
+                "category": "pseudo-classes",
+                "image": "/css-cheatsheets/pseudo-classes/nth-child.jpg"
+            }
+        ],
+        "selectors": [
+            {
+                "id": "css-universal-selector",
+                "title": "universal (*) Selector",
+                "tag": "CSS",
+                "category": "selectors",
+                "image": "/css-cheatsheets/selectors/universal.jpg"
+            }
+        ]
+    },
+    "javascript": {
+        "concepts": [
+            {
+                "id": "js-primitive-data-types",
+                "title": "Primitive Data Types",
+                "tag": "JavaScript",
+                "category": "concepts",
+                "image": "/js-cheatsheets/concepts/primitive-data-types.jpg"
+            },
+            {
+                "id": "js-non-primitive-data-types",
+                "title": "Non-Primitive Data Types",
+                "tag": "JavaScript",
+                "category": "concepts",
+                "image": "/js-cheatsheets/concepts/non-primitive-data-types.jpg"
+            },
+            {
+                "id": "js-scopes",
+                "title": "Scopes",
+                "tag": "JavaScript",
+                "category": "concepts",
+                "image": "/js-cheatsheets/concepts/scopes.jpg"
+            },
+            {
+                "id": "js-hoisting",
+                "title": "Hoisting",
+                "tag": "JavaScript",
+                "category": "concepts",
+                "image": "/js-cheatsheets/concepts/hoisting.jpg"
+            },
+            {
+                "id": "js-closures",
+                "title": "Closures",
+                "tag": "JavaScript",
+                "category": "concepts",
+                "image": "/js-cheatsheets/concepts/closures.jpg"
+            },
+            {
+                "id": "js-call-by-value-and-reference",
+                "title": "Call by Value VS Call by Reference",
+                "tag": "JavaScript",
+                "category": "concepts",
+                "image": "/js-cheatsheets/concepts/call-by-value-and-reference.jpg"
+            }
+        ],
+        "advanced-syntax": [
+            {
+                "id": "js-for-of-loop",
+                "title": "for...of Loop",
+                "tag": "JavaScript",
+                "category": "advanced-syntax",
+                "image": "/js-cheatsheets/advanced-syntax/for-of-loop.jpg"
+            },
+            {
+                "id": "js-for-in-loop",
+                "title": "for...in Loop",
+                "tag": "JavaScript",
+                "category": "advanced-syntax",
+                "image": "/js-cheatsheets/advanced-syntax/for-in-loop.jpg"
+            },
+            {
+                "id": "js-arrow-functions",
+                "title": "Arrow Functions",
+                "tag": "JavaScript",
+                "category": "advanced-syntax",
+                "image": "/js-cheatsheets/advanced-syntax/arrow-functions.jpg"
+            },
+            {
+                "id": "js-destructuring",
+                "title": "Destructuring",
+                "tag": "JavaScript",
+                "category": "advanced-syntax",
+                "image": "/js-cheatsheets/advanced-syntax/destructuring.jpg"
+            },
+            {
+                "id": "js-template-literal",
+                "title": "Template Literal",
+                "tag": "JavaScript",
+                "category": "advanced-syntax",
+                "image": "/js-cheatsheets/advanced-syntax/template-literal.jpg"
+            }
+        ],
+        "dom-manipulation": [
+            {
+                "id": "js-dom",
+                "title": "Document Object Model",
+                "tag": "JavaScript",
+                "category": "dom-manipulation",
+                "image": "/js-cheatsheets/dom-manipulation/dom.jpg"
+            },
+            {
+                "id": "js-event-propagation",
+                "title": "Event Propagation",
+                "tag": "JavaScript",
+                "category": "dom-manipulation",
+                "image": "/js-cheatsheets/dom-manipulation/event-propagation.jpg"
+            }
+        ],
+        "operators": [
+            {
+                "id": "js-spread-operator",
+                "title": "Spread Operator",
+                "tag": "JavaScript",
+                "category": "operators",
+                "image": "/js-cheatsheets/operators/spread.jpg"
+            },
+            {
+                "id": "js-ternary-operator",
+                "title": "Ternary Operator",
+                "tag": "JavaScript",
+                "category": "operators",
+                "image": "/js-cheatsheets/operators/ternary.jpg"
+            },
+            {
+                "id": "js-optional-chaining-operator",
+                "title": "Optional Chaining Operator",
+                "tag": "JavaScript",
+                "category": "operators",
+                "image": "/js-cheatsheets/operators/optional-chaining.jpg"
+            },
+            {
+                "id": "js-nullish-coalescing-operator",
+                "title": "Nullish Coalescing Operator",
+                "tag": "JavaScript",
+                "category": "operators",
+                "image": "/js-cheatsheets/operators/nullish-coalescing.jpg"
+            },
+            {
+                "id": "js-increment-and-decrement-operator",
+                "title": "Increment And Decrement Operators",
+                "tag": "JavaScript",
+                "category": "operators",
+                "image": "/js-cheatsheets/operators/increment-and-decrement.jpg"
+            },
+            {
+                "id": "js-equality-vs-strict-equality",
+                "title": "Equality VS Strict Equality",
+                "tag": "JavaScript",
+                "category": "operators",
+                "image": "/js-cheatsheets/operators/equality-vs-strict-equality.jpg"
+            }
+        ]
+    },
+    "react": {
+        "concepts": [
+            {
+                "id": "react-components-based-architecture",
+                "title": "Components Based Architecture",
+                "tag": "React",
+                "category": "concepts",
+                "image": "/react-cheatsheets/concepts/components-based-architecture.jpg"
+            },
+            {
+                "id": "react-declarative-syntax",
+                "title": "Declarative Syntax",
+                "tag": "React",
+                "category": "concepts",
+                "image": "/react-cheatsheets/concepts/declarative-syntax.jpg"
+            },
+            {
+                "id": "react-virtual-dom",
+                "title": "Virtual DOM",
+                "tag": "React",
+                "category": "concepts",
+                "image": "/react-cheatsheets/concepts/virtual-dom.jpg"
+            }
+        ]
+    }
+}
