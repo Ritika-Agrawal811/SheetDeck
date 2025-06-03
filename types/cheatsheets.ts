@@ -1,6 +1,8 @@
-type Tags = 'HTML' | 'CSS' | 'JavaScript' | 'React';
+import { TAGS, CATEGORIES } from '../lib/cheatsheets/constants';
 
-type Categories = 'concepts' | 'attributes' | 'elements' | 'properties' | 'pseudo-classes' | 'selectors';
+type Tags = (typeof TAGS)[number];
+
+type Categories = (typeof CATEGORIES)[number];
 
 export type Cheatsheet = {
     id: string;
