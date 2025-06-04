@@ -1,8 +1,8 @@
-import { TAGS, CATEGORIES } from '../lib/cheatsheets/constants';
+import { TAGS_INFO, CATEGORIES_INFO } from '../lib/cheatsheets/constants';
 
-type Tags = (typeof TAGS)[number];
+export type Tags = keyof typeof TAGS_INFO | 'All';
 
-type Categories = (typeof CATEGORIES)[number];
+export type Categories = keyof typeof CATEGORIES_INFO;
 
 export type Cheatsheet = {
     id: string;
