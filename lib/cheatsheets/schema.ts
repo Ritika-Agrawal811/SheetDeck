@@ -1,9 +1,9 @@
 import { z } from 'zod';
-import { TAGS, CATEGORIES } from './constants';
+import { TAGS_INFO, CATEGORIES_INFO } from './constants';
 
-export const Tags = z.enum(TAGS);
+export const Tags = z.enum(Object.keys(TAGS_INFO) as [keyof typeof TAGS_INFO]);
 
-export const Categories = z.enum(CATEGORIES);
+export const Categories = z.enum(Object.keys(CATEGORIES_INFO) as [keyof typeof CATEGORIES_INFO]);
 
 export const CheatsheetSchema = z.object({
     id: z.string(),

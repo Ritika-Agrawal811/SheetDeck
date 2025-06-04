@@ -1,11 +1,11 @@
-import React from 'react';
-
 // components
-import Grid from './Grid';
+import Grid from './grid/Grid';
+import Header from './header/Header';
 
 const CheatsheetsSection = () => {
     return (
-        <section>
+        <section className="py-28">
+            <Header />
             <Grid />
         </section>
     );
