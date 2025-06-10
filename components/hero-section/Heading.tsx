@@ -1,16 +1,47 @@
 import React from 'react';
 import clsx from 'clsx';
 
+// components
+import { IoPaperPlane } from 'react-icons/io5';
+
 const Heading = () => {
     return (
-        <section className={clsx('border-2', 'flex items-center justify-center')}>
+        <div className={clsx('flex items-center justify-center')}>
             <h1 className={clsx('text-5xl leading-16')}>
-                Code <span className={clsx('font-bold')}>faster</span>. <br />
-                Learn <span className={clsx('font-bold')}>smarter</span>.<br />
-                Concise <span className={clsx('font-bold underline underline-offset-6')}>cheat sheets</span> <br /> for instant code
-                reference.
+                <div>
+                    Code <span className={clsx('font-medium font-jua text-6xl')}>faster</span>. Learn{' '}
+                    <span className={clsx('bg-purple-800 text-white px-4')}>smarter</span>.
+                </div>
+
+                <div className="my-6">
+                    Concise
+                    <span
+                        className={clsx(
+                            'font-bold uppercase font-anta',
+                            'text-6xl mx-6',
+                            'inline-block relative',
+                            'before:absolute before:content-[""] before:w-[150%] before:h-1 before:bg-black before:-left-[140%] before:top-full',
+                            'after:absolute after:content-[""] after:w-[150%] after:h-1 after:bg-black after:-right-[140%] after:top-full'
+                        )}
+                    >
+                        cheat sheets
+                    </span>
+                </div>
+                <div>
+                    for
+                    <span
+                        className={clsx(
+                            'border-2 border-dashed border-zinc-500',
+                            'mx-3 px-2 rounded-2xl',
+                            'inline-flex gap-4 items-center'
+                        )}
+                    >
+                        instant <IoPaperPlane />
+                    </span>
+                    code reference.
+                </div>
             </h1>
-        </section>
+        </div>
     );
 };
 

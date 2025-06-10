@@ -11,7 +11,7 @@ import Badge from '../../ui/Badge';
 const Card = ({ title, tag, image }: Cheatsheet) => {
     return (
         <article className={clsx('relative shadow-lg', 'p-4 mb-16')}>
-            <Badge size="small" color={TAGS_INFO[tag]} shape="pill" className="absolute left-2 top-2">
+            <Badge size="small" color={TAGS_INFO[tag].color} shape="pill" className="absolute left-2 top-2">
                 {tag}
             </Badge>
 
@@ -27,7 +27,7 @@ const Card = ({ title, tag, image }: Cheatsheet) => {
                     'rounded-t-full',
                     'flex justify-center items-center'
                 )}
-                style={{ boxShadow: `2px -1.5px 0 ${TAGS_INFO[tag]}` }}
+                style={{ boxShadow: `2px -1.5px 0 ${TAGS_INFO[tag].color}` }}
             >
                 <h4 className={clsx(title.length > 20 && 'text-sm')}>{title}</h4>
             </div>
