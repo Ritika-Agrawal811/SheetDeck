@@ -16,7 +16,7 @@ const Categories = () => {
                     <CategoryCard
                         key={tag}
                         title={tag}
-                        color={TAGS_INFO[tag]}
+                        color={TAGS_INFO[tag].color}
                         active={activeCategory.topic === tag}
                         setActiveCategory={() => {
                             setActiveTopicHandler(tag);

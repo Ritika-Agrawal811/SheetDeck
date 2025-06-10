@@ -2,7 +2,10 @@
 
 import React from 'react';
 import clsx from 'clsx';
+
 import { motion } from 'framer-motion';
+import { useCategory } from '../../hooks/useCategory';
+import { TAGS_INFO } from '../../lib/cheatsheets/constants';
 
 const loopVariants = {
     initial: {
@@ -19,24 +22,30 @@ const loopVariants = {
 };
 
 const TopicsLoop = () => {
+    const { topics } = useCategory();
+
     return (
-        <section className={clsx('overflow-hidden py-20')}>
-            <div className={clsx('bg-gradient-to-r from-zinc-200 via-slate-100 via-40%', '-rotate-3')}>
+        <section className={clsx('overflow-hidden pb-8')}>
+            <div className={clsx('', '-rotate-2')}>
+                {/* bg-gradient-to-r from-zinc-200 via-slate-100 via-40% */}
                 <motion.div
                     initial="initial"
                     animate="animate"
                     variants={loopVariants}
-                    className={clsx('whitespace-nowrap py-6', 'text-4xl font-bold text-zinc-900')}
+                    className={clsx('whitespace-nowrap pt-8 pb-4', 'text-5xl font-bold text-zinc-900')}
                 >
                     {[...topics, ...topics].map((topic, index) => {
+                        if (topic.toLowerCase() === 'all') return null;
+
                         return (
                             <motion.p
                                 key={`${topic}-${index}`}
-                                className={clsx('w-[calc(100%/4)]', 'inline-flex justify-center items-center gap-10')}
+                                className={clsx('w-[calc(100%/4)]', 'inline-flex justify-between items-center gap-10', 'font-castoro')}
+                                style={{ color: TAGS_INFO[topic].color }}
                             >
-                                <span className={clsx('w-2 h-2', 'inline-block rounded-full bg-zinc-900')}></span>
+                                <span className={clsx('w-px h-12', 'inline-block rounded-full bg-zinc-400')}></span>
                                 {topic}
-                                <span className={clsx('w-2 h-2', 'inline-block rounded-full bg-zinc-900')}></span>
+                                <span className={clsx('w-px h-12', 'inline-block rounded-full bg-zinc-400')}></span>
                             </motion.p>
                         );
                     })}
@@ -47,5 +56,3 @@ const TopicsLoop = () => {
 };
 
 export default TopicsLoop;
-
-const topics = ['HTML', 'CSS', 'JavaScript', 'React'];

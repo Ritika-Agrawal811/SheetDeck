@@ -1,9 +1,27 @@
+import { IoLogoReact, IoLogoHtml5, IoLogoCss3, IoLogoJavascript } from 'react-icons/io5';
+
 export const TAGS_INFO = {
-    All: '#71717A',
-    HTML: '#D97706',
-    CSS: '#3B82F6',
-    JavaScript: '#EAB308',
-    React: '#93C5FD',
+    All: {
+        color: '#71717A',
+        icon: null,
+    },
+    HTML: {
+        color: '#D97706',
+        icon: IoLogoHtml5,
+    },
+
+    CSS: {
+        color: '#3B82F6',
+        icon: IoLogoCss3,
+    },
+    JavaScript: {
+        color: '#EAB308',
+        icon: IoLogoJavascript,
+    },
+    React: {
+        color: '#93C5FD',
+        icon: IoLogoReact,
+    },
 } as const;
 
 export const CATEGORIES_INFO = {
