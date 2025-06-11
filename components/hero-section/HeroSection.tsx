@@ -15,7 +15,7 @@ const HeroSection = () => {
         <header className={clsx('h-screen', 'flex flex-col justify-between', 'overflow-x-hidden')}>
             <Logo />
             <Heading />
-            <section className="flex flex-col gap-24">
+            <section className="flex flex-col gap-20">
                 <ExploreButton />
                 <TopicsLoop />
             </section>

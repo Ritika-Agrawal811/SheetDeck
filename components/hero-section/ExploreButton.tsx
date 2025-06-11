@@ -22,7 +22,7 @@ const ExploreButton = () => {
                             className={clsx(
                                 'inline-block absolute h-full',
                                 'top-0 left-1/2 -translate-x-1/2',
-                                'font-bold font-anta uppercase text-purple-800 text-xl'
+                                'font-bold font-platypi uppercase text-purple-800 text-xl'
                             )}
                             style={{ transform: `rotate(${-75 + 25 * index}deg)` }}
                         >
