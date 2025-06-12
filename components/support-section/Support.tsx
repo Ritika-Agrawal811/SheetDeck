@@ -5,7 +5,7 @@ import clsx from 'clsx';
 
 // components
 import Image from 'next/image';
-import VisitRepositoryButton from './repository-button/VisitRepositoryButton';
+import VisitRepositoryButton from './VisitRepositoryButton';
 
 const Support = () => {
     return (
