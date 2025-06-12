@@ -13,17 +13,30 @@ const AboutMe = () => {
     return (
         <section className="pt-28 pb-16">
             <div className={clsx('flex flex-col items-center gap-12')}>
-                <Badge size="default" color="#6d11af" shape="pill" className="shadow-purple-200">
+                <Badge size="default" color="#6d11af" shape="pill" className="shadow-xl shadow-purple-100">
                     About me
                 </Badge>
 
-                <div className="flex gap-4">
+                <div
+                    className={clsx(
+                        'flex gap-4 relative',
+                        'before:absolute before:content-[""] before:w-full before:h-full before:-z-10',
+                        'before:bg-radial before:from-purple-100 before:from-0% before:to-transparent before:to-60%'
+                    )}
+                >
                     {/* left container */}
                     <div className="space-y-4">
                         {/* upper row */}
                         <div className="flex gap-4 items-end">
                             {/* GitHub card */}
-                            <SocialCard label="View my projects" icon={FaGithub} size="small" />
+                            <SocialCard
+                                label="View my projects"
+                                icon={FaGithub}
+                                profile="GitHub"
+                                socialURL="https://github.com/Ritika-Agrawal811"
+                                size="small"
+                                className="bg-white"
+                            />
 
                             <div>
                                 {/* Intro card */}
@@ -51,11 +64,19 @@ const AboutMe = () => {
                                     <SocialCard
                                         label="Read my articles"
                                         icon={FaDev}
+                                        profile="Dev.to"
+                                        socialURL="https://dev.to/ritikaagrawal08"
                                         size="small"
                                         orientation="horizontal"
-                                        className="grow"
+                                        className="grow bg-white"
                                     />
-                                    <SocialCard icon={FaMedium} orientation="horizontal" className="bg-black text-white" />
+                                    <SocialCard
+                                        icon={FaMedium}
+                                        profile="Medium"
+                                        socialURL="https://medium.com/@RitikaAgrawal08"
+                                        orientation="horizontal"
+                                        className="bg-black text-white"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -67,21 +88,45 @@ const AboutMe = () => {
                                 <SocialCard
                                     label="Buy me a coffee"
                                     icon={SiBuymeacoffee}
+                                    profile="Buy me a coffee"
+                                    socialURL="https://buymeacoffee.com/ritikaagrawal08"
                                     orientation="horizontal"
                                     size="big"
                                     className="bg-yellow-400"
                                 />
-                                <SocialCard label="View my pens" icon={FaCodepen} orientation="horizontal" />
+                                <SocialCard
+                                    label="View my pens"
+                                    icon={FaCodepen}
+                                    profile="Codepen"
+                                    socialURL="https://codepen.io/RitikaAgrawal08"
+                                    orientation="horizontal"
+                                    className="bg-white"
+                                />
                             </div>
 
                             {/* X/Twitter card */}
-                            <SocialCard label="Learn web dev with me" icon={FaSquareXTwitter} orientation="vertical" />
+                            <SocialCard
+                                label="Learn web dev with me"
+                                icon={FaSquareXTwitter}
+                                profile="X/Twitter"
+                                socialURL="https://twitter.com/RitikaAgrawal08"
+                                orientation="vertical"
+                                className="bg-white"
+                            />
                         </div>
                     </div>
 
                     {/* right container */}
                     <div className="flex items-center">
-                        <SocialCard label="View my ebooks" icon={SiGumroad} orientation="vertical" className="bg-[#ff90e8]" size="big" />
+                        <SocialCard
+                            label="View my ebooks"
+                            icon={SiGumroad}
+                            profile="Gumroad"
+                            socialURL="https://ritikaagrawal08.gumroad.com/"
+                            orientation="vertical"
+                            className="bg-[#ff90e8]"
+                            size="big"
+                        />
                     </div>
                 </div>
             </div>
