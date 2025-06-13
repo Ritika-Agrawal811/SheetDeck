@@ -1,21 +1,44 @@
 import React from 'react';
 import clsx from 'clsx';
 
+import type { IconType } from 'react-icons';
+
+// components
+import Icon from '../../ui/Icon';
+
 type CategoryCardProps = {
     title: string;
     color: string;
+    icon: IconType | null;
     active: boolean;
     setActiveCategory: () => void;
 };
 
-const CategoryCard = ({ title, color, active, setActiveCategory }: CategoryCardProps) => {
+const CategoryCard = ({ title, color, icon, active, setActiveCategory }: CategoryCardProps) => {
     return (
         <div
-            className={clsx('cursor-pointer border-r p-10', 'grow flex items-center justify-center', 'text-4xl', active && 'text-white')}
+            className={clsx(
+                'cursor-pointer border-r-1 p-4 relative overflow-hidden',
+                'grow flex flex-col items-center justify-center',
+                'font-castoro font-bold',
+                icon ? 'text-2xl' : 'text-4xl',
+                active && 'text-white'
+            )}
             onClick={setActiveCategory}
-            style={{ backgroundColor: active ? color : undefined }}
+            style={{ borderColor: color }}
         >
+            {icon && <Icon icon={icon} size={65} className="mb-4" />}
             {title}
+
+            <div
+                className={clsx(
+                    'absolute -z-10 rounded-full',
+                    'left-1/2 -bottom-10 -translate-x-1/2',
+                    'transition-all duration-650 ease-out',
+                    active ? 'w-[150%] h-[150%]' : 'w-0 h-0'
+                )}
+                style={{ backgroundColor: color }}
+            ></div>
         </div>
     );
 };

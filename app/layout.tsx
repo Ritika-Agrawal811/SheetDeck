@@ -15,7 +15,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${inter.variable} ${jua.variable} ${anta.variable} ${platypi.variable} ${castoro.variable} antialiased overflow-x-hidden`}
+                className={`${inter.variable} ${jua.variable} ${anta.variable} ${platypi.variable} ${castoro.variable} antialiased overflow-x-hidden text-gray-800`}
             >
                 {children}
             </body>

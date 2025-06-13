@@ -72,7 +72,7 @@ const AboutMe = () => {
                                         profile="Medium"
                                         socialURL="https://medium.com/@RitikaAgrawal08"
                                         orientation="horizontal"
-                                        className="bg-black text-white"
+                                        className="bg-gray-800 text-white"
                                     />
                                 </div>
                             </div>

@@ -14,7 +14,7 @@ const Grid = () => {
     const cheatsheets = fetchSelectedCheatsheets(activeCategory);
 
     return (
-        <section className={clsx('columns-4 gap-16', 'w-4/5 mx-auto my-10')}>
+        <section className={clsx('columns-4 gap-16', 'my-10')}>
             {cheatsheets.map((data) => {
                 return <Card key={data.id} {...data} />;
             })}

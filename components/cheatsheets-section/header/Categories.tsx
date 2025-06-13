@@ -10,13 +10,14 @@ const Categories = () => {
     const { topics, activeCategory, setActiveTopicHandler } = useCategory();
 
     return (
-        <div className="flex items-center">
+        <div className="flex">
             {topics.map((tag) => {
                 return (
                     <CategoryCard
                         key={tag}
                         title={tag}
                         color={TAGS_INFO[tag].color}
+                        icon={TAGS_INFO[tag].icon}
                         active={activeCategory.topic === tag}
                         setActiveCategory={() => {
                             setActiveTopicHandler(tag);

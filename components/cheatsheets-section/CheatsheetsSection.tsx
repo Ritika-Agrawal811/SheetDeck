@@ -4,7 +4,7 @@ import Header from './header/Header';
 
 const CheatsheetsSection = () => {
     return (
-        <section className="py-28">
+        <section className="w-4/5 mx-auto my-28">
             <Header />
             <Grid />
         </section>

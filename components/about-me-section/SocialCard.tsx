@@ -52,7 +52,7 @@ const SocialCard = ({ label, icon, size = 'default', orientation = 'vertical', c
         <a href={socialURL} target="_blank" rel="noopener noreferrer" className="inline-block" aria-label={`Visit my ${profile} account`}>
             <article
                 className={clsx(
-                    'rounded-2xl items-center border-2 border-black cursor-pointer group',
+                    'rounded-2xl items-center border-2 border-gray-800 cursor-pointer group',
                     'hover:scale-95 transition duration-300 ease-in-out',
                     cardVariants.size[size].card,
                     cardVariants.orientation[orientation],
