@@ -8,6 +8,7 @@ import { FaGithub, FaDev, FaMedium, FaSquareXTwitter, FaCodepen } from 'react-ic
 import { SiGumroad, SiBuymeacoffee } from 'react-icons/si';
 import SocialCard from './SocialCard';
 import ArrowSVG from './ArrowSVG';
+import BackgroundSoftGradient from '../ui/BackgroundGradient';
 
 const AboutMe = () => {
     return (
@@ -17,13 +18,9 @@ const AboutMe = () => {
                     About me
                 </Badge>
 
-                <div
-                    className={clsx(
-                        'flex gap-4 relative',
-                        'before:absolute before:content-[""] before:w-full before:h-full before:-z-10',
-                        'before:bg-radial before:from-purple-100 before:from-0% before:to-transparent before:to-60%'
-                    )}
-                >
+                <div className={clsx('flex gap-4 relative')}>
+                    <BackgroundSoftGradient />
+
                     {/* left container */}
                     <div className="space-y-4">
                         {/* upper row */}
