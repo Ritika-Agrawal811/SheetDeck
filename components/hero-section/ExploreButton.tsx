@@ -1,7 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
 
+// components
 import { IoArrowDown } from 'react-icons/io5';
+import Icon from '../ui/Icon';
 
 const ExploreButton = () => {
     const label = 'explore';
@@ -9,7 +11,7 @@ const ExploreButton = () => {
         <div className={clsx('flex items-center justify-center')}>
             <button
                 className={clsx(
-                    'border-2 border-purple-800 bg-purple-50 outline-4 outline-purple-50',
+                    'border-2 border-purple-800 bg-purple-50',
                     'w-30 h-30',
                     'relative cursor-pointer rounded-full',
                     'shadow-xl shadow-purple-100'
@@ -35,11 +37,10 @@ const ExploreButton = () => {
                     className={clsx(
                         'inline-block absolute px-3 py-4 rounded-full',
                         'left-1/2 top-2/3 -translate-x-1/2 -translate-y-2/3',
-                        'bg-purple-800 text-white',
-                        'text-3xl'
+                        'bg-purple-800 text-white'
                     )}
                 >
-                    <IoArrowDown />
+                    <Icon icon={IoArrowDown} size={32} />
                 </span>
             </button>
         </div>

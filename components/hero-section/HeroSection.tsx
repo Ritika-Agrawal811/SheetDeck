@@ -9,6 +9,7 @@ import Logo from './Logo';
 import TopicsLoop from './TopicsLoop';
 import DecorativeImage from '../ui/DecorativeImage';
 import ExploreButton from './ExploreButton';
+import BackgroundSoftGradient from '../ui/BackgroundGradient';
 
 const HeroSection = () => {
     return (
@@ -20,8 +21,14 @@ const HeroSection = () => {
                 <TopicsLoop />
             </section>
 
+            {/* decorative components */}
             <DecorativeImage {...cheatSheets.html.concepts[0]} position="left" size="small" />
             <DecorativeImage {...cheatSheets.css.concepts[0]} position="right" size="default" />
+
+            {/* background gradients */}
+            <BackgroundSoftGradient position="left" size="tiny" />
+            <BackgroundSoftGradient position="right" size="tiny" />
+            <BackgroundSoftGradient position="bottom" size="tiny" />
         </header>
     );
 };

@@ -1,18 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import { motion } from 'framer-motion';
-
-const buttonVariants = {
-    initial: { scale: 1 },
-    hover: { scale: 1.05 },
-};
-
-const shadowVariants = {
-    initial: { top: 100 },
-    hover: { top: 5, transition: { duration: 0.45, ease: 'easeInOut' } },
-};
-
 const VisitRepositoryButton = () => {
     return (
         <a
@@ -21,31 +9,23 @@ const VisitRepositoryButton = () => {
             rel="noopener noreferrer"
             aria-label="Visit GitHub Repository"
         >
-            <motion.button
+            <button
                 className={clsx(
                     'mt-8 px-8 py-4',
-                    'border-2 border-gray-100 rounded-full',
-                    'bg-gray-900 text-white text-xl',
+                    'border-2 border-purple-100 rounded-full',
+                    'bg-purple-800 text-white text-xl',
                     'cursor-pointer',
-                    'shadow-lg shadow-purple-200',
+                    'shadow-lg shadow-purple-100',
                     'font-platypi',
-                    'relative overflow-hidden'
+                    'relative overflow-hidden',
+                    'hover:scale-105 transition duration-300 ease-in-out',
+                    'before:absolute before:content-[""] before:w-[200%] before:h-[200%] before:left-0  before:top-0',
+                    'before:bg-linear-0 before:from-transparent before:from-0% via-transparent via-80% before:to-purple-400 before:to-80% before:rotate-30 before:opacity-90',
+                    'before:transition-all before:ease-in-out before:duration-300 hover:before:rotate-0'
                 )}
-                whileHover="hover"
-                variants={buttonVariants}
             >
-                Visit repository
-                {/* Shadow */}
-                <motion.span
-                    className={clsx(
-                        'left-0 w-full h-full',
-                        'absolute inline-block',
-                        'bg-gradient-to-t from-purple-500 to-transparent to-65%'
-                    )}
-                    aria-hidden={true}
-                    variants={shadowVariants}
-                ></motion.span>
-            </motion.button>
+                <span className="relative z-10">Visit repository</span>
+            </button>
         </a>
     );
 };

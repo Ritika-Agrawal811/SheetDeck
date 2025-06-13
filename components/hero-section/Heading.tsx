@@ -3,13 +3,14 @@ import clsx from 'clsx';
 
 // components
 import { IoPaperPlane } from 'react-icons/io5';
+import Icon from '../ui/Icon';
 
 const Heading = () => {
     return (
         <div className={clsx('flex items-center justify-center')}>
             <h1 className={clsx('text-5xl leading-16')}>
                 <div>
-                    Code <span className={clsx('font-medium font-jua text-6xl')}>faster</span>. Learn{' '}
+                    Code <span className={clsx('font-jua text-6xl')}>faster</span>. Learn{' '}
                     <span className={clsx('bg-purple-800 text-white px-4')}>smarter</span>.
                 </div>
 
@@ -36,7 +37,7 @@ const Heading = () => {
                             'inline-flex gap-4 items-center'
                         )}
                     >
-                        instant <IoPaperPlane />
+                        instant <Icon icon={IoPaperPlane} size={45} className="text-purple-800" />
                     </span>
                     code reference.
                 </div>

@@ -17,7 +17,7 @@ const DecorativeImage = ({ image, title, position, size }: DecorativeImageProps)
             <figure
                 className={clsx(
                     'relative',
-                    'before:absolute before:content-[""] before:w-full before:h-full before:bg-gray-100 before:rounded-xl before:-z-10',
+                    'before:absolute before:content-[""] before:w-full before:h-full before:bg-gray-200 before:rounded-xl before:-z-10',
                     position === 'left' ? 'before:rotate-10 before:-left-20' : 'before:-rotate-5 before:right-3'
                 )}
             >
