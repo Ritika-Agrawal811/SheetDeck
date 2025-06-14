@@ -32,7 +32,7 @@ const AboutMe = () => {
                                 profile="GitHub"
                                 socialURL="https://github.com/Ritika-Agrawal811"
                                 size="small"
-                                className="bg-white"
+                                className="bg-gray-800 text-white"
                             />
 
                             <div>
@@ -51,9 +51,9 @@ const AboutMe = () => {
                                 </article>
                                 <div className="text-right">
                                     <p className="text-3xl pr-2">
-                                        Hey, I &apos; m <span className="font-castoro text-3xl font-bold">Ritika</span>
+                                        Hey, I&apos;m <span className="font-castoro text-3xl font-bold">Ritika</span>
                                     </p>
-                                    <p className="text-2xl font-medium text-purple-800">Full-stack Developer</p>
+                                    <p className="text-2xl font-medium text-emerald-700">Full-stack Developer</p>
                                 </div>
 
                                 {/* Blogs card */}

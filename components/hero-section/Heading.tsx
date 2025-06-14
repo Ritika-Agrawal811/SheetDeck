@@ -11,7 +11,7 @@ const Heading = () => {
             <h1 className={clsx('text-5xl leading-16')}>
                 <div>
                     Code <span className={clsx('font-jua text-6xl')}>faster</span>. Learn{' '}
-                    <span className={clsx('bg-purple-800 text-white px-4')}>smarter</span>.
+                    <span className={clsx('bg-purple-800 text-slate-100 px-4')}>smarter</span>.
                 </div>
 
                 <div className="my-6">
@@ -19,7 +19,7 @@ const Heading = () => {
                     <span
                         className={clsx(
                             'font-bold uppercase font-anta',
-                            'text-6xl mx-6',
+                            'text-6xl mx-6 text-emerald-700',
                             'inline-block relative',
                             'before:absolute before:content-[""] before:w-[150%] before:h-1 before:bg-black before:-left-[140%] before:top-full',
                             'after:absolute after:content-[""] after:w-[150%] after:h-1 after:bg-black after:-right-[140%] after:top-full'
@@ -32,7 +32,7 @@ const Heading = () => {
                     for
                     <span
                         className={clsx(
-                            'border-2 border-dashed border-zinc-500',
+                            'border-2 border-dashed border-slate-500',
                             'mx-3 px-2 rounded-2xl',
                             'inline-flex gap-4 items-center'
                         )}
