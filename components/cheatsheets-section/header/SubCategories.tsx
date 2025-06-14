@@ -13,15 +13,15 @@ const SubCategories = () => {
     const subCategories = fetchSubCategories(activeCategory.topic);
 
     return (
-        <div className={clsx('bg-gray-100 p-6 rounded-xl', 'flex gap-x-8 gap-y-6 items-center flex-wrap justify-center')}>
+        <div className={clsx('bg-purple-50 p-6 rounded-xl', 'flex gap-x-8 gap-y-6 items-center flex-wrap justify-center')}>
             {subCategories.map((category) => {
                 return (
                     <button key={category.title} onClick={() => setActiveSubCategoryHandler(category.title)}>
                         <Badge
                             size="default"
-                            color="#71717A"
+                            color="#1e2939"
                             shape="rounded"
-                            className="cursor-pointer"
+                            className="cursor-pointer shadow-none"
                             active={activeCategory.category === category.title}
                         >
                             {category.title}

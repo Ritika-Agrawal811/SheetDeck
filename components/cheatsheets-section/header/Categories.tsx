@@ -10,7 +10,7 @@ const Categories = () => {
     const { topics, activeCategory, setActiveTopicHandler } = useCategory();
 
     return (
-        <div className="flex">
+        <ul className="flex">
             {topics.map((tag) => {
                 return (
                     <CategoryCard
@@ -25,7 +25,7 @@ const Categories = () => {
                     />
                 );
             })}
-        </div>
+        </ul>
     );
 };
 

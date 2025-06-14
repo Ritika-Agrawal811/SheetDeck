@@ -1,14 +1,14 @@
-import clsx from 'clsx';
-
 // components
 import Categories from './Categories';
 import SubCategories from './SubCategories';
 
 const Header = () => {
     return (
-        <header className={clsx('flex flex-col gap-10')}>
-            <Categories />
-            <SubCategories />
+        <header>
+            <nav className="space-y-10">
+                <Categories />
+                <SubCategories />
+            </nav>
         </header>
     );
 };

@@ -27,38 +27,38 @@ export const TAGS_INFO = {
 export const CATEGORIES_INFO = {
     concepts: {
         title: 'concepts',
-        image: '/images/categories/concepts.jpg',
+        image: '/assets/categories/concepts.png',
     },
     attributes: {
         title: 'attributes',
-        image: '/images/categories/attributes.jpg',
+        image: '/assets/categories/attributes.jpg',
     },
     elements: {
         title: 'elements',
-        image: '/images/categories/elements.jpg',
+        image: '/assets/categories/elements.jpg',
     },
     properties: {
         title: 'properties',
-        image: '/images/categories/properties.jpg',
+        image: '/assets/categories/properties.jpg',
     },
     'pseudo-classes': {
         title: 'pseudo-classes',
-        image: '/images/categories/pseudo-classes.jpg',
+        image: '/assets/categories/pseudo-classes.jpg',
     },
     selectors: {
         title: 'selectors',
-        image: '/images/categories/selectors.jpg',
+        image: '/assets/categories/selectors.jpg',
     },
     'advanced-syntax': {
         title: 'advanced-syntax',
-        image: '/images/categories/advanced-syntax.jpg',
+        image: '/assets/categories/advanced-syntax.jpg',
     },
     'dom-manipulation': {
         title: 'dom-manipulation',
-        image: '/images/categories/dom-manipulation.jpg',
+        image: '/assets/categories/dom-manipulation.jpg',
     },
     operators: {
         title: 'operators',
-        image: '/images/categories/operators.jpg',
+        image: '/assets/categories/operators.jpg',
     },
 } as const;

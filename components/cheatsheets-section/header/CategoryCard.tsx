@@ -16,7 +16,7 @@ type CategoryCardProps = {
 
 const CategoryCard = ({ title, color, icon, active, setActiveCategory }: CategoryCardProps) => {
     return (
-        <div
+        <li
             className={clsx(
                 'cursor-pointer border-r-1 p-4 relative overflow-hidden',
                 'grow flex flex-col items-center justify-center',
@@ -39,7 +39,7 @@ const CategoryCard = ({ title, color, icon, active, setActiveCategory }: Categor
                 )}
                 style={{ backgroundColor: color }}
             ></div>
-        </div>
+        </li>
     );
 };
 

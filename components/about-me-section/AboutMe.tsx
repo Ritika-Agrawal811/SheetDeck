@@ -15,7 +15,7 @@ const AboutMe = () => {
         <section className="pt-28 pb-16">
             <div className={clsx('flex flex-col items-center gap-12')}>
                 <Badge size="default" color="#6d11af" shape="pill" className="shadow-xl shadow-purple-100">
-                    About me
+                    About Me
                 </Badge>
 
                 <div className={clsx('flex gap-4 relative')}>
