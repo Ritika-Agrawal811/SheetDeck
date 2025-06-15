@@ -12,10 +12,11 @@ export function usePagination<T>({ data, pageSize = 10 }: UsePaginationProps<T>)
     const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
 
     const totalPages = Math.ceil(data.length / pageSize);
+    const start = (currentPage - 1) * pageSize;
+    const end = start + pageSize;
 
     const paginatedData = useMemo(() => {
-        const start = (currentPage - 1) * pageSize;
-        return data.slice(start, start + pageSize);
+        return data.slice(start, end);
     }, [data, currentPage, pageSize]);
 
     const goToNextPage = () => {
@@ -30,14 +31,19 @@ export function usePagination<T>({ data, pageSize = 10 }: UsePaginationProps<T>)
         setCurrentPage(Math.min(Math.max(1, page), totalPages));
     };
 
+    const resetCurrentPage = () => {
+        setCurrentPage(1);
+    };
+
     return {
         currentPage,
-        startIndex: (currentPage - 1) * pageSize + 1,
-        endIndex: (currentPage - 1) * pageSize + pageSize,
+        startIndex: start + 1,
+        endIndex: end > data.length ? data.length : end,
         totalPages,
         paginatedData,
         goToNextPage,
         goToPrevPage,
         setPage,
+        resetCurrentPage,
     };
 }

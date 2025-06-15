@@ -2,12 +2,14 @@
 
 import { TAGS_INFO } from '@/lib/cheatsheets/constants';
 import { useCategory } from '@/hooks/useCategory';
+import { usePagination } from '@/hooks/usePagination';
 
 // components
 import CategoryCard from './CategoryCard';
 
 const Categories = () => {
-    const { topics, activeCategory, setActiveTopicHandler } = useCategory();
+    const { topics, activeCategory, cheatsheets, setActiveTopicHandler } = useCategory();
+    const { resetCurrentPage } = usePagination({ data: cheatsheets });
 
     return (
         <ul className="flex">
@@ -21,6 +23,7 @@ const Categories = () => {
                         active={activeCategory.topic === tag}
                         setActiveCategory={() => {
                             setActiveTopicHandler(tag);
+                            resetCurrentPage();
                         }}
                     />
                 );
