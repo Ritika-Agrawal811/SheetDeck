@@ -2,20 +2,20 @@ import React from 'react';
 import clsx from 'clsx';
 
 // components
-import Badge from '../ui/Badge';
+import Badge from '@/components/ui/Badge';
 import Image from 'next/image';
-import { FaGithub, FaDev, FaMedium, FaSquareXTwitter, FaCodepen } from 'react-icons/fa6';
-import { SiGumroad, SiBuymeacoffee } from 'react-icons/si';
 import SocialCard from './SocialCard';
 import ArrowSVG from './ArrowSVG';
-import BackgroundSoftGradient from '../ui/BackgroundGradient';
+import BackgroundSoftGradient from '@/components/ui/BackgroundGradient';
+import { FaGithub, FaDev, FaMedium, FaSquareXTwitter, FaCodepen } from 'react-icons/fa6';
+import { SiGumroad, SiBuymeacoffee } from 'react-icons/si';
 
 const AboutMe = () => {
     return (
         <section className="pt-28 pb-16">
             <div className={clsx('flex flex-col items-center gap-12')}>
                 <Badge size="default" color="#6d11af" shape="pill" className="shadow-xl shadow-purple-100">
-                    About me
+                    About Me
                 </Badge>
 
                 <div className={clsx('flex gap-4 relative')}>
@@ -32,7 +32,7 @@ const AboutMe = () => {
                                 profile="GitHub"
                                 socialURL="https://github.com/Ritika-Agrawal811"
                                 size="small"
-                                className="bg-white"
+                                className="bg-gray-800 text-white"
                             />
 
                             <div>
@@ -51,9 +51,9 @@ const AboutMe = () => {
                                 </article>
                                 <div className="text-right">
                                     <p className="text-3xl pr-2">
-                                        Hey, I &apos; m <span className="font-castoro text-3xl font-bold">Ritika</span>
+                                        Hey, I&apos;m <span className="font-castoro text-3xl font-bold">Ritika</span>
                                     </p>
-                                    <p className="text-2xl font-medium text-purple-800">Full-stack Developer</p>
+                                    <p className="text-2xl font-medium text-emerald-700">Full-stack Developer</p>
                                 </div>
 
                                 {/* Blogs card */}
@@ -72,7 +72,7 @@ const AboutMe = () => {
                                         profile="Medium"
                                         socialURL="https://medium.com/@RitikaAgrawal08"
                                         orientation="horizontal"
-                                        className="bg-black text-white"
+                                        className="bg-gray-800 text-white"
                                     />
                                 </div>
                             </div>

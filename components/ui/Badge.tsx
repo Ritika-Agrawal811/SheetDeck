@@ -5,7 +5,7 @@ const tagsVariants = {
     size: {
         small: 'px-3 py-1 text-sm border',
         default: 'px-4 py-1.5 border-2',
-        big: 'px-6 py-2 text-lg border-2',
+        big: 'px-7 py-2 text-lg border-2',
     },
     shape: {
         pill: 'rounded-full',
@@ -27,12 +27,12 @@ const Badge = ({ className, size, children, color, shape, active }: BadgeProps) 
         <div
             className={clsx(
                 'w-fit shadow-md font-semibold',
-                active ? 'bg-zinc-500 text-white' : 'bg-white',
+                active ? 'bg-emerald-700 text-white' : 'bg-white',
                 tagsVariants.size[size],
                 tagsVariants.shape[shape],
                 className
             )}
-            style={{ color: active ? undefined : color, borderColor: active ? undefined : color }}
+            style={{ color: active ? undefined : color, borderColor: active ? '#047857' : color }}
         >
             {children}
         </div>

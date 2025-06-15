@@ -19,7 +19,7 @@ const Support = () => {
                 {/* Subtitle */}
                 <p className={clsx('text-2xl', 'flex items-center gap-1')}>
                     <span className="font-medium">
-                        Found these cheat sheets <span className="text-purple-800 font-jua">helpful</span>?
+                        Found these cheat sheets <span className="text-emerald-700 font-jua">helpful</span>?
                     </span>{' '}
                     A <Image alt="star gif" src="/assets/star.gif" width={50} height={50} /> on GitHub goes a long way!
                 </p>

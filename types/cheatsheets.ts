@@ -1,4 +1,4 @@
-import { TAGS_INFO, CATEGORIES_INFO } from '../lib/cheatsheets/constants';
+import { TAGS_INFO, CATEGORIES_INFO } from '@/lib/cheatsheets/constants';
 
 export type Tags = keyof typeof TAGS_INFO | 'All';
 

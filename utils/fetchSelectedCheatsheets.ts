@@ -1,5 +1,5 @@
-import { cheatSheets } from '../lib/cheatsheets/loader';
-import type { ActiveCategory } from '../atoms/category';
+import { cheatSheets } from '@/lib/cheatsheets/loader';
+import type { ActiveCategory } from '@/atoms/category';
 
 export const fetchSelectedCheatsheets = (activeCategory: ActiveCategory) => {
     if (activeCategory.topic === 'All') {
