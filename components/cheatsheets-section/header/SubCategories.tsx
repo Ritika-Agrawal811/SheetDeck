@@ -2,11 +2,13 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import { useCategory } from '../../../hooks/useCategory';
-import { fetchSubCategories } from '../../../utils/fetchSubCategories';
+import { useCategory } from '@/hooks/useCategory';
+import { fetchSubCategories } from '@/utils/fetchSubCategories';
+import { formatSubCategories } from '@/utils/formatSubCategories';
 
 // components
-import Badge from '../../ui/Badge';
+import Badge from '@/components/ui/Badge';
+import Image from 'next/image';
 
 const SubCategories = () => {
     const { activeCategory, setActiveSubCategoryHandler } = useCategory();
@@ -21,10 +23,15 @@ const SubCategories = () => {
                             size="default"
                             color="#1e2939"
                             shape="rounded"
-                            className="cursor-pointer shadow-none"
+                            className={clsx(
+                                'cursor-pointer shadow-none capitalize',
+                                'flex gap-4 items-center',
+                                'transition-colors duration-175 ease-in'
+                            )}
                             active={activeCategory.category === category.title}
                         >
-                            {category.title}
+                            <Image src={category.image} alt={`${category.title}`} width={35} height={35} />
+                            {formatSubCategories(category.title)}
                         </Badge>
                     </button>
                 );

@@ -4,8 +4,8 @@ import React from 'react';
 import clsx from 'clsx';
 
 import { motion } from 'framer-motion';
-import { useCategory } from '../../hooks/useCategory';
-import { TAGS_INFO } from '../../lib/cheatsheets/constants';
+import { useCategory } from '@/hooks/useCategory';
+import { TAGS_INFO } from '@/lib/cheatsheets/constants';
 
 const loopVariants = {
     initial: {

@@ -1,10 +1,10 @@
 import { atom } from 'jotai';
 
-import type { Categories, Tags, Cheatsheet } from '../types/cheatsheets';
+import type { Categories, Tags, Cheatsheet } from '@/types/cheatsheets';
 
-import { TAGS_INFO } from '../lib/cheatsheets/constants';
-import { fetchSubCategories } from '../utils/fetchSubCategories';
-import { fetchSelectedCheatsheets } from '../utils/fetchSelectedCheatsheets';
+import { TAGS_INFO } from '@/lib/cheatsheets/constants';
+import { fetchSubCategories } from '@/utils/fetchSubCategories';
+import { fetchSelectedCheatsheets } from '@/utils/fetchSelectedCheatsheets';
 
 export type ActiveCategory = {
     topic: Tags;

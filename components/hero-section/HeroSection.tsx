@@ -1,15 +1,15 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import { cheatSheets } from '../../lib/cheatsheets/loader';
+import { cheatSheets } from '@/lib/cheatsheets/loader';
 
 // components
 import Heading from './Heading';
 import Logo from './Logo';
 import TopicsLoop from './TopicsLoop';
-import DecorativeImage from '../ui/DecorativeImage';
+import DecorativeImage from '@/components/ui/DecorativeImage';
 import ExploreButton from './ExploreButton';
-import BackgroundSoftGradient from '../ui/BackgroundGradient';
+import BackgroundSoftGradient from '@/components/ui/BackgroundGradient';
 
 const HeroSection = () => {
     return (

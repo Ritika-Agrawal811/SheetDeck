@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import type { IconType } from 'react-icons';
 
 // components
-import Icon from '../../ui/Icon';
+import Icon from '@/components/ui/Icon';
 
 type CategoryCardProps = {
     title: string;

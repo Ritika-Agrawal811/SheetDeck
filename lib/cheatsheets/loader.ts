@@ -1,5 +1,4 @@
-// app/utils/loadCheatsheets.ts
-import cheatSheetsRaw from '../../data/cheatsheets.json';
+import cheatSheetsRaw from '@/data/cheatsheets.json';
 import { CheatsheetNestedGroupSchema } from './schema';
 
 const parsed = CheatsheetNestedGroupSchema.safeParse(cheatSheetsRaw);

@@ -1,7 +1,7 @@
 'use client';
 
-import { TAGS_INFO } from '../../../lib/cheatsheets/constants';
-import { useCategory } from '../../../hooks/useCategory';
+import { TAGS_INFO } from '@/lib/cheatsheets/constants';
+import { useCategory } from '@/hooks/useCategory';
 
 // components
 import CategoryCard from './CategoryCard';

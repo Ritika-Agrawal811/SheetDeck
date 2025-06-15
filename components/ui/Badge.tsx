@@ -5,7 +5,7 @@ const tagsVariants = {
     size: {
         small: 'px-3 py-1 text-sm border',
         default: 'px-4 py-1.5 border-2',
-        big: 'px-6 py-2 text-lg border-2',
+        big: 'px-7 py-2 text-lg border-2',
     },
     shape: {
         pill: 'rounded-full',

@@ -1,10 +1,10 @@
 import { useAtom } from 'jotai';
 
-import type { Categories, Tags } from '../types/cheatsheets';
+import type { Categories, Tags } from '@/types/cheatsheets';
 
-import { activeCategoryAtom, topics, activeCheatsheetsAtom } from '../atoms/category';
-import { fetchSubCategories } from '../utils/fetchSubCategories';
-import { fetchSelectedCheatsheets } from '../utils/fetchSelectedCheatsheets';
+import { activeCategoryAtom, topics, activeCheatsheetsAtom } from '@/atoms/category';
+import { fetchSubCategories } from '@/utils/fetchSubCategories';
+import { fetchSelectedCheatsheets } from '@/utils/fetchSelectedCheatsheets';
 
 export const useCategory = () => {
     const [activeCategory, setActiveCategory] = useAtom(activeCategoryAtom);

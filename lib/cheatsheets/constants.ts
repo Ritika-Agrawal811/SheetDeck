@@ -31,34 +31,34 @@ export const CATEGORIES_INFO = {
     },
     attributes: {
         title: 'attributes',
-        image: '/assets/categories/attributes.jpg',
+        image: '/assets/categories/attributes.png',
     },
     elements: {
         title: 'elements',
-        image: '/assets/categories/elements.jpg',
+        image: '/assets/categories/elements.png',
     },
     properties: {
         title: 'properties',
-        image: '/assets/categories/properties.jpg',
+        image: '/assets/categories/properties.png',
     },
     'pseudo-classes': {
         title: 'pseudo-classes',
-        image: '/assets/categories/pseudo-classes.jpg',
+        image: '/assets/categories/pseudo-classes.png',
     },
     selectors: {
         title: 'selectors',
-        image: '/assets/categories/selectors.jpg',
+        image: '/assets/categories/selectors.png',
     },
     'advanced-syntax': {
         title: 'advanced-syntax',
-        image: '/assets/categories/advanced-syntax.jpg',
+        image: '/assets/categories/advanced-syntax.png',
     },
     'dom-manipulation': {
         title: 'dom-manipulation',
-        image: '/assets/categories/dom-manipulation.jpg',
+        image: '/assets/categories/dom-manipulation.png',
     },
     operators: {
         title: 'operators',
-        image: '/assets/categories/operators.jpg',
+        image: '/assets/categories/operators.png',
     },
 } as const;

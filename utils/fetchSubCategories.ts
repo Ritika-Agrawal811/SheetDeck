@@ -1,7 +1,7 @@
-import { cheatSheets } from '../lib/cheatsheets/loader';
-import { CATEGORIES_INFO } from '../lib/cheatsheets/constants';
+import { cheatSheets } from '@/lib/cheatsheets/loader';
+import { CATEGORIES_INFO } from '@/lib/cheatsheets/constants';
 
-import type { Tags, Categories } from '../types/cheatsheets';
+import type { Tags, Categories } from '@/types/cheatsheets';
 
 export const fetchSubCategories = (topic: Tags) => {
     const topicCategories = (

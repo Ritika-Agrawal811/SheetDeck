@@ -2,13 +2,13 @@ import React from 'react';
 import clsx from 'clsx';
 
 // components
-import Badge from '../ui/Badge';
+import Badge from '@/components/ui/Badge';
 import Image from 'next/image';
-import { FaGithub, FaDev, FaMedium, FaSquareXTwitter, FaCodepen } from 'react-icons/fa6';
-import { SiGumroad, SiBuymeacoffee } from 'react-icons/si';
 import SocialCard from './SocialCard';
 import ArrowSVG from './ArrowSVG';
-import BackgroundSoftGradient from '../ui/BackgroundGradient';
+import BackgroundSoftGradient from '@/components/ui/BackgroundGradient';
+import { FaGithub, FaDev, FaMedium, FaSquareXTwitter, FaCodepen } from 'react-icons/fa6';
+import { SiGumroad, SiBuymeacoffee } from 'react-icons/si';
 
 const AboutMe = () => {
     return (

@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 // components
 import { IoArrowDown } from 'react-icons/io5';
-import Icon from '../ui/Icon';
+import Icon from '@/components/ui/Icon';
 
 const ExploreButton = () => {
     const label = 'explore';
