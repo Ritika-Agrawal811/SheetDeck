@@ -4,12 +4,12 @@ import clsx from 'clsx';
 // components
 import Image from 'next/image';
 
-type DecorativeImageProps = {
+interface DecorativeImageProps {
     image: string;
     title: string;
     position: 'left' | 'right';
     size: 'small' | 'default';
-};
+}
 
 const DecorativeImage = ({ image, title, position, size }: DecorativeImageProps) => {
     return (

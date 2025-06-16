@@ -3,10 +3,10 @@ import { useAtom } from 'jotai';
 
 import { currentPageAtom } from '@/atoms/pagination';
 
-type UsePaginationProps<T> = {
+interface UsePaginationProps<T> {
     data: T[];
     pageSize?: number;
-};
+}
 
 export function usePagination<T>({ data, pageSize = 10 }: UsePaginationProps<T>) {
     const [currentPage, setCurrentPage] = useAtom(currentPageAtom);

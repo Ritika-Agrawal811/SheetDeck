@@ -37,7 +37,7 @@ const verticalWidthClasses = {
     big: 'w-40',
 };
 
-type SocialCardProps = {
+interface SocialCardProps {
     label?: string;
     icon: IconType;
     size?: keyof typeof cardVariants.size;
@@ -45,7 +45,7 @@ type SocialCardProps = {
     profile: string;
     socialURL: string;
     className?: string;
-};
+}
 
 const SocialCard = ({ label, icon, size = 'default', orientation = 'vertical', className, socialURL, profile }: SocialCardProps) => {
     return (

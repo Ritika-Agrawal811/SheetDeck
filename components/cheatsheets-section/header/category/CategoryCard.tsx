@@ -6,13 +6,13 @@ import type { IconType } from 'react-icons';
 // components
 import Icon from '@/components/ui/Icon';
 
-type CategoryCardProps = {
+interface CategoryCardProps {
     title: string;
     color: string;
     icon: IconType | null;
     active: boolean;
     setActiveCategory: () => void;
-};
+}
 
 const CategoryCard = ({ title, color, icon, active, setActiveCategory }: CategoryCardProps) => {
     return (

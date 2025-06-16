@@ -1,9 +1,9 @@
 import React from 'react';
 
-type ArrowSVGProps = {
+interface ArrowSVGProps {
     color: string;
     className?: string;
-};
+}
 
 const ArrowSVG = ({ color, className }: ArrowSVGProps) => {
     return (
