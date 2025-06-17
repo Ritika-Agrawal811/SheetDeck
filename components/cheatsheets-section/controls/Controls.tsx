@@ -4,6 +4,8 @@ import clsx from 'clsx';
 import ResultsSummary from '@/components/cheatsheets-section/controls/ResultsSummary';
 import LayoutControls from '@/components/cheatsheets-section/controls/LayoutControls';
 import SearchBox from '@/components/cheatsheets-section/controls/SearchBox';
+import TopicsDropdown from './TopicsDropdown';
+import SubCategoriesDropdown from './SubCategoriesDropdown';
 
 interface ControlsProps {
     view: 'grid' | 'list';
@@ -37,8 +39,16 @@ const Controls: React.FC<ControlsProps> = ({ view, setViewHandler }) => {
                 )}
             >
                 <div className="flex items-center justify-between">
-                    <ResultsSummary />
-                    <div className="flex gap-4 items-center">
+                    {showSticky && (
+                        <div className="flex gap-2 items-center">
+                            <TopicsDropdown />
+                            <SubCategoriesDropdown />
+                        </div>
+                    )}
+                    <div className={clsx('grow-2', showSticky && 'text-center')}>
+                        <ResultsSummary />
+                    </div>
+                    <div className={clsx('flex gap-2 items-center justify-end', !showSticky && 'grow')}>
                         <LayoutControls view={view} setViewHandler={setViewHandler} />
                         <SearchBox />
                     </div>

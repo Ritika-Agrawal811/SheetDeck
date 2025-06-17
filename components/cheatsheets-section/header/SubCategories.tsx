@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { useCategory } from '@/hooks/useCategory';
 import { usePagination } from '@/hooks/usePagination';
 import { fetchSubCategories } from '@/utils/fetchSubCategories';
-import { formatSubCategories } from '@/utils/formatSubCategories';
+import { formatLabels } from '@/utils/formatLabels';
 
 // components
 import Badge from '@/components/ui/Badge';
@@ -40,7 +40,7 @@ const SubCategories = () => {
                             active={activeCategory.category === category.title}
                         >
                             <Image src={category.image} alt={`${category.title}`} width={35} height={35} />
-                            {formatSubCategories(category.title)}
+                            {formatLabels(category.title)}
                         </Badge>
                     </button>
                 );

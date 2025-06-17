@@ -14,7 +14,7 @@ interface LayoutControlsProps {
 
 const LayoutControls: React.FC<LayoutControlsProps> = ({ view, setViewHandler }) => {
     return (
-        <ul className="flex gap-4">
+        <ul className="flex gap-2">
             {gridViews.map((item) => {
                 return (
                     <li
