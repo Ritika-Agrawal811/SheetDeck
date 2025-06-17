@@ -10,7 +10,7 @@ const SearchBox = () => {
         <form
             role="search"
             aria-label="search for cheat sheets"
-            className={clsx('border border-gray-200 shadow rounded-md', 'flex', 'relative w-[350px] h-12')}
+            className={clsx('border border-gray-200 shadow rounded-md bg-white', 'flex', 'relative w-full max-w-[300px] h-12')}
         >
             <label htmlFor="cheatsheets-search" className="sr-only">
                 search for cheat sheets:

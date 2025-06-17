@@ -21,8 +21,8 @@ const Heading = () => {
                             'font-bold uppercase font-anta',
                             'text-6xl mx-6 text-emerald-700',
                             'inline-block relative',
-                            'before:absolute before:content-[""] before:w-[150%] before:h-1 before:bg-black before:-left-[140%] before:top-full',
-                            'after:absolute after:content-[""] after:w-[150%] after:h-1 after:bg-black after:-right-[140%] after:top-full'
+                            'before:absolute before:content-[""] before:w-[115%] before:h-1 before:bg-black before:-left-[110%] before:top-full',
+                            'after:absolute after:content-[""] after:w-[100%] after:h-1 after:bg-black after:-right-[95%] after:top-full'
                         )}
                     >
                         cheat sheets

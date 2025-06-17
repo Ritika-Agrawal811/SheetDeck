@@ -7,6 +7,7 @@ import Grid from './grid/Grid';
 import Header from './header/Header';
 import Badge from '@/components/ui/Badge';
 import Pagination from './pagination/Pagination';
+import Controls from './controls/Controls';
 
 const CheatsheetsSection = () => {
     const [view, setView] = useState<'grid' | 'list'>('grid');
@@ -20,7 +21,8 @@ const CheatsheetsSection = () => {
             <Badge size="default" color="#6d11af" shape="pill" className="shadow-xl shadow-purple-100 mx-auto">
                 Cheat Sheets
             </Badge>
-            <Header view={view} setViewHandler={setViewHandler} />
+            <Header />
+            <Controls view={view} setViewHandler={setViewHandler} />
             <Grid />
             <Pagination />
         </section>

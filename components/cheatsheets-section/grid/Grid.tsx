@@ -10,7 +10,7 @@ import { usePagination } from '@/hooks/usePagination';
 import Card from './Card';
 
 const Grid = () => {
-    const { cheatsheets } = useCategory();
+    const { cheatsheets, activeCategory } = useCategory();
     const { currentPage, paginatedData } = usePagination({ data: cheatsheets });
 
     const gridRef = useRef<HTMLElement>(null);
@@ -19,7 +19,7 @@ const Grid = () => {
         if (gridRef.current) {
             gridRef.current.scrollIntoView({ behavior: 'smooth' });
         }
-    }, [currentPage]);
+    }, [currentPage, activeCategory.category, activeCategory.topic]);
 
     return (
         <section className={clsx('grid grid-cols-4 gap-x-16 items-center', 'scroll-m-36')} ref={gridRef}>

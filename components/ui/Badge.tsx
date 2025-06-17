@@ -13,14 +13,14 @@ const tagsVariants = {
     },
 } as const;
 
-type BadgeProps = {
+interface BadgeProps {
     size: keyof typeof tagsVariants.size;
     shape: keyof typeof tagsVariants.shape;
     color: string;
     children: React.ReactNode;
     className?: string;
     active?: boolean;
-};
+}
 
 const Badge = ({ className, size, children, color, shape, active }: BadgeProps) => {
     return (
