@@ -17,12 +17,13 @@ const Controls: React.FC<ControlsProps> = ({ view, setViewHandler }) => {
     const sentinelRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
+        const target = sentinelRef.current;
         const observer = new IntersectionObserver(([entry]) => setShowSticky(!entry.isIntersecting), { threshold: 0 });
 
-        if (sentinelRef.current) observer.observe(sentinelRef.current);
+        if (target) observer.observe(target);
 
         return () => {
-            if (sentinelRef.current) observer.unobserve(sentinelRef.current);
+            if (target) observer.unobserve(target);
         };
     }, []);
 
@@ -31,7 +32,7 @@ const Controls: React.FC<ControlsProps> = ({ view, setViewHandler }) => {
             <div ref={sentinelRef} className="absolute -mt-8" />
             <nav
                 className={clsx(
-                    'sticky top-0 py-5 z-50 -mt-6',
+                    'sticky top-0 py-5 z-50 -mt-8',
                     'transition-all duration-150',
                     'before:absolute before:content-[""] before:w-[150%] before:h-full before:-left-1/4 before:top-0',
                     'before:-z-10',

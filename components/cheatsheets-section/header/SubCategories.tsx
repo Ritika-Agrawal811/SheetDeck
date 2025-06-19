@@ -35,7 +35,8 @@ const SubCategories = () => {
                             className={clsx(
                                 'cursor-pointer shadow-none capitalize',
                                 'flex gap-4 items-center',
-                                'transition-colors duration-175 ease-in'
+                                'transition duration-150 ease-in',
+                                'bg-white hover:scale-103 hover:bg-gray-100'
                             )}
                             active={activeCategory.category === category.title}
                         >
