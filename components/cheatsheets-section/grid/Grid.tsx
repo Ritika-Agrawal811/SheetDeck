@@ -22,11 +22,14 @@ const Grid = () => {
 
     const [modal, setModal] = useState<CheatsheetModalDetails>({ open: false, details: null });
     const gridRef = useRef<HTMLElement>(null);
+    const hasMounted = useRef(false);
 
     useEffect(() => {
-        if (gridRef.current) {
+        if (hasMounted.current && gridRef.current) {
             gridRef.current.scrollIntoView({ behavior: 'smooth' });
         }
+
+        hasMounted.current = true;
     }, [currentPage, activeCategory.category, activeCategory.topic]);
 
     return (

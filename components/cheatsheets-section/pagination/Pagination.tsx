@@ -8,7 +8,7 @@ import { IoChevronForward, IoChevronBack } from 'react-icons/io5';
 
 const Pagination = () => {
     const { cheatsheets } = useCategory();
-    const { currentPage, totalPages, goToPrevPage, goToNextPage } = usePagination({ data: cheatsheets });
+    const { currentPage, totalPages, goToPrevPage, goToNextPage, setPage } = usePagination({ data: cheatsheets });
 
     const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
@@ -40,8 +40,10 @@ const Pagination = () => {
                             className={clsx(
                                 'text-xl w-10 h-10',
                                 'flex items-center justify-center',
+                                'cursor-pointer hover:text-emerald-700',
                                 currentPage === item && 'text-white duration-260 scale-125'
                             )}
+                            onClick={() => setPage(item)}
                         >
                             {item}
                         </span>
