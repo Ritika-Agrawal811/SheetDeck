@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 // components
 import Grid from './grid/Grid';
+import Table from './table/Table';
 import Header from './header/Header';
 import Badge from '@/components/ui/Badge';
 import Pagination from './pagination/Pagination';
@@ -23,7 +24,8 @@ const CheatsheetsSection = () => {
             </Badge>
             <Header />
             <Controls view={view} setViewHandler={setViewHandler} />
-            <Grid />
+            {view === 'grid' && <Grid />}
+            {view === 'list' && <Table />}
             <Pagination />
         </section>
     );

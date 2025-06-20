@@ -41,7 +41,7 @@ const Controls: React.FC<ControlsProps> = ({ view, setViewHandler }) => {
             >
                 <div className="flex items-center justify-between">
                     {showSticky && (
-                        <div className="flex gap-2 items-center">
+                        <div className="flex gap-3 items-center">
                             <TopicsDropdown />
                             <SubCategoriesDropdown />
                         </div>
@@ -49,7 +49,7 @@ const Controls: React.FC<ControlsProps> = ({ view, setViewHandler }) => {
                     <div className={clsx('grow-2', showSticky && 'text-center')}>
                         <ResultsSummary />
                     </div>
-                    <div className={clsx('flex gap-2 items-center justify-end', !showSticky && 'grow')}>
+                    <div className={clsx('flex gap-3 items-center justify-end', !showSticky && 'grow')}>
                         <LayoutControls view={view} setViewHandler={setViewHandler} />
                         <SearchBox />
                     </div>
