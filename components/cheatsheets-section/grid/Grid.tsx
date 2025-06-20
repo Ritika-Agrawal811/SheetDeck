@@ -9,7 +9,7 @@ import { usePagination } from '@/hooks/usePagination';
 
 // components
 import Card from './Card';
-import CheatsheetModal from './CheatsheetModal';
+import CheatsheetModal from '../modal/CheatsheetModal';
 
 type CheatsheetModalDetails = {
     open: boolean;
@@ -17,7 +17,7 @@ type CheatsheetModalDetails = {
 };
 
 const Grid = () => {
-    const { cheatsheets, activeCategory } = useCategory();
+    const { cheatsheets } = useCategory();
     const { currentPage, paginatedData } = usePagination({ data: cheatsheets });
 
     const [modal, setModal] = useState<CheatsheetModalDetails>({ open: false, details: null });
@@ -30,7 +30,7 @@ const Grid = () => {
         }
 
         hasMounted.current = true;
-    }, [currentPage, activeCategory.category, activeCategory.topic]);
+    }, [currentPage]);
 
     return (
         <>

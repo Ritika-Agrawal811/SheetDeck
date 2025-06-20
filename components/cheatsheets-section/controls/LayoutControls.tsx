@@ -14,18 +14,21 @@ interface LayoutControlsProps {
 
 const LayoutControls: React.FC<LayoutControlsProps> = ({ view, setViewHandler }) => {
     return (
-        <ul className="flex gap-2">
+        <ul className="flex gap-3">
             {gridViews.map((item) => {
                 return (
                     <li
                         key={item.view}
                         className={clsx(
                             'p-2.5 rounded-md shadow cursor-pointer transition-colors duration-200 ease-in',
-                            view === item.view ? 'bg-emerald-700 text-white' : 'bg-white border border-gray-200'
+                            'group transition duration-300',
+                            view === item.view
+                                ? 'bg-emerald-700 text-white'
+                                : 'bg-white border border-gray-200 text-emerald-700 hover:bg-purple-50 hover:border-transparent'
                         )}
                         onClick={() => setViewHandler(item.view)}
                     >
-                        <Icon icon={item.icon} size={24} />
+                        <Icon icon={item.icon} size={24} className="group-hover:scale-110 transition duration-300" />
                     </li>
                 );
             })}

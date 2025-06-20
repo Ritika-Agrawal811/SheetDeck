@@ -30,7 +30,7 @@ type CardProps = {
     onClick: () => void;
 } & Cheatsheet;
 
-const Card = ({ title, tag, image, onClick }: CardProps) => {
+const Card: React.FC<CardProps> = ({ title, tag, image, onClick }) => {
     const downloadFileName = image.split('/').pop();
 
     return (
@@ -45,7 +45,7 @@ const Card = ({ title, tag, image, onClick }: CardProps) => {
                 {tag}
             </Badge>
 
-            {/* next button */}
+            {/* download button */}
             <a
                 href={image}
                 className={clsx(
@@ -55,6 +55,7 @@ const Card = ({ title, tag, image, onClick }: CardProps) => {
                     'hover:bg-purple-50 hover:border-transparent'
                 )}
                 download={downloadFileName}
+                tabIndex={0}
                 onClick={(event) => event.stopPropagation()}
             >
                 <Icon icon={IoMdDownload} size={24} className="group-hover/icon:scale-120 transition duration-300" />
