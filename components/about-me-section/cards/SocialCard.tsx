@@ -1,27 +1,29 @@
+'use client';
+
 import React from 'react';
 import clsx from 'clsx';
 
 import type { IconType } from 'react-icons';
 
 // components
-import Icon from '../ui/Icon';
+import Icon from '@/components/ui/Icon';
 
 const cardVariants = {
     size: {
         small: {
-            card: 'p-4 gap-4',
-            label: 'text-lg',
-            icon: 45,
+            card: 'p-3 gap-3 sm:p-4 sm:gap-4',
+            label: 'text-base 2xl:text-lg',
+            icon: 'text-4xl md:text-5xl',
         },
         default: {
-            card: 'py-4 px-6 gap-6',
-            label: 'text-xl',
-            icon: 50,
+            card: 'p-3 gap-3 sm:py-4 sm:px-4 xl:px-6 gap-4 xl:gap-6',
+            label: 'text-lg 2xl:text-xl',
+            icon: 'text-4xl md:text-5xl',
         },
         big: {
-            card: 'py-4 px-8 gap-8',
-            label: 'text-2xl',
-            icon: 60,
+            card: 'py-4 px-6 xl:px-8 gap-6 xl:gap-8',
+            label: 'text-lg md:text-xl 2xl:text-2xl',
+            icon: 'text-5xl md:text-6xl',
         },
     },
     orientation: {
@@ -33,8 +35,8 @@ const cardVariants = {
 // specific width classes for vertical orientation based on size
 const verticalWidthClasses = {
     small: 'w-28',
-    default: 'w-32',
-    big: 'w-40',
+    default: 'w-32 xl:w-36',
+    big: 'w-32 md:w-36 xl:w-40',
 };
 
 interface SocialCardProps {
