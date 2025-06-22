@@ -2,15 +2,17 @@
 
 import { useState } from 'react';
 
+import { useSearch } from '@/hooks/useSearch';
+
 // components
-import Grid from './grid/Grid';
-import Table from './table/Table';
 import Header from './header/Header';
 import Badge from '@/components/ui/Badge';
-import Pagination from './pagination/Pagination';
 import Controls from './controls/Controls';
+import CheatsheetsDisplay from './cheatsheets-display/CheatsheetsDisplay';
+import SearchResults from './search-results/SearchResults';
 
 const CheatsheetsSection = () => {
+    const { showSearchResults } = useSearch();
     const [view, setView] = useState<'grid' | 'list'>('grid');
 
     const setViewHandler = (view: 'grid' | 'list') => {
@@ -24,9 +26,7 @@ const CheatsheetsSection = () => {
             </Badge>
             <Header />
             <Controls view={view} setViewHandler={setViewHandler} />
-            {view === 'grid' && <Grid />}
-            {view === 'list' && <Table />}
-            <Pagination />
+            {showSearchResults ? <SearchResults view={view} /> : <CheatsheetsDisplay view={view} />}
         </section>
     );
 };

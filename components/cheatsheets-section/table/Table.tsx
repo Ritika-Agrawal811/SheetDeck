@@ -3,8 +3,6 @@
 import { useState } from 'react';
 
 import type { Cheatsheet } from '@/types/cheatsheets';
-
-import { useCategory } from '@/hooks/useCategory';
 import { usePagination } from '@/hooks/usePagination';
 
 // components
@@ -16,8 +14,11 @@ type CheatsheetModalDetails = {
     details: Cheatsheet | null;
 };
 
-const Table = () => {
-    const { cheatsheets } = useCategory();
+interface TableProps {
+    cheatsheets: Cheatsheet[];
+}
+
+const Table: React.FC<TableProps> = ({ cheatsheets }) => {
     const { paginatedData } = usePagination({ data: cheatsheets });
 
     const [modal, setModal] = useState<CheatsheetModalDetails>({ open: false, details: null });
