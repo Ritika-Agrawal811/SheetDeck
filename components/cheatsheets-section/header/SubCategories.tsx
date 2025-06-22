@@ -2,8 +2,11 @@
 import React from 'react';
 import clsx from 'clsx';
 
+import type { Categories } from '@/types/cheatsheets';
+
 import { useCategory } from '@/hooks/useCategory';
 import { usePagination } from '@/hooks/usePagination';
+import { useSearch } from '@/hooks/useSearch';
 import { fetchSubCategories } from '@/utils/fetchSubCategories';
 import { formatLabels } from '@/utils/formatLabels';
 
@@ -14,20 +17,21 @@ import Image from 'next/image';
 const SubCategories = () => {
     const { activeCategory, setActiveSubCategoryHandler, cheatsheets } = useCategory();
     const { resetCurrentPage } = usePagination({ data: cheatsheets });
+    const { reset } = useSearch();
 
     const subCategories = fetchSubCategories(activeCategory.topic);
+
+    const setSubCategoryHandler = (title: Categories) => {
+        setActiveSubCategoryHandler(title);
+        resetCurrentPage();
+        reset();
+    };
 
     return (
         <div className={clsx('bg-purple-50 p-6 rounded-xl', 'flex gap-x-8 gap-y-6 items-center flex-wrap justify-center')}>
             {subCategories.map((category) => {
                 return (
-                    <button
-                        key={category.title}
-                        onClick={() => {
-                            setActiveSubCategoryHandler(category.title);
-                            resetCurrentPage();
-                        }}
-                    >
+                    <button key={category.title} onClick={() => setSubCategoryHandler(category.title)}>
                         <Badge
                             size="default"
                             color="#1e2939"

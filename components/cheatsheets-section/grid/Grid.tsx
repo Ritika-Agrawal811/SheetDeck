@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 
 import type { Cheatsheet } from '@/types/cheatsheets';
-import { useCategory } from '@/hooks/useCategory';
 import { usePagination } from '@/hooks/usePagination';
 
 // components
@@ -16,8 +15,11 @@ type CheatsheetModalDetails = {
     details: Cheatsheet | null;
 };
 
-const Grid = () => {
-    const { cheatsheets } = useCategory();
+interface GridProps {
+    cheatsheets: Cheatsheet[];
+}
+
+const Grid: React.FC<GridProps> = ({ cheatsheets }) => {
     const { currentPage, paginatedData } = usePagination({ data: cheatsheets });
 
     const [modal, setModal] = useState<CheatsheetModalDetails>({ open: false, details: null });

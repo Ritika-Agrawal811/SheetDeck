@@ -1,14 +1,18 @@
-import Icon from '@/components/ui/Icon';
 import clsx from 'clsx';
 import React from 'react';
 
-import { useCategory } from '@/hooks/useCategory';
 import { usePagination } from '@/hooks/usePagination';
-import { IoChevronForward, IoChevronBack } from 'react-icons/io5';
 
-const Pagination = () => {
-    const { cheatsheets } = useCategory();
-    const { currentPage, totalPages, goToPrevPage, goToNextPage, setPage } = usePagination({ data: cheatsheets });
+// components
+import { IoChevronForward, IoChevronBack } from 'react-icons/io5';
+import Icon from '@/components/ui/Icon';
+
+interface PaginationProps<T> {
+    data: T[];
+}
+
+function Pagination<T>({ data }: PaginationProps<T>) {
+    const { currentPage, totalPages, goToPrevPage, goToNextPage, setPage } = usePagination({ data });
 
     const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
@@ -76,6 +80,6 @@ const Pagination = () => {
             </span>
         </section>
     );
-};
+}
 
 export default Pagination;
