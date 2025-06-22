@@ -25,7 +25,13 @@ interface BadgeProps {
 const Badge = ({ className, size, children, color, shape, active }: BadgeProps) => {
     return (
         <div
-            className={clsx('w-fit shadow-md font-semibold', tagsVariants.size[size], tagsVariants.shape[shape], className)}
+            className={clsx(
+                'w-fit shadow-md font-semibold',
+                'text-sm lg:text-base',
+                tagsVariants.size[size],
+                tagsVariants.shape[shape],
+                className
+            )}
             style={{
                 color: active ? '#fff' : color,
                 borderColor: active ? '#047857' : color,
