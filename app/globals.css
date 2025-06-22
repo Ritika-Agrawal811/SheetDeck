@@ -12,6 +12,7 @@
     --font-jua: var(--font-jua);
     --font-anta: var(--font-anta);
     --font-platypi: var(--font-platypi) --font-castoro: var(--font-castoro);
+    --breakpoint-3xl: 120rem;
 }
 
 @media (prefers-color-scheme: dark) {

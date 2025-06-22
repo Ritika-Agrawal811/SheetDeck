@@ -11,9 +11,10 @@ const VisitRepositoryButton = () => {
         >
             <button
                 className={clsx(
-                    'mt-8 px-8 py-4',
+                    'mt-8 px-6 py-3 2xl:px-8 2xl:py-4',
+                    'text-base 2xl:text-xl',
                     'border-2 border-purple-100 rounded-full',
-                    'bg-purple-800 text-white text-xl',
+                    'bg-purple-800 text-white',
                     'cursor-pointer',
                     'shadow-lg shadow-purple-100',
                     'font-platypi',
