@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import clsx from 'clsx';
 
@@ -13,21 +15,27 @@ import BackgroundSoftGradient from '@/components/ui/BackgroundGradient';
 
 const HeroSection = () => {
     return (
-        <header className={clsx('h-screen', 'flex flex-col justify-between', 'overflow-x-hidden')}>
+        <header
+            className={clsx(
+                'lg:h-screen',
+                'w-full max-w-screen-3xl mx-auto',
+                'flex flex-col justify-between gap-6 lg:gap-2',
+                'relative overflow-x-hidden'
+            )}
+        >
             <Logo />
             <Heading />
-            <section className="flex flex-col gap-20">
-                <ExploreButton />
-                <TopicsLoop />
-            </section>
+            <ExploreButton />
+            <TopicsLoop />
 
             {/* decorative components */}
-            <DecorativeImage {...cheatSheets.html.concepts[0]} position="left" size="small" />
-            <DecorativeImage {...cheatSheets.css.concepts[0]} position="right" size="default" />
+            <DecorativeImage {...cheatSheets.html.concepts[0]} position="left" size="small" className="hidden md:block" />
+            <DecorativeImage {...cheatSheets.css.concepts[0]} position="right" size="default" className="hidden md:block" />
 
             {/* background gradients */}
-            <BackgroundSoftGradient position="left" size="tiny" />
-            <BackgroundSoftGradient position="right" size="tiny" />
+            <BackgroundSoftGradient position="left" size="tiny" className="hidden md:block" />
+            <BackgroundSoftGradient position="right" size="tiny" className="hidden md:block" />
+            <BackgroundSoftGradient position="center" size="default" className="block md:hidden" />
         </header>
     );
 };

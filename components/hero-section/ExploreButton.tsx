@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import clsx from 'clsx';
 
@@ -12,7 +14,7 @@ const ExploreButton = () => {
             <button
                 className={clsx(
                     'border-2 border-purple-800 bg-purple-50',
-                    'w-30 h-30',
+                    'w-24 h-24 sm:w-26 sm:h-26 xl:w-28 xl:h-28 2xl:w-30 2xl:h-30',
                     'relative cursor-pointer rounded-full',
                     'shadow-xl shadow-purple-100'
                 )}
@@ -24,7 +26,8 @@ const ExploreButton = () => {
                             className={clsx(
                                 'inline-block absolute h-full',
                                 'top-0 left-1/2 -translate-x-1/2',
-                                'font-bold font-platypi uppercase text-purple-800 text-xl'
+                                'font-bold font-platypi uppercase text-purple-800',
+                                'xl:text-lg 2xl:text-xl'
                             )}
                             style={{ transform: `rotate(${-75 + 25 * index}deg)` }}
                         >
@@ -35,12 +38,13 @@ const ExploreButton = () => {
 
                 <span
                     className={clsx(
-                        'inline-block absolute px-3 py-4 rounded-full',
+                        'inline-block absolute rounded-full',
+                        'px-3 py-4',
                         'left-1/2 top-2/3 -translate-x-1/2 -translate-y-2/3',
                         'bg-purple-800 text-white'
                     )}
                 >
-                    <Icon icon={IoArrowDown} size={32} />
+                    <Icon icon={IoArrowDown} size="text-xl sm:text-2xl 2xl:text-3xl" />
                 </span>
             </button>
         </div>

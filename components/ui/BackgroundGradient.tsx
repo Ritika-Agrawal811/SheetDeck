@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 const gradientVariants = {
     size: {
-        tiny: 'w-1/4 h-full',
+        tiny: 'w-1/4 h-4/5 lg:h-full',
         small: 'w-1/2 h-full',
         default: 'w-full h-full',
         big: 'w-[200%] h-[200%]',
@@ -17,19 +17,21 @@ const gradientVariants = {
     },
 };
 
-type BackgroundSoftGradientProps = {
+interface BackgroundSoftGradientProps {
     size?: keyof typeof gradientVariants.size;
     position?: keyof typeof gradientVariants.position;
-};
+    className?: string;
+}
 
-const BackgroundSoftGradient = ({ size = 'default', position = 'center' }: BackgroundSoftGradientProps) => {
+const BackgroundSoftGradient = ({ size = 'default', position = 'center', className }: BackgroundSoftGradientProps) => {
     return (
         <div
             className={clsx(
                 'absolute -z-10',
                 'bg-radial from-purple-100 from-0% to-transparent to-60%',
                 gradientVariants.size[size],
-                gradientVariants.position[position]
+                gradientVariants.position[position],
+                className
             )}
         ></div>
     );
