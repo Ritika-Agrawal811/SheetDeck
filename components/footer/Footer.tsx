@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <footer
             className={clsx(
-                'w-full md:w-11/12 2xl:w-4/5 mx-auto',
+                'w-full md:w-11/12 2xl:w-4/5 max-w-screen-3xl mx-auto',
                 'p-6 mt-16 md:mb-6',
                 'bg-purple-50 md:rounded-xl',
                 'border-b border-purple-200',

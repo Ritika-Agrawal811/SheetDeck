@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import clsx from 'clsx';
 
@@ -8,37 +10,39 @@ import Icon from '@/components/ui/Icon';
 const Heading = () => {
     return (
         <div className={clsx('flex items-center justify-center')}>
-            <h1 className={clsx('text-5xl leading-16')}>
-                <div>
-                    Code <span className={clsx('font-jua text-6xl')}>faster</span>. Learn{' '}
-                    <span className={clsx('bg-purple-800 text-slate-100 px-4')}>smarter</span>.
+            <h1 className={clsx('text-3xl xl:text-4xl 2xl:text-5xl', 'leading-12 xl:leading-14 2xl:leading-16')}>
+                <div className="w-fit mx-auto sm:mx-0">
+                    Code <span className={clsx('font-jua', 'text-4xl xl:text-5xl 2xl:text-6xl')}>faster</span>. <br className="sm:hidden" />{' '}
+                    Learn <span className={clsx('bg-purple-800 text-slate-100 px-4')}>smarter</span>.
                 </div>
 
-                <div className="my-6">
-                    Concise
+                <div className={clsx('my-4 2xl:my-6', 'text-center')}>
+                    Concise <br className="sm:hidden" />
                     <span
                         className={clsx(
-                            'font-bold uppercase font-anta',
-                            'text-6xl mx-6 text-emerald-700',
+                            'font-bold uppercase font-anta whitespace-nowrap',
+                            'text-4xl sm:text-4xl xl:text-5xl 2xl:text-6xl',
+                            'mx-6 text-emerald-700',
                             'inline-block relative',
-                            'before:absolute before:content-[""] before:w-[115%] before:h-1 before:bg-black before:-left-[110%] before:top-full',
-                            'after:absolute after:content-[""] after:w-[100%] after:h-1 after:bg-black after:-right-[95%] after:top-full'
+                            'before:absolute before:content-[""] before:w-[200%] before:h-1 before:bg-black before:-left-[190%] before:top-full',
+                            'after:absolute after:content-[""] after:w-[200%] after:h-1 after:bg-black after:-right-[190%] after:top-full'
                         )}
                     >
                         cheat sheets
                     </span>
                 </div>
-                <div>
+                <div className="w-fit mx-auto sm:mx-0">
                     for
                     <span
                         className={clsx(
                             'border-2 border-dashed border-slate-500',
-                            'mx-3 px-2 rounded-2xl',
+                            'ml-3 sm:mr-3 px-4 rounded-2xl',
                             'inline-flex gap-4 items-center'
                         )}
                     >
-                        instant <Icon icon={IoPaperPlane} size={45} className="text-purple-800" />
-                    </span>
+                        instant <Icon icon={IoPaperPlane} size="text-4xl xl:text-5xl" className="text-purple-800" />
+                    </span>{' '}
+                    <br className="sm:hidden" />
                     code reference.
                 </div>
             </h1>
