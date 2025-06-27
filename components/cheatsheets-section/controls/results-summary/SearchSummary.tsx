@@ -29,10 +29,10 @@ const SearchSummary = () => {
                 className={clsx('inline-block rounded-full cursor-pointer group transition duration-300', 'hover:text-emerald-700')}
                 onClick={reset}
             >
-                <Icon icon={IoChevronBack} size={24} className="group-hover:scale-125 transition duration-300" />
+                <Icon icon={IoChevronBack} size="text-2xl" className="group-hover:scale-125 transition duration-300" />
             </span>
 
-            <h3 className="text-lg space-x-1">
+            <h3 className="text-base xl:text-lg 3xl:text-xl space-x-1">
                 <span>Showing</span>
                 <ResultsIndex startIndex={startIndex} endIndex={endIndex} />
 
@@ -43,7 +43,8 @@ const SearchSummary = () => {
                 {showSearchResults && (
                     <>
                         {' '}
-                        for <span className="font-bold text-lg">&quot;{searchValue}&quot;</span>
+                        for <br className="lg:hidden" />{' '}
+                        <span className="font-bold text-base xl:text-lg 3xl:text-xl">&quot;{searchValue}&quot;</span>
                     </>
                 )}
             </h3>

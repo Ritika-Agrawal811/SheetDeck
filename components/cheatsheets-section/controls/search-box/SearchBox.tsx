@@ -65,7 +65,11 @@ const SearchBox = () => {
         <form
             role="search"
             aria-label="search for cheat sheets"
-            className={clsx('border border-gray-200 shadow rounded-md bg-white', 'flex', 'relative w-full max-w-[300px] h-12')}
+            className={clsx(
+                'border border-gray-200 shadow rounded-md bg-white',
+                'flex',
+                'relative w-full sm:max-w-[250px] xl:max-w-[300px] h-12 sm:h-10 xl:h-12'
+            )}
             onSubmit={showSearchResultsHandler}
         >
             <label htmlFor="cheatsheets-search" className="sr-only">
@@ -78,13 +82,13 @@ const SearchBox = () => {
                 name="cheatsheet"
                 autoComplete="off"
                 placeholder="Search for a cheat sheet"
-                className={clsx('h-full grow', 'px-4')}
+                className={clsx('h-full grow', 'px-4', 'sm:text-sm xl:text-base')}
                 value={searchData.value}
                 onChange={searchCheatsheetHandler}
                 onBlur={onBlurHandler}
             />
 
-            <SearchList className="absolute top-[120%] w-full" data={searchData} setDataHandler={setSearchResultsHandler} />
+            <SearchList className="absolute top-[120%] w-full z-50" data={searchData} setDataHandler={setSearchResultsHandler} />
 
             <button
                 type="submit"
@@ -95,7 +99,7 @@ const SearchBox = () => {
                     'border border-emerald-700'
                 )}
             >
-                <Icon icon={IoSearch} size={24} />
+                <Icon icon={IoSearch} size="text-xl xl:text-2xl" />
             </button>
         </form>
     );

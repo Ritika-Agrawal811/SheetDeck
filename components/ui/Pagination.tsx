@@ -25,14 +25,14 @@ function Pagination<T>({ data }: PaginationProps<T>) {
             {/* prev button */}
             <span
                 className={clsx(
-                    'p-2.5 shadow',
+                    'p-1.5 md:p-2.5 shadow',
                     'text-emerald-700 border border-gray-200',
                     'inline-block rounded-full cursor-pointer group transition duration-300',
                     'hover:bg-purple-50 hover:border-transparent'
                 )}
                 onClick={goToPrevPage}
             >
-                <Icon icon={IoChevronBack} size={24} className="group-hover:scale-125 transition duration-300" />
+                <Icon icon={IoChevronBack} size="text-xl md:text-2xl" className="group-hover:scale-125 transition duration-300" />
             </span>
 
             {/* page numbers */}
@@ -42,10 +42,10 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                         <span
                             key={`page-${item}`}
                             className={clsx(
-                                'text-xl w-10 h-10',
+                                'text-lg md:text-xl w-10 h-10',
                                 'flex items-center justify-center',
                                 'cursor-pointer hover:text-emerald-700',
-                                currentPage === item && 'text-white duration-260 scale-125'
+                                currentPage === item && 'text-white duration-260 scale-110 md:scale-125'
                             )}
                             onClick={() => setPage(item)}
                         >
@@ -69,14 +69,14 @@ function Pagination<T>({ data }: PaginationProps<T>) {
             {/* next button */}
             <span
                 className={clsx(
-                    'p-2.5 shadow',
+                    'p-1.5 md:p-2.5 shadow',
                     'text-emerald-700 border border-gray-200',
                     'inline-block rounded-full cursor-pointer group transition duration-300',
                     'hover:bg-purple-50 hover:border-transparent'
                 )}
                 onClick={goToNextPage}
             >
-                <Icon icon={IoChevronForward} size={24} className="group-hover:scale-125 transition duration-300" />
+                <Icon icon={IoChevronForward} size="text-xl md:text-2xl" className="group-hover:scale-125 transition duration-300" />
             </span>
         </section>
     );

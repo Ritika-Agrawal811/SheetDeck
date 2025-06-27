@@ -19,7 +19,7 @@ const HeroSection = () => {
             className={clsx(
                 'lg:h-screen',
                 'w-full max-w-screen-3xl mx-auto',
-                'flex flex-col justify-between gap-6 lg:gap-2',
+                'flex flex-col justify-between gap-16 lg:gap-0',
                 'relative overflow-x-hidden'
             )}
         >

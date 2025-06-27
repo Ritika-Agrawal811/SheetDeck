@@ -37,7 +37,14 @@ const Grid: React.FC<GridProps> = ({ cheatsheets }) => {
     return (
         <>
             <CheatsheetModal {...modal} onClose={() => setModal((prev) => ({ ...prev, open: false }))} />
-            <section className={clsx('grid grid-cols-4 gap-x-16 items-center', 'scroll-m-36')} ref={gridRef}>
+            <section
+                className={clsx(
+                    'grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5',
+                    'gap-10 sm:gap-x-6 sm:gap-y-12 md:gap-16 items-center',
+                    'scroll-m-36'
+                )}
+                ref={gridRef}
+            >
                 {paginatedData.map((data) => {
                     return <Card key={data.id} {...data} onClick={() => setModal({ open: true, details: data })} />;
                 })}

@@ -26,7 +26,7 @@ const SubCategoriesDropdown = () => {
             <Dropdown
                 data={subCategories}
                 label="category"
-                labelStyle={{ minWidth: '160px' }}
+                labelClassname="min-w-[145px] xl:min-w-[160px]"
                 selectedOption={activeCategory.category}
                 setSelectedOption={setSelectedOptionHandler}
             />

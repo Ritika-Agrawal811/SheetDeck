@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import clsx from 'clsx';
 
 import type { Cheatsheet } from '@/types/cheatsheets';
 import { usePagination } from '@/hooks/usePagination';
@@ -27,11 +28,11 @@ const Table: React.FC<TableProps> = ({ cheatsheets }) => {
         <>
             <CheatsheetModal {...modal} onClose={() => setModal((prev) => ({ ...prev, open: false }))} />
             <table className="w-full table-fixed">
-                <thead className="bg-gray-100 text-left">
+                <thead className={clsx('bg-gray-100 text-left', '2xl:text-lg 3xl:text-xl')}>
                     <tr>
-                        <th className="p-4 w-1/2">Title</th>
-                        <th className="p-4 text-left">Category</th>
-                        <th className="p-4 text-left">Action</th>
+                        <th className={clsx('p-4 3xl:p-6', 'w-[65%] sm:w-1/2')}>Title</th>
+                        <th className={clsx('p-4 3xl:p-6', 'text-left', 'hidden sm:table-cell')}>Category</th>
+                        <th className={clsx('p-4 3xl:p-6', 'text-left')}>Action</th>
                     </tr>
                 </thead>
                 <tbody>

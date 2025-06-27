@@ -25,7 +25,8 @@ const TopicsDropdown = () => {
                 label="topic"
                 selectedOption={activeCategory.topic}
                 setSelectedOption={setSelectedOptionHandler}
-                labelStyle={{ backgroundColor: TAGS_INFO[activeCategory.topic].color, color: '#fff', minWidth: '115px' }}
+                labelStyle={{ backgroundColor: TAGS_INFO[activeCategory.topic].color, color: '#fff' }}
+                labelClassname="min-w-[100px] xl:min-w-[115px]"
             />
         </>
     );

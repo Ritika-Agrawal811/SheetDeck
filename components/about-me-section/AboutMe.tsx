@@ -17,7 +17,7 @@ import GumroadCard from './cards/GumroadCard';
 const AboutMe = () => {
     return (
         <section className="pt-28 pb-16">
-            <div className={clsx('flex flex-col items-center gap-12')}>
+            <div className={clsx('flex flex-col items-center gap-16')}>
                 <Badge size="default" color="#6d11af" shape="pill" className="shadow-xl shadow-purple-100">
                     About Me
                 </Badge>
