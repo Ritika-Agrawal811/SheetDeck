@@ -17,14 +17,14 @@ const Modal: React.FC<ModalProps> = ({ children, open, onClose }) => {
             <span
                 className={clsx(
                     'text-white',
-                    'absolute right-6 top-6',
+                    'absolute right-1 top-2 sm:right-3 sm:top-3 xl:right-4 xl:top-4 2xl:right-5 2xl:top-5',
                     'cursor-pointer',
                     'p-2 rounded-full',
                     'hover:bg-black transition duration-75'
                 )}
                 onClick={onClose}
             >
-                <Icon icon={IoClose} size={24} />
+                <Icon icon={IoClose} size="text-xl 2xl:text-2xl 3xl:text-3xl" />
             </span>
             <section>{children}</section>
         </div>

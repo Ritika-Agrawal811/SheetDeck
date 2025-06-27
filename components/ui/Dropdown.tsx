@@ -13,9 +13,10 @@ interface DropdownProps {
     setSelectedOption: (option: string) => void;
     data: string[];
     labelStyle?: React.CSSProperties;
+    labelClassname?: string;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedOption, data, labelStyle }) => {
+const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedOption, data, labelStyle, labelClassname }) => {
     const [open, setOpen] = useState(false);
 
     const filteredData = data.filter((item, index) => data.indexOf(item) === index);
@@ -36,12 +37,15 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                 className={clsx('bg-white rounded-md', 'bg-white border border-gray-200', 'cursor-pointer', 'flex items-center')}
                 onClick={() => setOpen((prev) => !prev)}
             >
-                <span className="p-2.5 rounded-l-md border-r border-gray-200" style={labelStyle}>
+                <span
+                    className={clsx('p-2 xl:p-2.5', 'rounded-l-md border-r border-gray-200', 'text-sm xl:text-base', labelClassname)}
+                    style={labelStyle}
+                >
                     {formatLabels(selectedOption)}
                 </span>
 
-                <span className={clsx('p-2.5 px-2', 'bg-emerald-700 text-white', 'rounded-r-md')}>
-                    <Icon icon={IoChevronDownOutline} size={24} className="pointer-events-none" />
+                <span className={clsx('py-2 xl:py-2.5 px-1.5 xl:px-2', 'bg-emerald-700 text-white', 'rounded-r-md')}>
+                    <Icon icon={IoChevronDownOutline} size="text-xl xl:text-2xl" className="pointer-events-none" />
                 </span>
             </button>
 
@@ -68,6 +72,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                             tabIndex={0}
                             className={clsx(
                                 'py-2 cursor-pointer',
+                                'text-sm xl:text-base',
                                 item === selectedOption ? 'bg-emerald-700 text-white hover:bg-emerald-800' : 'hover:bg-gray-100'
                             )}
                             onClick={() => setSelectedOptionHandler(item)}

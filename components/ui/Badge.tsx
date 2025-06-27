@@ -3,8 +3,9 @@ import clsx from 'clsx';
 
 const tagsVariants = {
     size: {
-        small: 'px-3 py-1 text-sm border',
-        default: 'px-4 py-1.5 border-2',
+        tiny: 'text-[13px] py-0.5 px-2 border',
+        small: 'px-3 py-1 border text-sm',
+        default: 'px-4 py-1.5 border-2 text-sm lg:text-base 3xl:text-lg',
         big: 'px-7 py-2 text-lg border-2',
     },
     shape: {
@@ -25,13 +26,7 @@ interface BadgeProps {
 const Badge = ({ className, size, children, color, shape, active }: BadgeProps) => {
     return (
         <div
-            className={clsx(
-                'w-fit shadow-md font-semibold',
-                'text-sm lg:text-base',
-                tagsVariants.size[size],
-                tagsVariants.shape[shape],
-                className
-            )}
+            className={clsx('w-fit shadow-md font-semibold', tagsVariants.size[size], tagsVariants.shape[shape], className)}
             style={{
                 color: active ? '#fff' : color,
                 borderColor: active ? '#047857' : color,

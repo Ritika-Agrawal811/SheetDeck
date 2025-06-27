@@ -18,16 +18,17 @@ const CategoryCard = ({ title, color, icon, active, setActiveCategory }: Categor
     return (
         <li
             className={clsx(
-                'cursor-pointer border-r-1 p-4 relative overflow-hidden',
-                'grow flex flex-col items-center justify-center',
+                'cursor-pointer border-r-1 relative overflow-hidden',
+                'w-1/2 sm:w-1/3 md:w-1/4 h-full lg:grow',
+                'inline-flex flex-col items-center justify-center',
                 'font-castoro font-bold',
-                icon ? 'text-2xl' : 'text-4xl',
+                icon ? 'text-lg sm:text-xl xl:text-2xl 3xl:text-3xl' : 'text-2xl lg:text-3xl 2xl:text-4xl',
                 active && 'text-white'
             )}
             onClick={setActiveCategory}
             style={{ borderColor: color }}
         >
-            {icon && <Icon icon={icon} size={65} className="mb-4" />}
+            {icon && <Icon icon={icon} size="text-5xl lg:text-6xl 2xl:text-7xl" className="mb-4 xl:mb-6" />}
             {title}
 
             <div

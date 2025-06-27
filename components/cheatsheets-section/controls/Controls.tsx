@@ -23,7 +23,7 @@ const Controls: React.FC<ControlsProps> = ({ view, setViewHandler }) => {
 
     useEffect(() => {
         const target = sentinelRef.current;
-        const observer = new IntersectionObserver(([entry]) => setShowSticky(!entry.isIntersecting), { threshold: 0 });
+        const observer = new IntersectionObserver(([entry]) => setShowSticky(!entry.isIntersecting), { threshold: 0.1 });
 
         if (target) observer.observe(target);
 
@@ -37,26 +37,40 @@ const Controls: React.FC<ControlsProps> = ({ view, setViewHandler }) => {
             <div ref={sentinelRef} className="absolute -mt-8" />
             <nav
                 className={clsx(
-                    'sticky top-0 py-5 z-50 -mt-8',
+                    'sm:sticky top-0 z-50 -mt-8',
+                    'px-4 md:px-0 py-5',
                     'transition-all duration-150',
-                    'before:absolute before:content-[""] before:w-[150%] before:h-full before:-left-1/4 before:top-0',
+                    'before:absolute before:content-[""] before:w-[125%] md:before:w-[130%] 2xl:before:w-[150%] before:h-full before:-left-1/4 before:top-0',
                     'before:-z-10',
                     showSticky && 'before:bg-purple-50 before:border-b before:border-purple-200'
                 )}
             >
-                <div className="flex items-center justify-between">
+                {/* for tablets and laptops */}
+                <div className={clsx('hidden sm:flex', 'items-center justify-between')}>
                     {showSticky && !showSearchResults && (
-                        <div className="flex gap-3 items-center">
+                        <div className="hidden lg:flex gap-2 xl:gap-3 items-center">
                             <TopicsDropdown />
                             <SubCategoriesDropdown />
                         </div>
                     )}
-                    <div className={clsx('grow-2', showSticky && 'text-center')}>
+                    <div className={clsx('grow-2', showSticky && 'lg:text-center')}>
                         <ResultsSummary />
                     </div>
-                    <div className={clsx('flex gap-3 items-center justify-end', !showSticky && 'grow')}>
+                    <div className={clsx('flex gap-2 xl:gap-3 items-center justify-end', !showSticky && 'grow')}>
                         <LayoutControls view={view} setViewHandler={setViewHandler} />
-                        <SearchBox />
+
+                        <div className={clsx(showSticky && 'hidden lg:block')}>
+                            <SearchBox />
+                        </div>
+                    </div>
+                </div>
+
+                {/* for mobile screens */}
+                <div className={clsx('flex flex-col sm:hidden', 'gap-5')}>
+                    <SearchBox />
+                    <div className="flex justify-between items-center">
+                        <ResultsSummary />
+                        {!showSearchResults && <LayoutControls view={view} setViewHandler={setViewHandler} />}
                     </div>
                 </div>
             </nav>

@@ -22,18 +22,18 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
         <>
             {details && (
                 <Modal open={open} onClose={onClose}>
-                    <section className={clsx('w-4/5 mx-auto', 'h-screen flex flex-col')}>
-                        <header className={clsx('py-6', 'flex items-center justify-between')}>
-                            <div className="space-y-3">
-                                <h3 className="text-white text-3xl">{details.title}</h3>
-                                <Badge size="small" color={TAGS_INFO[details.tag].color} shape="pill" className="">
+                    <section className={clsx('w-[85%] xl:w-4/5 mx-auto', 'h-screen flex flex-col')}>
+                        <header className={clsx('pt-8 pb-6 sm:pb-0 lg:pt-6', 'flex items-center justify-between')}>
+                            <div className="space-y-2 lg:space-y-3 3xl:space-y-4">
+                                <h3 className="text-white text-lg sm:text-xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl">{details.title}</h3>
+                                <Badge size="small" color={TAGS_INFO[details.tag].color} shape="pill" className="3xl:text-base">
                                     {details.tag}
                                 </Badge>
                             </div>
 
                             <button
                                 className={clsx(
-                                    'bg-purple-800 text-xl text-white',
+                                    'bg-purple-800 lg:text-lg 2xl:text-xl 3xl:text-2xl text-white',
                                     'rounded-md cursor-pointer',
                                     'transition duration-150 hover:bg-purple-900'
                                 )}
@@ -41,10 +41,10 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                                 <a
                                     href={details.image}
                                     download={details.image.split('/').pop()}
-                                    className={clsx('flex gap-4 items-center', 'px-4 py-2')}
+                                    className={clsx('flex gap-2 lg:gap-4 items-center', 'px-2 sm:px-3 2xl:px-4 3xl:px-5', 'py-2 3xl:py-3')}
                                 >
                                     Download
-                                    <Icon icon={IoMdDownload} size={24} />
+                                    <Icon icon={IoMdDownload} size="text-xl 2xl:text-2xl 3xl:text-3xl" />
                                 </a>
                             </button>
                         </header>

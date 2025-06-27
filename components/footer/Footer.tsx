@@ -11,7 +11,7 @@ const Footer = () => {
                 'p-6 mt-16 md:mb-6',
                 'bg-purple-50 md:rounded-xl',
                 'border-b border-purple-200',
-                'text-sm md:text-base text-center sm:text-right'
+                'text-sm md:text-base 3xl:text-lg text-center sm:text-right'
             )}
         >
             <p>

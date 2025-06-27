@@ -35,7 +35,12 @@ const Card: React.FC<CardProps> = ({ title, tag, image, onClick }) => {
 
     return (
         <motion.article
-            className={clsx('relative shadow-lg', 'p-4 mb-16', 'cursor-pointer group/card')}
+            className={clsx(
+                'relative shadow-lg',
+                'p-4',
+                'cursor-pointer group/card',
+                'mx-auto w-[275px] xs:w-[300px] sm:w-[280px] md:w-[300px] xl:w-auto'
+            )}
             initial="initial"
             animate="animate"
             variants={cardVariants}
@@ -58,7 +63,11 @@ const Card: React.FC<CardProps> = ({ title, tag, image, onClick }) => {
                 tabIndex={0}
                 onClick={(event) => event.stopPropagation()}
             >
-                <Icon icon={IoMdDownload} size={24} className="group-hover/icon:scale-120 transition duration-300" />
+                <Icon
+                    icon={IoMdDownload}
+                    size="text-xl md:text-2xl lg:text-xl 2xl:text-2xl"
+                    className="group-hover/icon:scale-120 transition duration-300"
+                />
             </a>
 
             <figure className="mt-10 mb-10 overflow-hidden">

@@ -35,14 +35,14 @@ const TopicsLoop = () => {
     };
 
     return (
-        <section className={clsx('overflow-hidden pb-8')}>
+        <section className={clsx('overflow-hidden')}>
             <div className={clsx('', '-rotate-2')}>
                 <motion.div
                     initial={{
                         x: 0,
                     }}
                     animate={animate}
-                    className={clsx('whitespace-nowrap pt-8 pb-4')}
+                    className={clsx('whitespace-nowrap py-4 lg:py-8 2xl:py-10')}
                 >
                     {[...topics, ...topics].map((topic, index) => {
                         if (topic.toLowerCase() === 'all') return null;

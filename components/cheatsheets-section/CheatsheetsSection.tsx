@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import clsx from 'clsx';
 
 import { useSearch } from '@/hooks/useSearch';
 
@@ -20,7 +21,7 @@ const CheatsheetsSection = () => {
     };
 
     return (
-        <section className="w-4/5 mx-auto my-32 space-y-16">
+        <section className={clsx('w-full md:w-11/12 2xl:w-4/5 max-w-screen-3xl mx-auto', 'my-28 space-y-16')}>
             <Badge size="default" color="#6d11af" shape="pill" className="shadow-xl shadow-purple-100 mx-auto">
                 Cheat Sheets
             </Badge>

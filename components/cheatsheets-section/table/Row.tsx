@@ -17,22 +17,29 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
     const downloadFileName = image.split('/').pop();
 
     return (
-        <tr className="">
-            <td className={clsx('p-4 font-medium', 'cursor-pointer hover:text-purple-800')} onClick={onClick}>
+        <tr className="border-b border-gray-200 sm:border-none">
+            <td
+                className={clsx('px-4 py-5 lg:p-4 3xl:px-6 font-medium', 'cursor-pointer hover:text-purple-800', 'text-base 3xl:text-lg')}
+                onClick={onClick}
+            >
                 {title}
-            </td>
-            <td className="p-4">
-                <Badge size="small" color={TAGS_INFO[tag].color} shape="pill">
+                <Badge size="tiny" color={TAGS_INFO[tag].color} shape="rounded" className="mt-2 sm:hidden">
                     {tag}
                 </Badge>
             </td>
-            <td className="p-4 flex gap-4 items-center justify-start">
+            <td className={clsx('px-4 py-5 sm:p-43xl:px-6', 'hidden sm:table-cell')}>
+                <Badge size="small" color={TAGS_INFO[tag].color} shape="pill" className="3xl:text-base">
+                    {tag}
+                </Badge>
+            </td>
+            <td className={clsx('px-4 py-5 sm:p-4 3xl:px-6', 'flex items-center justify-start', 'gap-3 sm:gap-4 3xl:gap-5')}>
                 <button
                     className={clsx(
                         'bg-white text-purple-800',
                         'border border-purple-800',
                         'rounded-md cursor-pointer',
-                        'group transition-colors duration-150 hover:bg-purple-800 hover:text-white'
+                        'group transition-colors duration-150 hover:bg-purple-800 hover:text-white',
+                        '3xl:text-lg'
                     )}
                 >
                     <a
@@ -40,15 +47,15 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
                         download={downloadFileName}
                         tabIndex={0}
                         onClick={(event) => event.stopPropagation()}
-                        className={clsx('flex gap-2 items-center', 'p-2 shadow')}
+                        className={clsx('flex gap-2 items-center', 'p-1.5 lg:p-2 shadow')}
                     >
-                        Download
-                        <Icon icon={IoMdDownload} size={24} />
+                        <span className="hidden lg:inline">Download</span>
+                        <Icon icon={IoMdDownload} size="text-xl xs:text-[22px] lg:text-2xl 3xl:text-[26px]" />
                     </a>
                 </button>
                 <button
                     className={clsx(
-                        'p-2 shadow',
+                        'p-1.5 lg:p-2 shadow',
                         'text-emerald-700 bg-white border border-gray-200',
                         'rounded-md cursor-pointer group transition duration-300',
                         'hover:bg-purple-50 hover:border-transparent',
@@ -56,7 +63,11 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
                     )}
                     onClick={onClick}
                 >
-                    <Icon icon={IoMdEye} size={24} className="group-hover:scale-115 transition duration-300" />
+                    <Icon
+                        icon={IoMdEye}
+                        size="text-xl xs:text-[22px] lg:text-2xl 3xl:text-[26px]"
+                        className="group-hover:scale-115 transition duration-300"
+                    />
                 </button>
             </td>
         </tr>
