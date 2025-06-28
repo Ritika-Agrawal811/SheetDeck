@@ -22,7 +22,7 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
         <>
             {details && (
                 <Modal open={open} onClose={onClose}>
-                    <section className={clsx('w-[85%] xl:w-4/5 mx-auto', 'h-screen flex flex-col')}>
+                    <section className={clsx('w-[85%] xl:w-4/5 mx-auto', 'h-screen flex flex-col')} onClick={onClose}>
                         <header className={clsx('pt-8 pb-6 sm:pb-0 lg:pt-6', 'flex items-center justify-between')}>
                             <div className="space-y-2 lg:space-y-3 3xl:space-y-4">
                                 <h3 className="text-white text-lg sm:text-xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl">{details.title}</h3>
@@ -41,6 +41,7 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                                 <a
                                     href={details.image}
                                     download={details.image.split('/').pop()}
+                                    onClick={(event) => event.stopPropagation()}
                                     className={clsx('flex gap-2 lg:gap-4 items-center', 'px-2 sm:px-3 2xl:px-4 3xl:px-5', 'py-2 3xl:py-3')}
                                 >
                                     Download

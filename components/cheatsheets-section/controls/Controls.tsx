@@ -40,7 +40,7 @@ const Controls: React.FC<ControlsProps> = ({ view, setViewHandler }) => {
                     'sm:sticky top-0 z-50 -mt-8',
                     'px-4 md:px-0 py-5',
                     'transition-all duration-150',
-                    'before:absolute before:content-[""] before:w-[125%] md:before:w-[130%] 2xl:before:w-[150%] before:h-full before:-left-1/4 before:top-0',
+                    'sm:before:absolute before:content-[""] before:w-[125%] md:before:w-[130%] 2xl:before:w-[150%] before:h-full before:-left-1/4 before:top-0',
                     'before:-z-10',
                     showSticky && 'before:bg-purple-50 before:border-b before:border-purple-200'
                 )}

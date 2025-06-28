@@ -16,12 +16,7 @@ import BackgroundSoftGradient from '@/components/ui/BackgroundGradient';
 const HeroSection = () => {
     return (
         <header
-            className={clsx(
-                'lg:h-screen',
-                'w-full max-w-screen-3xl mx-auto',
-                'flex flex-col justify-between gap-16 lg:gap-0',
-                'relative overflow-x-hidden'
-            )}
+            className={clsx('h-screen', 'w-full max-w-screen-3xl mx-auto', 'flex flex-col justify-between', 'relative overflow-x-hidden')}
         >
             <Logo />
             <Heading />

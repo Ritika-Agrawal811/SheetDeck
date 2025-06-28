@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 const tagsVariants = {
     size: {
-        tiny: 'text-[13px] py-0.5 px-2 border',
+        tiny: 'text-[13px] py-1 px-2 border',
         small: 'px-3 py-1 border text-sm',
         default: 'px-4 py-1.5 border-2 text-sm lg:text-base 3xl:text-lg',
         big: 'px-7 py-2 text-lg border-2',
