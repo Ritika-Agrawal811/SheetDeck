@@ -1,6 +1,7 @@
 // components
 import Categories from './category/Categories';
-import SubCategories from './SubCategories';
+import SubCategoriesMobile from './sub-category/SubCategoriesMobile';
+import SubCategories from './sub-category/SubCategories';
 
 const Header = () => {
     return (
@@ -8,6 +9,7 @@ const Header = () => {
             <nav className="space-y-10">
                 <Categories />
                 <SubCategories />
+                <SubCategoriesMobile />
             </nav>
         </header>
     );
