@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     images: {
         domains: ['pbs.twimg.com'],
     },
+    devIndicators: false,
 };
 
 export default nextConfig;

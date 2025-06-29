@@ -9,6 +9,7 @@ import LayoutControls from '@/components/cheatsheets-section/controls/LayoutCont
 import SearchBox from '@/components/cheatsheets-section/controls/search-box/SearchBox';
 import SubCategoriesDropdown from './SubCategoriesDropdown';
 import TopicsDropdown from './TopicsDropdown';
+import CategoriesModal from './CategoriesModal';
 
 interface ControlsProps {
     view: 'grid' | 'list';
@@ -34,10 +35,10 @@ const Controls: React.FC<ControlsProps> = ({ view, setViewHandler }) => {
 
     return (
         <>
-            <div ref={sentinelRef} className="absolute -mt-8" />
+            <div ref={sentinelRef} className="absolute -mt-8 hidden sm:block" />
             <nav
                 className={clsx(
-                    'sm:sticky top-0 z-50 -mt-8',
+                    'sticky top-0 z-50 -mt-8',
                     'px-4 md:px-0 py-5',
                     'transition-all duration-150',
                     'sm:before:absolute before:content-[""] before:w-[125%] md:before:w-[130%] 2xl:before:w-[150%] before:h-full before:-left-1/4 before:top-0',
@@ -62,15 +63,8 @@ const Controls: React.FC<ControlsProps> = ({ view, setViewHandler }) => {
                         <div className={clsx(showSticky && 'hidden lg:block')}>
                             <SearchBox />
                         </div>
-                    </div>
-                </div>
 
-                {/* for mobile screens */}
-                <div className={clsx('flex flex-col sm:hidden', 'gap-5')}>
-                    <SearchBox />
-                    <div className="flex justify-between items-center">
-                        <ResultsSummary />
-                        {!showSearchResults && <LayoutControls view={view} setViewHandler={setViewHandler} />}
+                        {showSticky && <CategoriesModal />}
                     </div>
                 </div>
             </nav>
