@@ -4,6 +4,7 @@ import { useState } from 'react';
 import clsx from 'clsx';
 
 import { useSearch } from '@/hooks/useSearch';
+import { useScreenBreakpoint } from '@/hooks/useScreenBreakpoint';
 
 // components
 import Header from './header/Header';
@@ -11,9 +12,12 @@ import Badge from '@/components/ui/Badge';
 import Controls from './controls/Controls';
 import CheatsheetsDisplay from './cheatsheets-display/CheatsheetsDisplay';
 import SearchResults from './search-results/SearchResults';
+import ControlsMobile from './controls/ControlsMobile';
 
 const CheatsheetsSection = () => {
     const { showSearchResults } = useSearch();
+    const { breakpoint } = useScreenBreakpoint();
+
     const [view, setView] = useState<'grid' | 'list'>('grid');
 
     const setViewHandler = (view: 'grid' | 'list') => {
@@ -26,7 +30,12 @@ const CheatsheetsSection = () => {
                 Cheat Sheets
             </Badge>
             <Header />
-            <Controls view={view} setViewHandler={setViewHandler} />
+            {breakpoint === 'xs' ? (
+                <ControlsMobile view={view} setViewHandler={setViewHandler} />
+            ) : (
+                <Controls view={view} setViewHandler={setViewHandler} />
+            )}
+
             {showSearchResults ? <SearchResults view={view} /> : <CheatsheetsDisplay view={view} />}
         </section>
     );
