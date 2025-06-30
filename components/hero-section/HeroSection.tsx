@@ -13,14 +13,18 @@ import DecorativeImage from '@/components/ui/DecorativeImage';
 import ExploreButton from './ExploreButton';
 import BackgroundSoftGradient from '@/components/ui/BackgroundGradient';
 
-const HeroSection = () => {
+interface HeroSectionProps {
+    onExploreBtnClick: () => void;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ onExploreBtnClick }) => {
     return (
         <header
             className={clsx('h-screen', 'w-full max-w-screen-3xl mx-auto', 'flex flex-col justify-between', 'relative overflow-x-hidden')}
         >
             <Logo />
             <Heading />
-            <ExploreButton />
+            <ExploreButton onExploreBtnClick={onExploreBtnClick} />
             <TopicsLoop />
 
             {/* decorative components */}

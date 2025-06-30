@@ -51,24 +51,26 @@ interface SocialCardProps {
 
 const SocialCard = ({ label, icon, size = 'default', orientation = 'vertical', className, socialURL, profile }: SocialCardProps) => {
     return (
-        <a href={socialURL} target="_blank" rel="noopener noreferrer" className="inline-block" aria-label={`Visit my ${profile} account`}>
-            <article
-                className={clsx(
-                    'rounded-2xl items-center border-2 border-gray-800 cursor-pointer group',
-                    'hover:scale-95 transition duration-300 ease-in-out',
-                    cardVariants.size[size].card,
-                    cardVariants.orientation[orientation],
-                    orientation === 'horizontal' ? 'w-fit' : verticalWidthClasses[size],
-                    className
-                )}
-            >
-                {label && <h4 className={clsx('text-center', cardVariants.size[size].label)}>{label}</h4>}
-                <Icon
-                    icon={icon}
-                    size={cardVariants.size[size].icon}
-                    className="group-hover:scale-115 transition duration-300 ease-in-out"
-                />
-            </article>
+        <a
+            href={socialURL}
+            target="_blank"
+            rel="noopener noreferrer"
+            tabIndex={0}
+            className={clsx(
+                'block border-2 border-gray-800',
+                'focus:outline-none focus:border-transparent focus:ring-3 focus:ring-offset-2 focus:ring-blue-500 rounded-2xl',
+                'hover:scale-95 transition duration-300 ease-in-out',
+                'items-center cursor-pointer group',
+
+                cardVariants.size[size].card,
+                cardVariants.orientation[orientation],
+                orientation === 'horizontal' ? 'w-fit' : verticalWidthClasses[size],
+                className
+            )}
+            aria-label={`Visit my ${profile} account`}
+        >
+            {label && <h4 className={clsx('text-center', cardVariants.size[size].label)}>{label}</h4>}
+            <Icon icon={icon} size={cardVariants.size[size].icon} className="group-hover:scale-115 transition duration-300 ease-in-out" />
         </a>
     );
 };
