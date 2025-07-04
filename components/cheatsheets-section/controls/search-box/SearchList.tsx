@@ -14,9 +14,10 @@ interface SearchListProps {
     className?: string;
     data: Data;
     setDataHandler: (result: Cheatsheet[]) => void;
+    resetInputValueHandler: () => void;
 }
 
-const SearchList: React.FC<SearchListProps> = ({ className, data, setDataHandler }) => {
+const SearchList: React.FC<SearchListProps> = ({ className, data, setDataHandler, resetInputValueHandler }) => {
     const { getResultsList, displaySearchResultsHandler } = useSearch();
 
     // sets the search results list
@@ -29,6 +30,11 @@ const SearchList: React.FC<SearchListProps> = ({ className, data, setDataHandler
         const filteredCheatsheets = getResultsList(data.value);
         setDataHandler(filteredCheatsheets);
     }, [data.value, getResultsList, setDataHandler]);
+
+    const selectSearchOptionHandler = (title: string) => {
+        displaySearchResultsHandler(title);
+        resetInputValueHandler();
+    };
 
     return (
         <ul
@@ -48,7 +54,7 @@ const SearchList: React.FC<SearchListProps> = ({ className, data, setDataHandler
                         key={item.id}
                         tabIndex={0}
                         className={clsx('p-3 cursor-pointer', 'hover:bg-gray-100')}
-                        onMouseDown={() => displaySearchResultsHandler(item.title)}
+                        onMouseDown={() => selectSearchOptionHandler(item.title)}
                     >
                         {item.title}
                     </li>

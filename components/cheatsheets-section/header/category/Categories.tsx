@@ -100,14 +100,16 @@ const Categories = () => {
                     )}
                     onClick={() => scroll('left')}
                 >
+                    <span className="sr-only">Scroll to left</span>
                     <span className="bg-black/20 inline-block rounded-full p-1">
-                        <Icon icon={IoChevronBack} size="text-xl" />
+                        <Icon icon={IoChevronBack} size="text-xl" aria-hidden={true} />
                     </span>
                 </button>
             )}
 
             <ul
                 ref={scrollContainerRef}
+                role="tablist"
                 className={clsx(
                     'overflow-y-hidden overflow-x-auto whitespace-nowrap hide-scrollbar',
                     'h-28 sm:h-32 md:h-36 lg:h-40 2xl:h-44',
@@ -139,8 +141,9 @@ const Categories = () => {
                     )}
                     onClick={() => scroll('right')}
                 >
+                    <span className="sr-only">Scroll to right</span>
                     <span className="bg-black/20 inline-block rounded-full p-1">
-                        <Icon icon={IoChevronForward} size="text-xl" />
+                        <Icon icon={IoChevronForward} size="text-xl" aria-hidden={true} />
                     </span>
                 </button>
             )}

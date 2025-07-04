@@ -27,24 +27,37 @@ const cardVariants = {
 };
 
 type CardProps = {
-    onClick: () => void;
+    viewCardDetails: () => void;
 } & Cheatsheet;
 
-const Card: React.FC<CardProps> = ({ title, tag, image, onClick }) => {
+const Card: React.FC<CardProps> = ({ title, tag, image, viewCardDetails }) => {
     const downloadFileName = image.split('/').pop();
+
+    const onKeyDownHandler = (event: React.KeyboardEvent<HTMLElement>) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            viewCardDetails();
+        }
+    };
 
     return (
         <motion.article
+            role="button"
+            aria-label={`View the cheat sheet for ${title}`}
+            aria-haspopup="dialog"
+            tabIndex={0}
             className={clsx(
-                'relative shadow-lg',
+                'relative shadow-lg rounded-lg',
                 'p-4',
                 'cursor-pointer group/card',
-                'mx-auto w-[275px] xs:w-[300px] sm:w-[280px] md:w-[300px] xl:w-auto'
+                'mx-auto w-[275px] xs:w-[300px] sm:w-[280px] md:w-[300px] xl:w-auto',
+                'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
             )}
             initial="initial"
             animate="animate"
             variants={cardVariants}
-            onClick={onClick}
+            onClick={viewCardDetails}
+            onKeyDown={onKeyDownHandler}
         >
             <Badge size="small" color={TAGS_INFO[tag].color} shape="pill" className="absolute left-2 top-2">
                 {tag}
@@ -52,19 +65,23 @@ const Card: React.FC<CardProps> = ({ title, tag, image, onClick }) => {
 
             {/* download button */}
             <a
+                role="button"
                 href={image}
                 className={clsx(
                     'p-2 shadow absolute right-2 top-2',
                     'text-emerald-700 bg-white border border-gray-200',
                     'inline-block rounded-full cursor-pointer group/icon transition duration-300',
-                    'hover:bg-purple-50 hover:border-transparent'
+                    'hover:bg-purple-50 hover:border-transparent',
+                    'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
                 )}
                 download={downloadFileName}
                 tabIndex={0}
                 onClick={(event) => event.stopPropagation()}
             >
+                <span className="sr-only">Download the {title} cheatsheet</span>
                 <Icon
                     icon={IoMdDownload}
+                    aria-hidden={true}
                     size="text-xl md:text-2xl lg:text-xl 2xl:text-2xl"
                     className="group-hover/icon:scale-120 transition duration-300"
                 />
@@ -90,7 +107,7 @@ const Card: React.FC<CardProps> = ({ title, tag, image, onClick }) => {
                 )}
                 style={{ boxShadow: `2px -1.5px 0 ${TAGS_INFO[tag].color}` }}
             >
-                <h4 className={clsx(title.length > 20 && 'text-sm')}>{title}</h4>
+                <h3 className={clsx(title.length > 20 && 'text-sm')}>{title}</h3>
             </div>
         </motion.article>
     );

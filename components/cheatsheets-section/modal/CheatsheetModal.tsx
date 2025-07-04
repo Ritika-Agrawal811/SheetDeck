@@ -34,9 +34,11 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                             <button
                                 className={clsx(
                                     'bg-purple-800 lg:text-lg 2xl:text-xl 3xl:text-2xl text-white',
-                                    'rounded-md cursor-pointer',
-                                    'transition duration-150 hover:bg-purple-900'
+                                    'rounded-md cursor-pointer border-2 border-transparent',
+                                    'transition duration-150 hover:bg-purple-900',
+                                    'focus:outline-none focus:border-blue-500'
                                 )}
+                                aria-label="download the cheat sheet"
                             >
                                 <a
                                     href={details.image}
@@ -45,7 +47,7 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                                     className={clsx('flex gap-2 lg:gap-4 items-center', 'px-2 sm:px-3 2xl:px-4 3xl:px-5', 'py-2 3xl:py-3')}
                                 >
                                     Download
-                                    <Icon icon={IoMdDownload} size="text-xl 2xl:text-2xl 3xl:text-3xl" />
+                                    <Icon icon={IoMdDownload} size="text-xl 2xl:text-2xl 3xl:text-3xl" aria-hidden={true} />
                                 </a>
                             </button>
                         </header>

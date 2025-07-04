@@ -46,7 +46,7 @@ const Grid: React.FC<GridProps> = ({ cheatsheets }) => {
                 ref={gridRef}
             >
                 {paginatedData.map((data) => {
-                    return <Card key={data.id} {...data} onClick={() => setModal({ open: true, details: data })} />;
+                    return <Card key={data.id} {...data} viewCardDetails={() => setModal({ open: true, details: data })} />;
                 })}
             </section>
         </>

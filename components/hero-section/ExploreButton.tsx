@@ -25,10 +25,12 @@ const ExploreButton: React.FC<ExploreButtonProps> = ({ onExploreBtnClick }) => {
                 )}
                 onClick={onExploreBtnClick}
             >
+                <span className="sr-only">Explore the cheat sheets</span>
                 {label.split('').map((letter, index) => {
                     return (
                         <span
                             key={`${letter}-${index}`}
+                            aria-hidden="true"
                             className={clsx(
                                 'inline-block absolute h-full',
                                 'top-0 left-1/2 -translate-x-1/2',
@@ -43,6 +45,7 @@ const ExploreButton: React.FC<ExploreButtonProps> = ({ onExploreBtnClick }) => {
                 })}
 
                 <span
+                    aria-hidden="true"
                     className={clsx(
                         'inline-block absolute rounded-full',
                         'px-3 py-4',

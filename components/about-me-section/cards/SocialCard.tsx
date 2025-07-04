@@ -69,8 +69,13 @@ const SocialCard = ({ label, icon, size = 'default', orientation = 'vertical', c
             )}
             aria-label={`Visit my ${profile} account`}
         >
-            {label && <h4 className={clsx('text-center', cardVariants.size[size].label)}>{label}</h4>}
-            <Icon icon={icon} size={cardVariants.size[size].icon} className="group-hover:scale-115 transition duration-300 ease-in-out" />
+            {label && <span className={clsx('text-center', cardVariants.size[size].label)}>{label}</span>}
+            <Icon
+                icon={icon}
+                size={cardVariants.size[size].icon}
+                aria-hidden={true}
+                className="group-hover:scale-115 transition duration-300 ease-in-out"
+            />
         </a>
     );
 };

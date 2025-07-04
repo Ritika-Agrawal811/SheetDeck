@@ -13,22 +13,40 @@ interface LayoutControlsProps {
 }
 
 const LayoutControls: React.FC<LayoutControlsProps> = ({ view, setViewHandler }) => {
+    const onKeyDownHandler = (event: React.KeyboardEvent<HTMLLIElement>, view: 'grid' | 'list') => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            setViewHandler(view);
+        }
+    };
+
     return (
-        <ul className={clsx('flex gap-2 xl:gap-3')}>
+        <ul role="radiogroup" className={clsx('flex gap-2 xl:gap-3')}>
             {gridViews.map((item) => {
                 return (
                     <li
                         key={item.view}
+                        tabIndex={view === item.view ? 0 : -1}
+                        role="radio"
+                        aria-checked={view === item.view}
                         className={clsx(
                             'p-2 xl:p-2.5 rounded-md shadow cursor-pointer transition-colors duration-200 ease-in',
+                            'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-blue-500',
                             'group transition duration-300',
                             view === item.view
                                 ? 'bg-emerald-700 text-white'
                                 : 'bg-white border border-gray-200 text-emerald-700 hover:bg-purple-50 hover:border-transparent'
                         )}
                         onClick={() => setViewHandler(item.view)}
+                        onKeyDown={(e) => onKeyDownHandler(e, item.view)}
                     >
-                        <Icon icon={item.icon} size="text-xl xl:text-2xl" className="group-hover:scale-110 transition duration-300" />
+                        <span className="sr-only">Switch to {item.view} view</span>
+                        <Icon
+                            icon={item.icon}
+                            size="text-xl xl:text-2xl"
+                            aria-hidden="true"
+                            className="group-hover:scale-110 transition duration-300"
+                        />
                     </li>
                 );
             })}

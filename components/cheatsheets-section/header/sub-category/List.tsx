@@ -27,7 +27,7 @@ const List: React.FC<ListProps> = ({ className, size = 'default', showImage = tr
 
     const subCategories = fetchSubCategories(activeCategory.topic);
 
-    const setSubCategoryHandler = (event: React.MouseEvent<HTMLButtonElement>, title: Categories) => {
+    const setSubCategoryHandler = (event: React.MouseEvent<HTMLElement>, title: Categories) => {
         event.stopPropagation();
         setActiveSubCategoryHandler(title);
         resetCurrentPage();
@@ -35,10 +35,22 @@ const List: React.FC<ListProps> = ({ className, size = 'default', showImage = tr
     };
 
     return (
-        <div className={className}>
+        <ul role="tablist" aria-label={`Subcategories for ${activeCategory.topic}`} className={className}>
             {subCategories.map((category) => {
                 return (
-                    <button key={category.title} onClick={(event) => setSubCategoryHandler(event, category.title)}>
+                    <li
+                        key={category.title}
+                        role="tab"
+                        id={`subtab-${activeCategory.topic.toLowerCase()}-${category.title.toLowerCase()}`}
+                        aria-selected={activeCategory.category === category.title}
+                        aria-controls="cheatsheets-panel"
+                        tabIndex={activeCategory.category === category.title ? 0 : -1}
+                        onClick={(event) => setSubCategoryHandler(event, category.title)}
+                        className={clsx(
+                            'rounded-lg',
+                            'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+                        )}
+                    >
                         <Badge
                             size={size}
                             color="#1e2939"
@@ -55,7 +67,7 @@ const List: React.FC<ListProps> = ({ className, size = 'default', showImage = tr
                             {showImage && (
                                 <Image
                                     src={category.image}
-                                    alt={`${category.title}`}
+                                    alt={`sub category: ${category.title}`}
                                     width={35}
                                     height={35}
                                     className={clsx('w-8 h-8 xl:w-9 xl:h-9')}
@@ -63,10 +75,10 @@ const List: React.FC<ListProps> = ({ className, size = 'default', showImage = tr
                             )}
                             {formatLabels(category.title)}
                         </Badge>
-                    </button>
+                    </li>
                 );
             })}
-        </div>
+        </ul>
     );
 };
 

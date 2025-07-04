@@ -7,6 +7,7 @@ const VisitRepositoryButton = () => {
             href="https://github.com/Ritika-Agrawal811/webdev-cheatsheets"
             target="_blank"
             rel="noopener noreferrer"
+            role="button"
             aria-label="Visit SheetDeck GitHub Repository"
             className={clsx(
                 'mt-8 px-6 py-3 2xl:px-8 2xl:py-4',
