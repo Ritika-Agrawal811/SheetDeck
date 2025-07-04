@@ -16,19 +16,20 @@ const SubCategoriesMobile = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div role="listbox" className="sm:hidden mx-4">
+        <div className="sm:hidden mx-4" aria-label="Select a sub category for a cheat sheet">
             <button
-                aria-haspopup="listbox"
-                aria-expanded="false"
-                aria-label="Select a sub category for a cheat sheet"
+                aria-haspopup="dialog"
+                aria-expanded={open}
                 id="sub-cateogy-mobile-dropdown"
                 className={clsx('flex flex-col items-start gap-1', 'bg-purple-50', 'w-full p-3', 'rounded-xl border border-purple-200')}
                 onClick={() => setOpen(true)}
             >
                 <span className="font-medium text-lg">Category</span>
                 <div className={clsx('flex items-center justify-between w-full')}>
-                    <span className="capitalize">{formatLabels(activeCategory.category)}</span>
-                    <Icon icon={IoChevronDownOutline} size="text-xl xl:text-2xl" className="pointer-events-none" />
+                    <span className="capitalize" aria-label={`selected category is ${formatLabels(activeCategory.category)}`}>
+                        {formatLabels(activeCategory.category)}
+                    </span>
+                    <Icon icon={IoChevronDownOutline} size="text-xl xl:text-2xl" className="pointer-events-none" aria-hidden={true} />
                 </div>
             </button>
 

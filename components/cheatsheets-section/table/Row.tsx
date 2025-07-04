@@ -39,18 +39,19 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
                         'border border-purple-800',
                         'rounded-md cursor-pointer',
                         'group transition-colors duration-150 hover:bg-purple-800 hover:text-white',
-                        '3xl:text-lg'
+                        '3xl:text-lg',
+                        'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400'
                     )}
                 >
                     <a
                         href={image}
                         download={downloadFileName}
-                        tabIndex={0}
                         onClick={(event) => event.stopPropagation()}
                         className={clsx('flex gap-2 items-center', 'p-1.5 lg:p-2 shadow')}
+                        tabIndex={-1}
                     >
                         <span className="hidden lg:inline">Download</span>
-                        <Icon icon={IoMdDownload} size="text-xl xs:text-[22px] lg:text-2xl 3xl:text-[26px]" />
+                        <Icon icon={IoMdDownload} aria-hidden={true} size="text-xl xs:text-[22px] lg:text-2xl 3xl:text-[26px]" />
                     </a>
                 </button>
                 <button
@@ -59,14 +60,17 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
                         'text-emerald-700 bg-white border border-gray-200',
                         'rounded-md cursor-pointer group transition duration-300',
                         'hover:bg-purple-50 hover:border-transparent',
-                        'flex gap-2 items-center'
+                        'flex gap-2 items-center',
+                        'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400'
                     )}
                     onClick={onClick}
                 >
+                    <span className="sr-only">View details for cheat sheet: {title}</span>
                     <Icon
                         icon={IoMdEye}
                         size="text-xl xs:text-[22px] lg:text-2xl 3xl:text-[26px]"
                         className="group-hover:scale-115 transition duration-300"
+                        aria-hidden={true}
                     />
                 </button>
             </td>

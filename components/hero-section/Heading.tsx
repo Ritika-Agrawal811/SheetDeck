@@ -11,12 +11,12 @@ const Heading = () => {
     return (
         <div className={clsx('flex items-center justify-center')}>
             <h1 className={clsx('text-3xl xl:text-4xl 2xl:text-5xl', 'leading-12 xl:leading-14 2xl:leading-16')}>
-                <div className="w-fit mx-auto sm:mx-0">
+                <span className="w-fit mx-auto sm:mx-0 block">
                     Code <span className={clsx('font-jua', 'text-4xl xl:text-5xl 2xl:text-6xl')}>faster</span>. <br className="sm:hidden" />{' '}
                     Learn <span className={clsx('bg-purple-800 text-slate-100 px-4')}>smarter</span>.
-                </div>
+                </span>
 
-                <div className={clsx('my-4 2xl:my-6', 'text-center')}>
+                <span className={clsx('my-4 2xl:my-6', 'text-center block')}>
                     Concise <br className="sm:hidden" />
                     <span
                         className={clsx(
@@ -30,8 +30,8 @@ const Heading = () => {
                     >
                         cheat sheets
                     </span>
-                </div>
-                <div className="w-fit mx-auto sm:mx-0">
+                </span>
+                <span className="w-fit mx-auto sm:mx-0 block">
                     for
                     <span
                         className={clsx(
@@ -40,11 +40,11 @@ const Heading = () => {
                             'inline-flex gap-4 items-center'
                         )}
                     >
-                        instant <Icon icon={IoPaperPlane} size="text-4xl xl:text-5xl" className="text-purple-800" />
+                        instant <Icon icon={IoPaperPlane} size="text-4xl xl:text-5xl" className="text-purple-800" aria-hidden={true} />
                     </span>{' '}
                     <br className="sm:hidden" />
                     code reference.
-                </div>
+                </span>
             </h1>
         </div>
     );

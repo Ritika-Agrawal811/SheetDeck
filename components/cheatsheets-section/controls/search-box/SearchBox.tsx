@@ -30,6 +30,10 @@ const SearchBox = () => {
         setSearchData((prev) => ({ ...prev, results }));
     }, []);
 
+    const resetInputValueHandler = useCallback(() => {
+        setSearchData((prev) => ({ ...prev, value: '' }));
+    }, []);
+
     // triggered on change event of input field -- when a value is entered
     const searchCheatsheetHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.value === '') setSearchData((prev) => ({ ...prev, openList: false }));
@@ -43,11 +47,12 @@ const SearchBox = () => {
 
     // triggered when input field goes out of focus to close the results list
     const onBlurHandler = () => {
-        setSearchData({
-            openList: false,
-            value: '',
-            results: [],
-        });
+        setSearchData((prev) => ({ ...prev, openList: false }));
+    };
+
+    // triggered when input field is on focus to show the results list
+    const onFocusHandler = () => {
+        setSearchData((prev) => ({ ...prev, openList: true }));
     };
 
     // triggered on form submit to show the search results
@@ -64,7 +69,6 @@ const SearchBox = () => {
     return (
         <form
             role="search"
-            aria-label="search for cheat sheets"
             className={clsx(
                 'border border-gray-200 shadow rounded-md bg-white',
                 'flex',
@@ -73,7 +77,7 @@ const SearchBox = () => {
             onSubmit={showSearchResultsHandler}
         >
             <label htmlFor="cheatsheets-search" className="sr-only">
-                search for cheat sheets:
+                Search for cheat sheets
             </label>
 
             <input
@@ -82,13 +86,19 @@ const SearchBox = () => {
                 name="cheatsheet"
                 autoComplete="off"
                 placeholder="Search for a cheat sheet"
-                className={clsx('h-full grow', 'px-4', 'sm:text-sm xl:text-base')}
+                className={clsx('h-full grow', 'px-4', 'sm:text-sm xl:text-base', 'focus:border-blue-500')}
                 value={searchData.value}
                 onChange={searchCheatsheetHandler}
                 onBlur={onBlurHandler}
+                onFocus={onFocusHandler}
             />
 
-            <SearchList className="absolute top-[120%] w-full z-50" data={searchData} setDataHandler={setSearchResultsHandler} />
+            <SearchList
+                className="absolute top-[120%] w-full z-50"
+                data={searchData}
+                setDataHandler={setSearchResultsHandler}
+                resetInputValueHandler={resetInputValueHandler}
+            />
 
             <button
                 type="submit"
@@ -96,10 +106,12 @@ const SearchBox = () => {
                     'flex items-center justify-center',
                     'px-2 cursor-pointer',
                     'bg-emerald-700 text-white rounded-r-md',
-                    'border border-emerald-700'
+                    'border border-emerald-700',
+                    'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
                 )}
             >
-                <Icon icon={IoSearch} size="text-xl xl:text-2xl" />
+                <span className="sr-only">Search</span>
+                <Icon icon={IoSearch} size="text-xl xl:text-2xl" aria-hidden={true} />
             </button>
         </form>
     );

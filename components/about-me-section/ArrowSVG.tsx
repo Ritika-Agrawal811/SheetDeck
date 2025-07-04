@@ -16,6 +16,7 @@ const ArrowSVG = ({ color, className }: ArrowSVGProps) => {
             viewBox="0 0 256 256"
             xmlSpace="preserve"
             className={className}
+            aria-hidden={true}
         >
             <g
                 style={{

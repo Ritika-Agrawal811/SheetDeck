@@ -21,21 +21,28 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
 
     const filteredData = data.filter((item, index) => data.indexOf(item) === index);
 
-    const setSelectedOptionHandler = (option: string) => {
+    const setSelectedOptionHandler = (event: React.MouseEvent<HTMLLIElement>, option: string) => {
+        event.stopPropagation();
         setSelectedOption(option);
         setOpen(false);
     };
 
     return (
-        <div role="listbox" className="relative">
+        <div className="relative" aria-label={`Select a ${label} for cheatsheet`}>
             <button
                 aria-haspopup="listbox"
-                aria-expanded="false"
+                aria-expanded={open}
                 aria-controls={`${label}-dropdown-options`}
-                aria-label={`Select a ${label} for cheatsheet`}
                 id={`${label}-dropdown-button`}
-                className={clsx('bg-white rounded-md', 'bg-white border border-gray-200', 'cursor-pointer', 'flex items-center')}
+                className={clsx(
+                    'bg-white rounded-md',
+                    'bg-white border border-gray-200',
+                    'cursor-pointer',
+                    'flex items-center',
+                    'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-blue-500'
+                )}
                 onClick={() => setOpen((prev) => !prev)}
+                // onBlur={() => setOpen(false)}
             >
                 <span
                     className={clsx('p-2 xl:p-2.5', 'rounded-l-md border-r border-gray-200', 'text-sm xl:text-base', labelClassname)}
@@ -44,7 +51,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                     {formatLabels(selectedOption)}
                 </span>
 
-                <span className={clsx('py-2 xl:py-2.5 px-1.5 xl:px-2', 'bg-emerald-700 text-white', 'rounded-r-md')}>
+                <span className={clsx('py-2 xl:py-2.5 px-1.5 xl:px-2', 'bg-emerald-700 text-white', 'rounded-r-md')} aria-hidden={true}>
                     <Icon icon={IoChevronDownOutline} size="text-xl xl:text-2xl" className="pointer-events-none" />
                 </span>
             </button>
@@ -65,17 +72,19 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                 )}
             >
                 {filteredData.map((item) => {
+                    const isSelected = item === selectedOption;
                     return (
                         <li
                             key={item}
                             role="option"
                             tabIndex={0}
+                            aria-selected={isSelected}
                             className={clsx(
                                 'py-2 cursor-pointer',
                                 'text-sm xl:text-base',
-                                item === selectedOption ? 'bg-emerald-700 text-white hover:bg-emerald-800' : 'hover:bg-gray-100'
+                                isSelected ? 'bg-emerald-700 text-white hover:bg-emerald-800' : 'hover:bg-gray-100'
                             )}
-                            onClick={() => setSelectedOptionHandler(item)}
+                            onClick={(event) => setSelectedOptionHandler(event, item)}
                         >
                             {formatLabels(item)}
                         </li>

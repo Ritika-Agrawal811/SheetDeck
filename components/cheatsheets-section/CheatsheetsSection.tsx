@@ -13,10 +13,12 @@ import Controls from './controls/Controls';
 import CheatsheetsDisplay from './cheatsheets-display/CheatsheetsDisplay';
 import SearchResults from './search-results/SearchResults';
 import ControlsMobile from './controls/ControlsMobile';
+import { useCategory } from '@/hooks/useCategory';
 
 const CheatsheetsSection = () => {
     const { showSearchResults } = useSearch();
     const { breakpoint } = useScreenBreakpoint();
+    const { activeCategory } = useCategory();
 
     const [view, setView] = useState<'grid' | 'list'>('grid');
 
@@ -36,7 +38,13 @@ const CheatsheetsSection = () => {
                 <Controls view={view} setViewHandler={setViewHandler} />
             )}
 
-            {showSearchResults ? <SearchResults view={view} /> : <CheatsheetsDisplay view={view} />}
+            <div
+                role="tabpanel"
+                id="cheatsheets-panel"
+                aria-labelledby={`subtab-${activeCategory.topic.toLowerCase()}-${activeCategory.category.toLowerCase()}`}
+            >
+                {showSearchResults ? <SearchResults view={view} /> : <CheatsheetsDisplay view={view} />}
+            </div>
         </section>
     );
 };

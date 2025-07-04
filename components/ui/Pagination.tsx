@@ -21,36 +21,50 @@ function Pagination<T>({ data }: PaginationProps<T>) {
     const OFFSET = (PAGE_WIDTH + GAP) * (currentPage - 1);
 
     return (
-        <section className={clsx('flex items-center justify-center gap-6')}>
+        <nav role="navigation" aria-label="Pagination" className={clsx('flex items-center justify-center gap-6')}>
             {/* prev button */}
-            <span
+            <button
                 className={clsx(
                     'p-1.5 md:p-2.5 shadow',
                     'text-emerald-700 border border-gray-200',
-                    'inline-block rounded-full cursor-pointer group transition duration-300',
-                    'hover:bg-purple-50 hover:border-transparent'
+                    'inline-block rounded-full cursor-pointer',
+                    'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-blue-500',
+                    'disabled:bg-gray-50 disabled:text-gray-600 disabled:cursor-not-allowed',
+                    currentPage !== 1 && 'group transition duration-300 hover:bg-purple-50 hover:border-transparent'
                 )}
                 onClick={goToPrevPage}
+                disabled={currentPage === 1}
+                aria-disabled={currentPage === 1}
             >
-                <Icon icon={IoChevronBack} size="text-xl md:text-2xl" className="group-hover:scale-125 transition duration-300" />
-            </span>
+                <span className="sr-only">Go to previous page</span>
+                <Icon
+                    icon={IoChevronBack}
+                    size="text-xl md:text-2xl"
+                    className="group-hover:scale-125 transition duration-300"
+                    aria-hidden={true}
+                />
+            </button>
 
             {/* page numbers */}
-            <div className={clsx('flex gap-4', 'relative')}>
-                {pages.map((item) => {
+            <ul className={clsx('flex gap-4', 'relative')}>
+                {pages.map((number) => {
                     return (
-                        <span
-                            key={`page-${item}`}
-                            className={clsx(
-                                'text-lg md:text-xl w-10 h-10',
-                                'flex items-center justify-center',
-                                'cursor-pointer hover:text-emerald-700',
-                                currentPage === item && 'text-white duration-260 scale-110 md:scale-125'
-                            )}
-                            onClick={() => setPage(item)}
-                        >
-                            {item}
-                        </span>
+                        <li key={`page-${number}`}>
+                            <button
+                                aria-current={number === currentPage ? 'page' : undefined}
+                                aria-label={`Go to page ${number}`}
+                                className={clsx(
+                                    'text-lg md:text-xl w-10 h-10 rounded-full',
+                                    'flex items-center justify-center',
+                                    'cursor-pointer hover:text-emerald-700',
+                                    'focus:outline-none focus:ring-2 focus:ring-blue-500',
+                                    currentPage === number && 'text-white duration-260 scale-110 md:scale-125'
+                                )}
+                                onClick={() => setPage(number)}
+                            >
+                                {number}
+                            </button>
+                        </li>
                     );
                 })}
 
@@ -63,22 +77,33 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                         '-z-10 transition-all duration-250 ease-out'
                     )}
                     style={{ left: OFFSET }}
+                    aria-hidden="true"
                 ></div>
-            </div>
+            </ul>
 
             {/* next button */}
-            <span
+            <button
                 className={clsx(
                     'p-1.5 md:p-2.5 shadow',
                     'text-emerald-700 border border-gray-200',
-                    'inline-block rounded-full cursor-pointer group transition duration-300',
-                    'hover:bg-purple-50 hover:border-transparent'
+                    'inline-block rounded-full cursor-pointer',
+                    'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-blue-500',
+                    'disabled:bg-gray-50 disabled:text-gray-600 disabled:cursor-not-allowed',
+                    currentPage !== totalPages && 'group transition duration-300 hover:bg-purple-50 hover:border-transparent'
                 )}
                 onClick={goToNextPage}
+                disabled={currentPage === totalPages}
+                aria-disabled={currentPage === totalPages}
             >
-                <Icon icon={IoChevronForward} size="text-xl md:text-2xl" className="group-hover:scale-125 transition duration-300" />
-            </span>
-        </section>
+                <span className="sr-only">Go to next page</span>
+                <Icon
+                    icon={IoChevronForward}
+                    size="text-xl md:text-2xl"
+                    className="group-hover:scale-125 transition duration-300"
+                    aria-hidden={true}
+                />
+            </button>
+        </nav>
     );
 }
 

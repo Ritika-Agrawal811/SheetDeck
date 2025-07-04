@@ -28,21 +28,21 @@ const CategoriesModal = () => {
     };
 
     return (
-        <div role="listbox" className="lg:hidden">
+        <div className="lg:hidden" aria-label="Select a category for a cheat sheet">
             <button
-                aria-haspopup="listbox"
-                aria-expanded="false"
-                aria-label="Select a category for a cheat sheet"
+                aria-haspopup="dialog"
+                aria-expanded={open}
                 id="cateogy-dropdown"
                 className={clsx(
                     'flex items-start gap-1',
                     'p-2',
                     'rounded-full border border-purple-800',
-                    'text-purple-800 font-medium text-sm'
+                    'text-purple-800 font-medium text-sm',
+                    'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-blue-500'
                 )}
                 onClick={() => setOpen(true)}
             >
-                <Icon icon={IoGlobeOutline} size="text-xl" className="pointer-events-none" />
+                <Icon icon={IoGlobeOutline} size="text-xl" className="pointer-events-none" aria-hidden={true} />
                 Category
             </button>
 
@@ -51,14 +51,22 @@ const CategoriesModal = () => {
                     <div className={clsx('bg-white', 'rounded-xl shadow', 'p-4 w-11/12')}>
                         <h3 className="text-lg font-medium">Select a category</h3>
 
-                        <ul className={clsx('flex', 'mt-2 mb-6 border-b border-purple-200')}>
+                        <ul role="tablist" className={clsx('flex', 'mt-2 mb-6 border-b border-purple-200')}>
                             {topics.map((tag) => {
                                 const color = TAGS_INFO[tag].color;
                                 const isSelected = activeCategory.topic === tag;
                                 return (
                                     <li
                                         key={tag}
-                                        className={clsx('p-4 grow text-center', isSelected ? 'font-bold' : 'font-medium')}
+                                        role="tab"
+                                        tabIndex={isSelected ? 0 : -1}
+                                        aria-label={tag}
+                                        id={`tablet-tab-${tag.toLowerCase()}`}
+                                        className={clsx(
+                                            'p-4 grow text-center',
+                                            'focus:outline-none focus:border-3 focus:border-blue-500',
+                                            isSelected ? 'font-bold' : 'font-medium'
+                                        )}
                                         style={{
                                             borderBottom: isSelected ? `3px solid ${color}` : undefined,
                                             color: isSelected ? color : undefined,

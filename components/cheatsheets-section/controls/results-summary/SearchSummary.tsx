@@ -16,23 +16,40 @@ const SearchSummary = () => {
 
     if (!searchResults || searchResults.length == 0) {
         return (
-            <h3 className="text-lg">
-                <span className="text-purple-800">No results</span> found for <span className="font-bold">&quot;{searchValue}&quot;</span>
-            </h3>
+            <div className="flex gap-2 items-center">
+                {/* prev button */}
+                <button
+                    className={clsx('inline-block rounded-full cursor-pointer group transition duration-300', 'hover:text-emerald-700')}
+                    onClick={reset}
+                >
+                    <span className="sr-only">Clear search results</span>
+                    <Icon
+                        icon={IoChevronBack}
+                        aria-hidden="true"
+                        size="text-2xl"
+                        className="group-hover:scale-125 transition duration-300"
+                    />
+                </button>
+                <h2 className="text-lg">
+                    <span className="text-purple-800">No results</span> found for{' '}
+                    <span className="font-bold">&quot;{searchValue}&quot;</span>
+                </h2>
+            </div>
         );
     }
 
     return (
         <div className="flex gap-2 items-center">
             {/* prev button */}
-            <span
+            <button
                 className={clsx('inline-block rounded-full cursor-pointer group transition duration-300', 'hover:text-emerald-700')}
                 onClick={reset}
             >
-                <Icon icon={IoChevronBack} size="text-2xl" className="group-hover:scale-125 transition duration-300" />
-            </span>
+                <span className="sr-only">Clear search results</span>
+                <Icon icon={IoChevronBack} aria-hidden="true" size="text-2xl" className="group-hover:scale-125 transition duration-300" />
+            </button>
 
-            <h3 className="text-base xl:text-lg 3xl:text-xl space-x-1">
+            <h2 className="text-base xl:text-lg 3xl:text-xl space-x-1">
                 <span>Showing</span>
                 <ResultsIndex startIndex={startIndex} endIndex={endIndex} />
 
@@ -47,7 +64,7 @@ const SearchSummary = () => {
                         <span className="font-bold text-base xl:text-lg 3xl:text-xl">&quot;{searchValue}&quot;</span>
                     </>
                 )}
-            </h3>
+            </h2>
         </div>
     );
 };
