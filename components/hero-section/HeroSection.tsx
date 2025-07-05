@@ -28,8 +28,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onExploreBtnClick }) => {
             <TopicsLoop />
 
             {/* decorative components */}
-            <DecorativeImage {...cheatSheets.html.concepts[0]} position="left" size="small" className="hidden md:block" />
-            <DecorativeImage {...cheatSheets.css.concepts[0]} position="right" size="default" className="hidden md:block" />
+            <DecorativeImage {...cheatSheets.html.concepts[0]} position="left" size="small" className="hidden md:block" priorty />
+            <DecorativeImage {...cheatSheets.css.concepts[0]} position="right" size="default" className="hidden md:block" priorty />
 
             {/* background gradients */}
             <BackgroundSoftGradient position="left" size="tiny" className="hidden md:block" />

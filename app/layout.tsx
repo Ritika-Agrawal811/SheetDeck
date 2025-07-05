@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { inter, jua, anta, platypi, castoro } from './font';
+import { inter } from './font';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -14,11 +14,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body
-                className={`${inter.variable} ${jua.variable} ${anta.variable} ${platypi.variable} ${castoro.variable} antialiased overflow-x-hidden text-gray-800`}
-            >
-                {children}
-            </body>
+            <body className={`${inter.variable} antialiased overflow-x-hidden text-gray-800`}>{children}</body>
         </html>
     );
 }

@@ -52,7 +52,7 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                             </button>
                         </header>
                         <figure className="relative grow overflow-hidden">
-                            <Image src={details.image} alt={details.title} fill quality={100} className="object-contain" />
+                            <Image src={details.image} alt={details.title} fill quality={55} className="object-contain" />
                         </figure>
                     </section>
                 </Modal>

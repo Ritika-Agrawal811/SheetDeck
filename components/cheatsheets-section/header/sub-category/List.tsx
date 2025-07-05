@@ -58,7 +58,7 @@ const List: React.FC<ListProps> = ({ className, size = 'default', showImage = tr
                             className={clsx(
                                 'cursor-pointer shadow-none capitalize',
                                 'flex items-center',
-                                'gap-2 xl:gap-4',
+                                'gap-2 xl:gap-3',
                                 'transition duration-150 ease-in',
                                 'bg-white hover:scale-103 hover:bg-gray-100'
                             )}
@@ -70,7 +70,7 @@ const List: React.FC<ListProps> = ({ className, size = 'default', showImage = tr
                                     alt={`sub category: ${category.title}`}
                                     width={35}
                                     height={35}
-                                    className={clsx('w-8 h-8 xl:w-9 xl:h-9')}
+                                    className={clsx('w-auto h-8 xl:h-9')}
                                 />
                             )}
                             {formatLabels(category.title)}
