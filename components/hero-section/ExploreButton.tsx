@@ -3,6 +3,8 @@
 import React from 'react';
 import clsx from 'clsx';
 
+import { platypi } from '@/app/font';
+
 // components
 import { IoArrowDown } from 'react-icons/io5';
 import Icon from '@/components/ui/Icon';
@@ -34,7 +36,8 @@ const ExploreButton: React.FC<ExploreButtonProps> = ({ onExploreBtnClick }) => {
                             className={clsx(
                                 'inline-block absolute h-full',
                                 'top-0 left-1/2 -translate-x-1/2',
-                                'font-bold font-platypi uppercase text-purple-800',
+                                'font-bold uppercase text-purple-800',
+                                `${platypi.variable} font-platypi`,
                                 'xl:text-lg 2xl:text-xl'
                             )}
                             style={{ transform: `rotate(${-75 + 25 * index}deg)` }}

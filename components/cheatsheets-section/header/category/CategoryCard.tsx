@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 
 import type { IconType } from 'react-icons';
+import { castoro } from '@/app/font';
 
 // components
 import Icon from '@/components/ui/Icon';
@@ -33,7 +34,7 @@ const CategoryCard = ({ title, color, icon, active, setActiveCategory }: Categor
                 'cursor-pointer relative overflow-hidden',
                 'w-1/2 sm:w-1/3 md:w-1/4 h-full lg:grow',
                 'inline-flex flex-col items-center justify-center',
-                'font-castoro font-bold border-3 border-transparent',
+                `${castoro.variable} font-castoro font-bold border-3 border-transparent`,
                 'focus:outline-none focus:border-3 focus:border-blue-500',
                 icon ? 'text-lg sm:text-xl xl:text-2xl 3xl:text-3xl' : 'text-2xl lg:text-3xl 2xl:text-4xl',
                 active && 'text-white'

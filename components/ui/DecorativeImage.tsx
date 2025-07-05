@@ -15,9 +15,10 @@ interface DecorativeImageProps {
     position: 'left' | 'right';
     size: 'small' | 'default';
     className?: string;
+    priorty: boolean;
 }
 
-const DecorativeImage = ({ image, title, position, size, className }: DecorativeImageProps) => {
+const DecorativeImage = ({ image, title, position, size, className, priorty }: DecorativeImageProps) => {
     return (
         <div
             className={clsx(
@@ -40,6 +41,7 @@ const DecorativeImage = ({ image, title, position, size, className }: Decorative
                     width={300}
                     height={350}
                     className={clsx('rounded-xl border border-gray-200 opacity-95', position === 'left' ? '-rotate-10' : 'rotate-10')}
+                    priority={priorty}
                 />
             </figure>
         </div>

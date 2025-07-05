@@ -1,6 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 
+import { castoro } from '@/app/font';
+
 // components
 import Image from 'next/image';
 import ArrowSVG from '../ArrowSVG';
@@ -24,7 +26,7 @@ const IntroCard = () => {
 
             <div className="text-right sm:-mt-4">
                 <p className={clsx('text-xl md:text-2xl 2xl:text-3xl', 'pr-4 2xl:pr-2')}>
-                    Hey, I&apos;m <span className="font-castoro font-bold">Ritika</span>
+                    Hey, I&apos;m <span className={clsx(`${castoro.variable} font-castoro font-bold`)}>Ritika</span>
                 </p>
                 <p className={clsx('text-lg md:text-xl 2xl:text-2xl ', 'font-medium text-emerald-700')}>Full-stack Developer</p>
             </div>

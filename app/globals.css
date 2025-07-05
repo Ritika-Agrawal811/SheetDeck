@@ -11,7 +11,8 @@
     --font-primary: var(--font-inter);
     --font-jua: var(--font-jua);
     --font-anta: var(--font-anta);
-    --font-platypi: var(--font-platypi) --font-castoro: var(--font-castoro);
+    --font-platypi: var(--font-platypi);
+    --font-castoro: var(--font-castoro);
     --breakpoint-xs: 26.5rem;
     --breakpoint-3xl: 120rem;
 }

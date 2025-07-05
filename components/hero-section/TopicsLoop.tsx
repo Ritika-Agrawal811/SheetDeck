@@ -3,6 +3,8 @@
 import React from 'react';
 import clsx from 'clsx';
 
+import { castoro } from '@/app/font';
+
 import { motion } from 'framer-motion';
 import { useCategory } from '@/hooks/useCategory';
 import { useScreenBreakpoint } from '@/hooks/useScreenBreakpoint';
@@ -53,7 +55,7 @@ const TopicsLoop = () => {
                                 className={clsx(
                                     'w-full sm:w-1/2 md:w-[calc(100%/3)] lg:w-[calc(100%/4)]',
                                     'inline-flex justify-between items-center',
-                                    'font-castoro font-bold',
+                                    ` ${castoro.variable} font-castoro font-bold`,
                                     'text-3xl xl:text-4xl 2xl:text-5xl'
                                 )}
                                 style={{ color: TAGS_INFO[topic].color }}

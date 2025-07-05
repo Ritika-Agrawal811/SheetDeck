@@ -93,6 +93,7 @@ const Card: React.FC<CardProps> = ({ title, tag, image, viewCardDetails }) => {
                     alt={title}
                     width={300}
                     height={350}
+                    quality={70}
                     className="transition duration-300 group-hover/card:scale-105 group-hover/card:translate-y-3"
                 />
             </figure>
