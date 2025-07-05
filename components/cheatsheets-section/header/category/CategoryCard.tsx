@@ -31,10 +31,10 @@ const CategoryCard = ({ title, color, icon, active, setActiveCategory }: Categor
             aria-label={title}
             id={`tab-${title.toLowerCase()}`}
             className={clsx(
-                'cursor-pointer relative overflow-hidden',
+                'cursor-pointer relative overflow-hidden box-border',
                 'w-1/2 sm:w-1/3 md:w-1/4 h-full lg:grow',
                 'inline-flex flex-col items-center justify-center',
-                `${castoro.variable} font-castoro font-bold border-3 border-transparent`,
+                `${castoro.variable} font-castoro font-bold`,
                 'focus:outline-none focus:border-3 focus:border-blue-500',
                 icon ? 'text-lg sm:text-xl xl:text-2xl 3xl:text-3xl' : 'text-2xl lg:text-3xl 2xl:text-4xl',
                 active && 'text-white'
@@ -45,7 +45,7 @@ const CategoryCard = ({ title, color, icon, active, setActiveCategory }: Categor
             {icon && <Icon icon={icon} size="text-5xl lg:text-6xl 2xl:text-7xl" className="mb-4 xl:mb-6" aria-hidden={true} />}
             {title}
 
-            <div className={clsx('absolute right-0 top-0', 'h-full w-px')} style={{ background: color }}></div>
+            <div className={clsx('absolute right-0 top-0', 'h-full w-px')} style={{ background: color }} aria-hidden={true}></div>
             <div
                 className={clsx(
                     'absolute -z-10 rounded-full',
