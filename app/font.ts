@@ -1,16 +1,8 @@
-import { Inter, Jua, Anta, Platypi, Castoro_Titling } from 'next/font/google';
+import { Inter, Anta, Platypi, Castoro_Titling } from 'next/font/google';
 
 export const inter = Inter({
     subsets: ['latin'],
     variable: '--font-inter',
-    display: 'swap',
-    preload: false,
-});
-
-export const jua = Jua({
-    weight: '400',
-    subsets: ['latin'],
-    variable: '--font-jua',
     display: 'swap',
     preload: false,
 });

@@ -9,7 +9,6 @@
     --color-background: var(--background);
     --color-foreground: var(--foreground);
     --font-primary: var(--font-inter);
-    --font-jua: var(--font-jua);
     --font-anta: var(--font-anta);
     --font-platypi: var(--font-platypi);
     --font-castoro: var(--font-castoro);
@@ -28,10 +27,6 @@ body {
     background: var(--background);
     color: var(--foreground);
     font-family: var(--font-primary);
-}
-
-.font-jua {
-    font-family: var(--font-jua);
 }
 
 .font-anta {

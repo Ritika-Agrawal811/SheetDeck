@@ -1,11 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 
 import { castoro } from '@/app/font';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useCategory } from '@/hooks/useCategory';
 import { useScreenBreakpoint } from '@/hooks/useScreenBreakpoint';
 import { TAGS_INFO } from '@/lib/cheatsheets/constants';
@@ -13,6 +13,9 @@ import { TAGS_INFO } from '@/lib/cheatsheets/constants';
 const TopicsLoop = () => {
     const { topics } = useCategory();
     const { breakpoint } = useScreenBreakpoint();
+    const prefersReducedMotion = useReducedMotion();
+
+    const [animateNow, setAnimateNow] = useState(false);
 
     const xValue = (breakpoint: string) => {
         switch (breakpoint) {
@@ -36,6 +39,11 @@ const TopicsLoop = () => {
         },
     };
 
+    useEffect(() => {
+        const timeout = setTimeout(() => setAnimateNow(true), 100);
+        return () => clearTimeout(timeout);
+    }, []);
+
     return (
         <section className={clsx('overflow-hidden')}>
             <div className={clsx('', '-rotate-2')}>
@@ -43,14 +51,14 @@ const TopicsLoop = () => {
                     initial={{
                         x: 0,
                     }}
-                    animate={animate}
+                    animate={animateNow && !prefersReducedMotion ? animate : undefined}
                     className={clsx('whitespace-nowrap py-4 lg:py-8 2xl:py-10')}
                 >
                     {[...topics, ...topics].map((topic, index) => {
                         if (topic.toLowerCase() === 'all') return null;
 
                         return (
-                            <motion.p
+                            <p
                                 key={`${topic}-${index}`}
                                 className={clsx(
                                     'w-full sm:w-1/2 md:w-[calc(100%/3)] lg:w-[calc(100%/4)]',
@@ -63,7 +71,7 @@ const TopicsLoop = () => {
                                 <span className={clsx('w-px h-8 lg:h-10 2xl:h-12', 'inline-block rounded-full bg-zinc-400')}></span>
                                 {topic}
                                 <span className={clsx('w-px h-8 lg:h-10 2xl:h-12', 'inline-block rounded-full bg-zinc-400')}></span>
-                            </motion.p>
+                            </p>
                         );
                     })}
                 </motion.div>

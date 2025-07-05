@@ -3,7 +3,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import { jua, anta } from '@/app/font';
+import { anta } from '@/app/font';
 
 // components
 import { IoPaperPlane } from 'react-icons/io5';
@@ -14,8 +14,8 @@ const Heading = () => {
         <div className={clsx('flex items-center justify-center')}>
             <h1 className={clsx('text-3xl xl:text-4xl 2xl:text-5xl', 'leading-12 xl:leading-14 2xl:leading-16')}>
                 <span className="w-fit mx-auto sm:mx-0 block">
-                    Code <span className={clsx(`${jua.variable} font-jua`, 'text-4xl xl:text-5xl 2xl:text-6xl')}>faster</span>.{' '}
-                    <br className="sm:hidden" /> Learn <span className={clsx('bg-purple-800 text-slate-100 px-4')}>smarter</span>.
+                    Code <span className="font-medium text-4xl xl:text-5xl 2xl:text-6xl">faster</span>. <br className="sm:hidden" /> Learn{' '}
+                    <span className="bg-purple-800 text-white px-2">smarter</span>.
                 </span>
 
                 <span className={clsx('my-4 2xl:my-6', 'text-center block')}>
