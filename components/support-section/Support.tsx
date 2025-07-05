@@ -3,7 +3,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import { jua, platypi } from '@/app/font';
+import { platypi } from '@/app/font';
 
 // components
 import Image from 'next/image';
@@ -21,7 +21,7 @@ const Support = () => {
                 {/* Subtitle */}
                 <p className={clsx('sm:text-lg xl:text-xl 2xl:text-2xl', 'flex flex-col sm:flex-row items-center gap-1')}>
                     <span className="font-medium">
-                        Found these cheat sheets <span className={clsx('text-emerald-700', `${jua.variable} font-jua`)}>helpful</span>?
+                        Found these cheat sheets <span className={clsx('text-emerald-700 font-medium')}>helpful</span>?
                     </span>
                     <span className="flex gap-1 items-center">
                         A{' '}
