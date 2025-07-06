@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import clsx from 'clsx';
 
 import { formatLabels } from '@/utils/formatLabels';
@@ -27,6 +27,21 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
         setOpen(false);
     };
 
+    const closeExpandedOptions = useCallback(() => {
+        setOpen(false);
+    }, []);
+
+    // add click event to document to close the expanded options
+    useEffect(() => {
+        if (!open) return;
+
+        document.addEventListener('click', closeExpandedOptions);
+
+        return () => {
+            document.removeEventListener('click', closeExpandedOptions);
+        };
+    }, [open, closeExpandedOptions]);
+
     return (
         <div className="relative" aria-label={`Select a ${label} for cheatsheet`}>
             <button
@@ -42,7 +57,6 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                     'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-blue-500'
                 )}
                 onClick={() => setOpen((prev) => !prev)}
-                // onBlur={() => setOpen(false)}
             >
                 <span
                     className={clsx('p-2 xl:p-2.5', 'rounded-l-md border-r border-gray-200', 'text-sm xl:text-base', labelClassname)}

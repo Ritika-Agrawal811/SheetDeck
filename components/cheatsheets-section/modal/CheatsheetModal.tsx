@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 
 import type { Cheatsheet } from '@/types/cheatsheets';
@@ -10,6 +10,7 @@ import Badge from '@/components/ui/Badge';
 import { IoMdDownload } from 'react-icons/io';
 import Icon from '@/components/ui/Icon';
 import Image from 'next/image';
+import CircularLoader from '@/components/ui/CircularLoader';
 
 interface CheatsheetModalProps {
     open: boolean;
@@ -18,6 +19,12 @@ interface CheatsheetModalProps {
 }
 
 const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClose }) => {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => setIsLoading(false), 300);
+    }, []);
+
     return (
         <>
             {details && (
@@ -51,8 +58,12 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                                 </a>
                             </button>
                         </header>
-                        <figure className="relative grow overflow-hidden">
-                            <Image src={details.image} alt={details.title} fill quality={55} className="object-contain" />
+                        <figure className={clsx('relative grow overflow-hidden xl:mt-4', isLoading && 'flex items-center justify-center')}>
+                            {isLoading ? (
+                                <CircularLoader title="cheat sheet image" />
+                            ) : (
+                                <Image src={details.image} alt={details.title} fill quality={55} className="object-contain" />
+                            )}
                         </figure>
                     </section>
                 </Modal>
