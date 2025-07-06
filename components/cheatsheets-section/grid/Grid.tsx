@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import clsx from 'clsx';
 
 import type { Cheatsheet } from '@/types/cheatsheets';
@@ -20,19 +20,19 @@ interface GridProps {
 }
 
 const Grid: React.FC<GridProps> = ({ cheatsheets }) => {
-    const { currentPage, paginatedData } = usePagination({ data: cheatsheets });
+    const { paginatedData } = usePagination({ data: cheatsheets });
 
     const [modal, setModal] = useState<CheatsheetModalDetails>({ open: false, details: null });
     const gridRef = useRef<HTMLElement>(null);
-    const hasMounted = useRef(false);
+    // const hasMounted = useRef(false);
 
-    useEffect(() => {
-        if (hasMounted.current && gridRef.current) {
-            gridRef.current.scrollIntoView({ behavior: 'smooth' });
-        }
+    // useEffect(() => {
+    //     if (hasMounted.current && gridRef.current) {
+    //         gridRef.current.scrollIntoView({ behavior: 'smooth' });
+    //     }
 
-        hasMounted.current = true;
-    }, [currentPage]);
+    //     hasMounted.current = true;
+    // }, [currentPage]);
 
     return (
         <>
