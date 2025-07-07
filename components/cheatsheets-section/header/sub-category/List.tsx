@@ -59,11 +59,11 @@ const List: React.FC<ListProps> = ({ className, size = 'default', showImage = tr
                             color="#1e2939"
                             shape="rounded"
                             className={clsx(
-                                'cursor-pointer shadow-none capitalize',
+                                'bg-white cursor-pointer shadow-none capitalize',
                                 'flex items-center',
                                 'gap-2 xl:gap-3',
                                 'transition duration-150 ease-in',
-                                'bg-white hover:scale-103 hover:bg-gray-100'
+                                activeCategory.category !== category.title && 'hover:scale-103 hover:bg-gray-100'
                             )}
                             active={activeCategory.category === category.title}
                         >

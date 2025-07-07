@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import clsx from 'clsx';
 
 import type { Cheatsheet } from '@/types/cheatsheets';
@@ -20,14 +20,30 @@ interface TableProps {
 }
 
 const Table: React.FC<TableProps> = ({ cheatsheets }) => {
-    const { paginatedData } = usePagination({ data: cheatsheets });
+    const { goToPageTop, paginatedData } = usePagination({ data: cheatsheets });
 
     const [modal, setModal] = useState<CheatsheetModalDetails>({ open: false, details: null });
+    const tableRef = useRef<HTMLTableElement>(null);
+    const hasMounted = useRef(false);
+
+    useEffect(() => {
+        if (!hasMounted.current) {
+            hasMounted.current = true;
+            return;
+        }
+
+        const timeout = setTimeout(() => {
+            if (tableRef.current) {
+                tableRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 200);
+        return () => clearTimeout(timeout);
+    }, [goToPageTop]);
 
     return (
         <>
             <CheatsheetModal {...modal} onClose={() => setModal((prev) => ({ ...prev, open: false }))} />
-            <table className="w-full table-fixed">
+            <table className="w-full table-fixed scroll-m-36" ref={tableRef}>
                 <thead className={clsx('bg-gray-100 text-left', '2xl:text-lg 3xl:text-xl')}>
                     <tr>
                         <th className={clsx('p-4 3xl:p-6', 'w-[65%] sm:w-1/2')}>Title</th>

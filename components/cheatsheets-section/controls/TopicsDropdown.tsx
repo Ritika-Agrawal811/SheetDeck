@@ -10,20 +10,23 @@ import Dropdown from '@/components/ui/Dropdown';
 
 const TopicsDropdown = () => {
     const { topics, activeCategory, setActiveTopicHandler, cheatsheets } = useCategory();
-    const { resetCurrentPage } = usePagination({ data: cheatsheets });
+    const { resetCurrentPage, scrollToPageTop } = usePagination({ data: cheatsheets });
+
+    const formattedTopics = topics.map((item) => TAGS_INFO[item].title);
 
     const setSelectedOptionHandler = (option: string) => {
-        const topic = option as Tags;
+        const topic = option.toLowerCase() as Tags;
         setActiveTopicHandler(topic);
         resetCurrentPage();
+        scrollToPageTop();
     };
 
     return (
         <>
             <Dropdown
-                data={topics}
+                data={formattedTopics}
                 label="topic"
-                selectedOption={activeCategory.topic}
+                selectedOption={TAGS_INFO[activeCategory.topic].title}
                 setSelectedOption={setSelectedOptionHandler}
                 labelStyle={{ backgroundColor: TAGS_INFO[activeCategory.topic].color, color: '#fff' }}
                 labelClassname="min-w-[100px] xl:min-w-[115px]"
