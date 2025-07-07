@@ -1,4 +1,5 @@
 import { useAtom } from 'jotai';
+import { useCallback } from 'react';
 
 import type { Categories, Tags } from '@/types/cheatsheets';
 
@@ -10,13 +11,17 @@ export const useCategory = () => {
     const [activeCategory, setActiveCategory] = useAtom(activeCategoryAtom);
     const [cheatsheets, setCheatsheets] = useAtom(activeCheatsheetsAtom);
 
-    const updateCategoryAndCheatsheets = (updatedCategory: { topic: Tags; category: Categories }) => {
-        setActiveCategory(updatedCategory);
+    const updateCategoryAndCheatsheets = useCallback((updatedCategory: { topic: Tags; category: Categories }) => {
+        setActiveCategory((prev) => {
+            console.log('prev is ==>', prev);
+            console.log('updatedCategory is ==>', updatedCategory);
+            return updatedCategory;
+        });
 
         // update the active cheatsheets
         const updatedCheatsheets = fetchSelectedCheatsheets(updatedCategory);
         setCheatsheets(updatedCheatsheets);
-    };
+    }, []);
 
     // update the selected topic
     const setActiveTopicHandler = (topic: Tags) => {
@@ -40,5 +45,5 @@ export const useCategory = () => {
         }
     };
 
-    return { activeCategory, cheatsheets, setActiveTopicHandler, setActiveSubCategoryHandler, topics };
+    return { activeCategory, cheatsheets, setActiveTopicHandler, setActiveSubCategoryHandler, updateCategoryAndCheatsheets, topics };
 };

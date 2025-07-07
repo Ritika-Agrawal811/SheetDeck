@@ -31,7 +31,7 @@ type CardProps = {
     viewCardDetails: () => void;
 } & Cheatsheet;
 
-const Card: React.FC<CardProps> = ({ title, tag, image, viewCardDetails }) => {
+const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) => {
     const [isLoading, setIsLoading] = useState(true);
     const downloadFileName = image.split('/').pop();
 
@@ -63,6 +63,7 @@ const Card: React.FC<CardProps> = ({ title, tag, image, viewCardDetails }) => {
                         'mx-auto w-[275px] xs:w-[300px] sm:w-[280px] md:w-[300px] xl:w-auto',
                         'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
                     )}
+                    id={id}
                     initial="initial"
                     animate="animate"
                     variants={cardVariants}
