@@ -7,6 +7,7 @@ import type { Categories } from '@/types/cheatsheets';
 import { useCategory } from '@/hooks/useCategory';
 import { usePagination } from '@/hooks/usePagination';
 import { useSearch } from '@/hooks/useSearch';
+import { useQueryParams } from '@/hooks/useQueryParams';
 import { fetchSubCategories } from '@/utils/fetchSubCategories';
 import { formatLabels } from '@/utils/formatLabels';
 
@@ -23,6 +24,7 @@ interface ListProps {
 const List: React.FC<ListProps> = ({ className, size = 'default', showImage = true }) => {
     const { activeCategory, setActiveSubCategoryHandler, cheatsheets } = useCategory();
     const { resetCurrentPage } = usePagination({ data: cheatsheets });
+    const { clearQueryParams } = useQueryParams();
     const { reset } = useSearch();
 
     const subCategories = fetchSubCategories(activeCategory.topic);
@@ -31,6 +33,7 @@ const List: React.FC<ListProps> = ({ className, size = 'default', showImage = tr
         event.stopPropagation();
         setActiveSubCategoryHandler(title);
         resetCurrentPage();
+        clearQueryParams();
         reset();
     };
 

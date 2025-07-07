@@ -9,6 +9,7 @@ import { useCategory } from '@/hooks/useCategory';
 import { usePagination } from '@/hooks/usePagination';
 import { useSearch } from '@/hooks/useSearch';
 import { useScreenBreakpoint } from '@/hooks/useScreenBreakpoint';
+import { useQueryParams } from '@/hooks/useQueryParams';
 
 // components
 import CategoryCard from './CategoryCard';
@@ -20,6 +21,7 @@ const Categories = () => {
     const { resetCurrentPage } = usePagination({ data: cheatsheets });
     const { reset } = useSearch();
     const { breakpoint } = useScreenBreakpoint();
+    const { clearQueryParams } = useQueryParams();
 
     const scrollContainerRef = useRef<HTMLUListElement>(null);
     const [scrollButton, setScrollButton] = useState({ left: false, right: false });
@@ -64,6 +66,7 @@ const Categories = () => {
     const setCategoryHandler = (tag: Tags) => {
         setActiveTopicHandler(tag);
         resetCurrentPage();
+        clearQueryParams();
         reset();
     };
 

@@ -1,24 +1,24 @@
 import { IoLogoReact, IoLogoHtml5, IoLogoCss3, IoLogoJavascript } from 'react-icons/io5';
 
 export const TAGS_INFO = {
-    All: {
+    all: {
         color: '#71717A',
         icon: null,
     },
-    HTML: {
+    html: {
         color: '#D97706',
         icon: IoLogoHtml5,
     },
 
-    CSS: {
+    css: {
         color: '#3B82F6',
         icon: IoLogoCss3,
     },
-    JavaScript: {
+    javascript: {
         color: '#EAB308',
         icon: IoLogoJavascript,
     },
-    React: {
+    react: {
         color: '#93C5FD',
         icon: IoLogoReact,
     },

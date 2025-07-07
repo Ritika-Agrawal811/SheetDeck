@@ -5,7 +5,7 @@ import type { Tags, Categories } from '@/types/cheatsheets';
 
 export const fetchSubCategories = (topic: Tags) => {
     const topicCategories = (
-        topic === 'All' ? Object.keys(CATEGORIES_INFO) : Object.keys(cheatSheets[topic.toLowerCase()])
+        topic === 'all' ? Object.keys(CATEGORIES_INFO) : Object.keys(cheatSheets[topic.toLowerCase()])
     ) as Categories[];
     const subCategories = topicCategories.map((item) => CATEGORIES_INFO[item]);
 
