@@ -2,23 +2,28 @@ import { IoLogoReact, IoLogoHtml5, IoLogoCss3, IoLogoJavascript } from 'react-ic
 
 export const TAGS_INFO = {
     all: {
+        title: 'All',
         color: '#71717A',
         icon: null,
     },
     html: {
+        title: 'HTML',
         color: '#D97706',
         icon: IoLogoHtml5,
     },
 
     css: {
+        title: 'CSS',
         color: '#3B82F6',
         icon: IoLogoCss3,
     },
     javascript: {
+        title: 'JavaScript',
         color: '#EAB308',
         icon: IoLogoJavascript,
     },
     react: {
+        title: 'React',
         color: '#93C5FD',
         icon: IoLogoReact,
     },

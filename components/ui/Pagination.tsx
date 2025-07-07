@@ -54,11 +54,10 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                                 aria-current={number === currentPage ? 'page' : undefined}
                                 aria-label={`Go to page ${number}`}
                                 className={clsx(
-                                    'text-lg md:text-xl w-10 h-10 rounded-full',
+                                    'text-lg md:text-xl w-10 h-10 rounded-full cursor-pointer',
                                     'flex items-center justify-center',
-                                    'cursor-pointer hover:text-emerald-700',
                                     'focus:outline-none focus:ring-2 focus:ring-blue-500',
-                                    currentPage === number && 'text-white duration-260 scale-110 md:scale-125'
+                                    currentPage === number ? 'text-white duration-260 scale-110 md:scale-125' : 'hover:text-emerald-700'
                                 )}
                                 onClick={() => setPage(number)}
                             >

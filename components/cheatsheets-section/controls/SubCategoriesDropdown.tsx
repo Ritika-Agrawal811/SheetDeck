@@ -11,7 +11,7 @@ import Dropdown from '@/components/ui/Dropdown';
 
 const SubCategoriesDropdown = () => {
     const { activeCategory, setActiveSubCategoryHandler, cheatsheets } = useCategory();
-    const { resetCurrentPage } = usePagination({ data: cheatsheets });
+    const { resetCurrentPage, scrollToPageTop } = usePagination({ data: cheatsheets });
 
     const subCategories = fetchSubCategories(activeCategory.topic).map((item) => item.title);
 
@@ -19,6 +19,7 @@ const SubCategoriesDropdown = () => {
         const category = option as Categories;
         setActiveSubCategoryHandler(category);
         resetCurrentPage();
+        scrollToPageTop();
     };
 
     return (

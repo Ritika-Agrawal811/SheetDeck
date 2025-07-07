@@ -43,7 +43,7 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
     };
 
     useEffect(() => {
-        setTimeout(() => setIsLoading(false), 500);
+        setTimeout(() => setIsLoading(false), 350);
     }, []);
 
     return (

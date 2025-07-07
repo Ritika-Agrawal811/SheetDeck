@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useAtom } from 'jotai';
 
-import { currentPageAtom } from '@/atoms/pagination';
+import { currentPageAtom, scrollToTopOfPageAtom } from '@/atoms/pagination';
 
 interface UsePaginationProps<T> {
     data: T[];
@@ -10,6 +10,7 @@ interface UsePaginationProps<T> {
 
 export function usePagination<T>({ data, pageSize = 10 }: UsePaginationProps<T>) {
     const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
+    const [goToPageTop, setGoToPageTop] = useAtom(scrollToTopOfPageAtom);
 
     const totalPages = Math.ceil(data.length / pageSize);
     const start = (currentPage - 1) * pageSize;
@@ -21,18 +22,25 @@ export function usePagination<T>({ data, pageSize = 10 }: UsePaginationProps<T>)
 
     const goToNextPage = () => {
         setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+        scrollToPageTop();
     };
 
     const goToPrevPage = () => {
         setCurrentPage((prev) => Math.max(prev - 1, 1));
+        scrollToPageTop();
     };
 
     const setPage = (page: number) => {
         setCurrentPage(Math.min(Math.max(1, page), totalPages));
+        scrollToPageTop();
     };
 
     const resetCurrentPage = () => {
         setCurrentPage(1);
+    };
+
+    const scrollToPageTop = () => {
+        setGoToPageTop((prev) => !prev);
     };
 
     return {
@@ -45,5 +53,7 @@ export function usePagination<T>({ data, pageSize = 10 }: UsePaginationProps<T>)
         goToPrevPage,
         setPage,
         resetCurrentPage,
+        goToPageTop,
+        scrollToPageTop,
     };
 }
