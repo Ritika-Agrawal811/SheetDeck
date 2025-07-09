@@ -13,9 +13,10 @@ interface CategoryCardProps {
     icon: IconType | null;
     active: boolean;
     setActiveCategory: () => void;
+    ref: (elem: HTMLLIElement) => void;
 }
 
-const CategoryCard = ({ title, color, icon, active, setActiveCategory }: CategoryCardProps) => {
+const CategoryCard = ({ title, color, icon, ref, active, setActiveCategory }: CategoryCardProps) => {
     const keyDownHandler = (event: React.KeyboardEvent<HTMLLIElement>) => {
         if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
@@ -41,6 +42,7 @@ const CategoryCard = ({ title, color, icon, active, setActiveCategory }: Categor
             )}
             onClick={setActiveCategory}
             onKeyDown={keyDownHandler}
+            ref={ref}
         >
             {icon && <Icon icon={icon} size="text-5xl lg:text-6xl 2xl:text-7xl" className="mb-4 xl:mb-6" aria-hidden={true} />}
             {title}

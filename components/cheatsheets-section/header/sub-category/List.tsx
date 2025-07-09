@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect } from 'react';
 import clsx from 'clsx';
 
 import type { Categories } from '@/types/cheatsheets';
@@ -8,6 +8,7 @@ import { useCategory } from '@/hooks/useCategory';
 import { usePagination } from '@/hooks/usePagination';
 import { useSearch } from '@/hooks/useSearch';
 import { useQueryParams } from '@/hooks/useQueryParams';
+import { useArrowKeyNavigation } from '@/hooks/useArrowKeyNavigation';
 import { fetchSubCategories } from '@/utils/fetchSubCategories';
 import { formatLabels } from '@/utils/formatLabels';
 
@@ -28,18 +29,44 @@ const List: React.FC<ListProps> = ({ className, size = 'default', showImage = tr
     const { reset } = useSearch();
 
     const subCategories = fetchSubCategories(activeCategory.topic);
+    const { registerItemRef, handleKeysNavigation, setActiveIndex } = useArrowKeyNavigation(subCategories.length);
 
-    const setSubCategoryHandler = (event: React.MouseEvent<HTMLElement>, title: Categories) => {
-        event.stopPropagation();
+    useEffect(() => {
+        setActiveIndex(0);
+    }, [activeCategory.topic, setActiveIndex]);
+
+    const parentKeyDownHandler = (event: React.KeyboardEvent) => {
+        if (event.key === 'Tab') {
+            /* set the current active sub category index as active index */
+            const index = subCategories.findIndex((item) => item.title === activeCategory.category);
+            setActiveIndex(index);
+        }
+        handleKeysNavigation(event);
+    };
+
+    const setSubCategoryHandler = (title: Categories, index: number) => {
         setActiveSubCategoryHandler(title);
+        setActiveIndex(index);
         resetCurrentPage();
         clearQueryParams();
         reset();
     };
 
+    const clickHandler = (event: React.MouseEvent<HTMLElement>, title: Categories, index: number) => {
+        event.stopPropagation();
+        setSubCategoryHandler(title, index);
+    };
+
+    const itemKeyDownHandler = (event: React.KeyboardEvent<HTMLLIElement>, title: Categories, index: number) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            setSubCategoryHandler(title, index);
+        }
+    };
+
     return (
-        <ul role="tablist" aria-label={`Subcategories for ${activeCategory.topic}`} className={className}>
-            {subCategories.map((category) => {
+        <ul role="tablist" aria-label={`Subcategories for ${activeCategory.topic}`} className={className} onKeyDown={parentKeyDownHandler}>
+            {subCategories.map((category, index) => {
                 return (
                     <li
                         key={category.title}
@@ -48,7 +75,9 @@ const List: React.FC<ListProps> = ({ className, size = 'default', showImage = tr
                         aria-selected={activeCategory.category === category.title}
                         aria-controls="cheatsheets-panel"
                         tabIndex={activeCategory.category === category.title ? 0 : -1}
-                        onClick={(event) => setSubCategoryHandler(event, category.title)}
+                        onClick={(event) => clickHandler(event, category.title, index)}
+                        onKeyDown={(event) => itemKeyDownHandler(event, category.title, index)}
+                        ref={(elem) => registerItemRef(elem, index)}
                         className={clsx(
                             'rounded-lg',
                             'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'

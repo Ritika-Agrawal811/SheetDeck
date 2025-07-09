@@ -11,17 +11,16 @@ export const useCategory = () => {
     const [activeCategory, setActiveCategory] = useAtom(activeCategoryAtom);
     const [cheatsheets, setCheatsheets] = useAtom(activeCheatsheetsAtom);
 
-    const updateCategoryAndCheatsheets = useCallback((updatedCategory: { topic: Tags; category: Categories }) => {
-        setActiveCategory((prev) => {
-            console.log('prev is ==>', prev);
-            console.log('updatedCategory is ==>', updatedCategory);
-            return updatedCategory;
-        });
+    const updateCategoryAndCheatsheets = useCallback(
+        (updatedCategory: { topic: Tags; category: Categories }) => {
+            setActiveCategory(updatedCategory);
 
-        // update the active cheatsheets
-        const updatedCheatsheets = fetchSelectedCheatsheets(updatedCategory);
-        setCheatsheets(updatedCheatsheets);
-    }, []);
+            // update the active cheatsheets
+            const updatedCheatsheets = fetchSelectedCheatsheets(updatedCategory);
+            setCheatsheets(updatedCheatsheets);
+        },
+        [setActiveCategory, setCheatsheets]
+    );
 
     // update the selected topic
     const setActiveTopicHandler = (topic: Tags) => {

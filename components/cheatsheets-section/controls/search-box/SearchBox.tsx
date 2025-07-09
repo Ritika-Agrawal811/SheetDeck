@@ -25,6 +25,7 @@ const SearchBox = () => {
         value: '',
         results: [],
     });
+    const [focusFirstSearchItem, setFocusFirstSearchItem] = useState(false);
 
     const setSearchResultsHandler = useCallback((results: Cheatsheet[]) => {
         setSearchData((prev) => ({ ...prev, results }));
@@ -32,6 +33,10 @@ const SearchBox = () => {
 
     const resetInputValueHandler = useCallback(() => {
         setSearchData((prev) => ({ ...prev, value: '' }));
+    }, []);
+
+    const closeSearchList = useCallback(() => {
+        setSearchData((prev) => ({ ...prev, openList: false }));
     }, []);
 
     // triggered on change event of input field -- when a value is entered
@@ -45,15 +50,23 @@ const SearchBox = () => {
         }));
     };
 
-    // triggered when input field goes out of focus to close the results list
-    const onBlurHandler = () => {
-        setSearchData((prev) => ({ ...prev, openList: false }));
-    };
-
     // triggered when input field is on focus to show the results list
     const onFocusHandler = () => {
         setSearchData((prev) => ({ ...prev, openList: true }));
     };
+
+    const onKeyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (searchData.results.length === 0) return;
+
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            setFocusFirstSearchItem(true);
+        }
+    };
+
+    const resetFocusFirstSearchItem = useCallback(() => {
+        setFocusFirstSearchItem(false);
+    }, []);
 
     // triggered on form submit to show the search results
     const showSearchResultsHandler = (event: React.FormEvent<HTMLFormElement>) => {
@@ -89,8 +102,8 @@ const SearchBox = () => {
                 className={clsx('h-full grow', 'px-4', 'sm:text-sm xl:text-base', 'focus:border-blue-500')}
                 value={searchData.value}
                 onChange={searchCheatsheetHandler}
-                onBlur={onBlurHandler}
                 onFocus={onFocusHandler}
+                onKeyDown={onKeyDownHandler}
             />
 
             <SearchList
@@ -98,6 +111,9 @@ const SearchBox = () => {
                 data={searchData}
                 setDataHandler={setSearchResultsHandler}
                 resetInputValueHandler={resetInputValueHandler}
+                focusFirstSearchItem={focusFirstSearchItem}
+                resetFocusFirstSearchItem={resetFocusFirstSearchItem}
+                closeSearchList={closeSearchList}
             />
 
             <button

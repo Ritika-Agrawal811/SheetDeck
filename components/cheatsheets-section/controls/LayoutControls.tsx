@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 
 import type { IconType } from 'react-icons';
+import { useArrowKeyNavigation } from '@/hooks/useArrowKeyNavigation';
 
 // components
 import { IoGrid, IoListSharp } from 'react-icons/io5';
@@ -13,16 +14,27 @@ interface LayoutControlsProps {
 }
 
 const LayoutControls: React.FC<LayoutControlsProps> = ({ view, setViewHandler }) => {
-    const onKeyDownHandler = (event: React.KeyboardEvent<HTMLLIElement>, view: 'grid' | 'list') => {
+    const { registerItemRef, handleKeysNavigation, setActiveIndex } = useArrowKeyNavigation(2);
+
+    const parentKeyDownHandler = (event: React.KeyboardEvent) => {
+        if (event.key === 'Tab') {
+            /* set the current active view index as active index */
+            setActiveIndex(view === 'grid' ? 0 : 1);
+        }
+        handleKeysNavigation(event);
+    };
+
+    const itemKeyDownHandler = (event: React.KeyboardEvent<HTMLLIElement>, view: 'grid' | 'list', index: number) => {
         if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
             setViewHandler(view);
+            setActiveIndex(index);
         }
     };
 
     return (
-        <ul role="radiogroup" className={clsx('flex gap-2 xl:gap-3')}>
-            {gridViews.map((item) => {
+        <ul role="radiogroup" className={clsx('flex gap-2 xl:gap-3')} onKeyDown={parentKeyDownHandler}>
+            {gridViews.map((item, index) => {
                 return (
                     <li
                         key={item.view}
@@ -38,7 +50,8 @@ const LayoutControls: React.FC<LayoutControlsProps> = ({ view, setViewHandler })
                                 : 'bg-white border border-gray-200 text-emerald-700 hover:bg-purple-50 hover:border-transparent'
                         )}
                         onClick={() => setViewHandler(item.view)}
-                        onKeyDown={(e) => onKeyDownHandler(e, item.view)}
+                        onKeyDown={(e) => itemKeyDownHandler(e, item.view, index)}
+                        ref={(elem) => registerItemRef(elem, index)}
                     >
                         <span className="sr-only">Switch to {item.view} view</span>
                         <Icon
