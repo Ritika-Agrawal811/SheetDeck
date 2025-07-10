@@ -1,7 +1,5 @@
-'use client';
-
-import { useRef } from 'react';
 import { Suspense } from 'react';
+import { siteMetadata } from './sitemetadata';
 
 // components
 import AboutMe from '../components/about-me-section/AboutMe';
@@ -11,15 +9,12 @@ import HeroSection from '../components/hero-section/HeroSection';
 import Support from '../components/support-section/Support';
 import CircularLoader from '@/components/ui/CircularLoader';
 
-export default function Home() {
-    const cheatsheetsRef = useRef<HTMLDivElement>(null);
+export const metadata = siteMetadata;
 
-    const scrollToCheatsheetsSectionHandler = () => {
-        cheatsheetsRef?.current?.scrollIntoView({ behavior: 'smooth' });
-    };
+export default function Home() {
     return (
         <>
-            <HeroSection onExploreBtnClick={scrollToCheatsheetsSectionHandler} />
+            <HeroSection />
             <main>
                 <Suspense
                     fallback={
@@ -28,9 +23,7 @@ export default function Home() {
                         </div>
                     }
                 >
-                    <div ref={cheatsheetsRef} className="scroll-m-4">
-                        <CheatsheetsSection />
-                    </div>
+                    <CheatsheetsSection />
                 </Suspense>
                 <Support />
                 <AboutMe />

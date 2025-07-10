@@ -1,11 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import clsx from 'clsx';
 
+import { useAtom } from 'jotai';
 import { useSearch } from '@/hooks/useSearch';
 import { useScreenBreakpoint } from '@/hooks/useScreenBreakpoint';
 import { useQueryParams } from '@/hooks/useQueryParams';
+import { scrollToCheatsheetAtom } from '@/atoms/scrollToCheatsheet';
 
 // components
 import Header from './header/Header';
@@ -24,6 +26,8 @@ const CheatsheetsSection = () => {
 
     const [view, setView] = useState<'grid' | 'list'>('grid');
     const [hasInitialized, setHasInitialized] = useState(false);
+    const [scroll, setScroll] = useAtom(scrollToCheatsheetAtom);
+    const cheatsheetsRef = useRef<HTMLDivElement>(null);
 
     const setViewHandler = (view: 'grid' | 'list') => {
         setView(view);
@@ -52,8 +56,19 @@ const CheatsheetsSection = () => {
         return () => clearTimeout(timeout);
     }, [activeCategory, id]);
 
+    // scroll to cheat sheets section when explore button is clicked
+    useEffect(() => {
+        if (scroll) {
+            cheatsheetsRef?.current?.scrollIntoView({ behavior: 'smooth' });
+            setScroll(false);
+        }
+    }, [scroll, setScroll]);
+
     return (
-        <section className={clsx('w-full md:w-11/12 2xl:w-4/5 max-w-screen-3xl mx-auto', 'my-20 xl:my-28 space-y-16')}>
+        <section
+            ref={cheatsheetsRef}
+            className={clsx('w-full md:w-11/12 2xl:w-4/5 max-w-screen-3xl mx-auto', 'my-20 xl:my-28 space-y-16', 'scroll-m-4')}
+        >
             <Badge size="default" color="#6d11af" shape="pill" className="shadow-xl shadow-purple-100 mx-auto">
                 Cheat Sheets
             </Badge>

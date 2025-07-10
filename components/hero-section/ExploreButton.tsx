@@ -3,18 +3,19 @@
 import React from 'react';
 import clsx from 'clsx';
 
+import { useAtom } from 'jotai';
 import { platypi } from '@/app/font';
+import { scrollToCheatsheetAtom } from '@/atoms/scrollToCheatsheet';
 
 // components
 import { IoArrowDown } from 'react-icons/io5';
 import Icon from '@/components/ui/Icon';
 
-interface ExploreButtonProps {
-    onExploreBtnClick: () => void;
-}
-
-const ExploreButton: React.FC<ExploreButtonProps> = ({ onExploreBtnClick }) => {
+const ExploreButton = () => {
     const label = 'explore';
+
+    const [, setScroll] = useAtom(scrollToCheatsheetAtom);
+
     return (
         <div className={clsx('flex items-center justify-center')}>
             <button
@@ -25,7 +26,7 @@ const ExploreButton: React.FC<ExploreButtonProps> = ({ onExploreBtnClick }) => {
                     'relative cursor-pointer rounded-full',
                     'shadow-xl shadow-purple-100'
                 )}
-                onClick={onExploreBtnClick}
+                onClick={() => setScroll(true)}
             >
                 <span className="sr-only">Explore the cheat sheets</span>
                 {label.split('').map((letter, index) => {
