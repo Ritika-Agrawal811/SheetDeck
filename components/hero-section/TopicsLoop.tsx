@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 
 import { castoro } from '@/app/font';
+import type { TargetAndTransition } from 'framer-motion';
 
 import { motion, useReducedMotion } from 'framer-motion';
 import { useCategory } from '@/hooks/useCategory';
@@ -30,7 +31,7 @@ const TopicsLoop = () => {
         }
     };
 
-    const animate = {
+    const animate: TargetAndTransition = {
         x: xValue(breakpoint ?? ''),
         transition: {
             repeat: Infinity,
