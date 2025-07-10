@@ -8,8 +8,12 @@
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
+    --font-primary: var(--font-inter);
+    --font-anta: var(--font-anta);
+    --font-platypi: var(--font-platypi);
+    --font-castoro: var(--font-castoro);
+    --breakpoint-xs: 26.5rem;
+    --breakpoint-3xl: 120rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +26,27 @@
 body {
     background: var(--background);
     color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-primary);
+}
+
+.font-anta {
+    font-family: var(--font-anta);
+}
+
+.font-platypi {
+    font-family: var(--font-platypi);
+}
+
+.font-castoro {
+    font-family: var(--font-castoro);
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none; /* For IE and Edge */
+    scrollbar-width: none; /* For Firefox */
+}
+
+/* For Chrome, Safari, and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
 }
