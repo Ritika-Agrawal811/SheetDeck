@@ -17,9 +17,9 @@ const HeroSection = () => {
     return (
         <header
             className={clsx(
-                'h-dvh',
+                'lg:h-dvh',
                 'w-full max-w-screen-3xl mx-auto',
-                'flex flex-col gap-16 lg:gap-0 lg:justify-between',
+                'flex flex-col gap-12 lg:gap-0 lg:justify-between',
                 'relative overflow-x-hidden'
             )}
         >
