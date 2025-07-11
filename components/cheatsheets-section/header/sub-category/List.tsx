@@ -80,7 +80,7 @@ const List: React.FC<ListProps> = ({ className, size = 'default', showImage = tr
                         ref={(elem) => registerItemRef(elem, index)}
                         className={clsx(
                             'rounded-lg',
-                            'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+                            'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500'
                         )}
                     >
                         <Badge

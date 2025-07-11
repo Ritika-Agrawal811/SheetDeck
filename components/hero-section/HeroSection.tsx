@@ -15,9 +15,7 @@ import BackgroundSoftGradient from '@/components/ui/BackgroundGradient';
 
 const HeroSection = () => {
     return (
-        <header
-            className={clsx('h-screen', 'w-full max-w-screen-3xl mx-auto', 'flex flex-col justify-between', 'relative overflow-x-hidden')}
-        >
+        <header className={clsx('h-dvh', 'w-full max-w-screen-3xl mx-auto', 'flex flex-col justify-between', 'relative overflow-x-hidden')}>
             <Logo />
             <Heading />
             <ExploreButton />
@@ -30,6 +28,7 @@ const HeroSection = () => {
             {/* background gradients */}
             <BackgroundSoftGradient position="left" size="tiny" className="hidden md:block" />
             <BackgroundSoftGradient position="right" size="tiny" className="hidden md:block" />
+            <BackgroundSoftGradient position="center" size="default" className="block md:hidden" />
         </header>
     );
 };

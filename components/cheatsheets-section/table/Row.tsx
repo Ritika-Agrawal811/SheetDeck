@@ -40,7 +40,7 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
                         'rounded-md cursor-pointer',
                         'group transition-colors duration-150 hover:bg-purple-800 hover:text-white',
                         '3xl:text-lg',
-                        'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400'
+                        'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-400'
                     )}
                 >
                     <a
@@ -61,7 +61,7 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
                         'rounded-md cursor-pointer group transition duration-300',
                         'hover:bg-purple-50 hover:border-transparent',
                         'flex gap-2 items-center',
-                        'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400'
+                        'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-400'
                     )}
                     onClick={onClick}
                 >

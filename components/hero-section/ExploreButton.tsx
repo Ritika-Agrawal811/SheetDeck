@@ -21,10 +21,10 @@ const ExploreButton = () => {
             <button
                 className={clsx(
                     'border-2 border-purple-800 bg-purple-50',
-                    'focus:outline-none focus:border-transparent focus:ring-3 focus:ring-offset-2 focus:ring-blue-500',
+                    'focus:outline-none focus-visible:border-transparent focus-visible:ring-3 focus-visible:ring-offset-2 focus-visible:ring-blue-500',
                     'w-24 h-24 sm:w-26 sm:h-26 xl:w-28 xl:h-28 2xl:w-30 2xl:h-30',
                     'relative cursor-pointer rounded-full',
-                    'shadow-xl shadow-purple-100'
+                    'shadow-xl shadow-purple-50'
                 )}
                 onClick={() => setScroll(true)}
             >

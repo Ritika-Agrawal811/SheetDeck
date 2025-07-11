@@ -61,7 +61,7 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
                         'p-4',
                         'cursor-pointer group/card',
                         'mx-auto w-[275px] xs:w-[300px] sm:w-[280px] md:w-[300px] xl:w-auto',
-                        'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+                        'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500'
                     )}
                     id={id}
                     initial="initial"
@@ -83,7 +83,7 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
                             'text-emerald-700 bg-white border border-gray-200',
                             'inline-block rounded-full cursor-pointer group/icon transition duration-300',
                             'hover:bg-purple-50 hover:border-transparent',
-                            'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+                            'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500'
                         )}
                         download={downloadFileName}
                         tabIndex={0}

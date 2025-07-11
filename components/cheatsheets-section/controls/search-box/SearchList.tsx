@@ -99,7 +99,7 @@ const SearchList: React.FC<SearchListProps> = ({
                     <li
                         key={item.id}
                         tabIndex={0}
-                        className={clsx('p-3 cursor-pointer', 'hover:bg-gray-100', 'focus:outline-blue-500')}
+                        className={clsx('p-3 cursor-pointer', 'hover:bg-gray-100', 'focus-visible:outline-blue-500')}
                         onMouseDown={() => selectSearchOptionHandler(item.title)}
                         ref={(elem) => registerItemRef(elem, index)}
                         onKeyDown={(event) => itemKeyDownHandler(event, item.title)}

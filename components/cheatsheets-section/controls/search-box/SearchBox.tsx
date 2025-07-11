@@ -123,7 +123,7 @@ const SearchBox = () => {
                     'px-2 cursor-pointer',
                     'bg-emerald-700 text-white rounded-r-md',
                     'border border-emerald-700',
-                    'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+                    'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500'
                 )}
             >
                 <span className="sr-only">Search</span>

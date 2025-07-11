@@ -36,7 +36,7 @@ const CategoryCard = ({ title, color, icon, ref, active, setActiveCategory }: Ca
                 'w-1/2 sm:w-1/3 md:w-1/4 h-full lg:grow',
                 'inline-flex flex-col items-center justify-center',
                 `${castoro.variable} font-castoro font-bold`,
-                'focus:outline-none focus:border-3 focus:border-blue-500',
+                'focus:outline-none focus-visible:border-3 focus-visible:border-blue-500',
                 icon ? 'text-lg sm:text-xl xl:text-2xl 3xl:text-3xl' : 'text-2xl lg:text-3xl 2xl:text-4xl',
                 active && 'text-white'
             )}
