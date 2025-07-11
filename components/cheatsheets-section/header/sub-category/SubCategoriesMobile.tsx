@@ -9,6 +9,7 @@ import { IoChevronDownOutline } from 'react-icons/io5';
 import Icon from '@/components/ui/Icon';
 import Modal from '@/components/ui/Modal';
 import List from './List';
+import CloseBtn from '@/components/ui/CloseBtn';
 
 const SubCategoriesMobile = () => {
     const { activeCategory } = useCategory();
@@ -36,7 +37,10 @@ const SubCategoriesMobile = () => {
             <Modal backdrop="light" open={open} onClose={() => setOpen(false)}>
                 <section className="flex items-center justify-center h-full" onClick={() => setOpen(false)}>
                     <div className={clsx('bg-white', 'rounded-xl shadow', 'p-4 w-11/12')}>
-                        <h3 className="text-lg font-medium">Select a category</h3>
+                        <header className="flex items-center justify-between">
+                            <h3 className="text-lg font-medium">Select a category</h3>
+                            <CloseBtn onClose={() => setOpen(false)} />
+                        </header>
                         <hr className="h-px border-purple-200 my-4" />
                         <List className={clsx('flex flex-wrap justify-center gap-3')} size="tiny" showImage={false} />
                     </div>

@@ -11,7 +11,7 @@ import Icon from '@/components/ui/Icon';
 
 const Heading = () => {
     return (
-        <div className={clsx('flex items-center justify-center')}>
+        <div className={clsx('flex items-center justify-center', 'transition duration-300')}>
             <h1 className={clsx('text-3xl xl:text-4xl 2xl:text-5xl', 'leading-12 xl:leading-14 2xl:leading-16')}>
                 <span className="w-fit mx-auto sm:mx-0 block">
                     Code <span className="font-medium text-4xl xl:text-5xl 2xl:text-6xl">faster</span>. <br className="sm:hidden" /> Learn{' '}

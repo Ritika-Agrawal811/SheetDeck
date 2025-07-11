@@ -52,12 +52,12 @@ const Categories = () => {
                         'absolute h-full top-1/2 -translate-y-1/2 left-0 z-50',
                         'bg-linear-to-r from-black/10 to-transparent',
                         'text-white flex items-center lg:hidden',
-                        'inline-block cursor-pointer pl-1 pr-2'
+                        'inline-block cursor-pointer pl-1 text-sm'
                     )}
                     onClick={() => scroll('left')}
                 >
                     <span className="sr-only">Scroll to left</span>
-                    <span className="bg-black/20 inline-block rounded-full p-1">
+                    <span className="bg-black/20 inline-block rounded-full p-0.5">
                         <Icon icon={IoChevronBack} size="text-xl" aria-hidden={true} />
                     </span>
                 </button>
@@ -95,12 +95,12 @@ const Categories = () => {
                         'absolute h-full top-1/2 -translate-y-1/2 right-0 z-50',
                         'bg-linear-to-r from-transparent to-black/10',
                         'text-white flex items-center lg:hidden',
-                        'inline-block cursor-pointer pl-1 pr-2'
+                        'inline-block cursor-pointer pr-1 text-sm'
                     )}
                     onClick={() => scroll('right')}
                 >
                     <span className="sr-only">Scroll to right</span>
-                    <span className="bg-black/20 inline-block rounded-full p-1">
+                    <span className="bg-black/20 inline-block rounded-full p-0.5">
                         <Icon icon={IoChevronForward} size="text-xl" aria-hidden={true} />
                     </span>
                 </button>
