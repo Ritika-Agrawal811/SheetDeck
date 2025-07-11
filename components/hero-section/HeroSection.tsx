@@ -30,7 +30,6 @@ const HeroSection = () => {
             {/* background gradients */}
             <BackgroundSoftGradient position="left" size="tiny" className="hidden md:block" />
             <BackgroundSoftGradient position="right" size="tiny" className="hidden md:block" />
-            <BackgroundSoftGradient position="center" size="default" className="block md:hidden" />
         </header>
     );
 };

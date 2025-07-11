@@ -21,7 +21,7 @@ const GumroadCard = () => {
             socialURL="https://ritikaagrawal08.gumroad.com/"
             orientation={breakpoint === 'xs' || breakpoint === 'sm' ? 'horizontal' : 'vertical'}
             className="bg-[#ff90e8]"
-            size="big"
+            size={breakpoint === 'xs' ? 'default' : 'big'}
         />
     );
 };

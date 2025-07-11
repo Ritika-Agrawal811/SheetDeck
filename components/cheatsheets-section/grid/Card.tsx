@@ -71,7 +71,7 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
                     onKeyDown={onKeyDownHandler}
                 >
                     <Badge size="small" color={TAGS_INFO[tag].color} shape="pill" className="absolute left-2 top-2">
-                        {tag}
+                        {TAGS_INFO[tag].title}
                     </Badge>
 
                     {/* download button */}
