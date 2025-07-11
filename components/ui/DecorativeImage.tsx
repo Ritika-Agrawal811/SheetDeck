@@ -24,7 +24,7 @@ const DecorativeImage = ({ image, title, position, size, className, priorty }: D
             className={clsx(
                 'absolute top-[40%] -translate-y-[40%]',
                 className,
-                position === 'left' ? '-left-8 lg:-left-3' : '-right-48 lg:-right-20 xl:-right-14 2xl:-right-5'
+                position === 'left' ? '-left-8 lg:-left-6' : '-right-48 lg:-right-32 xl:-right-14 2xl:-right-5'
             )}
         >
             <figure
