@@ -22,7 +22,7 @@ const ExploreButton = () => {
                 className={clsx(
                     'border-2 border-purple-800 bg-purple-50',
                     'focus:outline-none focus-visible:border-transparent focus-visible:ring-3 focus-visible:ring-offset-2 focus-visible:ring-blue-500',
-                    'w-24 h-24 sm:w-26 sm:h-26 xl:w-28 xl:h-28 2xl:w-30 2xl:h-30',
+                    'w-24 h-24 sm:w-28 sm:h-28 2xl:w-30 2xl:h-30',
                     'relative cursor-pointer rounded-full',
                     'shadow-xl shadow-purple-50'
                 )}
@@ -39,7 +39,7 @@ const ExploreButton = () => {
                                 'top-0 left-1/2 -translate-x-1/2',
                                 'font-bold uppercase text-purple-800',
                                 `${platypi.variable} font-platypi`,
-                                'xl:text-lg 2xl:text-xl'
+                                'sm:text-lg 2xl:text-xl'
                             )}
                             style={{ transform: `rotate(${-75 + 25 * index}deg)` }}
                         >
