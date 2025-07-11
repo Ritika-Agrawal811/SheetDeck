@@ -38,7 +38,7 @@ const CategoriesModal = () => {
                     'p-2',
                     'rounded-full border border-purple-800',
                     'text-purple-800 font-medium text-sm',
-                    'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-blue-500'
+                    'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-500'
                 )}
                 onClick={() => setOpen(true)}
             >
@@ -64,7 +64,7 @@ const CategoriesModal = () => {
                                         id={`tablet-tab-${tag.toLowerCase()}`}
                                         className={clsx(
                                             'p-4 grow text-center',
-                                            'focus:outline-none focus:border-3 focus:border-blue-500',
+                                            'focus:outline-none focus-visible:border-3 focus-visible:border-blue-500',
                                             isSelected ? 'font-bold' : 'font-medium'
                                         )}
                                         style={{
@@ -73,7 +73,7 @@ const CategoriesModal = () => {
                                         }}
                                         onClick={(event) => setCategoryHandler(event, tag)}
                                     >
-                                        {tag}
+                                        {TAGS_INFO[tag].title}
                                     </li>
                                 );
                             })}

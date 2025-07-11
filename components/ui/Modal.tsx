@@ -80,7 +80,7 @@ const Modal: React.FC<ModalProps> = ({ children, backdrop = 'dark', open, onClos
                     'cursor-pointer text-white',
                     'p-2 rounded-full border-2 border-transparent',
                     'hover:bg-black transition duration-75',
-                    'focus:outline-none focus:border-blue-500'
+                    'focus:outline-none focus-visible:border-blue-500'
                 )}
                 onClick={onClose}
             >

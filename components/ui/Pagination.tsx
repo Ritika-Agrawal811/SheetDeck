@@ -28,7 +28,7 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                     'p-1.5 md:p-2.5 shadow',
                     'text-emerald-700 border border-gray-200',
                     'inline-block rounded-full cursor-pointer',
-                    'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-blue-500',
+                    'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-500',
                     'disabled:bg-gray-50 disabled:text-gray-600 disabled:cursor-not-allowed',
                     currentPage !== 1 && 'group transition duration-300 hover:bg-purple-50 hover:border-transparent'
                 )}
@@ -56,7 +56,7 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                                 className={clsx(
                                     'text-lg md:text-xl w-10 h-10 rounded-full cursor-pointer',
                                     'flex items-center justify-center',
-                                    'focus:outline-none focus:ring-2 focus:ring-blue-500',
+                                    'focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500',
                                     currentPage === number ? 'text-white duration-260 scale-110 md:scale-125' : 'hover:text-emerald-700'
                                 )}
                                 onClick={() => setPage(number)}
@@ -86,7 +86,7 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                     'p-1.5 md:p-2.5 shadow',
                     'text-emerald-700 border border-gray-200',
                     'inline-block rounded-full cursor-pointer',
-                    'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-blue-500',
+                    'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-500',
                     'disabled:bg-gray-50 disabled:text-gray-600 disabled:cursor-not-allowed',
                     currentPage !== totalPages && 'group transition duration-300 hover:bg-purple-50 hover:border-transparent'
                 )}

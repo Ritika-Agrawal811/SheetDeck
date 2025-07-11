@@ -13,7 +13,7 @@ const VisitRepositoryButton = () => {
                 'mt-8 px-6 py-3 2xl:px-8 2xl:py-4',
                 'text-base 2xl:text-xl',
                 'border-2 border-purple-100 rounded-full',
-                'focus:outline-none focus:border-transparent focus:ring-3 focus:ring-offset-2 focus:ring-blue-500',
+                'focus:outline-none focus-visible:border-transparent focus-visible:ring-3 focus-visible:ring-offset-2 focus-visible:ring-blue-500',
                 'bg-purple-800 text-white',
                 'cursor-pointer',
                 'shadow-lg shadow-purple-100',

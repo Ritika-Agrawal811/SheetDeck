@@ -69,7 +69,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                     'bg-white border border-gray-200',
                     'cursor-pointer',
                     'flex items-center',
-                    'focus:outline-none focus:border-transparent focus:ring-2 focus:ring-blue-500'
+                    'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-500'
                 )}
                 onClick={() => setOpen((prev) => !prev)}
                 onKeyDown={parentKeyDownHandler}
