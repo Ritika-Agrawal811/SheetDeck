@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 
 import type { Cheatsheet } from '@/types/cheatsheets';
-import { TAGS_INFO } from '@/lib/cheatsheets/constants';
+// import { TAGS_INFO } from '@/lib/cheatsheets/constants';
 
 // components
 import Modal from '@/components/ui/Modal';
-import Badge from '@/components/ui/Badge';
-import { IoMdDownload } from 'react-icons/io';
-import Icon from '@/components/ui/Icon';
+// import Badge from '@/components/ui/Badge';
+// import { IoMdDownload } from 'react-icons/io';
+// import Icon from '@/components/ui/Icon';
 import Image from 'next/image';
 import CircularLoader from '@/components/ui/CircularLoader';
 
@@ -30,11 +30,11 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
             {details && (
                 <Modal open={open} onClose={onClose}>
                     <section className={clsx('w-[85%] xl:w-4/5 mx-auto', 'h-screen flex flex-col')} onClick={onClose}>
-                        <header className={clsx('pt-8 pb-6 sm:pb-0 lg:pt-6', 'flex items-center justify-between')}>
+                        {/* <header className={clsx('pt-8 pb-6 sm:pb-0 lg:pt-6', 'flex items-center justify-between')}>
                             <div className="space-y-2 lg:space-y-3 3xl:space-y-4">
                                 <h3 className="text-white text-lg sm:text-xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl">{details.title}</h3>
                                 <Badge size="small" color={TAGS_INFO[details.tag].color} shape="pill" className="3xl:text-base">
-                                    {details.tag}
+                                    {TAGS_INFO[details.tag].title}
                                 </Badge>
                             </div>
 
@@ -57,8 +57,8 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                                     <Icon icon={IoMdDownload} size="text-xl 2xl:text-2xl 3xl:text-3xl" aria-hidden={true} />
                                 </a>
                             </button>
-                        </header>
-                        <figure className={clsx('relative grow overflow-hidden xl:mt-4', isLoading && 'flex items-center justify-center')}>
+                        </header> */}
+                        <figure className={clsx('relative grow overflow-hidden', isLoading && 'flex items-center justify-center')}>
                             {isLoading ? (
                                 <CircularLoader title="cheat sheet image" />
                             ) : (
