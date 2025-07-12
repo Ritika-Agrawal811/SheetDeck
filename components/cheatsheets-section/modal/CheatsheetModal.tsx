@@ -32,7 +32,7 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                 <Modal open={open} onClose={onClose}>
                     <section className={clsx('w-full', 'h-screen flex flex-col lg:flex-row-reverse')} onClick={onClose}>
                         <header className={clsx('w-full lg:w-1/4', 'border border-b-gray-800 lg:border-l-gray-800 bg-black/10')}>
-                            <div className="flex justify-end  p-2 lg:p-4">
+                            <div className="flex justify-end  p-2 md:p-4">
                                 <CloseBtn onClose={onClose} theme="light" />
                             </div>
 
@@ -43,7 +43,9 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                                 )}
                             >
                                 <div className="space-y-2 lg:space-y-3 3xl:space-y-4">
-                                    <h3 className="text-white sm:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl">{details.title}</h3>
+                                    <h3 className="text-white text-lg sm:text-xl md:text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
+                                        {details.title}
+                                    </h3>
                                     <Badge
                                         size="small"
                                         color={TAGS_INFO[details.tag].color}
