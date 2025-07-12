@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 const variants = {
     light: 'bg-black/40',
-    dark: 'bg-black/90',
+    dark: 'bg-black/92',
 };
 
 interface ModalProps {
@@ -69,7 +69,7 @@ const Modal: React.FC<ModalProps> = ({ children, backdrop = 'dark', open, onClos
             ref={modalRef}
             className={clsx('fixed h-screen w-screen', '', 'z-50 top-0 left-0', open ? 'block' : 'hidden')}
         >
-            <div className={clsx('absolute w-full h-full -z-10', variants[backdrop])} onClick={onClose}></div>
+            <div className={clsx('absolute w-full h-full -z-10 cursor-pointer', variants[backdrop])} onClick={onClose}></div>
             {children}
         </div>
     );

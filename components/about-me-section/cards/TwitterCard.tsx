@@ -14,11 +14,12 @@ const TwitterCard = () => {
     if (!breakpoint) return null;
     return (
         <SocialCard
-            label="Connect with me on"
+            label={breakpoint === 'xs' ? 'Connect' : 'Connect with me on'}
             icon={FaSquareXTwitter}
             profile="X/Twitter"
             socialURL="https://twitter.com/RitikaAgrawal08"
             orientation={breakpoint === 'xs' ? 'horizontal' : 'vertical'}
+            size={breakpoint === 'xs' ? 'small' : 'default'}
             className="bg-white"
         />
     );

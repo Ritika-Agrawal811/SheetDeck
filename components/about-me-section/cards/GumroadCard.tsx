@@ -15,7 +15,7 @@ const GumroadCard = () => {
 
     return (
         <SocialCard
-            label="Explore my Ebooks"
+            label={breakpoint === 'xs' ? 'Ebooks' : 'Explore my Ebooks'}
             icon={SiGumroad}
             profile="Gumroad"
             socialURL="https://ritikaagrawal08.gumroad.com/"
