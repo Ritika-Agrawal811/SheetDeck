@@ -20,7 +20,7 @@ const BuyMeACoffeeCard = () => {
             profile="Buy me a coffee"
             socialURL="https://buymeacoffee.com/ritikaagrawal08"
             orientation={breakpoint === 'xs' ? 'vertical' : 'horizontal'}
-            size={breakpoint === 'xs' ? 'default' : 'big'}
+            size="big"
             className="bg-yellow-400"
         />
     );

@@ -14,8 +14,7 @@ const Heading = () => {
         <div className={clsx('flex items-center justify-center', 'transition duration-300')}>
             <h1 className={clsx('text-3xl sm:text-4xl 2xl:text-5xl', 'leading-12 xl:leading-14 2xl:leading-16')}>
                 <span className="w-fit mx-auto sm:mx-0 block">
-                    Code <span className="font-medium text-4xl sm:text-5xl 2xl:text-6xl">faster</span>. <br className="sm:hidden" /> Learn{' '}
-                    <span className="bg-purple-800 text-white px-2">smarter</span>.
+                    Code Faster. <br className="sm:hidden" /> Learn Smarter.
                 </span>
 
                 <span className={clsx('my-4 2xl:my-6', 'text-center block')}>
@@ -44,7 +43,7 @@ const Heading = () => {
                         )}
                     >
                         instant <Icon icon={IoPaperPlane} size="text-4xl xl:text-5xl" className="text-purple-800" aria-hidden={true} />
-                    </span>{' '}
+                    </span>
                     <br className="sm:hidden" />
                     code reference.
                 </span>

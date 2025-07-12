@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 
 import type { Cheatsheet } from '@/types/cheatsheets';
-// import { TAGS_INFO } from '@/lib/cheatsheets/constants';
+import { TAGS_INFO } from '@/lib/cheatsheets/constants';
 
 // components
 import Modal from '@/components/ui/Modal';
-// import Badge from '@/components/ui/Badge';
-// import { IoMdDownload } from 'react-icons/io';
-// import Icon from '@/components/ui/Icon';
+import Badge from '@/components/ui/Badge';
+import { IoMdDownload } from 'react-icons/io';
+import Icon from '@/components/ui/Icon';
 import Image from 'next/image';
 import CircularLoader from '@/components/ui/CircularLoader';
+import CloseBtn from '@/components/ui/CloseBtn';
 
 interface CheatsheetModalProps {
     open: boolean;
@@ -29,42 +30,65 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
         <>
             {details && (
                 <Modal open={open} onClose={onClose}>
-                    <section className={clsx('w-[85%] xl:w-4/5 mx-auto', 'h-screen flex flex-col')} onClick={onClose}>
-                        {/* <header className={clsx('pt-8 pb-6 sm:pb-0 lg:pt-6', 'flex items-center justify-between')}>
-                            <div className="space-y-2 lg:space-y-3 3xl:space-y-4">
-                                <h3 className="text-white text-lg sm:text-xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl">{details.title}</h3>
-                                <Badge size="small" color={TAGS_INFO[details.tag].color} shape="pill" className="3xl:text-base">
-                                    {TAGS_INFO[details.tag].title}
-                                </Badge>
+                    <section className={clsx('w-full', 'h-screen flex flex-col lg:flex-row-reverse')} onClick={onClose}>
+                        <header className={clsx('w-full lg:w-1/4', 'border border-b-gray-800 lg:border-l-gray-800 bg-black/10')}>
+                            <div className="flex justify-end  p-2 lg:p-4">
+                                <CloseBtn onClose={onClose} theme="light" />
                             </div>
 
-                            <button
+                            <div
                                 className={clsx(
-                                    'bg-purple-800 lg:text-lg 2xl:text-xl 3xl:text-2xl text-white',
-                                    'rounded-md cursor-pointer border-2 border-transparent',
-                                    'transition duration-150 hover:bg-purple-900',
-                                    'focus:outline-none focus:border-blue-500'
+                                    'flex lg:flex-col items-center lg:items-start justify-between',
+                                    'px-4 pb-4 md:px-6 lg:pl-4 lg:pr-0 2xl:pl-8'
                                 )}
-                                aria-label="download the cheat sheet"
                             >
-                                <a
-                                    href={details.image}
-                                    download={details.image.split('/').pop()}
-                                    onClick={(event) => event.stopPropagation()}
-                                    className={clsx('flex gap-2 lg:gap-4 items-center', 'px-2 sm:px-3 2xl:px-4 3xl:px-5', 'py-2 3xl:py-3')}
+                                <div className="space-y-2 lg:space-y-3 3xl:space-y-4">
+                                    <h3 className="text-white sm:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl">{details.title}</h3>
+                                    <Badge
+                                        size="small"
+                                        color={TAGS_INFO[details.tag].color}
+                                        shape="pill"
+                                        className="text-xs sm:text-sm 3xl:text-base"
+                                    >
+                                        {TAGS_INFO[details.tag].title}
+                                    </Badge>
+                                </div>
+
+                                <button
+                                    className={clsx(
+                                        'bg-purple-800 xl:text-lg 2xl:text-xl 3xl:text-2xl text-white',
+                                        'rounded-md cursor-pointer border-2 border-transparent lg:mt-6',
+                                        'transition duration-150 hover:bg-purple-900',
+                                        'focus:outline-none focus-visible:border-blue-500'
+                                    )}
+                                    aria-label="download the cheat sheet"
                                 >
-                                    Download
-                                    <Icon icon={IoMdDownload} size="text-xl 2xl:text-2xl 3xl:text-3xl" aria-hidden={true} />
-                                </a>
-                            </button>
-                        </header> */}
-                        <figure className={clsx('relative grow overflow-hidden', isLoading && 'flex items-center justify-center')}>
-                            {isLoading ? (
-                                <CircularLoader title="cheat sheet image" />
-                            ) : (
-                                <Image src={details.image} alt={details.title} fill quality={55} className="object-contain" />
-                            )}
-                        </figure>
+                                    <a
+                                        href={details.image}
+                                        download={details.image.split('/').pop()}
+                                        onClick={(event) => event.stopPropagation()}
+                                        className={clsx('flex gap-2 lg:gap-4 items-center', 'px-2 2xl:px-4 3xl:px-5', 'py-2 3xl:py-3')}
+                                    >
+                                        <span className="hidden md:inline">Download</span>
+                                        <Icon icon={IoMdDownload} size="text-xl 2xl:text-2xl 3xl:text-3xl" aria-hidden={true} />
+                                    </a>
+                                </button>
+                            </div>
+                        </header>
+                        <div className={clsx('grow overflow-hidden', 'flex justify-center')}>
+                            <figure
+                                className={clsx(
+                                    'relative h-full w-full lg:w-11/12 overflow-hidden',
+                                    isLoading && 'flex items-center justify-center'
+                                )}
+                            >
+                                {isLoading ? (
+                                    <CircularLoader title="cheat sheet image" />
+                                ) : (
+                                    <Image src={details.image} alt={details.title} fill quality={55} className="object-contain" />
+                                )}
+                            </figure>
+                        </div>
                     </section>
                 </Modal>
             )}

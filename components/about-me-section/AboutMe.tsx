@@ -38,23 +38,28 @@ const AboutMe = () => {
                         </div>
 
                         {/* lower row */}
-                        <div className={clsx('flex flex-col md:flex-row', 'gap-4 2xl:gap-6 items-center md:items-start justify-end')}>
-                            <div className={clsx('flex md:flex-col', 'gap-4 2xl:gap-6 md:items-end')}>
+                        <div className={clsx('flex flex-row', 'gap-4 2xl:gap-6 items-start sm:justify-end')}>
+                            <div className={clsx('flex flex-col', 'gap-4 2xl:gap-6 items-end')}>
+                                <div className="sm:hidden">
+                                    <GumroadCard />
+                                </div>
                                 <BuyMeACoffeeCard />
-                                <CodePenCard />
+                                <div className="hidden sm:block">
+                                    <CodePenCard />
+                                </div>
                             </div>
 
-                            <div className={clsx('flex flex-col sm:flex-row', 'gap-4', 'items-center sm:items-start')}>
+                            <div className={clsx('flex flex-col-reverse', 'gap-4', 'items-start')}>
                                 <TwitterCard />
-                                <div className="md:hidden">
-                                    <GumroadCard />
+                                <div className="block sm:hidden">
+                                    <CodePenCard />
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     {/* right container */}
-                    <div className="hidden md:flex items-center">
+                    <div className="hidden sm:flex items-center">
                         <GumroadCard />
                     </div>
                 </div>

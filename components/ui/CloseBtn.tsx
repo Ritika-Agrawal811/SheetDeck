@@ -7,7 +7,7 @@ import Icon from './Icon';
 
 const variants = {
     theme: {
-        light: 'text-white hover:bg-black',
+        light: 'text-white bg-black',
         dark: 'bg-black/10 hover:bg-black/30',
     },
 };
