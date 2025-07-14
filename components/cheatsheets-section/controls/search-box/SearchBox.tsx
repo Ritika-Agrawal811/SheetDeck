@@ -83,7 +83,7 @@ const SearchBox = () => {
         <form
             role="search"
             className={clsx(
-                'border border-gray-200 shadow rounded-md bg-white',
+                'border border-gray-200 dark:border-gray-600 shadow rounded-md bg-white dark:bg-gray-800',
                 'flex',
                 'relative w-full sm:max-w-[250px] xl:max-w-[300px] h-12 sm:h-10 xl:h-12'
             )}
@@ -98,8 +98,14 @@ const SearchBox = () => {
                 id="cheatsheets-search"
                 name="cheatsheet"
                 autoComplete="off"
-                placeholder="Search for a cheat sheet"
-                className={clsx('h-full grow', 'px-4', 'sm:text-sm xl:text-base', 'focus:border-blue-500')}
+                placeholder="Enter a cheat sheet"
+                className={clsx(
+                    'h-full grow',
+                    'px-4',
+                    'sm:text-sm xl:text-base',
+                    'focus:border-blue-500',
+                    'placeholder:text-gray-500 dark:placeholder:text-gray-200'
+                )}
                 value={searchData.value}
                 onChange={searchCheatsheetHandler}
                 onFocus={onFocusHandler}
@@ -121,8 +127,8 @@ const SearchBox = () => {
                 className={clsx(
                     'flex items-center justify-center',
                     'px-2 cursor-pointer',
-                    'bg-emerald-700 text-white rounded-r-md',
-                    'border border-emerald-700',
+                    'bg-emerald-700 dark:bg-emerald-600 text-white dark:text-gray-900 rounded-r-md',
+                    'border border-emerald-700 dark:border-emerald-600',
                     'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500'
                 )}
             >

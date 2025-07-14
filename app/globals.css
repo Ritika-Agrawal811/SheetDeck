@@ -1,8 +1,15 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
     --background: #ffffff;
     --foreground: #171717;
+}
+
+.dark {
+    --background: #151515;
+    --foreground: #ededed;
 }
 
 @theme inline {
@@ -14,13 +21,6 @@
     --font-castoro: var(--font-castoro);
     --breakpoint-xs: 26.5rem;
     --breakpoint-3xl: 120rem;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
 }
 
 body {

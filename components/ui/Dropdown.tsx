@@ -65,8 +65,8 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                 aria-controls={`${label}-dropdown-options`}
                 id={`${label}-dropdown-button`}
                 className={clsx(
-                    'bg-white rounded-md',
-                    'bg-white border border-gray-200',
+                    'bg-white dark:bg-gray-800 rounded-md',
+                    'border border-gray-200 dark:border-gray-700',
                     'cursor-pointer',
                     'flex items-center',
                     'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-500'
@@ -75,13 +75,25 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                 onKeyDown={parentKeyDownHandler}
             >
                 <span
-                    className={clsx('p-2 xl:p-2.5', 'rounded-l-md border-r border-gray-200', 'text-sm xl:text-base', labelClassname)}
+                    className={clsx(
+                        'p-2 xl:p-2.5',
+                        'rounded-l-md border-r border-gray-200 dark:border-gray-700',
+                        'text-sm xl:text-base',
+                        labelClassname
+                    )}
                     style={labelStyle}
                 >
                     {formatLabels(selectedOption)}
                 </span>
 
-                <span className={clsx('py-2 xl:py-2.5 px-1.5 xl:px-2', 'bg-emerald-700 text-white', 'rounded-r-md')} aria-hidden={true}>
+                <span
+                    className={clsx(
+                        'py-2 xl:py-2.5 px-1.5 xl:px-2',
+                        'bg-emerald-700 dark:bg-emerald-600 text-white dark:text-gray-900',
+                        'rounded-r-md'
+                    )}
+                    aria-hidden={true}
+                >
                     <Icon icon={IoChevronDownOutline} size="text-xl xl:text-2xl" className="pointer-events-none" />
                 </span>
             </button>
@@ -95,9 +107,9 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                 className={clsx(
                     'absolute',
                     'w-full mt-2',
-                    'bg-white rounded-md',
-                    'bg-white border border-gray-200',
-                    'text-center divide-y divide-gray-200',
+                    'bg-white dark:bg-neutral-800 rounded-md',
+                    'border border-gray-200 dark:border-none',
+                    'text-center divide-y divide-gray-200 dark:divide-gray-700',
                     open ? 'block' : 'hidden'
                 )}
                 onKeyDown={handleKeysNavigation}
@@ -113,7 +125,9 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                             className={clsx(
                                 'py-2 cursor-pointer',
                                 'text-sm xl:text-base',
-                                isSelected ? 'bg-emerald-700 text-white hover:bg-emerald-800' : 'hover:bg-gray-100'
+                                isSelected
+                                    ? 'bg-emerald-700 dark:bg-emerald-600 text-white dark:text-gray-900 hover:bg-emerald-800 dark:font-medium'
+                                    : 'hover:bg-gray-100 dark:hover:bg-gray-800'
                             )}
                             onClick={(event) => setSelectedOptionHandler(event, item)}
                             onKeyDown={(event) => itemKeyDownHandler(event, item)}

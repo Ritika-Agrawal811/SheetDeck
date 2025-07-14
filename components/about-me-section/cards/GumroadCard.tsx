@@ -19,8 +19,8 @@ const GumroadCard = () => {
             icon={SiGumroad}
             profile="Gumroad"
             socialURL="https://ritikaagrawal08.gumroad.com/"
-            orientation={breakpoint === 'xs' || breakpoint === 'sm' ? 'horizontal' : 'vertical'}
-            className="bg-[#ff90e8]"
+            orientation={breakpoint === 'xs' ? 'horizontal' : 'vertical'}
+            className="bg-[#ff90e8] dark:bg-[#c850b6] dark:text-black"
             size={breakpoint === 'xs' ? 'default' : 'big'}
         />
     );

@@ -11,17 +11,22 @@ import VisitRepositoryButton from './VisitRepositoryButton';
 
 const Support = () => {
     return (
-        <section className={clsx('py-20 bg-purple-50', 'relative')}>
+        <section className={clsx('py-20 bg-purple-50 dark:bg-neutral-800', 'relative')}>
             <div className={clsx('flex flex-col gap-4 items-center', 'relative z-20')}>
                 {/* Title */}
                 <h2 className="text-3xl sm:text-4xl xl:text-5xl 2xl:text-6xl">
-                    Show your <span className={clsx('font-medium text-purple-800', `${platypi.variable} font-platypi`)}>support</span>.{' '}
+                    Show your{' '}
+                    <span className={clsx('font-medium text-purple-800 dark:text-purple-500', `${platypi.variable} font-platypi`)}>
+                        support
+                    </span>
+                    .{' '}
                 </h2>
 
                 {/* Subtitle */}
                 <p className={clsx('sm:text-lg xl:text-xl 2xl:text-2xl', 'flex flex-col sm:flex-row items-center gap-1')}>
                     <span className="font-medium">
-                        Found these cheat sheets <span className={clsx('text-emerald-700 font-medium')}>helpful</span>?
+                        Found these cheat sheets <span className={clsx('text-emerald-700 dark:text-emerald-600 font-medium')}>helpful</span>
+                        ?
                     </span>
                     <span className="flex gap-1 items-center">
                         A{' '}

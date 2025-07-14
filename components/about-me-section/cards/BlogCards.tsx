@@ -14,7 +14,7 @@ const BlogCards = () => {
                 socialURL="https://dev.to/ritikaagrawal08"
                 size="small"
                 orientation="horizontal"
-                className="grow bg-white"
+                className="grow bg-white dark:bg-transparent"
             />
             <SocialCard
                 icon={FaMedium}

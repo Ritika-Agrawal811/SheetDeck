@@ -7,8 +7,8 @@ import Icon from './Icon';
 
 const variants = {
     theme: {
-        light: 'text-white bg-black',
-        dark: 'bg-black/10 hover:bg-black/30',
+        light: 'text-white bg-black dark:text-purple-300 dark:bg-white/10',
+        dark: 'bg-black/10 dark:bg-white/10 hover:bg-black/30',
     },
 };
 

@@ -57,7 +57,7 @@ const SocialCard = ({ label, icon, size = 'default', orientation = 'vertical', c
             rel="noopener noreferrer"
             tabIndex={0}
             className={clsx(
-                'block border-2 border-gray-800',
+                'block border-2 border-gray-800 dark:border-gray-600',
                 'focus:outline-none focus-visible:border-transparent focus-visible:ring-3 focus-visible:ring-offset-2 focus-visible:ring-blue-500 rounded-2xl',
                 'hover:scale-95 transition duration-300 ease-in-out',
                 'items-center cursor-pointer group',
