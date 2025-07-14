@@ -16,7 +16,7 @@ const Support = () => {
                 {/* Title */}
                 <h2 className="text-3xl sm:text-4xl xl:text-5xl 2xl:text-6xl">
                     Show your{' '}
-                    <span className={clsx('font-medium text-purple-800 dark:text-purple-500', `${platypi.variable} font-platypi`)}>
+                    <span className={clsx('font-medium text-purple-800 dark:text-purple-400', `${platypi.variable} font-platypi`)}>
                         support
                     </span>
                     .{' '}

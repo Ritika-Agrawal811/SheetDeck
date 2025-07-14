@@ -34,7 +34,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ view }) => {
                         className={clsx(
                             'mt-5 lg:mt-8 px-5 py-2.5',
                             'lg:text-lg',
-                            'rounded-full bg-purple-800 dark:bg-purple-900 text-white hover:bg-purple-700 hover:scale-105',
+                            'rounded-full bg-purple-800 dark:bg-purple-600 text-white hover:bg-purple-700 hover:scale-105',
                             'transition duration-300 cursor-pointer'
                         )}
                     >
