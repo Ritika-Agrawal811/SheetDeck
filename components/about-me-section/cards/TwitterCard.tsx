@@ -20,7 +20,7 @@ const TwitterCard = () => {
             socialURL="https://twitter.com/RitikaAgrawal08"
             orientation={breakpoint === 'xs' ? 'horizontal' : 'vertical'}
             size={breakpoint === 'xs' ? 'small' : 'default'}
-            className="bg-white"
+            className="bg-white dark:bg-transparent"
         />
     );
 };

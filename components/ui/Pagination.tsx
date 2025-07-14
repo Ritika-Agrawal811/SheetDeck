@@ -26,11 +26,12 @@ function Pagination<T>({ data }: PaginationProps<T>) {
             <button
                 className={clsx(
                     'p-1.5 md:p-2.5 shadow',
-                    'text-emerald-700 border border-gray-200',
+                    'bg-white dark:bg-gray-800',
+                    'text-emerald-700 dark:text-emerald-600 border border-gray-200 dark:border-gray-700',
                     'inline-block rounded-full cursor-pointer',
                     'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-500',
-                    'disabled:bg-gray-50 disabled:text-gray-600 disabled:cursor-not-allowed',
-                    currentPage !== 1 && 'group transition duration-300 hover:bg-purple-50 hover:border-transparent'
+                    'disabled:bg-gray-50 dark:disabled:bg-gray-400 disabled:text-gray-600 dark:disabled:text-gray-700 disabled:cursor-not-allowed',
+                    currentPage !== 1 && 'group transition duration-300 hover:bg-purple-50 dark:hover:bg-gray-700 hover:border-transparent'
                 )}
                 onClick={goToPrevPage}
                 disabled={currentPage === 1}
@@ -57,7 +58,9 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                                     'text-lg md:text-xl w-10 h-10 rounded-full cursor-pointer',
                                     'flex items-center justify-center',
                                     'focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500',
-                                    currentPage === number ? 'text-white duration-260 scale-110 md:scale-125' : 'hover:text-emerald-700'
+                                    currentPage === number
+                                        ? 'text-white dark:text-gray-900 duration-260 scale-110 md:scale-125'
+                                        : 'hover:text-emerald-700 dark:hover:text-emerald-600'
                                 )}
                                 onClick={() => setPage(number)}
                             >
@@ -72,7 +75,7 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                     className={clsx(
                         'absolute top-1/2 -translate-y-1/2',
                         'w-10 h-10 rounded-full',
-                        'bg-emerald-700',
+                        'bg-emerald-700 dark:bg-emerald-600',
                         '-z-10 transition-all duration-250 ease-out'
                     )}
                     style={{ left: OFFSET }}
@@ -84,11 +87,13 @@ function Pagination<T>({ data }: PaginationProps<T>) {
             <button
                 className={clsx(
                     'p-1.5 md:p-2.5 shadow',
-                    'text-emerald-700 border border-gray-200',
+                    'bg-white dark:bg-gray-800',
+                    'text-emerald-700 dark:text-emerald-600 border border-gray-200 dark:border-gray-700',
                     'inline-block rounded-full cursor-pointer',
                     'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-500',
-                    'disabled:bg-gray-50 disabled:text-gray-600 disabled:cursor-not-allowed',
-                    currentPage !== totalPages && 'group transition duration-300 hover:bg-purple-50 hover:border-transparent'
+                    'disabled:bg-gray-50 dark:disabled:bg-gray-400 disabled:text-gray-600 dark:disabled:text-gray-700 disabled:cursor-not-allowed',
+                    currentPage !== totalPages &&
+                        'group transition duration-300 hover:bg-purple-50 dark:hover:bg-gray-700 hover:border-transparent'
                 )}
                 onClick={goToNextPage}
                 disabled={currentPage === totalPages}

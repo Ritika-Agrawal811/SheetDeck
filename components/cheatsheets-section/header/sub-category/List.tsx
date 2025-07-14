@@ -7,6 +7,7 @@ import type { Categories } from '@/types/cheatsheets';
 import { useCategory } from '@/hooks/useCategory';
 import { usePagination } from '@/hooks/usePagination';
 import { useSearch } from '@/hooks/useSearch';
+import { useTheme } from '@/hooks/useTheme';
 import { useQueryParams } from '@/hooks/useQueryParams';
 import { useArrowKeyNavigation } from '@/hooks/useArrowKeyNavigation';
 import { fetchSubCategories } from '@/utils/fetchSubCategories';
@@ -27,6 +28,7 @@ const List: React.FC<ListProps> = ({ className, size = 'default', showImage = tr
     const { resetCurrentPage } = usePagination({ data: cheatsheets });
     const { clearQueryParams } = useQueryParams();
     const { reset } = useSearch();
+    const { isDark } = useTheme();
 
     const subCategories = fetchSubCategories(activeCategory.topic);
     const { registerItemRef, handleKeysNavigation, setActiveIndex } = useArrowKeyNavigation(subCategories.length);
@@ -85,14 +87,14 @@ const List: React.FC<ListProps> = ({ className, size = 'default', showImage = tr
                     >
                         <Badge
                             size={size}
-                            color="#1e2939"
+                            color={isDark ? '#d4d4d8' : '#1e2939'}
                             shape="rounded"
                             className={clsx(
-                                'bg-white cursor-pointer shadow-none capitalize',
+                                'bg-white dark:bg-gray-800 cursor-pointer shadow-none capitalize',
                                 'flex items-center',
                                 'gap-2 xl:gap-3',
                                 'transition duration-150 ease-in',
-                                activeCategory.category !== category.title && 'hover:scale-103 hover:bg-gray-100'
+                                activeCategory.category !== category.title && 'hover:scale-103 hover:bg-gray-100 dark:hover:bg-zinc-800'
                             )}
                             active={activeCategory.category === category.title}
                         >

@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import clsx from 'clsx';
 
 const variants = {
-    light: 'bg-black/40',
+    light: 'bg-black/40 dark:bg-black/80',
     dark: 'bg-black/92',
 };
 

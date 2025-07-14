@@ -7,7 +7,7 @@ import { cheatSheets } from '@/lib/cheatsheets/loader';
 
 // components
 import Heading from './Heading';
-import Logo from './Logo';
+import Navbar from './Navbar';
 import TopicsLoop from './TopicsLoop';
 import DecorativeImage from '@/components/ui/DecorativeImage';
 import ExploreButton from './ExploreButton';
@@ -23,7 +23,7 @@ const HeroSection = () => {
                 'relative overflow-x-hidden'
             )}
         >
-            <Logo />
+            <Navbar />
             <Heading />
             <ExploreButton />
             <TopicsLoop />

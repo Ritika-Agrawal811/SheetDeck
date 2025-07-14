@@ -30,7 +30,7 @@ const DecorativeImage = ({ image, title, position, size, className, priorty }: D
             <figure
                 className={clsx(
                     'relative',
-                    'before:absolute before:content-[""] before:w-full before:h-full before:bg-gray-200 before:rounded-xl before:-z-10',
+                    'before:absolute before:content-[""] before:w-full before:h-full before:bg-gray-200 dark:before:bg-gray-800 before:rounded-xl before:-z-10',
                     sizeVariants[size],
                     position === 'left' ? 'before:rotate-10 before:left-0' : 'before:-rotate-5 before:right-3'
                 )}
@@ -40,7 +40,10 @@ const DecorativeImage = ({ image, title, position, size, className, priorty }: D
                     alt={title}
                     width={300}
                     height={350}
-                    className={clsx('rounded-xl border border-gray-200 opacity-95', position === 'left' ? '-rotate-10' : 'rotate-10')}
+                    className={clsx(
+                        'rounded-xl border border-gray-200 dark:border-gray-700 opacity-95',
+                        position === 'left' ? '-rotate-10' : 'rotate-10'
+                    )}
                     priority={priorty}
                 />
             </figure>

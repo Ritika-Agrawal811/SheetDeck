@@ -23,11 +23,11 @@ const Heading = () => {
                         className={clsx(
                             'font-bold uppercase whitespace-nowrap',
                             `${anta.variable} font-anta`,
-                            'text-4xl sm:text-5xl 2xl:text-6xl',
-                            'mx-6 text-emerald-700',
+                            'text-4xl sm:text-5xl 2xl:text-6xl tracking-wider',
+                            'mx-6 text-emerald-700 dark:text-emerald-600',
                             'inline-block relative',
-                            'before:absolute before:content-[""] before:w-[200%] before:h-1 before:bg-black before:-left-[190%] before:top-full',
-                            'after:absolute after:content-[""] after:w-[200%] after:h-1 after:bg-black after:-right-[190%] after:top-full'
+                            'before:absolute before:content-[""] before:w-[200%] before:h-1 before:bg-black dark:before:bg-gray-600 before:-left-[190%] before:top-[105%]',
+                            'after:absolute after:content-[""] after:w-[200%] after:h-1 after:bg-black dark:after:bg-gray-600 after:-right-[190%] after:top-[105%]'
                         )}
                     >
                         cheat sheets
@@ -37,12 +37,18 @@ const Heading = () => {
                     for
                     <span
                         className={clsx(
-                            'border-2 border-dashed border-slate-500',
+                            'border-2 border-dashed border-slate-500 dark:border-slate-700',
                             'ml-3 sm:mr-3 px-4 rounded-2xl',
                             'inline-flex gap-4 items-center'
                         )}
                     >
-                        instant <Icon icon={IoPaperPlane} size="text-4xl xl:text-5xl" className="text-purple-800" aria-hidden={true} />
+                        instant{' '}
+                        <Icon
+                            icon={IoPaperPlane}
+                            size="text-4xl xl:text-5xl"
+                            className="text-purple-800 dark:text-purple-300"
+                            aria-hidden={true}
+                        />
                     </span>
                     <br className="sm:hidden" />
                     code reference.

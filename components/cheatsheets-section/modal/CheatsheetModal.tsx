@@ -31,7 +31,9 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
             {details && (
                 <Modal open={open} onClose={onClose}>
                     <section className={clsx('w-full', 'h-screen flex flex-col lg:flex-row-reverse')} onClick={onClose}>
-                        <header className={clsx('w-full lg:w-1/4', 'border border-b-gray-800 lg:border-l-gray-800 bg-black/10')}>
+                        <header
+                            className={clsx('w-full lg:w-1/4', 'border-b lg:border-l border-b-gray-800 lg:border-l-gray-800 bg-black/10')}
+                        >
                             <div className="flex justify-end  p-2 md:p-4">
                                 <CloseBtn onClose={onClose} theme="light" />
                             </div>

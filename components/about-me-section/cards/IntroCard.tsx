@@ -1,13 +1,18 @@
+'use client';
+
 import React from 'react';
 import clsx from 'clsx';
 
 import { castoro } from '@/app/font';
+import { useTheme } from '@/hooks/useTheme';
 
 // components
 import Image from 'next/image';
 import ArrowSVG from '../ArrowSVG';
 
 const IntroCard = () => {
+    const { isDark } = useTheme();
+
     return (
         <>
             {/* Intro card */}
@@ -21,14 +26,19 @@ const IntroCard = () => {
                         className={clsx('rounded-full', 'w-20 md:w-24 2xl:w-28', 'h-20 md:h-24 2xl:h-28')}
                     />
                 </figure>
-                <ArrowSVG color="#6e11b0" className={clsx('scale-x-[-1] rotate-60', 'w-20 h-20 2xl:w-24 2xl:h-24')} />
+                <ArrowSVG
+                    color={isDark ? '#d8b4fe' : '#6d11af'}
+                    className={clsx('scale-x-[-1] rotate-60', 'w-20 h-20 2xl:w-24 2xl:h-24')}
+                />
             </article>
 
             <div className="text-right sm:-mt-4">
                 <p className={clsx('text-xl md:text-2xl 2xl:text-3xl', 'pr-4 2xl:pr-2')}>
                     Hey, I&apos;m <span className={clsx(`${castoro.variable} font-castoro font-bold`)}>Ritika</span>
                 </p>
-                <p className={clsx('text-lg md:text-xl 2xl:text-2xl ', 'font-medium text-emerald-700')}>Full-stack Developer</p>
+                <p className={clsx('text-lg md:text-xl 2xl:text-2xl ', 'font-medium text-emerald-700 dark:text-emerald-600')}>
+                    Full-stack Developer
+                </p>
             </div>
         </>
     );

@@ -19,7 +19,10 @@ const SearchSummary = () => {
             <div className="flex gap-2 items-center">
                 {/* prev button */}
                 <button
-                    className={clsx('inline-block rounded-full cursor-pointer group transition duration-300', 'hover:text-emerald-700')}
+                    className={clsx(
+                        'inline-block rounded-full cursor-pointer group transition duration-300',
+                        'hover:text-emerald-700 dark:hover:text-emerald-600'
+                    )}
                     onClick={reset}
                 >
                     <span className="sr-only">Clear search results</span>
@@ -31,7 +34,7 @@ const SearchSummary = () => {
                     />
                 </button>
                 <h2 className="text-lg">
-                    <span className="text-purple-800">No results</span> found for{' '}
+                    <span className="text-purple-800 dark:text-purple-300">No results</span> found for{' '}
                     <span className="font-bold">&quot;{searchValue}&quot;</span>
                 </h2>
             </div>

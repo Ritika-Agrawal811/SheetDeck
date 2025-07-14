@@ -19,7 +19,7 @@ const CodePenCard = () => {
             profile="Codepen"
             socialURL="https://codepen.io/RitikaAgrawal08"
             orientation={breakpoint === 'xs' ? 'vertical' : 'horizontal'}
-            className="bg-white"
+            className="bg-white dark:bg-transparent"
         />
     );
 };

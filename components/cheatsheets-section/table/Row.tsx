@@ -17,26 +17,30 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
     const downloadFileName = image.split('/').pop();
 
     return (
-        <tr className="border-b border-gray-200 sm:border-none">
+        <tr className="border-b border-gray-200 dark:border-gray-600 sm:border-none">
             <td
-                className={clsx('px-4 py-5 lg:p-4 3xl:px-6 font-medium', 'cursor-pointer hover:text-purple-800', 'text-base 3xl:text-lg')}
+                className={clsx(
+                    'px-4 py-5 lg:p-4 3xl:px-6 font-medium',
+                    'cursor-pointer hover:text-purple-800 dark:hover:text-purple-300',
+                    'text-base 3xl:text-lg'
+                )}
                 onClick={onClick}
             >
                 {title}
-                <Badge size="tiny" color={TAGS_INFO[tag].color} shape="rounded" className="mt-2 sm:hidden">
-                    {tag}
+                <Badge size="tiny" color={TAGS_INFO[tag].color} shape="pill" className="mt-2 sm:hidden">
+                    {TAGS_INFO[tag].title}
                 </Badge>
             </td>
             <td className={clsx('px-4 py-5 sm:p-43xl:px-6', 'hidden sm:table-cell')}>
                 <Badge size="small" color={TAGS_INFO[tag].color} shape="pill" className="3xl:text-base">
-                    {tag}
+                    {TAGS_INFO[tag].title}
                 </Badge>
             </td>
             <td className={clsx('px-4 py-5 sm:p-4 3xl:px-6', 'flex items-center justify-start', 'gap-3 sm:gap-4 3xl:gap-5')}>
                 <button
                     className={clsx(
-                        'bg-white text-purple-800',
-                        'border border-purple-800',
+                        'bg-white dark:bg-neutral-900 text-purple-800 dark:text-purple-300',
+                        'border border-purple-800 dark:border-purple-300',
                         'rounded-md cursor-pointer',
                         'group transition-colors duration-150 hover:bg-purple-800 hover:text-white',
                         '3xl:text-lg',
@@ -57,9 +61,9 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
                 <button
                     className={clsx(
                         'p-1.5 lg:p-2 shadow',
-                        'text-emerald-700 bg-white border border-gray-200',
+                        'text-emerald-700 dark:text-emerald-600 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700',
                         'rounded-md cursor-pointer group transition duration-300',
-                        'hover:bg-purple-50 hover:border-transparent',
+                        'hover:bg-purple-50 dark:hover:bg-gray-700 hover:border-transparent',
                         'flex gap-2 items-center',
                         'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-400'
                     )}
