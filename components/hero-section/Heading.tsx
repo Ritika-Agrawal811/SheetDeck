@@ -24,7 +24,7 @@ const Heading = () => {
                             'font-bold uppercase whitespace-nowrap',
                             `${anta.variable} font-anta`,
                             'text-4xl sm:text-5xl 2xl:text-6xl tracking-wider',
-                            'mx-6 text-emerald-700 dark:text-emerald-600',
+                            'mx-6 text-emerald-700 dark:text-emerald-500',
                             'inline-block relative',
                             'before:absolute before:content-[""] before:w-[200%] before:h-1 before:bg-black dark:before:bg-gray-600 before:-left-[190%] before:top-[105%]',
                             'after:absolute after:content-[""] after:w-[200%] after:h-1 after:bg-black dark:after:bg-gray-600 after:-right-[190%] after:top-[105%]'

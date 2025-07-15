@@ -27,7 +27,7 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                 className={clsx(
                     'p-1.5 md:p-2.5 shadow',
                     'bg-white dark:bg-gray-800',
-                    'text-emerald-700 dark:text-emerald-600 border border-gray-200 dark:border-gray-700',
+                    'text-emerald-700 dark:text-emerald-500 border border-gray-200 dark:border-gray-700',
                     'inline-block rounded-full cursor-pointer',
                     'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-500',
                     'disabled:bg-gray-50 dark:disabled:bg-gray-400 disabled:text-gray-600 dark:disabled:text-gray-700 disabled:cursor-not-allowed',
@@ -75,7 +75,7 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                     className={clsx(
                         'absolute top-1/2 -translate-y-1/2',
                         'w-10 h-10 rounded-full',
-                        'bg-emerald-700 dark:bg-emerald-600',
+                        'bg-emerald-700 dark:bg-emerald-500',
                         '-z-10 transition-all duration-250 ease-out'
                     )}
                     style={{ left: OFFSET }}
@@ -88,7 +88,7 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                 className={clsx(
                     'p-1.5 md:p-2.5 shadow',
                     'bg-white dark:bg-gray-800',
-                    'text-emerald-700 dark:text-emerald-600 border border-gray-200 dark:border-gray-700',
+                    'text-emerald-700 dark:text-emerald-500 border border-gray-200 dark:border-gray-700',
                     'inline-block rounded-full cursor-pointer',
                     'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-500',
                     'disabled:bg-gray-50 dark:disabled:bg-gray-400 disabled:text-gray-600 dark:disabled:text-gray-700 disabled:cursor-not-allowed',

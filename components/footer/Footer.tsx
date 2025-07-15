@@ -16,7 +16,7 @@ const Footer = () => {
             )}
         >
             <p>
-                &copy; {currentYear} <span className="text-emerald-700 dark:text-emerald-600">Ritika Agrawal</span> | All rights reserved.
+                &copy; {currentYear} <span className="text-emerald-700 dark:text-emerald-500">Ritika Agrawal</span> | All rights reserved.
             </p>
         </footer>
     );
