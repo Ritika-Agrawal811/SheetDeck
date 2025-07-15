@@ -69,7 +69,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                     'border border-gray-200 dark:border-gray-700',
                     'cursor-pointer',
                     'flex items-center',
-                    'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-500'
+                    'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-500 '
                 )}
                 onClick={() => setOpen((prev) => !prev)}
                 onKeyDown={parentKeyDownHandler}
@@ -125,6 +125,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                             className={clsx(
                                 'py-2 cursor-pointer',
                                 'text-sm xl:text-base',
+                                'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-500 focus-visible:outline-offset-[var(--ring-offset)]',
                                 isSelected
                                     ? 'bg-emerald-700 dark:bg-emerald-500 text-white dark:text-gray-900 hover:bg-emerald-800 dark:font-medium'
                                     : 'hover:bg-gray-100 dark:hover:bg-gray-800'

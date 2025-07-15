@@ -13,7 +13,7 @@ const ThemeToggle = () => {
     const { isDark, toggleTheme } = useTheme();
 
     return (
-        <div role="radiogroup" aria-label="Toggle Light/Dark Mode" tabIndex={0}>
+        <div role="radiogroup" aria-label="Toggle Light/Dark Mode">
             <button
                 role="radio"
                 aria-checked={!isDark}

@@ -28,7 +28,7 @@ const List: React.FC<ListProps> = ({ className, size = 'default', showImage = tr
     const { resetCurrentPage } = usePagination({ data: cheatsheets });
     const { clearQueryParams } = useQueryParams();
     const { reset } = useSearch();
-    const { isDark } = useTheme();
+    const { isDark, hasMounted } = useTheme();
 
     const subCategories = fetchSubCategories(activeCategory.topic);
     const { registerItemRef, handleKeysNavigation, setActiveIndex } = useArrowKeyNavigation(subCategories.length);
@@ -82,33 +82,35 @@ const List: React.FC<ListProps> = ({ className, size = 'default', showImage = tr
                         ref={(elem) => registerItemRef(elem, index)}
                         className={clsx(
                             'rounded-lg',
-                            'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500'
+                            'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-offset-[var(--ring-offset)]'
                         )}
                     >
-                        <Badge
-                            size={size}
-                            color={isDark ? '#d4d4d8' : '#1e2939'}
-                            shape="rounded"
-                            className={clsx(
-                                'bg-white dark:bg-gray-800 cursor-pointer shadow-none capitalize',
-                                'flex items-center',
-                                'gap-2 xl:gap-3',
-                                'transition duration-150 ease-in',
-                                activeCategory.category !== category.title && 'hover:scale-103 hover:bg-gray-100 dark:hover:bg-zinc-800'
-                            )}
-                            active={activeCategory.category === category.title}
-                        >
-                            {showImage && (
-                                <Image
-                                    src={category.image}
-                                    alt={`sub category: ${category.title}`}
-                                    width={35}
-                                    height={35}
-                                    className={clsx('w-auto h-8 xl:h-9')}
-                                />
-                            )}
-                            {formatLabels(category.title)}
-                        </Badge>
+                        {hasMounted && (
+                            <Badge
+                                size={size}
+                                color={isDark ? '#d4d4d8' : '#1e2939'}
+                                shape="rounded"
+                                className={clsx(
+                                    'bg-white dark:bg-gray-800 cursor-pointer shadow-none capitalize',
+                                    'flex items-center',
+                                    'gap-2 xl:gap-3',
+                                    'transition duration-150 ease-in',
+                                    activeCategory.category !== category.title && 'hover:scale-103 hover:bg-gray-100 dark:hover:bg-zinc-800'
+                                )}
+                                active={activeCategory.category === category.title}
+                            >
+                                {showImage && (
+                                    <Image
+                                        src={category.image}
+                                        alt={`sub category: ${category.title}`}
+                                        width={35}
+                                        height={35}
+                                        className={clsx('w-auto h-8 xl:h-9')}
+                                    />
+                                )}
+                                {formatLabels(category.title)}
+                            </Badge>
+                        )}
                     </li>
                 );
             })}

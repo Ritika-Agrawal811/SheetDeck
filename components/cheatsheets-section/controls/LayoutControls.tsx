@@ -43,7 +43,7 @@ const LayoutControls: React.FC<LayoutControlsProps> = ({ view, setViewHandler })
                         aria-checked={view === item.view}
                         className={clsx(
                             'p-2 xl:p-2.5 rounded-md shadow cursor-pointer transition-colors duration-200 ease-in',
-                            'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500',
+                            'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-offset-[var(--ring-offset)]',
                             'group transition duration-300',
                             view === item.view
                                 ? 'bg-emerald-700 dark:bg-emerald-500 text-white dark:text-gray-900'

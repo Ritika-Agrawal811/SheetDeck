@@ -100,10 +100,10 @@ const SearchBox = () => {
                 autoComplete="off"
                 placeholder="Enter a cheat sheet"
                 className={clsx(
-                    'h-full grow',
+                    'h-full grow rounded-l-md',
                     'px-4',
                     'sm:text-sm xl:text-base',
-                    'focus:border-blue-500',
+                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-offset-[var(--ring-offset)]',
                     'placeholder:text-gray-500 dark:placeholder:text-gray-200'
                 )}
                 value={searchData.value}
@@ -129,7 +129,7 @@ const SearchBox = () => {
                     'px-2 cursor-pointer',
                     'bg-emerald-700 dark:bg-emerald-500 text-white dark:text-gray-900 rounded-r-md',
                     'border border-emerald-700 dark:border-emerald-500',
-                    'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500'
+                    'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-offset-[var(--ring-offset)]'
                 )}
             >
                 <span className="sr-only">Search</span>
