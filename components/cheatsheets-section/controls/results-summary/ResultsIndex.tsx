@@ -7,7 +7,7 @@ interface ResultsIndexProps {
 
 const ResultsIndex: React.FC<ResultsIndexProps> = ({ startIndex, endIndex }) => {
     return (
-        <span className="font-medium text-emerald-700 dark:text-emerald-600">
+        <span className="font-medium text-emerald-700 dark:text-emerald-500">
             {endIndex === 1 ? endIndex : `${startIndex}-${endIndex}`}
         </span>
     );

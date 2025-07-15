@@ -34,8 +34,8 @@ const Badge = ({ className, size, children, color, shape, active }: BadgeProps) 
             className={clsx('w-fit shadow-md font-semibold', tagsVariants.size[size], tagsVariants.shape[shape], className)}
             style={{
                 color: active ? (isDark ? '#111827' : '#fff') : color,
-                borderColor: active ? (isDark ? '#059669' : '#047857') : color,
-                backgroundColor: active ? (isDark ? '#059669' : '#047857') : undefined,
+                borderColor: active ? (isDark ? '#10B981' : '#047857') : color,
+                backgroundColor: active ? (isDark ? '#10B981' : '#047857') : undefined,
             }}
         >
             {children}

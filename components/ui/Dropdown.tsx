@@ -89,7 +89,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                 <span
                     className={clsx(
                         'py-2 xl:py-2.5 px-1.5 xl:px-2',
-                        'bg-emerald-700 dark:bg-emerald-600 text-white dark:text-gray-900',
+                        'bg-emerald-700 dark:bg-emerald-500 text-white dark:text-gray-900',
                         'rounded-r-md'
                     )}
                     aria-hidden={true}
@@ -126,7 +126,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                                 'py-2 cursor-pointer',
                                 'text-sm xl:text-base',
                                 isSelected
-                                    ? 'bg-emerald-700 dark:bg-emerald-600 text-white dark:text-gray-900 hover:bg-emerald-800 dark:font-medium'
+                                    ? 'bg-emerald-700 dark:bg-emerald-500 text-white dark:text-gray-900 hover:bg-emerald-800 dark:font-medium'
                                     : 'hover:bg-gray-100 dark:hover:bg-gray-800'
                             )}
                             onClick={(event) => setSelectedOptionHandler(event, item)}

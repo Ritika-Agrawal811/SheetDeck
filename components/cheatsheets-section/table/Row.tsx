@@ -61,7 +61,7 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
                 <button
                     className={clsx(
                         'p-1.5 lg:p-2 shadow',
-                        'text-emerald-700 dark:text-emerald-600 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700',
+                        'text-emerald-700 dark:text-emerald-500 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700',
                         'rounded-md cursor-pointer group transition duration-300',
                         'hover:bg-purple-50 dark:hover:bg-gray-700 hover:border-transparent',
                         'flex gap-2 items-center',

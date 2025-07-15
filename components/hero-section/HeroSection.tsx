@@ -7,7 +7,7 @@ import { cheatSheets } from '@/lib/cheatsheets/loader';
 
 // components
 import Heading from './Heading';
-import Navbar from './Navbar';
+import Navbar from './navbar/Navbar';
 import TopicsLoop from './TopicsLoop';
 import DecorativeImage from '@/components/ui/DecorativeImage';
 import ExploreButton from './ExploreButton';

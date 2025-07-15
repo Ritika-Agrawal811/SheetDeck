@@ -127,8 +127,8 @@ const SearchBox = () => {
                 className={clsx(
                     'flex items-center justify-center',
                     'px-2 cursor-pointer',
-                    'bg-emerald-700 dark:bg-emerald-600 text-white dark:text-gray-900 rounded-r-md',
-                    'border border-emerald-700 dark:border-emerald-600',
+                    'bg-emerald-700 dark:bg-emerald-500 text-white dark:text-gray-900 rounded-r-md',
+                    'border border-emerald-700 dark:border-emerald-500',
                     'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500'
                 )}
             >
