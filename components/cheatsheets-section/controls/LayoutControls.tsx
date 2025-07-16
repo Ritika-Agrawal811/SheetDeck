@@ -46,8 +46,8 @@ const LayoutControls: React.FC<LayoutControlsProps> = ({ view, setViewHandler })
                             'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-offset-[var(--ring-offset)]',
                             'group transition duration-300',
                             view === item.view
-                                ? 'bg-emerald-700 dark:bg-emerald-500 text-white dark:text-gray-900'
-                                : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-emerald-700 dark:text-emerald-500 hover:bg-purple-100 dark:hover:bg-gray-700 hover:border-transparent'
+                                ? 'bg-emerald-700 dark:bg-emerald-400 text-white dark:text-gray-900'
+                                : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-gray-700 hover:border-transparent'
                         )}
                         onClick={() => setViewHandler(item.view)}
                         onKeyDown={(e) => itemKeyDownHandler(e, item.view, index)}

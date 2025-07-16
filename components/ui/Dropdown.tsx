@@ -127,7 +127,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                                 'text-sm xl:text-base',
                                 'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-500 focus-visible:outline-offset-[var(--ring-offset)]',
                                 isSelected
-                                    ? 'bg-emerald-700 dark:bg-emerald-500 text-white dark:text-gray-900 hover:bg-emerald-800 dark:font-medium'
+                                    ? 'bg-emerald-700 dark:bg-emerald-400 text-white dark:text-gray-900 hover:bg-emerald-800 dark:font-medium'
                                     : 'hover:bg-gray-100 dark:hover:bg-gray-800'
                             )}
                             onClick={(event) => setSelectedOptionHandler(event, item)}

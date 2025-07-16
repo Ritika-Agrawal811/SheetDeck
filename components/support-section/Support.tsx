@@ -11,7 +11,7 @@ import VisitRepositoryButton from './VisitRepositoryButton';
 
 const Support = () => {
     return (
-        <section className={clsx('py-20 bg-purple-200 dark:bg-neutral-800', 'relative')}>
+        <section className={clsx('py-20 bg-primary', 'relative')}>
             <div className={clsx('flex flex-col gap-4 items-center', 'relative z-20')}>
                 {/* Title */}
                 <h2 className="text-3xl sm:text-4xl xl:text-5xl 2xl:text-6xl">
@@ -25,7 +25,7 @@ const Support = () => {
                 {/* Subtitle */}
                 <p className={clsx('sm:text-lg xl:text-xl 2xl:text-2xl', 'flex flex-col sm:flex-row items-center gap-1')}>
                     <span className="font-medium">
-                        Found these cheat sheets <span className={clsx('text-emerald-700 dark:text-emerald-500 font-medium')}>helpful</span>
+                        Found these cheat sheets <span className={clsx('text-emerald-600 dark:text-emerald-400 font-medium')}>helpful</span>
                         ?
                     </span>
                     <span className="flex gap-1 items-center">

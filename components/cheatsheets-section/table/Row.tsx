@@ -63,7 +63,7 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
                         'p-1.5 lg:p-2 shadow',
                         'text-emerald-700 dark:text-emerald-500 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700',
                         'rounded-md cursor-pointer group transition duration-300',
-                        'hover:bg-purple-100 dark:hover:bg-gray-700 hover:border-transparent',
+                        'hover:bg-emerald-50 dark:hover:bg-gray-700 hover:border-transparent',
                         'flex gap-2 items-center',
                         'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-400'
                     )}

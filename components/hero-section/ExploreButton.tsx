@@ -25,7 +25,7 @@ const ExploreButton = () => {
                     'focus:outline-none focus-visible:border-transparent focus-visible:ring-3 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-offset-[var(--ring-offset)]',
                     'w-24 h-24 sm:w-28 sm:h-28 2xl:w-30 2xl:h-30',
                     'relative cursor-pointer rounded-full',
-                    'shadow-xl shadow-purple-100 dark:shadow-lg dark:shadow-gray-800'
+                    'shadow-xl shadow-purple-50 dark:shadow-lg dark:shadow-gray-800'
                 )}
                 onClick={() => setScroll(true)}
             >

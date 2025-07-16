@@ -21,7 +21,7 @@ const SearchSummary = () => {
                 <button
                     className={clsx(
                         'inline-block rounded-full cursor-pointer group transition duration-300',
-                        'hover:text-emerald-700 dark:hover:text-emerald-600'
+                        'hover:text-emerald-600 dark:hover:text-emerald-500'
                     )}
                     onClick={reset}
                 >
@@ -45,7 +45,7 @@ const SearchSummary = () => {
         <div className="flex gap-2 items-center">
             {/* prev button */}
             <button
-                className={clsx('inline-block rounded-full cursor-pointer group transition duration-300', 'hover:text-emerald-700')}
+                className={clsx('inline-block rounded-full cursor-pointer group transition duration-300', 'hover:text-emerald-600')}
                 onClick={reset}
             >
                 <span className="sr-only">Clear search results</span>

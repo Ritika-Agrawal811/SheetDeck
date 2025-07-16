@@ -22,7 +22,8 @@ const ThemeToggle = () => {
                     'p-2.5 rounded-full cursor-pointer',
                     'bg-gray-800 border border-gray-700 dark:hover:bg-gray-700',
                     isDark ? 'block' : 'hidden',
-                    'focus:outline-none focus-visible:ring-2 ring-blue-500'
+                    'focus:outline-none focus-visible:ring-2 ring-blue-500',
+                    'group transition duration-300'
                 )}
                 onClick={() => toggleTheme(false)}
             >
@@ -30,7 +31,7 @@ const ThemeToggle = () => {
                     icon={IoSunny}
                     aria-hidden="true"
                     size="text-xl md:text-2xl lg:text-xl 2xl:text-2xl"
-                    className="pointer-events-none"
+                    className="group-hover:scale-110 transition duration-300 pointer-events-none"
                 />
             </button>
 
@@ -40,13 +41,19 @@ const ThemeToggle = () => {
                 aria-label="Dark Mode"
                 className={clsx(
                     'p-2 rounded-full cursor-pointer',
-                    'shadow bg-white border border-gray-200 hover:bg-purple-100',
+                    'shadow bg-white border border-gray-200 hover:bg-emerald-50',
                     isDark ? 'hidden' : 'block',
-                    'focus:outline-none focus-visible:ring-2 ring-blue-500'
+                    'focus:outline-none focus-visible:ring-2 ring-blue-500',
+                    'group transition duration-300'
                 )}
                 onClick={() => toggleTheme(true)}
             >
-                <Icon icon={IoMoon} aria-hidden="true" size="text-xl md:text-2xl lg:text-xl 2xl:text-2xl" className="pointer-events-none" />
+                <Icon
+                    icon={IoMoon}
+                    aria-hidden="true"
+                    size="text-xl md:text-2xl lg:text-xl 2xl:text-2xl"
+                    className="group-hover:scale-110 transition duration-300 pointer-events-none"
+                />
             </button>
         </div>
     );

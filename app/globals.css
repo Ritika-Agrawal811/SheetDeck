@@ -6,12 +6,16 @@
     --background: #ffffff;
     --foreground: #171717;
     --ring-offset: #ffffff;
+    --color-primary: #fffae2;
+    --color-border-primary: #c19a6b;
 }
 
 .dark {
     --background: #151515;
     --foreground: #ededed;
     --ring-offset: #151515;
+    --color-primary: #262626;
+    --color-border-primary: #4a5565;
 }
 
 @theme inline {
@@ -29,6 +33,14 @@ body {
     background: var(--background);
     color: var(--foreground);
     font-family: var(--font-primary);
+}
+
+.bg-primary {
+    background-color: var(--color-primary);
+}
+
+.border-primary {
+    border-color: var(--color-border-primary);
 }
 
 .font-anta {
