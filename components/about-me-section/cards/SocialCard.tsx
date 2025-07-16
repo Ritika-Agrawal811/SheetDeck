@@ -11,19 +11,19 @@ import Icon from '@/components/ui/Icon';
 const cardVariants = {
     size: {
         small: {
-            card: 'p-3 gap-3 sm:p-4 sm:gap-4 3xl:p-6 3xl:gap-6',
-            label: 'text-base 2xl:text-lg 3xl:text-xl',
-            icon: 'text-4xl md:text-5xl',
+            card: 'p-3 gap-3 sm:p-4 sm:gap-4 4xl:p-6 4xl:gap-6',
+            label: 'text-base 3xl:text-lg 4xl:text-xl',
+            icon: 'text-4xl md:text-5xl xl:text-4xl 3xl:text-5xl',
         },
         default: {
-            card: 'p-3 gap-3 sm:py-4 sm:px-4 xl:px-6 gap-4 xl:gap-6 3xl:px-8 3xl:gap-8',
-            label: 'text-lg 2xl:text-xl 3xl:text-2xl',
-            icon: 'text-4xl md:text-5xl 3xl:text-6xl',
+            card: 'p-3 gap-3 sm:py-4 sm:px-4 3xl:px-6 gap-4 3xl:gap-6 4xl:px-8 4xl:gap-8',
+            label: 'text-lg 3xl:text-xl 4xl:text-2xl',
+            icon: 'text-4xl md:text-5xl xl:text-4xl 3xl:text-5xl 4xl:text-6xl',
         },
         big: {
-            card: 'py-4 px-6 xl:px-8 gap-6 xl:gap-8 3xl:px-10 3xl:gap-10',
-            label: 'text-lg md:text-xl 2xl:text-2xl',
-            icon: 'text-5xl md:text-6xl 3xl:text-7xl',
+            card: 'py-4 px-6 3xl:px-8 gap-6 3xl:gap-8 4xl:px-10 4xl:gap-10',
+            label: 'text-lg md:text-xl 3xl:text-2xl',
+            icon: 'text-5xl md:text-6xl xl:text-5xl 3xl:text-6xl 4xl:text-7xl',
         },
     },
     orientation: {
@@ -34,9 +34,9 @@ const cardVariants = {
 
 // specific width classes for vertical orientation based on size
 const verticalWidthClasses = {
-    small: 'w-28 3xl:w-32',
-    default: 'w-32 xl:w-36 3xl:w-40',
-    big: 'w-32 md:w-36 xl:w-40 3xl:w-44',
+    small: 'w-28 4xl:w-32',
+    default: 'w-32 3xl:w-36 4xl:w-40',
+    big: 'w-32 md:w-36 3xl:w-40 4xl:w-44',
 };
 
 interface SocialCardProps {
