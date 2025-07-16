@@ -7,7 +7,13 @@ import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
     return (
-        <nav className={clsx('pt-6 lg:pt-8 2xl:pt-12', 'w-11/12 md:w-4/5 mx-auto', 'flex items-center justify-between')}>
+        <nav
+            className={clsx(
+                'pt-6 lg:pt-8 3xl:pt-12',
+                'w-11/12 2xl:w-[85%] 3xl:w-4/5 max-w-screen-3xl mx-auto',
+                'flex items-center justify-between'
+            )}
+        >
             <Logo />
             <ThemeToggle />
         </nav>

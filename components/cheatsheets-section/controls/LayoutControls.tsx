@@ -56,7 +56,7 @@ const LayoutControls: React.FC<LayoutControlsProps> = ({ view, setViewHandler })
                         <span className="sr-only">Switch to {item.view} view</span>
                         <Icon
                             icon={item.icon}
-                            size="text-xl xl:text-2xl"
+                            size="text-xl 3xl:text-2xl"
                             aria-hidden="true"
                             className="group-hover:scale-110 transition duration-300"
                         />

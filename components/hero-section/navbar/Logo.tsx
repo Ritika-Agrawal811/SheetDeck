@@ -19,7 +19,7 @@ const Logo = () => {
                 height={50}
                 priority
                 quality={70}
-                className="origin-left scale-80 xl:scale-100"
+                className="origin-left scale-80 xl:scale-90 3xl:scale-100"
             />
         </div>
     );
