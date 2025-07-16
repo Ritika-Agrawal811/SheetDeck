@@ -18,6 +18,7 @@ const Logo = () => {
                 width={200}
                 height={50}
                 priority
+                quality={70}
                 className="origin-left scale-80 xl:scale-100"
             />
         </div>
