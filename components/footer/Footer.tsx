@@ -1,6 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
 
+// components
+import Logo from '@/components/hero-section/navbar/Logo';
+
 const Footer = () => {
     const currentYear = new Date().getFullYear();
 
@@ -12,9 +15,12 @@ const Footer = () => {
                 'p-6 mt-16 md:mb-6',
                 'bg-purple-50 dark:bg-neutral-800 md:rounded-xl',
                 'border-b border-purple-200 dark:border-gray-600',
-                'text-sm md:text-base 3xl:text-lg text-center sm:text-right'
+                'text-sm md:text-base 3xl:text-lg',
+                'flex flex-col sm:flex-row items-start sm:items-center justify-between',
+                'gap-4 sm:gap-0'
             )}
         >
+            <Logo />
             <p>
                 &copy; {currentYear} <span className="text-emerald-700 dark:text-emerald-500">Ritika Agrawal</span> | All rights reserved.
             </p>
