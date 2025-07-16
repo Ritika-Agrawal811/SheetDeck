@@ -257,7 +257,7 @@
                 "title": "Destructuring",
                 "tag": "javascript",
                 "category": "advanced-syntax",
-                "image": "/js-cheatsheets/advanced-syntax/destructuring.jpg"
+                "image": "/js-cheatsheets/advanced-syntax/destructuring-assignment.jpg"
             },
             {
                 "id": "js-template-literal",
@@ -273,7 +273,7 @@
                 "title": "Document Object Model",
                 "tag": "javascript",
                 "category": "dom-manipulation",
-                "image": "/js-cheatsheets/dom-manipulation/dom.jpg"
+                "image": "/js-cheatsheets/dom-manipulation/document-object-model.jpg"
             },
             {
                 "id": "js-event-propagation",
