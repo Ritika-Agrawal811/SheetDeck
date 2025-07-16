@@ -28,7 +28,7 @@ const BackgroundSoftGradient = ({ size = 'default', position = 'center', classNa
         <div
             className={clsx(
                 'absolute -z-10',
-                'bg-radial from-purple-50 dark:hidden from-0% to-transparent to-60%',
+                'bg-radial from-purple-100 dark:hidden from-0% to-transparent to-60%',
                 gradientVariants.size[size],
                 gradientVariants.position[position],
                 className

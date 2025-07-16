@@ -85,7 +85,7 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
                             'p-2 shadow absolute right-2 top-2',
                             'text-emerald-700 dark:text-emerald-500 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700',
                             'inline-block rounded-full cursor-pointer group/icon transition duration-300',
-                            'hover:bg-purple-50 dark:hover:bg-gray-700 hover:border-transparent',
+                            'hover:bg-purple-100 dark:hover:bg-gray-700 hover:border-transparent',
                             'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-offset-[var(--ring-offset)]'
                         )}
                         download={downloadFileName}

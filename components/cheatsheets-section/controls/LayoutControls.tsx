@@ -47,7 +47,7 @@ const LayoutControls: React.FC<LayoutControlsProps> = ({ view, setViewHandler })
                             'group transition duration-300',
                             view === item.view
                                 ? 'bg-emerald-700 dark:bg-emerald-500 text-white dark:text-gray-900'
-                                : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-emerald-700 dark:text-emerald-500 hover:bg-purple-50 dark:hover:bg-gray-700 hover:border-transparent'
+                                : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-emerald-700 dark:text-emerald-500 hover:bg-purple-100 dark:hover:bg-gray-700 hover:border-transparent'
                         )}
                         onClick={() => setViewHandler(item.view)}
                         onKeyDown={(e) => itemKeyDownHandler(e, item.view, index)}

@@ -40,7 +40,7 @@ const ThemeToggle = () => {
                 aria-label="Dark Mode"
                 className={clsx(
                     'p-2 rounded-full cursor-pointer',
-                    'shadow bg-white border border-gray-200 hover:bg-purple-50',
+                    'shadow bg-white border border-gray-200 hover:bg-purple-100',
                     isDark ? 'hidden' : 'block',
                     'focus:outline-none focus-visible:ring-2 ring-blue-500'
                 )}

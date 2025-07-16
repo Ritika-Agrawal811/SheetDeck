@@ -55,7 +55,7 @@ const CategoriesModal = () => {
                             <CloseBtn onClose={() => setOpen(false)} />
                         </header>
 
-                        <ul role="tablist" className={clsx('flex', 'mt-2 mb-6 border-b border-purple-200 dark:border-gray-600')}>
+                        <ul role="tablist" className={clsx('flex', 'mt-2 mb-6 border-b border-purple-100 dark:border-gray-600')}>
                             {topics.map((tag) => {
                                 const color = TAGS_INFO[tag].color;
                                 const isSelected = activeCategory.topic === tag;

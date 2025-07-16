@@ -11,7 +11,7 @@ import VisitRepositoryButton from './VisitRepositoryButton';
 
 const Support = () => {
     return (
-        <section className={clsx('py-20 bg-purple-50 dark:bg-neutral-800', 'relative')}>
+        <section className={clsx('py-20 bg-purple-100 dark:bg-neutral-800', 'relative')}>
             <div className={clsx('flex flex-col gap-4 items-center', 'relative z-20')}>
                 {/* Title */}
                 <h2 className="text-3xl sm:text-4xl xl:text-5xl 2xl:text-6xl">

@@ -31,7 +31,7 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                     'inline-block rounded-full cursor-pointer',
                     'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-500',
                     'disabled:bg-gray-50 dark:disabled:bg-gray-400 disabled:text-gray-600 dark:disabled:text-gray-700 disabled:cursor-not-allowed',
-                    currentPage !== 1 && 'group transition duration-300 hover:bg-purple-50 dark:hover:bg-gray-700 hover:border-transparent'
+                    currentPage !== 1 && 'group transition duration-300 hover:bg-purple-100 dark:hover:bg-gray-700 hover:border-transparent'
                 )}
                 onClick={goToPrevPage}
                 disabled={currentPage === 1}
@@ -93,7 +93,7 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                     'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-500',
                     'disabled:bg-gray-50 dark:disabled:bg-gray-400 disabled:text-gray-600 dark:disabled:text-gray-700 disabled:cursor-not-allowed',
                     currentPage !== totalPages &&
-                        'group transition duration-300 hover:bg-purple-50 dark:hover:bg-gray-700 hover:border-transparent'
+                        'group transition duration-300 hover:bg-purple-100 dark:hover:bg-gray-700 hover:border-transparent'
                 )}
                 onClick={goToNextPage}
                 disabled={currentPage === totalPages}
