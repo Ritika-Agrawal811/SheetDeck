@@ -23,13 +23,16 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        setTimeout(() => setIsLoading(false), 300);
-    }, []);
+        if (details) {
+            setIsLoading(true);
+            setTimeout(() => setIsLoading(false), 300);
+        }
+    }, [details]);
 
     return (
         <>
             {details && (
-                <Modal open={open} onClose={onClose}>
+                <Modal key={details?.id} open={open} onClose={onClose}>
                     <section className={clsx('w-full', 'h-screen flex flex-col lg:flex-row-reverse')} onClick={onClose}>
                         <header
                             className={clsx('w-full lg:w-1/4', 'border-b lg:border-l border-b-gray-800 lg:border-l-gray-800 bg-black/10')}
