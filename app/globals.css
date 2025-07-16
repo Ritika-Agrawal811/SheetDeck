@@ -5,11 +5,13 @@
 :root {
     --background: #ffffff;
     --foreground: #171717;
+    --ring-offset: #ffffff;
 }
 
 .dark {
     --background: #151515;
     --foreground: #ededed;
+    --ring-offset: #151515;
 }
 
 @theme inline {

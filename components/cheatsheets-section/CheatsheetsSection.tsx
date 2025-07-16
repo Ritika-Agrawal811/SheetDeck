@@ -24,7 +24,7 @@ const CheatsheetsSection = () => {
     const { breakpoint } = useScreenBreakpoint();
     const { activeCategory, updateCategoryAndCheatsheets } = useCategory();
     const { tab, subtab, id } = useQueryParams();
-    const { isDark } = useTheme();
+    const { isDark, hasMounted } = useTheme();
 
     const [view, setView] = useState<'grid' | 'list'>('grid');
     const [hasInitialized, setHasInitialized] = useState(false);
@@ -71,14 +71,16 @@ const CheatsheetsSection = () => {
             ref={cheatsheetsRef}
             className={clsx('w-full md:w-11/12 2xl:w-4/5 max-w-screen-3xl mx-auto', 'my-20 xl:my-28 space-y-16', 'scroll-m-4')}
         >
-            <Badge
-                size="default"
-                color={isDark ? '#d8b4fe' : '#6d11af'}
-                shape="pill"
-                className="mx-auto shadow-xl shadow-purple-100 dark:shadow-lg dark:shadow-gray-800"
-            >
-                Cheat Sheets
-            </Badge>
+            {hasMounted && (
+                <Badge
+                    size="default"
+                    color={isDark ? '#d8b4fe' : '#6d11af'}
+                    shape="pill"
+                    className="mx-auto shadow-xl shadow-purple-100 dark:shadow-lg dark:shadow-gray-800"
+                >
+                    Cheat Sheets
+                </Badge>
+            )}
             <Header />
             {breakpoint === 'xs' ? (
                 <ControlsMobile view={view} setViewHandler={setViewHandler} />

@@ -7,6 +7,19 @@ export default function Head() {
             <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
             <link rel="manifest" href="/assets/favicon/site.webmanifest" />
             <meta name="theme-color" content="#ffffff" />
+
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `
+                    try {
+                        const theme = localStorage.getItem('theme');
+                        if (theme === 'dark') {
+                        document.documentElement.classList.add('dark');
+                        }
+                    } catch(e) {}
+                    `,
+                }}
+            />
         </>
     );
 }
