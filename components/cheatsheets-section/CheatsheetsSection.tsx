@@ -76,7 +76,7 @@ const CheatsheetsSection = () => {
                     size="default"
                     color={isDark ? '#d8b4fe' : '#6d11af'}
                     shape="pill"
-                    className="mx-auto shadow-xl shadow-purple-100 dark:shadow-lg dark:shadow-gray-800"
+                    className="mx-auto shadow-xl shadow-purple-50 dark:shadow-lg dark:shadow-gray-800"
                 >
                     Cheat Sheets
                 </Badge>

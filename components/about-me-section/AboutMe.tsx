@@ -25,7 +25,7 @@ const AboutMe = () => {
                     size="default"
                     color={isDark ? '#d8b4fe' : '#6d11af'}
                     shape="pill"
-                    className="shadow-xl shadow-purple-100 dark:shadow-lg dark:shadow-gray-800"
+                    className="shadow-xl shadow-purple-50 dark:shadow-lg dark:shadow-gray-800"
                 >
                     About Me
                 </Badge>

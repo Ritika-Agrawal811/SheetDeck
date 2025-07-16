@@ -44,7 +44,7 @@ const Controls: React.FC<ControlsProps> = ({ view, setViewHandler }) => {
                     'sm:before:absolute before:content-[""] before:w-[125%] md:before:w-[130%] 2xl:before:w-[150%] before:h-full before:-left-1/4 before:top-0',
                     'before:-z-10',
                     showSticky &&
-                        'before:bg-purple-200 dark:before:bg-neutral-800 before:border-b before:border-purple-300 dark:before:border-gray-600'
+                        'before:bg-[#f7ece0] dark:before:bg-neutral-800 before:border-b before:border-[var(--color-border-primary)] dark:before:border-gray-600'
                 )}
             >
                 {/* for tablets and laptops */}

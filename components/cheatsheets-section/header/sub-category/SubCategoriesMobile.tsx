@@ -22,12 +22,7 @@ const SubCategoriesMobile = () => {
                 aria-haspopup="dialog"
                 aria-expanded={open}
                 id="sub-cateogy-mobile-dropdown"
-                className={clsx(
-                    'flex flex-col items-start gap-1',
-                    'bg-purple-100 dark:bg-neutral-800',
-                    'w-full p-3',
-                    'rounded-xl border border-purple-200 dark:border-gray-600'
-                )}
+                className={clsx('flex flex-col items-start gap-1', 'bg-primary', 'w-full p-3', 'rounded-xl border border-primary')}
                 onClick={() => setOpen(true)}
             >
                 <span className="font-medium text-lg">Category</span>
@@ -46,7 +41,7 @@ const SubCategoriesMobile = () => {
                             <h3 className="text-lg font-medium">Select a category</h3>
                             <CloseBtn onClose={() => setOpen(false)} />
                         </header>
-                        <hr className="h-px border-purple-200 dark:border-gray-600 my-4" />
+                        <hr className="h-px border-primary my-4" />
                         <List className={clsx('flex flex-wrap justify-center gap-3')} size="tiny" showImage={false} />
                     </div>
                 </section>
