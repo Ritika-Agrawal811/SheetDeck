@@ -19,7 +19,7 @@ import GumroadCard from './cards/GumroadCard';
 const AboutMe = () => {
     const { isDark } = useTheme();
     return (
-        <section className="my-20 xl:my-28">
+        <section className="my-20 3xl:my-28">
             <div className={clsx('flex flex-col items-center gap-16')}>
                 <Badge
                     size="default"
