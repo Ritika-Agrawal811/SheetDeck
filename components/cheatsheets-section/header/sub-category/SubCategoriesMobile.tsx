@@ -26,7 +26,7 @@ const SubCategoriesMobile = () => {
                     'flex flex-col items-start gap-1',
                     'bg-purple-100 dark:bg-neutral-800',
                     'w-full p-3',
-                    'rounded-xl border border-purple-100 dark:border-gray-600'
+                    'rounded-xl border border-purple-200 dark:border-gray-600'
                 )}
                 onClick={() => setOpen(true)}
             >
@@ -46,7 +46,7 @@ const SubCategoriesMobile = () => {
                             <h3 className="text-lg font-medium">Select a category</h3>
                             <CloseBtn onClose={() => setOpen(false)} />
                         </header>
-                        <hr className="h-px border-purple-100 dark:border-gray-600 my-4" />
+                        <hr className="h-px border-purple-200 dark:border-gray-600 my-4" />
                         <List className={clsx('flex flex-wrap justify-center gap-3')} size="tiny" showImage={false} />
                     </div>
                 </section>
