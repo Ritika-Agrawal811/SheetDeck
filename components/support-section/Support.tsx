@@ -14,7 +14,7 @@ const Support = () => {
         <section className={clsx('py-20 bg-primary', 'relative')}>
             <div className={clsx('flex flex-col gap-4 items-center', 'relative z-20')}>
                 {/* Title */}
-                <h2 className="text-3xl sm:text-4xl 3xl:text-6xl">
+                <h2 className="text-3xl sm:text-4xl 2xl:text-5xl 3xl:text-6xl">
                     Show your{' '}
                     <span className={clsx('font-medium text-purple-800 dark:text-purple-400', `${platypi.variable} font-platypi`)}>
                         support
@@ -23,7 +23,7 @@ const Support = () => {
                 </h2>
 
                 {/* Subtitle */}
-                <p className={clsx('sm:text-lg xl:text-xl 3xl:text-2xl', 'flex flex-col sm:flex-row items-center gap-1')}>
+                <p className={clsx('sm:text-lg 2xl:text-xl 3xl:text-2xl', 'flex flex-col sm:flex-row items-center gap-1')}>
                     <span className="font-medium">
                         Found these cheat sheets <span className={clsx('text-emerald-600 dark:text-emerald-400 font-medium')}>helpful</span>
                         ?
