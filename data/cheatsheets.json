@@ -22,7 +22,7 @@
                 "title": "target Attribute",
                 "tag": "html",
                 "category": "attributes",
-                "image": "/html-cheatsheets/attributes/target.png"
+                "image": "/html-cheatsheets/attributes/target.jpg"
             },
             {
                 "id": "html-download-attribute",
@@ -44,6 +44,27 @@
                 "tag": "html",
                 "category": "attributes",
                 "image": "/html-cheatsheets/attributes/inputmode.jpg"
+            },
+            {
+                "id": "html-tabindex-attribute",
+                "title": "tabindex Attribute",
+                "tag": "html",
+                "category": "attributes",
+                "image": "/html-cheatsheets/attributes/tabindex.jpg"
+            },
+            {
+                "id": "html-disabled-attribute",
+                "title": "disabled Attribute",
+                "tag": "html",
+                "category": "attributes",
+                "image": "/html-cheatsheets/attributes/disabled.jpg"
+            },
+            {
+                "id": "html-accept-attribute",
+                "title": "accept Attribute",
+                "tag": "html",
+                "category": "attributes",
+                "image": "/html-cheatsheets/attributes/accept.jpg"
             }
         ],
         "elements": [
@@ -52,7 +73,7 @@
                 "title": "<picture> Element",
                 "tag": "html",
                 "category": "elements",
-                "image": "/html-cheatsheets/elements/picture.png"
+                "image": "/html-cheatsheets/elements/picture.jpg"
             }
         ]
     },
@@ -63,7 +84,7 @@
                 "title": "CSS Variables",
                 "tag": "css",
                 "category": "concepts",
-                "image": "/css-cheatsheets/concepts/css-variables.png"
+                "image": "/css-cheatsheets/concepts/css-variables.jpg"
             },
             {
                 "id": "css-hsl-colors",
@@ -93,7 +114,7 @@
                 "title": "accent-color Property",
                 "tag": "css",
                 "category": "properties",
-                "image": "/css-cheatsheets/properties/accent-color.png"
+                "image": "/css-cheatsheets/properties/accent-color.jpg"
             },
             {
                 "id": "css-border-property",
@@ -137,7 +158,7 @@
                 "title": ":focus-within Pseudo Class",
                 "tag": "css",
                 "category": "pseudo-classes",
-                "image": "/css-cheatsheets/pseudo-classes/focus-within.png"
+                "image": "/css-cheatsheets/pseudo-classes/focus-within.jpg"
             },
             {
                 "id": "css-not-pseudo-class",
