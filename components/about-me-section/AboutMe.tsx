@@ -30,13 +30,13 @@ const AboutMe = () => {
                     About Me
                 </Badge>
 
-                <div className={clsx('flex flex-col sm:flex-row', 'gap-4 2xl:gap-6 relative')}>
+                <div className={clsx('flex flex-col sm:flex-row', 'gap-4 3xl:gap-6 relative')}>
                     <BackgroundSoftGradient />
 
                     {/* left container */}
-                    <div className="space-y-4 2xl:space-y-6">
+                    <div className="space-y-4 3xl:space-y-6">
                         {/* upper row */}
-                        <div className={clsx('flex flex-col-reverse sm:flex-row', 'gap-4 2xl:gap-6 items-center sm:items-end')}>
+                        <div className={clsx('flex flex-col-reverse sm:flex-row', 'gap-4 3xl:gap-6 items-center sm:items-end')}>
                             <GitHubCard />
 
                             <div>
@@ -46,8 +46,8 @@ const AboutMe = () => {
                         </div>
 
                         {/* lower row */}
-                        <div className={clsx('flex flex-row', 'gap-4 2xl:gap-6 items-start sm:justify-end')}>
-                            <div className={clsx('flex flex-col', 'gap-4 2xl:gap-6 items-end')}>
+                        <div className={clsx('flex flex-row', 'gap-4 3xl:gap-6 items-start sm:justify-end')}>
+                            <div className={clsx('flex flex-col', 'gap-4 3xl:gap-6 items-end')}>
                                 <div className="sm:hidden">
                                     <GumroadCard />
                                 </div>

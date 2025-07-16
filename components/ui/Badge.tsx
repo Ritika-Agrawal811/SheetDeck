@@ -9,7 +9,7 @@ const tagsVariants = {
     size: {
         tiny: 'text-[13px] py-1 px-2 border',
         small: 'px-3 py-1 border text-sm',
-        default: 'px-4 py-1.5 dark:py-2 border-2 dark:border text-sm lg:text-base 3xl:text-lg',
+        default: 'px-4 py-1.5 dark:py-2 border-2 dark:border text-sm lg:text-base 2xl:text-sm 3xl:text-base 4xl:text-lg',
         big: 'px-7 py-2 text-lg border-2',
     },
     shape: {
