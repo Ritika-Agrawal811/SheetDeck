@@ -15,7 +15,7 @@ const Footer = () => {
                 'p-6 mt-16 md:mb-6',
                 'bg-primary md:rounded-xl',
                 'border-b border-primary',
-                'text-sm md:text-base 3xl:text-lg',
+                'text-sm md:text-base',
                 'flex flex-col sm:flex-row items-start sm:items-center justify-between',
                 'gap-4 sm:gap-0'
             )}
