@@ -23,7 +23,7 @@ const ExploreButton = () => {
                     'border-2 border-purple-800 dark:border-purple-300',
                     'bg-transparent',
                     'focus:outline-none focus-visible:border-transparent focus-visible:ring-3 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-offset-[var(--ring-offset)]',
-                    'w-24 h-24 sm:w-28 sm:h-28 2xl:w-30 2xl:h-30',
+                    'w-24 h-24 sm:w-28 sm:h-28 3xl:w-30 3xl:h-30',
                     'relative cursor-pointer rounded-full',
                     'shadow-xl shadow-purple-50 dark:shadow-lg dark:shadow-gray-800'
                 )}
@@ -41,7 +41,7 @@ const ExploreButton = () => {
                                 'font-bold uppercase',
                                 'text-purple-800 dark:text-purple-300',
                                 `${platypi.variable} font-platypi`,
-                                'sm:text-lg 2xl:text-xl'
+                                'sm:text-lg 3xl:text-xl'
                             )}
                             style={{ transform: `rotate(${-75 + 25 * index}deg)` }}
                         >
@@ -59,7 +59,7 @@ const ExploreButton = () => {
                         'bg-purple-800 dark:bg-purple-300 text-white dark:text-gray-900'
                     )}
                 >
-                    <Icon icon={IoArrowDown} size="text-xl sm:text-2xl 2xl:text-3xl" />
+                    <Icon icon={IoArrowDown} size="text-xl sm:text-2xl 3xl:text-3xl" />
                 </span>
             </button>
         </div>

@@ -65,7 +65,7 @@ const TopicsLoop = () => {
                                     'w-full sm:w-1/2 md:w-[calc(100%/3)] lg:w-[calc(100%/4)]',
                                     'inline-flex justify-between items-center',
                                     ` ${castoro.variable} font-castoro font-bold`,
-                                    'text-3xl xl:text-4xl 2xl:text-5xl'
+                                    'text-3xl xl:text-4xl 3xl:text-5xl'
                                 )}
                                 style={{ color: TAGS_INFO[topic].color }}
                             >
