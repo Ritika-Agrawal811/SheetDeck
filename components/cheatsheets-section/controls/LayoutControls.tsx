@@ -33,7 +33,7 @@ const LayoutControls: React.FC<LayoutControlsProps> = ({ view, setViewHandler })
     };
 
     return (
-        <ul role="radiogroup" className={clsx('flex gap-2 xl:gap-3')} onKeyDown={parentKeyDownHandler}>
+        <ul role="radiogroup" className={clsx('flex gap-2 3xl:gap-3')} onKeyDown={parentKeyDownHandler}>
             {gridViews.map((item, index) => {
                 return (
                     <li
