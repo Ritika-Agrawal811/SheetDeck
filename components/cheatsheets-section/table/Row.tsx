@@ -20,9 +20,9 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
         <tr className="border-b border-gray-200 dark:border-gray-600 sm:border-none">
             <td
                 className={clsx(
-                    'px-4 py-5 lg:p-4 3xl:px-6 font-medium',
+                    'px-4 py-5 lg:p-4 4xl:px-6 font-medium',
                     'cursor-pointer hover:text-purple-800 dark:hover:text-purple-300',
-                    'text-base 3xl:text-lg'
+                    'text-base 4xl:text-lg'
                 )}
                 onClick={onClick}
             >
@@ -31,19 +31,19 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
                     {TAGS_INFO[tag].title}
                 </Badge>
             </td>
-            <td className={clsx('px-4 py-5 sm:p-43xl:px-6', 'hidden sm:table-cell')}>
-                <Badge size="small" color={TAGS_INFO[tag].color} shape="pill" className="3xl:text-base">
+            <td className={clsx('px-4 py-5 sm:p-4 4xl:px-6', 'hidden sm:table-cell')}>
+                <Badge size="small" color={TAGS_INFO[tag].color} shape="pill" className="4xl:text-base">
                     {TAGS_INFO[tag].title}
                 </Badge>
             </td>
-            <td className={clsx('px-4 py-5 sm:p-4 3xl:px-6', 'flex items-center justify-start', 'gap-3 sm:gap-4 3xl:gap-5')}>
+            <td className={clsx('px-4 py-5 sm:p-4 4xl:px-6', 'flex items-center justify-start', 'gap-3 sm:gap-4 4xl:gap-5')}>
                 <button
                     className={clsx(
                         'bg-white dark:bg-neutral-900 text-purple-800 dark:text-purple-300',
                         'border border-purple-800 dark:border-purple-300',
                         'rounded-md cursor-pointer',
                         'group transition-colors duration-150 hover:bg-purple-800 hover:text-white',
-                        '3xl:text-lg',
+                        '4xl:text-lg',
                         'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-400'
                     )}
                 >
@@ -55,7 +55,7 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
                         tabIndex={-1}
                     >
                         <span className="hidden lg:inline">Download</span>
-                        <Icon icon={IoMdDownload} aria-hidden={true} size="text-xl xs:text-[22px] lg:text-2xl 3xl:text-[26px]" />
+                        <Icon icon={IoMdDownload} aria-hidden={true} size="text-xl xs:text-[22px] lg:text-xl 3xl:text-2xl" />
                     </a>
                 </button>
                 <button
@@ -72,7 +72,7 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
                     <span className="sr-only">View details for cheat sheet: {title}</span>
                     <Icon
                         icon={IoMdEye}
-                        size="text-xl xs:text-[22px] lg:text-2xl 3xl:text-[26px]"
+                        size="text-xl xs:text-[22px] lg:text-xl 3xl:text-2xl"
                         className="group-hover:scale-115 transition duration-300"
                         aria-hidden={true}
                     />

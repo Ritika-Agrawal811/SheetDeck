@@ -40,7 +40,7 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                 <span className="sr-only">Go to previous page</span>
                 <Icon
                     icon={IoChevronBack}
-                    size="text-xl md:text-2xl"
+                    size="text-xl md:text-2xl lg:text-xl 3xl:text-2xl"
                     className="group-hover:scale-125 transition duration-300"
                     aria-hidden={true}
                 />
@@ -55,7 +55,7 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                                 aria-current={number === currentPage ? 'page' : undefined}
                                 aria-label={`Go to page ${number}`}
                                 className={clsx(
-                                    'text-lg md:text-xl w-10 h-10 rounded-full cursor-pointer',
+                                    'text-lg md:text-xl lg:text-lg 3xl:text-xl w-10 h-10 rounded-full cursor-pointer',
                                     'flex items-center justify-center',
                                     'focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500',
                                     currentPage === number
@@ -102,7 +102,7 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                 <span className="sr-only">Go to next page</span>
                 <Icon
                     icon={IoChevronForward}
-                    size="text-xl md:text-2xl"
+                    size="text-xl md:text-2xl lg:text-xl 3xl:text-2xl"
                     className="group-hover:scale-125 transition duration-300"
                     aria-hidden={true}
                 />

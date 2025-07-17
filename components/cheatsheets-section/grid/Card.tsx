@@ -96,7 +96,7 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
                         <Icon
                             icon={IoMdDownload}
                             aria-hidden={true}
-                            size="text-xl md:text-2xl lg:text-xl 2xl:text-2xl"
+                            size="text-xl md:text-2xl lg:text-xl 3xl:text-2xl"
                             className="group-hover/icon:scale-120 transition duration-300"
                         />
                     </a>

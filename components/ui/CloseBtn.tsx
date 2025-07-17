@@ -30,7 +30,7 @@ const CloseBtn: React.FC<CloseBtnProps> = ({ onClose, theme = 'dark' }) => {
             onClick={onClose}
         >
             <span className="sr-only">Close modal</span>
-            <Icon icon={IoClose} size="text-xl 2xl:text-2xl 3xl:text-3xl" aria-hidden={true} />
+            <Icon icon={IoClose} size="text-xl 3xl:text-2xl" aria-hidden={true} />
         </button>
     );
 };
