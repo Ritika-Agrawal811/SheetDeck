@@ -69,7 +69,7 @@ const CheatsheetsSection = () => {
     return (
         <section
             ref={cheatsheetsRef}
-            className={clsx('w-full md:w-11/12 2xl:w-4/5 max-w-screen-3xl mx-auto', 'my-20 xl:my-28 space-y-16', 'scroll-m-4')}
+            className={clsx('w-full md:w-11/12 2xl:w-[85%] 3xl:w-4/5 max-w-screen-3xl mx-auto', 'my-20 xl:my-28 space-y-16', 'scroll-m-4')}
         >
             {hasMounted && (
                 <Badge
