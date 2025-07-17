@@ -51,14 +51,19 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                                     <h3 className="text-white text-lg sm:text-xl md:text-2xl lg:text-xl xl:text-2xl 3xl:text-[28px]">
                                         {details.title}
                                     </h3>
-                                    <Badge size="small" color={TAGS_INFO[details.tag].color} shape="pill" className="text-xs sm:text-sm">
+                                    <Badge
+                                        size="small"
+                                        color={TAGS_INFO[details.tag].color}
+                                        shape="pill"
+                                        className="text-xs sm:text-sm bg-gray-900"
+                                    >
                                         {TAGS_INFO[details.tag].title}
                                     </Badge>
                                 </div>
 
                                 <button
                                     className={clsx(
-                                        'bg-purple-800 xl:text-lg 3xl:text-xl text-white',
+                                        'bg-purple-800 3xl:text-xl text-white',
                                         'rounded-md cursor-pointer border-2 border-transparent lg:mt-6',
                                         'transition duration-150 hover:bg-purple-900',
                                         'focus:outline-none focus-visible:border-blue-500'
