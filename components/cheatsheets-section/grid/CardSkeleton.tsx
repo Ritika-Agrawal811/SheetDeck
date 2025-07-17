@@ -27,7 +27,7 @@ const CardSkeleton = () => {
             {/* Image placeholder */}
             <div
                 className={clsx(
-                    'mt-10 mb-10',
+                    'mt-8 mb-8 3xl:mt-10 3xl:mb-10',
                     'h-[330px] w-full',
                     'bg-gray-200 dark:bg-zinc-600',
                     'rounded animate-pulse',
@@ -38,7 +38,7 @@ const CardSkeleton = () => {
             </div>
 
             {/* Title bubble */}
-            <div className="absolute bottom-0 left-0 right-0 h-12 rounded-t-full bg-slate-100 dark:bg-zinc-800 flex justify-center items-center">
+            <div className="absolute bottom-0 left-0 right-0 h-11 3xl:h-12 rounded-t-full bg-slate-100 dark:bg-zinc-800 flex justify-center items-center">
                 <div className="h-4 w-3/4 bg-gray-300 dark:bg-neutral-500 rounded-full animate-pulse"></div>
             </div>
         </div>

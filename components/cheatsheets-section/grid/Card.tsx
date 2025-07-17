@@ -101,7 +101,7 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
                         />
                     </a>
 
-                    <figure className="mt-10 mb-10 overflow-hidden dark:rounded-lg">
+                    <figure className="mt-8 mb-8 3xl:mt-10 3xl:mb-10 overflow-hidden dark:rounded-lg">
                         <Image
                             src={image}
                             alt={title}
@@ -116,7 +116,7 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
                         className={clsx(
                             'bg-slate-50 dark:bg-zinc-900',
                             'absolute bottom-0 left-0 right-0',
-                            'h-12',
+                            'h-11 3xl:h-12',
                             'rounded-t-full',
                             'flex justify-center items-center'
                         )}
