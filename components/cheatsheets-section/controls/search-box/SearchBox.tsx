@@ -85,7 +85,7 @@ const SearchBox = () => {
             className={clsx(
                 'border border-gray-200 dark:border-gray-600 shadow rounded-md bg-white dark:bg-gray-800',
                 'flex',
-                'relative w-full sm:max-w-[250px] xl:max-w-[300px] h-12 sm:h-10 3xl:h-12'
+                'relative w-full sm:max-w-[250px] xl:max-w-[300px] h-12 sm:h-10 xl:h-11 3xl:h-12'
             )}
             onSubmit={showSearchResultsHandler}
         >
