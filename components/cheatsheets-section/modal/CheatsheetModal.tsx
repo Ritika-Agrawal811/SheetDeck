@@ -37,7 +37,7 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                         <header
                             className={clsx('w-full lg:w-[30%]', 'border-b lg:border-l border-b-gray-800 lg:border-l-gray-800 bg-black/10')}
                         >
-                            <div className="flex justify-end  p-2 md:p-4">
+                            <div className="flex justify-end p-2 md:p-4 xl:p-6">
                                 <CloseBtn onClose={onClose} theme="light" />
                             </div>
 
