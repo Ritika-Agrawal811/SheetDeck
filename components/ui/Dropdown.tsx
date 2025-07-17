@@ -76,7 +76,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
             >
                 <span
                     className={clsx(
-                        'p-2 xl:p-2.5',
+                        'p-2 3xl:p-2.5',
                         'rounded-l-md border-r border-gray-200 dark:border-gray-700',
                         'text-sm xl:text-base',
                         labelClassname
@@ -87,7 +87,12 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                 </span>
 
                 <span
-                    className={clsx('p-2 xl:p-2.5', 'bg-emerald-700 dark:bg-emerald-500 text-white dark:text-gray-900', 'rounded-r-md')}
+                    className={clsx(
+                        'p-2 xl:p-2.5',
+                        'border border-emerald-700 dark:border-emerald-500',
+                        'bg-emerald-700 dark:bg-emerald-500 text-white dark:text-gray-900',
+                        'rounded-r-md'
+                    )}
                     aria-hidden={true}
                 >
                     <Icon icon={IoChevronDownOutline} size="text-xl 3xl:text-2xl" className="pointer-events-none" />
