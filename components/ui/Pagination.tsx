@@ -25,7 +25,7 @@ function Pagination<T>({ data }: PaginationProps<T>) {
             {/* prev button */}
             <button
                 className={clsx(
-                    'p-1.5 md:p-2.5 shadow',
+                    'p-2 xl:p-2.5 shadow',
                     'bg-white dark:bg-gray-800',
                     'text-emerald-700 dark:text-emerald-400 border border-gray-200 dark:border-gray-700',
                     'inline-block rounded-full cursor-pointer',
@@ -86,7 +86,7 @@ function Pagination<T>({ data }: PaginationProps<T>) {
             {/* next button */}
             <button
                 className={clsx(
-                    'p-1.5 md:p-2.5 shadow',
+                    'p-2 xl:p-2.5 shadow',
                     'bg-white dark:bg-gray-800',
                     'text-emerald-700 dark:text-emerald-400 border border-gray-200 dark:border-gray-700',
                     'inline-block rounded-full cursor-pointer',

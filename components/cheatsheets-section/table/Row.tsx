@@ -51,7 +51,7 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
                         href={image}
                         download={downloadFileName}
                         onClick={(event) => event.stopPropagation()}
-                        className={clsx('flex gap-2 items-center', 'p-1.5 lg:p-2 shadow')}
+                        className={clsx('flex gap-2 items-center', 'p-2 xl:p-2.5 shadow')}
                         tabIndex={-1}
                     >
                         <span className="hidden lg:inline">Download</span>
@@ -60,7 +60,7 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
                 </button>
                 <button
                     className={clsx(
-                        'p-1.5 lg:p-2 shadow',
+                        'p-2 xl:p-2.5 shadow',
                         'text-emerald-700 dark:text-emerald-500 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700',
                         'rounded-md cursor-pointer group transition duration-300',
                         'hover:bg-emerald-50 dark:hover:bg-gray-700 hover:border-transparent',
