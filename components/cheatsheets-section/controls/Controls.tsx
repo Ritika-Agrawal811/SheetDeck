@@ -50,7 +50,7 @@ const Controls: React.FC<ControlsProps> = ({ view, setViewHandler }) => {
                 {/* for tablets and laptops */}
                 <div className={clsx('hidden sm:flex', 'items-center justify-between')}>
                     {showSticky && !showSearchResults && (
-                        <div className="hidden lg:flex gap-2 xl:gap-3 items-center">
+                        <div className="hidden lg:flex gap-2 3xl:gap-3 items-center">
                             <TopicsDropdown />
                             <SubCategoriesDropdown />
                         </div>
@@ -58,7 +58,7 @@ const Controls: React.FC<ControlsProps> = ({ view, setViewHandler }) => {
                     <div className={clsx('grow-2', showSticky && 'lg:text-center')}>
                         <ResultsSummary />
                     </div>
-                    <div className={clsx('flex gap-2 xl:gap-3 items-center justify-end', !showSticky && 'grow')}>
+                    <div className={clsx('flex gap-2 3xl:gap-3 items-center justify-end', !showSticky && 'grow')}>
                         <LayoutControls view={view} setViewHandler={setViewHandler} />
 
                         <div className={clsx(showSticky && 'hidden lg:block')}>

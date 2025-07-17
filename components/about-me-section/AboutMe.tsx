@@ -3,10 +3,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import { useTheme } from '@/hooks/useTheme';
-
 // components
-import Badge from '@/components/ui/Badge';
 import IntroCard from './cards/IntroCard';
 import BackgroundSoftGradient from '@/components/ui/BackgroundGradient';
 import GitHubCard from './cards/GitHubCard';
@@ -15,20 +12,13 @@ import BuyMeACoffeeCard from './cards/BuyMeACoffeeCard';
 import CodePenCard from './cards/CodePenCard';
 import TwitterCard from './cards/TwitterCard';
 import GumroadCard from './cards/GumroadCard';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 const AboutMe = () => {
-    const { isDark } = useTheme();
     return (
         <section className="my-20 3xl:my-28">
             <div className={clsx('flex flex-col items-center gap-16')}>
-                <Badge
-                    size="default"
-                    color={isDark ? '#d8b4fe' : '#6d11af'}
-                    shape="pill"
-                    className="shadow-xl shadow-purple-50 dark:shadow-lg dark:shadow-gray-800"
-                >
-                    About Me
-                </Badge>
+                <SectionHeading content="About Me" />
 
                 <div className={clsx('flex flex-col sm:flex-row', 'gap-4 3xl:gap-6 relative')}>
                     <BackgroundSoftGradient />
