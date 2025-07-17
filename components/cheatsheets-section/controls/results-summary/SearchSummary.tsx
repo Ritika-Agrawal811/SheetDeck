@@ -33,7 +33,7 @@ const SearchSummary = () => {
                         className="group-hover:scale-125 transition duration-300"
                     />
                 </button>
-                <h2 className="text-lg">
+                <h2 className="text-base xl:text-lg 4xl:text-xl">
                     <span className="text-purple-800 dark:text-purple-300">No results</span> found for{' '}
                     <span className="font-bold">&quot;{searchValue}&quot;</span>
                 </h2>
@@ -52,7 +52,7 @@ const SearchSummary = () => {
                 <Icon icon={IoChevronBack} aria-hidden="true" size="text-2xl" className="group-hover:scale-125 transition duration-300" />
             </button>
 
-            <h2 className="text-base xl:text-lg 3xl:text-xl space-x-1">
+            <h2 className="text-base xl:text-lg 4xl:text-xl space-x-1">
                 <span>Showing</span>
                 <ResultsIndex startIndex={startIndex} endIndex={endIndex} />
 
@@ -64,7 +64,7 @@ const SearchSummary = () => {
                     <>
                         {' '}
                         for <br className="lg:hidden" />{' '}
-                        <span className="font-bold text-base xl:text-lg 3xl:text-xl">&quot;{searchValue}&quot;</span>
+                        <span className="font-bold text-base xl:text-lg 4xl:text-xl">&quot;{searchValue}&quot;</span>
                     </>
                 )}
             </h2>

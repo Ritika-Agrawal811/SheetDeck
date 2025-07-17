@@ -37,14 +37,14 @@ const CategoryCard = ({ title, color, icon, ref, active, setActiveCategory }: Ca
                 'inline-flex flex-col items-center justify-center',
                 `${castoro.variable} font-castoro font-bold`,
                 'focus:outline-none focus-visible:border-3 focus-visible:border-blue-500',
-                icon ? 'text-lg sm:text-xl xl:text-2xl 3xl:text-3xl' : 'text-2xl lg:text-3xl 2xl:text-4xl',
+                icon ? 'text-lg sm:text-xl 3xl:text-2xl 4xl:text-3xl' : 'text-2xl lg:text-3xl 3xl:text-4xl',
                 active && 'text-white dark:text-gray-900'
             )}
             onClick={setActiveCategory}
             onKeyDown={keyDownHandler}
             ref={ref}
         >
-            {icon && <Icon icon={icon} size="text-5xl lg:text-6xl 2xl:text-7xl" className="mb-4 xl:mb-6" aria-hidden={true} />}
+            {icon && <Icon icon={icon} size="text-5xl lg:text-6xl 3xl:text-7xl" className="mb-4 xl:mb-6" aria-hidden={true} />}
             {title}
 
             <div className={clsx('absolute right-0 top-0', 'h-full w-px')} style={{ background: color }} aria-hidden={true}></div>

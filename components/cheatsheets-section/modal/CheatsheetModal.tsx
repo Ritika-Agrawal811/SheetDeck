@@ -35,7 +35,7 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                 <Modal key={details?.id} open={open} onClose={onClose}>
                     <section className={clsx('w-full', 'h-screen flex flex-col lg:flex-row-reverse')} onClick={onClose}>
                         <header
-                            className={clsx('w-full lg:w-1/4', 'border-b lg:border-l border-b-gray-800 lg:border-l-gray-800 bg-black/10')}
+                            className={clsx('w-full lg:w-[30%]', 'border-b lg:border-l border-b-gray-800 lg:border-l-gray-800 bg-black/10')}
                         >
                             <div className="flex justify-end  p-2 md:p-4">
                                 <CloseBtn onClose={onClose} theme="light" />
@@ -48,22 +48,17 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                                 )}
                             >
                                 <div className="space-y-2 lg:space-y-3 3xl:space-y-4">
-                                    <h3 className="text-white text-lg sm:text-xl md:text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
+                                    <h3 className="text-white text-lg sm:text-xl md:text-2xl lg:text-xl xl:text-2xl 3xl:text-[28px]">
                                         {details.title}
                                     </h3>
-                                    <Badge
-                                        size="small"
-                                        color={TAGS_INFO[details.tag].color}
-                                        shape="pill"
-                                        className="text-xs sm:text-sm 3xl:text-base"
-                                    >
+                                    <Badge size="small" color={TAGS_INFO[details.tag].color} shape="pill" className="text-xs sm:text-sm">
                                         {TAGS_INFO[details.tag].title}
                                     </Badge>
                                 </div>
 
                                 <button
                                     className={clsx(
-                                        'bg-purple-800 xl:text-lg 2xl:text-xl 3xl:text-2xl text-white',
+                                        'bg-purple-800 xl:text-lg 3xl:text-xl text-white',
                                         'rounded-md cursor-pointer border-2 border-transparent lg:mt-6',
                                         'transition duration-150 hover:bg-purple-900',
                                         'focus:outline-none focus-visible:border-blue-500'
@@ -74,10 +69,10 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                                         href={details.image}
                                         download={details.image.split('/').pop()}
                                         onClick={(event) => event.stopPropagation()}
-                                        className={clsx('flex gap-2 lg:gap-4 items-center', 'px-2 2xl:px-4 3xl:px-5', 'py-2 3xl:py-3')}
+                                        className={clsx('flex gap-3 items-center', 'px-3', 'py-2')}
                                     >
                                         <span className="hidden md:inline">Download</span>
-                                        <Icon icon={IoMdDownload} size="text-xl 2xl:text-2xl 3xl:text-3xl" aria-hidden={true} />
+                                        <Icon icon={IoMdDownload} size="text-xl 3xl:text-2xl" aria-hidden={true} />
                                     </a>
                                 </button>
                             </div>

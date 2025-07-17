@@ -44,7 +44,7 @@ const Table: React.FC<TableProps> = ({ cheatsheets }) => {
         <>
             <CheatsheetModal {...modal} onClose={() => setModal((prev) => ({ ...prev, open: false }))} />
             <table className="w-full table-fixed scroll-m-36" ref={tableRef}>
-                <thead className={clsx('bg-gray-100 dark:bg-neutral-800 text-left', '2xl:text-lg 3xl:text-xl')}>
+                <thead className={clsx('bg-gray-100 dark:bg-neutral-800 text-left', '3xl:text-lg 4xl:text-xl')}>
                     <tr>
                         <th className={clsx('p-4 3xl:p-6', 'w-[65%] sm:w-1/2')}>Title</th>
                         <th className={clsx('p-4 3xl:p-6', 'text-left', 'hidden sm:table-cell')}>Category</th>

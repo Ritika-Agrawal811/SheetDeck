@@ -133,7 +133,7 @@ const SearchBox = () => {
                 )}
             >
                 <span className="sr-only">Search</span>
-                <Icon icon={IoSearch} size="text-xl xl:text-2xl" aria-hidden={true} />
+                <Icon icon={IoSearch} size="text-xl 3xl:text-2xl" aria-hidden={true} />
             </button>
         </form>
     );

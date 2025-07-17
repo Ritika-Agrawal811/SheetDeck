@@ -94,7 +94,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                     )}
                     aria-hidden={true}
                 >
-                    <Icon icon={IoChevronDownOutline} size="text-xl xl:text-2xl" className="pointer-events-none" />
+                    <Icon icon={IoChevronDownOutline} size="text-xl 3xl:text-2xl" className="pointer-events-none" />
                 </span>
             </button>
 
@@ -123,7 +123,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                             tabIndex={0}
                             aria-selected={isSelected}
                             className={clsx(
-                                'py-2 cursor-pointer',
+                                'py-1.5 3xl:py-2 cursor-pointer',
                                 'text-sm xl:text-base',
                                 'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-500 focus-visible:outline-offset-[var(--ring-offset)]',
                                 isSelected

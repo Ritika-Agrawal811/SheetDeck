@@ -105,7 +105,7 @@ const List: React.FC<ListProps> = ({ className, size = 'default', showImage = tr
                                         alt={`sub category: ${category.title}`}
                                         width={35}
                                         height={35}
-                                        className={clsx('w-auto h-8 xl:h-9')}
+                                        className={clsx('w-auto h-8 3xl:h-9')}
                                     />
                                 )}
                                 {formatLabels(category.title)}

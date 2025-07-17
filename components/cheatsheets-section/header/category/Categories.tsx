@@ -68,7 +68,7 @@ const Categories = () => {
                 role="tablist"
                 className={clsx(
                     'overflow-y-hidden overflow-x-auto whitespace-nowrap hide-scrollbar',
-                    'h-28 sm:h-32 md:h-36 lg:h-40 2xl:h-44',
+                    'h-28 sm:h-32 md:h-36 lg:h-40 3xl:h-44',
                     'lg:flex'
                 )}
                 onKeyDown={onKeyDownHandler}
