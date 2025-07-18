@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const siteMetadata: Metadata = {
     title: 'SheetDeck | Master the Web One Sheet at a Time',
-    description: 'Developer-friendly cheat sheets for HTML, CSS, JavaScript, React, and more. Simple. Fast. Reference-ready.',
+    description: 'Developer-friendly cheat sheets for HTML, CSS, JavaScript and more. Simple. Fast. Reference-ready.',
     keywords: [
         'cheat sheets',
         'web development',
@@ -19,7 +19,7 @@ export const siteMetadata: Metadata = {
     metadataBase: new URL('https://sheetdeck.vercel.app'),
     openGraph: {
         title: 'SheetDeck | Master the Web One Sheet at a Time',
-        description: 'Developer-friendly cheat sheets for HTML, CSS, JavaScript, React, and more. Simple. Fast. Reference-ready.',
+        description: 'Developer-friendly cheat sheets for HTML, CSS, JavaScript and more. Simple. Fast. Reference-ready.',
         url: 'https://sheetdeck.vercel.app',
         siteName: 'SheetDeck',
         images: [
@@ -36,7 +36,7 @@ export const siteMetadata: Metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'SheetDeck | Master the Web One Sheet at a Time',
-        description: 'Developer-friendly cheat sheets for HTML, CSS, JavaScript, React, and more.',
+        description: 'Developer-friendly cheat sheets for HTML, CSS, JavaScript and more. Simple. Fast. Reference-ready.',
         images: ['/assets/og-image.png'],
         creator: '@RitikaAgrawal08',
     },
