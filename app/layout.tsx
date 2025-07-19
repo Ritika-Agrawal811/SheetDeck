@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import { siteMetadata } from './sitemetadata';
 import { inter } from './font';
 import './globals.css';
@@ -11,7 +12,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${inter.variable} antialiased overflow-x-hidden text-gray-800`}>{children}</body>
+            <body className={`${inter.variable} antialiased overflow-x-hidden text-gray-800`}>
+                {children}
+                <Analytics />
+            </body>
         </html>
     );
 }
