@@ -7,7 +7,6 @@ import { cheatSheets } from '@/lib/cheatsheets/loader';
 
 // components
 import Heading from './Heading';
-import Navbar from './navbar/Navbar';
 import TopicsLoop from './TopicsLoop';
 import DecorativeImage from '@/components/ui/DecorativeImage';
 import ExploreButton from './ExploreButton';
@@ -17,13 +16,13 @@ const HeroSection = () => {
     return (
         <header
             className={clsx(
-                'xl:h-dvh',
+                'lg:h-[calc(100dvh-114px)] 3xl:h-[calc(100dvh-146px)]',
                 'w-full max-w-screen-3xl mx-auto',
-                'flex flex-col gap-16 xl:gap-0 xl:justify-between',
-                'relative overflow-x-hidden'
+                'flex flex-col gap-12 xl:gap-0 xl:justify-between',
+                'relative overflow-x-hidden',
+                'lg:pt-10'
             )}
         >
-            <Navbar />
             <Heading />
             <ExploreButton />
             <TopicsLoop />
