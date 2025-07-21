@@ -3,6 +3,7 @@ import clsx from 'clsx';
 
 // components
 import Logo from '@/components/hero-section/navbar/Logo';
+import Link from 'next/link';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -22,7 +23,11 @@ const Footer = () => {
         >
             <Logo />
             <p className="mt-1">
-                &copy; {currentYear} <span className="text-purple-800 dark:text-purple-300">Ritika Agrawal</span> | All rights reserved.
+                &copy; {currentYear} <span className="text-purple-800 dark:text-purple-300">Ritika Agrawal</span>. All rights reserved |{' '}
+                <Link href="/terms-and-conditions" className="text-purple-800 dark:text-purple-300 hover:underline underline-offset-4">
+                    Terms and Conditions
+                </Link>
+                .
             </p>
         </footer>
     );
