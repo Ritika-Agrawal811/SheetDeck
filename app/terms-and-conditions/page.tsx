@@ -11,7 +11,7 @@ import Icon from '@/components/ui/Icon';
 
 export default function TermsAndConditionsPage() {
     return (
-        <main className={clsx('w-11/12 2xl:w-[85%] 3xl:w-4/5 max-w-screen-3xl mx-auto', 'space-y-16')}>
+        <main className={clsx('w-11/12 2xl:w-[85%] 3xl:w-4/5 max-w-screen-3xl mx-auto', 'space-y-16 px-4')}>
             <SectionHeading content="Terms and Conditions" />
 
             <section className="space-y-4">

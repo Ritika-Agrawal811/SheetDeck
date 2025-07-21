@@ -12,8 +12,8 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({ content }) => {
         <h2
             className={clsx(
                 'text-purple-800 dark:text-purple-300',
-                'text-xl 3xl:text-[22px] font-medium',
-                'flex justify-center items-center gap-1.5',
+                'text-lg sm:text-xl 3xl:text-[22px] font-medium',
+                'flex justify-center items-center gap-1 md:gap-1.5',
                 `${platypi.variable} font-platypi`
             )}
         >
@@ -26,7 +26,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({ content }) => {
             <span aria-hidden={true} className={clsx('inline-block rounded-full', 'w-2 h-2', 'bg-emerald-700 dark:bg-emerald-400')}></span>
 
             {/* content */}
-            <span className="mx-2.5 -mt-1.5">{content}</span>
+            <span className="mx-1 md:mx-2 -mt-1.5 whitespace-nowrap">{content}</span>
 
             {/* circles on right */}
             <span aria-hidden={true} className={clsx('inline-block rounded-full', 'w-2 h-2', 'bg-emerald-700 dark:bg-emerald-400')}></span>

@@ -16,14 +16,15 @@ const Footer = () => {
                 'p-6 xl:p-4 3xl:p-6 mt-16 md:mb-6',
                 'bg-primary md:rounded-xl',
                 'border-b border-primary',
-                'text-sm md:text-base 4xl:text-lg',
+                'text-sm lg:text-base 4xl:text-lg',
                 'flex flex-col sm:flex-row items-start sm:items-center justify-between',
                 'gap-4 sm:gap-0'
             )}
         >
             <Logo />
             <p className="mt-1">
-                &copy; {currentYear} <span className="text-purple-800 dark:text-purple-300">Ritika Agrawal</span>. All rights reserved |{' '}
+                &copy; {currentYear} <span className="text-purple-800 dark:text-purple-300">Ritika Agrawal</span>. All rights reserved{' '}
+                <br className="md:hidden" />|{' '}
                 <Link href="/terms-and-conditions" className="text-purple-800 dark:text-purple-300 hover:underline underline-offset-4">
                     Terms and Conditions
                 </Link>
