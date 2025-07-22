@@ -74,6 +74,13 @@
                 "tag": "html",
                 "category": "elements",
                 "image": "/html-cheatsheets/elements/picture.jpg"
+            },
+            {
+                "id": "html-datalist-element",
+                "title": "<datalist> Element",
+                "tag": "html",
+                "category": "elements",
+                "image": "/html-cheatsheets/elements/datalist.jpg"
             }
         ]
     },
