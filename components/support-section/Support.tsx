@@ -29,16 +29,8 @@ const Support = () => {
                         ?
                     </span>
                     <span className="flex gap-1 items-center">
-                        A{' '}
-                        <Image
-                            alt="star gif"
-                            src="/assets/star.gif"
-                            width={50}
-                            height={50}
-                            className="w-10 h-10 3xl:w-12 3xl:h-12"
-                            unoptimized
-                        />{' '}
-                        on GitHub goes a long way!
+                        A <img alt="star gif" src="/assets/star.gif" width={50} height={50} className="w-10 h-10 3xl:w-12 3xl:h-12" /> on
+                        GitHub goes a long way!
                     </span>
                 </p>
 

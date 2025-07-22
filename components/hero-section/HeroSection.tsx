@@ -28,8 +28,8 @@ const HeroSection = () => {
             <TopicsLoop />
 
             {/* decorative components */}
-            <DecorativeImage {...cheatSheets.html.concepts[0]} position="left" size="small" className="hidden lg:block" priorty />
-            <DecorativeImage {...cheatSheets.css.concepts[0]} position="right" size="default" className="hidden lg:block" priorty />
+            <DecorativeImage {...cheatSheets.html.concepts[0]} position="left" size="small" className="hidden lg:block" />
+            <DecorativeImage {...cheatSheets.css.concepts[0]} position="right" size="default" className="hidden lg:block" />
 
             {/* background gradients */}
             <BackgroundSoftGradient position="left" size="tiny" className="hidden lg:block" />

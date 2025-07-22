@@ -10,7 +10,6 @@ import type { Cheatsheet } from '@/types/cheatsheets';
 import { TAGS_INFO } from '@/lib/cheatsheets/constants';
 
 // components
-import Image from 'next/image';
 import Badge from '@/components/ui/Badge';
 import { IoMdDownload } from 'react-icons/io';
 import Icon from '@/components/ui/Icon';
@@ -102,12 +101,11 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
                     </a>
 
                     <figure className="mt-8 mb-8 3xl:mt-10 3xl:mb-10 overflow-hidden dark:rounded-lg">
-                        <Image
+                        <img
                             src={image}
                             alt={title}
                             width={300}
                             height={350}
-                            quality={70}
                             className="transition duration-300 group-hover/card:scale-105 group-hover/card:translate-y-3 dark:rounded-lg dark:scale-95 dark:group-hover/card:scale-100 dark:group-hover/card:translate-y-1"
                         />
                     </figure>

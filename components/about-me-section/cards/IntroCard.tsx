@@ -7,7 +7,6 @@ import { castoro } from '@/app/font';
 import { useTheme } from '@/hooks/useTheme';
 
 // components
-import Image from 'next/image';
 import ArrowSVG from '../ArrowSVG';
 
 const IntroCard = () => {
@@ -18,7 +17,7 @@ const IntroCard = () => {
             {/* Intro card */}
             <article className="flex gap-2 3xl:gap-4">
                 <figure>
-                    <Image
+                    <img
                         alt="creator's picture"
                         src="https://pbs.twimg.com/profile_images/1536045260253515776/BNiSS_c1_400x400.jpg"
                         width={400}
