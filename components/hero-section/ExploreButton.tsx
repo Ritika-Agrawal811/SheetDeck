@@ -41,9 +41,9 @@ const ExploreButton = () => {
                                 'font-bold uppercase',
                                 'text-purple-800 dark:text-purple-300',
                                 `${platypi.variable} font-platypi`,
-                                'sm:text-lg 2xl:text-base 3xl:text-xl'
+                                'sm:text-lg 3xl:text-xl'
                             )}
-                            style={{ transform: `rotate(${-75 + 25 * index}deg)` }}
+                            style={{ transform: `rotate(${-80 + 26.5 * index}deg)` }}
                         >
                             {letter}
                         </span>
