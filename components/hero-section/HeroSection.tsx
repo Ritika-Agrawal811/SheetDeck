@@ -20,7 +20,7 @@ const HeroSection = () => {
                 'w-full max-w-screen-3xl mx-auto',
                 'flex flex-col gap-12 xl:gap-0 xl:justify-between',
                 'relative overflow-x-hidden',
-                'lg:pt-10'
+                'lg:pt-8 3xl:pt-10'
             )}
         >
             <Heading />
