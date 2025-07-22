@@ -53,7 +53,7 @@ const TopicsLoop = () => {
                         x: 0,
                     }}
                     animate={animateNow && !prefersReducedMotion ? animate : undefined}
-                    className={clsx('whitespace-nowrap py-4 lg:py-8 2xl:py-10')}
+                    className={clsx('whitespace-nowrap py-4 lg:py-8 3xl:py-10')}
                 >
                     {[...topics, ...topics].map((topic, index) => {
                         if (topic.toLowerCase() === 'all') return null;

@@ -41,7 +41,7 @@ const ExploreButton = () => {
                                 'font-bold uppercase',
                                 'text-purple-800 dark:text-purple-300',
                                 `${platypi.variable} font-platypi`,
-                                'sm:text-lg 3xl:text-xl'
+                                'sm:text-lg 2xl:text-base 3xl:text-xl'
                             )}
                             style={{ transform: `rotate(${-75 + 25 * index}deg)` }}
                         >
@@ -54,7 +54,7 @@ const ExploreButton = () => {
                     aria-hidden="true"
                     className={clsx(
                         'inline-block absolute rounded-full',
-                        'px-3 py-4',
+                        'px-3 py-4 2xl:py-3.5 3xl:py-4',
                         'left-1/2 top-2/3 -translate-x-1/2 -translate-y-2/3',
                         'bg-purple-800 dark:bg-purple-300 text-white dark:text-gray-900'
                     )}
