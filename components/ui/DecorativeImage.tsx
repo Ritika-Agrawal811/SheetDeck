@@ -1,9 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 
-// components
-import Image from 'next/image';
-
 const sizeVariants = {
     small: 'w-1/2 lg:w-3/5 2xl:w-3/4',
     default: 'w-3/4 lg:w-4/5 xl:w-[85%] 2xl:w-auto',
@@ -15,10 +12,9 @@ interface DecorativeImageProps {
     position: 'left' | 'right';
     size: 'small' | 'default';
     className?: string;
-    priorty: boolean;
 }
 
-const DecorativeImage = ({ image, title, position, size, className, priorty }: DecorativeImageProps) => {
+const DecorativeImage = ({ image, title, position, size, className }: DecorativeImageProps) => {
     return (
         <div
             className={clsx(
@@ -35,7 +31,7 @@ const DecorativeImage = ({ image, title, position, size, className, priorty }: D
                     position === 'left' ? 'before:rotate-10 before:left-0' : 'before:-rotate-5 before:right-3'
                 )}
             >
-                <Image
+                <img
                     src={image}
                     alt={title}
                     width={300}
@@ -44,7 +40,6 @@ const DecorativeImage = ({ image, title, position, size, className, priorty }: D
                         'rounded-xl border border-gray-200 dark:border-gray-700 opacity-95',
                         position === 'left' ? '-rotate-10' : 'rotate-10'
                     )}
-                    priority={priorty}
                 />
             </figure>
         </div>
