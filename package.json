@@ -1,6 +1,19 @@
 {
-  "name": "webdev-cheatsheets",
-  "version": "0.1.0",
+ "name": "sheetdeck",
+ "description": "Developer-friendly cheat sheets for HTML, CSS, JavaScript and more. Simple. Fast. Reference-ready.",
+  "keywords": [
+        "cheat sheets",
+        "web development",
+        "html cheat sheet",
+        "css cheat sheet",
+        "javascript cheat sheet",
+        "react cheat sheet",
+        "react reference",
+        "programming shortcuts",
+        "quick reference",
+        "quick notes"
+    ],
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
