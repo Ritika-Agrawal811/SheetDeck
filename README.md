@@ -13,7 +13,7 @@ Cheat sheets are currently available for the following languages :
 | Language                                                                                                                     | Topics                                                                    | Total |
 | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ----- |
 | <br/> <p align="center">[![HTML](https://skillicons.dev/icons?i=html)](https://skillicons.dev) <br/> **HTML** </p>           | Concepts (3) • Attributes (7) • Elements (2)                              | 12    |
-| <br/> <p align="center">[![CSS](https://skillicons.dev/icons?i=css)](https://skillicons.dev) <br/> **CSS** </p>              | Concepts (4) • Properties (5) • Pseudo Classes (4) • Selectors (1)        | 14    |
+| <br/> <p align="center">[![CSS](https://skillicons.dev/icons?i=css)](https://skillicons.dev) <br/> **CSS** </p>              | Concepts (5) • Properties (5) • Pseudo Classes (4) • Selectors (1)        | 15    |
 | <br/> <p align="center">[![JavaScript](https://skillicons.dev/icons?i=js)](https://skillicons.dev) <br/> **JavaScript** </p> | Concepts (6) • Operators (6) • DOM manipulation (2) • Advanced Syntax (5) | 19    |
 | <br/> <p align="center">[![React](https://skillicons.dev/icons?i=react)](https://skillicons.dev) <br/> **React** </p>        | Concepts (3)                                                              | 3     |
 

@@ -120,6 +120,13 @@
                 "tag": "css",
                 "category": "concepts",
                 "image": "/css-cheatsheets/concepts/var-function.jpg"
+            },
+            {
+                "id": "css-box-model",
+                "title": "Box Model",
+                "tag": "css",
+                "category": "concepts",
+                "image": "/css-cheatsheets/concepts/box-model.jpg"
             }
         ],
         "properties": [
