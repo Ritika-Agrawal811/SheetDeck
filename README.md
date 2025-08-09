@@ -6,6 +6,8 @@ I’ll be adding more cheat sheets here over time! :sparkles:
 
 <img src="public/assets/og-image.png">
 
+<br/>
+
 ## 🌐 Cheat Sheets Available For
 
 Cheat sheets are currently available for the following languages :
@@ -17,6 +19,8 @@ Cheat sheets are currently available for the following languages :
 | <br/> <p align="center">[![JavaScript](https://skillicons.dev/icons?i=js)](https://skillicons.dev) <br/> **JavaScript** </p> | Concepts (6) • Operators (6) • DOM manipulation (2) • Advanced Syntax (5) | 19    |
 | <br/> <p align="center">[![React](https://skillicons.dev/icons?i=react)](https://skillicons.dev) <br/> **React** </p>        | Concepts (3)                                                              | 3     |
 
+<br/>
+
 ## :computer: Tech Stack
 
 SheetDeck is built using the following technologies :
@@ -24,10 +28,14 @@ SheetDeck is built using the following technologies :
 - [Next.js](https://nextjs.org/) - a framework for building server-rendered React applications
 - [Tailwind CSS](https://tailwindcss.com/) - a utility-first CSS framework
 
+<br/>
+
 ## 📄 License
 
 - The **codebase** of this project is open source and licensed under the [MIT License](./LICENSE).
 - The **cheat sheet content** is not open source. Please read the [Content License](./CONTENT_LICENSE.txt) before use.
+
+<br/>
 
 ## 🚫 Contributions
 
