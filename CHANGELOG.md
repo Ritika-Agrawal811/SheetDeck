@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - 2025-07-26 HTML cheat sheet: Block Elements
 - 2025-07-31 CSS cheat sheet: Box Model
+- 2025-08-09 HTML cheat sheet: Alt text for images
 
 ---
 

@@ -21,6 +21,13 @@
                 "tag": "html",
                 "category": "concepts",
                 "image": "/html-cheatsheets/concepts/block-elements.jpg"
+            },
+            {
+                "id": "html-alt-text-for-images",
+                "title": "Alt Text for Images",
+                "tag": "html",
+                "category": "concepts",
+                "image": "/html-cheatsheets/concepts/alt-text-for-images.jpg"
             }
         ],
         "attributes": [
