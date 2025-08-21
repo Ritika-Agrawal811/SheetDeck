@@ -256,6 +256,13 @@
                 "tag": "javascript",
                 "category": "concepts",
                 "image": "/js-cheatsheets/concepts/call-by-value-and-reference.jpg"
+            },
+            {
+                "id": "js-default-parameters",
+                "title": "Default Parameters",
+                "tag": "javascript",
+                "category": "concepts",
+                "image": "/js-cheatsheets/concepts/default-parameters.jpeg"
             }
         ],
         "advanced-syntax": [
