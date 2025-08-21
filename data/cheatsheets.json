@@ -309,6 +309,13 @@
                 "tag": "javascript",
                 "category": "dom-manipulation",
                 "image": "/js-cheatsheets/dom-manipulation/event-propagation.jpg"
+            },
+            {
+                "id": "js-event-target",
+                "title": "event.target",
+                "tag": "javascript",
+                "category": "dom-manipulation",
+                "image": "/js-cheatsheets/dom-manipulation/event-target.jpg"
             }
         ],
         "operators": [
