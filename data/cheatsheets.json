@@ -367,6 +367,13 @@
                 "tag": "javascript",
                 "category": "operators",
                 "image": "/js-cheatsheets/operators/equality-vs-strict-equality.jpg"
+            },
+            {
+                "id": "js-rest-operator",
+                "title": "Rest Operator",
+                "tag": "javascript",
+                "category": "operators",
+                "image": "/js-cheatsheets/operators/rest.jpg"
             }
         ]
     },

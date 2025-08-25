@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - 2025-08-09 HTML cheat sheet: Alt text for images
 - 2025-08-16 JavaScript cheat sheet: Default Parameters
 - 2025-08-21 JavaScript cheat sheet: event.target
+- 2025-08-25 JavaScript cheat sheet: Rest Operator
 
 ---
 
