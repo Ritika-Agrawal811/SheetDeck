@@ -28,6 +28,13 @@
                 "tag": "html",
                 "category": "concepts",
                 "image": "/html-cheatsheets/concepts/alt-text-for-images.jpg"
+            },
+            {
+                "id": "html-clear-link-texts",
+                "title": "Meaningful Link Texts",
+                "tag": "html",
+                "category": "concepts",
+                "image": "/html-cheatsheets/concepts/clear-link-texts.jpg"
             }
         ],
         "attributes": [
