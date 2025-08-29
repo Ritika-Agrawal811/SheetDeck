@@ -16,6 +16,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - 2025-08-25 JavaScript cheat sheet: Rest Operator
 - 2025-08-26 HTML cheat sheet: Meaningful Link Texts
 
+### Fixed
+
+- 2025-08-29 Updated CSS cheat sheets: border and box-shadow
+
 ---
 
 ## [1.0.0] - 2025-07-22
