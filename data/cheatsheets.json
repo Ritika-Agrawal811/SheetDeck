@@ -35,6 +35,41 @@
                 "tag": "html",
                 "category": "concepts",
                 "image": "/html-cheatsheets/concepts/clear-link-texts.jpg"
+            },
+            {
+                "id": "html-headings-in-order",
+                "title": "Headings in Hierarchical Order",
+                "tag": "html",
+                "category": "concepts",
+                "image": "/html-cheatsheets/concepts/headings-in-order.jpg"
+            },
+            {
+                "id": "html-hide-decorative-icons",
+                "title": "Hide Decorative Icons",
+                "tag": "html",
+                "category": "concepts",
+                "image": "/html-cheatsheets/concepts/hide-decorative-icons.jpg"
+            },
+            {
+                "id": "html-entities",
+                "title": "HTML Entities",
+                "tag": "html",
+                "category": "concepts",
+                "image": "/html-cheatsheets/concepts/html-entities.jpg"
+            },
+            {
+                "id": "html-inline-elements",
+                "title": "Inline Elements",
+                "tag": "html",
+                "category": "concepts",
+                "image": "/html-cheatsheets/concepts/inline-elements.jpg"
+            },
+            {
+                "id": "html-semantic-elements",
+                "title": "Semantic Elements",
+                "tag": "html",
+                "category": "concepts",
+                "image": "/html-cheatsheets/concepts/semantic-elements.jpg"
             }
         ],
         "attributes": [
