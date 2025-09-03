@@ -106,6 +106,7 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
                             alt={title}
                             width={300}
                             height={350}
+                            loading="lazy"
                             className="transition duration-300 group-hover/card:scale-105 group-hover/card:translate-y-3 dark:rounded-lg dark:scale-95 dark:group-hover/card:scale-100 dark:group-hover/card:translate-y-1"
                         />
                     </figure>

@@ -32,39 +32,39 @@ export const TAGS_INFO = {
 export const CATEGORIES_INFO = {
     concepts: {
         title: 'concepts',
-        image: '/assets/categories/concepts.png',
+        image: '/assets/categories/concepts.webp',
     },
     attributes: {
         title: 'attributes',
-        image: '/assets/categories/attributes.png',
+        image: '/assets/categories/attributes.webp',
     },
     elements: {
         title: 'elements',
-        image: '/assets/categories/elements.png',
+        image: '/assets/categories/elements.webp',
     },
     properties: {
         title: 'properties',
-        image: '/assets/categories/properties.png',
+        image: '/assets/categories/properties.webp',
     },
     'pseudo-classes': {
         title: 'pseudo-classes',
-        image: '/assets/categories/pseudo-classes.png',
+        image: '/assets/categories/pseudo-classes.webp',
     },
     selectors: {
         title: 'selectors',
-        image: '/assets/categories/selectors.png',
+        image: '/assets/categories/selectors.webp',
     },
     'advanced-syntax': {
         title: 'advanced-syntax',
-        image: '/assets/categories/advanced-syntax.png',
+        image: '/assets/categories/advanced-syntax.webp',
     },
     'dom-manipulation': {
         title: 'dom-manipulation',
-        image: '/assets/categories/dom-manipulation.png',
+        image: '/assets/categories/dom-manipulation.webp',
     },
     operators: {
         title: 'operators',
-        image: '/assets/categories/operators.png',
+        image: '/assets/categories/operators.webp',
     },
     methods: {
         title: 'methods',
