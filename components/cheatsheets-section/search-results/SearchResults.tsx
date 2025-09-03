@@ -25,7 +25,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ view }) => {
                 </>
             ) : (
                 <div className="flex flex-col items-center">
-                    <Image src="/assets/no-results.png" alt="no search results found" width={300} height={300} />
+                    <Image src="/assets/no-results.webp" alt="no search results found" width={300} height={300} />
                     <h3 className="font-medium text-xl sm:text-2xl xl:text-3xl dark:text-purple-300">No results found.</h3>
                     <p className="sm:text-lg mt-1">No cheat sheet matches your search.</p>
 

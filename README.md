@@ -4,7 +4,7 @@ A collection of web development cheat sheets and visuals I’ve put together! I 
 
 I’ll be adding more cheat sheets here over time! :sparkles:
 
-<img src="public/assets/og-image.png">
+<img src="public/assets/og-image.webp">
 
 <br/>
 

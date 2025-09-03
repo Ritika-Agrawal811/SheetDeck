@@ -24,7 +24,7 @@ export const siteMetadata: Metadata = {
         siteName: 'SheetDeck',
         images: [
             {
-                url: '/assets/og-image.png',
+                url: '/assets/og-image.webp',
                 width: 1200,
                 height: 630,
                 alt: 'SheetDeck cheat sheet preview',
@@ -37,7 +37,7 @@ export const siteMetadata: Metadata = {
         card: 'summary_large_image',
         title: 'SheetDeck | Master the Web One Sheet at a Time',
         description: 'Developer-friendly cheat sheets for HTML, CSS, JavaScript and more. Simple. Fast. Reference-ready.',
-        images: ['/assets/og-image.png'],
+        images: ['/assets/og-image.webp'],
         creator: '@RitikaAgrawal08',
     },
     robots: {

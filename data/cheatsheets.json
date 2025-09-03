@@ -6,70 +6,70 @@
                 "title": "Boilerplate",
                 "tag": "html",
                 "category": "concepts",
-                "image": "/html-cheatsheets/concepts/html-boilerplate.jpg"
+                "image": "/html-cheatsheets/concepts/html-boilerplate.webp"
             },
             {
                 "id": "html-container-vs-empty-tags",
                 "title": "Container VS Empty Tags",
                 "tag": "html",
                 "category": "concepts",
-                "image": "/html-cheatsheets/concepts/container-vs-empty-tags.jpg"
+                "image": "/html-cheatsheets/concepts/container-vs-empty-tags.webp"
             },
             {
                 "id": "html-block-elements",
                 "title": "Block Elements",
                 "tag": "html",
                 "category": "concepts",
-                "image": "/html-cheatsheets/concepts/block-elements.jpg"
+                "image": "/html-cheatsheets/concepts/block-elements.webp"
             },
             {
                 "id": "html-alt-text-for-images",
                 "title": "Alt Text for Images",
                 "tag": "html",
                 "category": "concepts",
-                "image": "/html-cheatsheets/concepts/alt-text-for-images.jpg"
+                "image": "/html-cheatsheets/concepts/alt-text-for-images.webp"
             },
             {
                 "id": "html-clear-link-texts",
                 "title": "Meaningful Link Texts",
                 "tag": "html",
                 "category": "concepts",
-                "image": "/html-cheatsheets/concepts/clear-link-texts.jpg"
+                "image": "/html-cheatsheets/concepts/clear-link-texts.webp"
             },
             {
                 "id": "html-headings-in-order",
                 "title": "Headings in Hierarchical Order",
                 "tag": "html",
                 "category": "concepts",
-                "image": "/html-cheatsheets/concepts/headings-in-order.jpg"
+                "image": "/html-cheatsheets/concepts/headings-in-order.webp"
             },
             {
                 "id": "html-hide-decorative-icons",
                 "title": "Hide Decorative Icons",
                 "tag": "html",
                 "category": "concepts",
-                "image": "/html-cheatsheets/concepts/hide-decorative-icons.jpg"
+                "image": "/html-cheatsheets/concepts/hide-decorative-icons.webp"
             },
             {
                 "id": "html-entities",
                 "title": "HTML Entities",
                 "tag": "html",
                 "category": "concepts",
-                "image": "/html-cheatsheets/concepts/html-entities.jpg"
+                "image": "/html-cheatsheets/concepts/html-entities.webp"
             },
             {
                 "id": "html-inline-elements",
                 "title": "Inline Elements",
                 "tag": "html",
                 "category": "concepts",
-                "image": "/html-cheatsheets/concepts/inline-elements.jpg"
+                "image": "/html-cheatsheets/concepts/inline-elements.webp"
             },
             {
                 "id": "html-semantic-elements",
                 "title": "Semantic Elements",
                 "tag": "html",
                 "category": "concepts",
-                "image": "/html-cheatsheets/concepts/semantic-elements.jpg"
+                "image": "/html-cheatsheets/concepts/semantic-elements.webp"
             }
         ],
         "attributes": [
@@ -78,49 +78,49 @@
                 "title": "target Attribute",
                 "tag": "html",
                 "category": "attributes",
-                "image": "/html-cheatsheets/attributes/target.jpg"
+                "image": "/html-cheatsheets/attributes/target.webp"
             },
             {
                 "id": "html-download-attribute",
                 "title": "download Attribute",
                 "tag": "html",
                 "category": "attributes",
-                "image": "/html-cheatsheets/attributes/download.jpg"
+                "image": "/html-cheatsheets/attributes/download.webp"
             },
             {
                 "id": "html-lang-attribute",
                 "title": "lang Attribute",
                 "tag": "html",
                 "category": "attributes",
-                "image": "/html-cheatsheets/attributes/lang.jpg"
+                "image": "/html-cheatsheets/attributes/lang.webp"
             },
             {
                 "id": "html-inputmode-attribute",
                 "title": "inputmode Attribute",
                 "tag": "html",
                 "category": "attributes",
-                "image": "/html-cheatsheets/attributes/inputmode.jpg"
+                "image": "/html-cheatsheets/attributes/inputmode.webp"
             },
             {
                 "id": "html-tabindex-attribute",
                 "title": "tabindex Attribute",
                 "tag": "html",
                 "category": "attributes",
-                "image": "/html-cheatsheets/attributes/tabindex.jpg"
+                "image": "/html-cheatsheets/attributes/tabindex.webp"
             },
             {
                 "id": "html-disabled-attribute",
                 "title": "disabled Attribute",
                 "tag": "html",
                 "category": "attributes",
-                "image": "/html-cheatsheets/attributes/disabled.jpg"
+                "image": "/html-cheatsheets/attributes/disabled.webp"
             },
             {
                 "id": "html-accept-attribute",
                 "title": "accept Attribute",
                 "tag": "html",
                 "category": "attributes",
-                "image": "/html-cheatsheets/attributes/accept.jpg"
+                "image": "/html-cheatsheets/attributes/accept.webp"
             }
         ],
         "elements": [
@@ -129,14 +129,14 @@
                 "title": "<picture> Element",
                 "tag": "html",
                 "category": "elements",
-                "image": "/html-cheatsheets/elements/picture.jpg"
+                "image": "/html-cheatsheets/elements/picture.webp"
             },
             {
                 "id": "html-datalist-element",
                 "title": "<datalist> Element",
                 "tag": "html",
                 "category": "elements",
-                "image": "/html-cheatsheets/elements/datalist.jpg"
+                "image": "/html-cheatsheets/elements/datalist.webp"
             }
         ]
     },
@@ -147,35 +147,35 @@
                 "title": "CSS Variables",
                 "tag": "css",
                 "category": "concepts",
-                "image": "/css-cheatsheets/concepts/css-variables.jpg"
+                "image": "/css-cheatsheets/concepts/css-variables.webp"
             },
             {
                 "id": "css-hsl-colors",
                 "title": "HSL Colors",
                 "tag": "css",
                 "category": "concepts",
-                "image": "/css-cheatsheets/concepts/hsl-colors.jpg"
+                "image": "/css-cheatsheets/concepts/hsl-colors.webp"
             },
             {
                 "id": "css-rulesets",
                 "title": "Rulesets",
                 "tag": "css",
                 "category": "concepts",
-                "image": "/css-cheatsheets/concepts/rulesets.jpg"
+                "image": "/css-cheatsheets/concepts/rulesets.webp"
             },
             {
                 "id": "css-var-function",
                 "title": "var() Function",
                 "tag": "css",
                 "category": "concepts",
-                "image": "/css-cheatsheets/concepts/var-function.jpg"
+                "image": "/css-cheatsheets/concepts/var-function.webp"
             },
             {
                 "id": "css-box-model",
                 "title": "Box Model",
                 "tag": "css",
                 "category": "concepts",
-                "image": "/css-cheatsheets/concepts/box-model.jpg"
+                "image": "/css-cheatsheets/concepts/box-model.webp"
             }
         ],
         "properties": [
@@ -184,35 +184,35 @@
                 "title": "accent-color Property",
                 "tag": "css",
                 "category": "properties",
-                "image": "/css-cheatsheets/properties/accent-color.jpg"
+                "image": "/css-cheatsheets/properties/accent-color.webp"
             },
             {
                 "id": "css-border-property",
                 "title": "border Property",
                 "tag": "css",
                 "category": "properties",
-                "image": "/css-cheatsheets/properties/border.jpg"
+                "image": "/css-cheatsheets/properties/border.webp"
             },
             {
                 "id": "css-box-shadow-property",
                 "title": "box-shadow Property",
                 "tag": "css",
                 "category": "properties",
-                "image": "/css-cheatsheets/properties/box-shadow.jpg"
+                "image": "/css-cheatsheets/properties/box-shadow.webp"
             },
             {
                 "id": "css-box-shadow-vs-drop-shadow",
                 "title": "box-shadow VS drop-shadow",
                 "tag": "css",
                 "category": "properties",
-                "image": "/css-cheatsheets/properties/box-shadow-vs-drop-shadow.jpg"
+                "image": "/css-cheatsheets/properties/box-shadow-vs-drop-shadow.webp"
             },
             {
                 "id": "css-margin-property",
                 "title": "margin Property",
                 "tag": "css",
                 "category": "properties",
-                "image": "/css-cheatsheets/properties/margin.jpg"
+                "image": "/css-cheatsheets/properties/margin.webp"
             }
         ],
         "pseudo-classes": [
@@ -228,21 +228,21 @@
                 "title": ":focus-within Pseudo Class",
                 "tag": "css",
                 "category": "pseudo-classes",
-                "image": "/css-cheatsheets/pseudo-classes/focus-within.jpg"
+                "image": "/css-cheatsheets/pseudo-classes/focus-within.webp"
             },
             {
                 "id": "css-not-pseudo-class",
                 "title": ":not Pseudo Class",
                 "tag": "css",
                 "category": "pseudo-classes",
-                "image": "/css-cheatsheets/pseudo-classes/not.jpg"
+                "image": "/css-cheatsheets/pseudo-classes/not.webp"
             },
             {
                 "id": "css-nth-child-pseudo-class",
                 "title": ":nth-child Pseudo Class",
                 "tag": "css",
                 "category": "pseudo-classes",
-                "image": "/css-cheatsheets/pseudo-classes/nth-child.jpg"
+                "image": "/css-cheatsheets/pseudo-classes/nth-child.webp"
             }
         ],
         "selectors": [
@@ -251,7 +251,7 @@
                 "title": "universal (*) Selector",
                 "tag": "css",
                 "category": "selectors",
-                "image": "/css-cheatsheets/selectors/universal.jpg"
+                "image": "/css-cheatsheets/selectors/universal.webp"
             }
         ]
     },
@@ -262,42 +262,42 @@
                 "title": "Primitive Data Types",
                 "tag": "javascript",
                 "category": "concepts",
-                "image": "/js-cheatsheets/concepts/primitive-data-types.jpg"
+                "image": "/js-cheatsheets/concepts/primitive-data-types.webp"
             },
             {
                 "id": "js-non-primitive-data-types",
                 "title": "Non-Primitive Data Types",
                 "tag": "javascript",
                 "category": "concepts",
-                "image": "/js-cheatsheets/concepts/non-primitive-data-types.jpg"
+                "image": "/js-cheatsheets/concepts/non-primitive-data-types.webp"
             },
             {
                 "id": "js-scopes",
                 "title": "Scopes",
                 "tag": "javascript",
                 "category": "concepts",
-                "image": "/js-cheatsheets/concepts/scopes.jpg"
+                "image": "/js-cheatsheets/concepts/scopes.webp"
             },
             {
                 "id": "js-hoisting",
                 "title": "Hoisting",
                 "tag": "javascript",
                 "category": "concepts",
-                "image": "/js-cheatsheets/concepts/hoisting.jpg"
+                "image": "/js-cheatsheets/concepts/hoisting.webp"
             },
             {
                 "id": "js-closures",
                 "title": "Closures",
                 "tag": "javascript",
                 "category": "concepts",
-                "image": "/js-cheatsheets/concepts/closures.jpg"
+                "image": "/js-cheatsheets/concepts/closures.webp"
             },
             {
                 "id": "js-call-by-value-and-reference",
                 "title": "Call by Value VS Call by Reference",
                 "tag": "javascript",
                 "category": "concepts",
-                "image": "/js-cheatsheets/concepts/call-by-value-and-reference.jpg"
+                "image": "/js-cheatsheets/concepts/call-by-value-and-reference.webp"
             },
             {
                 "id": "js-default-parameters",
@@ -313,35 +313,35 @@
                 "title": "for...of Loop",
                 "tag": "javascript",
                 "category": "advanced-syntax",
-                "image": "/js-cheatsheets/advanced-syntax/for-of-loop.jpg"
+                "image": "/js-cheatsheets/advanced-syntax/for-of-loop.webp"
             },
             {
                 "id": "js-for-in-loop",
                 "title": "for...in Loop",
                 "tag": "javascript",
                 "category": "advanced-syntax",
-                "image": "/js-cheatsheets/advanced-syntax/for-in-loop.jpg"
+                "image": "/js-cheatsheets/advanced-syntax/for-in-loop.webp"
             },
             {
                 "id": "js-arrow-functions",
                 "title": "Arrow Functions",
                 "tag": "javascript",
                 "category": "advanced-syntax",
-                "image": "/js-cheatsheets/advanced-syntax/arrow-functions.jpg"
+                "image": "/js-cheatsheets/advanced-syntax/arrow-functions.webp"
             },
             {
                 "id": "js-destructuring",
                 "title": "Destructuring",
                 "tag": "javascript",
                 "category": "advanced-syntax",
-                "image": "/js-cheatsheets/advanced-syntax/destructuring-assignment.jpg"
+                "image": "/js-cheatsheets/advanced-syntax/destructuring-assignment.webp"
             },
             {
                 "id": "js-template-literal",
                 "title": "Template Literal",
                 "tag": "javascript",
                 "category": "advanced-syntax",
-                "image": "/js-cheatsheets/advanced-syntax/template-literal.jpg"
+                "image": "/js-cheatsheets/advanced-syntax/template-literal.webp"
             }
         ],
         "dom-manipulation": [
@@ -350,21 +350,21 @@
                 "title": "Document Object Model",
                 "tag": "javascript",
                 "category": "dom-manipulation",
-                "image": "/js-cheatsheets/dom-manipulation/document-object-model.jpg"
+                "image": "/js-cheatsheets/dom-manipulation/document-object-model.webp"
             },
             {
                 "id": "js-event-propagation",
                 "title": "Event Propagation",
                 "tag": "javascript",
                 "category": "dom-manipulation",
-                "image": "/js-cheatsheets/dom-manipulation/event-propagation.jpg"
+                "image": "/js-cheatsheets/dom-manipulation/event-propagation.webp"
             },
             {
                 "id": "js-event-target",
                 "title": "event.target",
                 "tag": "javascript",
                 "category": "dom-manipulation",
-                "image": "/js-cheatsheets/dom-manipulation/event-target.jpg"
+                "image": "/js-cheatsheets/dom-manipulation/event-target.webp"
             }
         ],
         "operators": [
@@ -373,49 +373,49 @@
                 "title": "Spread Operator",
                 "tag": "javascript",
                 "category": "operators",
-                "image": "/js-cheatsheets/operators/spread.jpg"
+                "image": "/js-cheatsheets/operators/spread.webp"
             },
             {
                 "id": "js-ternary-operator",
                 "title": "Ternary Operator",
                 "tag": "javascript",
                 "category": "operators",
-                "image": "/js-cheatsheets/operators/ternary.jpg"
+                "image": "/js-cheatsheets/operators/ternary.webp"
             },
             {
                 "id": "js-optional-chaining-operator",
                 "title": "Optional Chaining Operator",
                 "tag": "javascript",
                 "category": "operators",
-                "image": "/js-cheatsheets/operators/optional-chaining.jpg"
+                "image": "/js-cheatsheets/operators/optional-chaining.webp"
             },
             {
                 "id": "js-nullish-coalescing-operator",
                 "title": "Nullish Coalescing Operator",
                 "tag": "javascript",
                 "category": "operators",
-                "image": "/js-cheatsheets/operators/nullish-coalescing.jpg"
+                "image": "/js-cheatsheets/operators/nullish-coalescing.webp"
             },
             {
                 "id": "js-increment-and-decrement-operator",
                 "title": "Increment And Decrement Operators",
                 "tag": "javascript",
                 "category": "operators",
-                "image": "/js-cheatsheets/operators/increment-and-decrement.jpg"
+                "image": "/js-cheatsheets/operators/increment-and-decrement.webp"
             },
             {
                 "id": "js-equality-vs-strict-equality",
                 "title": "Equality VS Strict Equality",
                 "tag": "javascript",
                 "category": "operators",
-                "image": "/js-cheatsheets/operators/equality-vs-strict-equality.jpg"
+                "image": "/js-cheatsheets/operators/equality-vs-strict-equality.webp"
             },
             {
                 "id": "js-rest-operator",
                 "title": "Rest Operator",
                 "tag": "javascript",
                 "category": "operators",
-                "image": "/js-cheatsheets/operators/rest.jpg"
+                "image": "/js-cheatsheets/operators/rest.webp"
             }
         ],
         "methods": [
@@ -424,63 +424,63 @@
                 "title": "every() Array Method",
                 "tag": "javascript",
                 "category": "methods",
-                "image": "/js-cheatsheets/methods/array-every.jpg"
+                "image": "/js-cheatsheets/methods/array-every.webp"
             },
             {
                 "id": "js-filter-array-method",
                 "title": "filter() Array Method",
                 "tag": "javascript",
                 "category": "methods",
-                "image": "/js-cheatsheets/methods/array-filter.jpg"
+                "image": "/js-cheatsheets/methods/array-filter.webp"
             },
             {
                 "id": "js-find-array-method",
                 "title": "find() Array Method",
                 "tag": "javascript",
                 "category": "methods",
-                "image": "/js-cheatsheets/methods/array-find.jpg"
+                "image": "/js-cheatsheets/methods/array-find.webp"
             },
             {
                 "id": "js-includes-array-method",
                 "title": "includes() Array Method",
                 "tag": "javascript",
                 "category": "methods",
-                "image": "/js-cheatsheets/methods/array-includes.jpg"
+                "image": "/js-cheatsheets/methods/array-includes.webp"
             },
             {
                 "id": "js-index-of-array-method",
                 "title": "indexOf() Array Method",
                 "tag": "javascript",
                 "category": "methods",
-                "image": "/js-cheatsheets/methods/array-index-of.jpg"
+                "image": "/js-cheatsheets/methods/array-index-of.webp"
             },
             {
                 "id": "js-reduce-array-method",
                 "title": "reduce() Array Method",
                 "tag": "javascript",
                 "category": "methods",
-                "image": "/js-cheatsheets/methods/array-reduce.jpg"
+                "image": "/js-cheatsheets/methods/array-reduce.webp"
             },
             {
                 "id": "js-reverse-array-method",
                 "title": "reverse() Array Method",
                 "tag": "javascript",
                 "category": "methods",
-                "image": "/js-cheatsheets/methods/array-reverse.jpg"
+                "image": "/js-cheatsheets/methods/array-reverse.webp"
             },
             {
                 "id": "js-some-array-method",
                 "title": "reverse() Array Method",
                 "tag": "javascript",
                 "category": "methods",
-                "image": "/js-cheatsheets/methods/array-some.jpg"
+                "image": "/js-cheatsheets/methods/array-some.webp"
             },
             {
                 "id": "js-sort-array-method",
                 "title": "sort() Array Method",
                 "tag": "javascript",
                 "category": "methods",
-                "image": "/js-cheatsheets/methods/array-sort.jpg"
+                "image": "/js-cheatsheets/methods/array-sort.webp"
             }
         ]
     },
@@ -491,35 +491,35 @@
                 "title": "Components Based Architecture",
                 "tag": "react",
                 "category": "concepts",
-                "image": "/react-cheatsheets/concepts/components-based-architecture.jpg"
+                "image": "/react-cheatsheets/concepts/components-based-architecture.webp"
             },
             {
                 "id": "react-declarative-syntax",
                 "title": "Declarative Syntax",
                 "tag": "react",
                 "category": "concepts",
-                "image": "/react-cheatsheets/concepts/declarative-syntax.jpg"
+                "image": "/react-cheatsheets/concepts/declarative-syntax.webp"
             },
             {
                 "id": "react-virtual-dom",
                 "title": "Virtual DOM",
                 "tag": "react",
                 "category": "concepts",
-                "image": "/react-cheatsheets/concepts/virtual-dom.jpg"
+                "image": "/react-cheatsheets/concepts/virtual-dom.webp"
             },
             {
                 "id": "react-jsx",
                 "title": "JavaScript XML(JSX)",
                 "tag": "react",
                 "category": "concepts",
-                "image": "/react-cheatsheets/concepts/jsx.jpg"
+                "image": "/react-cheatsheets/concepts/jsx.webp"
             },
             {
                 "id": "react-fragment",
                 "title": "React Fragment",
                 "tag": "react",
                 "category": "concepts",
-                "image": "/react-cheatsheets/concepts/react-fragment.jpg"
+                "image": "/react-cheatsheets/concepts/react-fragment.webp"
             }
         ]
     }

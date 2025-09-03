@@ -13,7 +13,7 @@ const Logo = () => {
     return (
         <Link href="/">
             <img
-                src={isDark ? '/assets/logo-dark.png' : '/assets/logo-light.png'}
+                src={isDark ? '/assets/logo-dark.webp' : '/assets/logo-light.webp'}
                 alt="website logo for sheetdeck"
                 width={200}
                 height={50}
