@@ -66,4 +66,8 @@ export const CATEGORIES_INFO = {
         title: 'operators',
         image: '/assets/categories/operators.png',
     },
+    methods: {
+        title: 'methods',
+        image: '/assets/categories/methods.webp',
+    },
 } as const;
