@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - 2025-08-25 JavaScript cheat sheet: Rest Operator
 - 2025-08-26 HTML cheat sheet: Meaningful Link Texts
 - 2025-09-01 2 Accessibility and 3 HTML cheat sheets
+- 2025-09-03 2 React cheat sheets and 9 JavaScript method cheat sheets
 
 ### Fixed
 

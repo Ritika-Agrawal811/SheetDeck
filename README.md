@@ -12,12 +12,12 @@ I’ll be adding more cheat sheets here over time! :sparkles:
 
 Cheat sheets are currently available for the following languages :
 
-| Language                                                                                                                     | Topics                                                                    | Total |
-| ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ----- |
-| <br/> <p align="center">[![HTML](https://skillicons.dev/icons?i=html)](https://skillicons.dev) <br/> **HTML** </p>           | Concepts (10) • Attributes (7) • Elements (2)                             | 19    |
-| <br/> <p align="center">[![CSS](https://skillicons.dev/icons?i=css)](https://skillicons.dev) <br/> **CSS** </p>              | Concepts (5) • Properties (5) • Pseudo Classes (4) • Selectors (1)        | 15    |
-| <br/> <p align="center">[![JavaScript](https://skillicons.dev/icons?i=js)](https://skillicons.dev) <br/> **JavaScript** </p> | Concepts (7) • Operators (7) • DOM manipulation (3) • Advanced Syntax (5) | 22    |
-| <br/> <p align="center">[![React](https://skillicons.dev/icons?i=react)](https://skillicons.dev) <br/> **React** </p>        | Concepts (3)                                                              | 3     |
+| Language                                                                                                                     | Topics                                                                                  | Total |
+| ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ----- |
+| <br/> <p align="center">[![HTML](https://skillicons.dev/icons?i=html)](https://skillicons.dev) <br/> **HTML** </p>           | Concepts (10) • Attributes (7) • Elements (2)                                           | 19    |
+| <br/> <p align="center">[![CSS](https://skillicons.dev/icons?i=css)](https://skillicons.dev) <br/> **CSS** </p>              | Concepts (5) • Properties (5) • Pseudo Classes (4) • Selectors (1)                      | 15    |
+| <br/> <p align="center">[![JavaScript](https://skillicons.dev/icons?i=js)](https://skillicons.dev) <br/> **JavaScript** </p> | Concepts (7) • Operators (7) • DOM manipulation (3) • Advanced Syntax (5) • Methods (9) | 31    |
+| <br/> <p align="center">[![React](https://skillicons.dev/icons?i=react)](https://skillicons.dev) <br/> **React** </p>        | Concepts (5)                                                                            | 5     |
 
 <br/>
 

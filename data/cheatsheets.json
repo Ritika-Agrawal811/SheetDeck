@@ -417,6 +417,71 @@
                 "category": "operators",
                 "image": "/js-cheatsheets/operators/rest.jpg"
             }
+        ],
+        "methods": [
+            {
+                "id": "js-every-array-method",
+                "title": "every() Array Method",
+                "tag": "javascript",
+                "category": "methods",
+                "image": "/js-cheatsheets/methods/array-every.jpg"
+            },
+            {
+                "id": "js-filter-array-method",
+                "title": "filter() Array Method",
+                "tag": "javascript",
+                "category": "methods",
+                "image": "/js-cheatsheets/methods/array-filter.jpg"
+            },
+            {
+                "id": "js-find-array-method",
+                "title": "find() Array Method",
+                "tag": "javascript",
+                "category": "methods",
+                "image": "/js-cheatsheets/methods/array-find.jpg"
+            },
+            {
+                "id": "js-includes-array-method",
+                "title": "includes() Array Method",
+                "tag": "javascript",
+                "category": "methods",
+                "image": "/js-cheatsheets/methods/array-includes.jpg"
+            },
+            {
+                "id": "js-index-of-array-method",
+                "title": "indexOf() Array Method",
+                "tag": "javascript",
+                "category": "methods",
+                "image": "/js-cheatsheets/methods/array-index-of.jpg"
+            },
+            {
+                "id": "js-reduce-array-method",
+                "title": "reduce() Array Method",
+                "tag": "javascript",
+                "category": "methods",
+                "image": "/js-cheatsheets/methods/array-reduce.jpg"
+            },
+            {
+                "id": "js-reverse-array-method",
+                "title": "reverse() Array Method",
+                "tag": "javascript",
+                "category": "methods",
+                "image": "/js-cheatsheets/methods/array-reverse.jpg"
+            },
+            {
+                "id": "js-some-array-method",
+                "title": "reverse() Array Method",
+                "tag": "javascript",
+                "category": "methods",
+                "image": "/js-cheatsheets/methods/array-some.jpg"
+            },
+            {
+                "id": "js-sort-array-method",
+                "title": "sort() Array Method",
+                "tag": "javascript",
+                "category": "methods",
+                "image": "/js-cheatsheets/methods/array-sort.jpg"
+            }
         ]
     },
     "react": {
@@ -441,6 +506,20 @@
                 "tag": "react",
                 "category": "concepts",
                 "image": "/react-cheatsheets/concepts/virtual-dom.jpg"
+            },
+            {
+                "id": "react-jsx",
+                "title": "JavaScript XML(JSX)",
+                "tag": "react",
+                "category": "concepts",
+                "image": "/react-cheatsheets/concepts/jsx.jpg"
+            },
+            {
+                "id": "react-fragment",
+                "title": "React Fragment",
+                "tag": "react",
+                "category": "concepts",
+                "image": "/react-cheatsheets/concepts/react-fragment.jpg"
             }
         ]
     }
