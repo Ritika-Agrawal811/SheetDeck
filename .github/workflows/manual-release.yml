@@ -1,0 +1,73 @@
+name: Manual Release from Changelog
+
+on:
+    workflow_dispatch:
+        inputs:
+            version:
+                description: 'Version number (e.g. 1.1.0)'
+                required: true
+            release_date:
+                description: 'Release date (default: today)'
+                required: false
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v3
+              with:
+                  token: ${{ secrets.CHANGELOG_RELEASE }}
+
+            - name: Set release date
+              id: date
+              run: |
+                  if [ -z "${{ github.event.inputs.release_date }}" ]; then
+                    echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+                  else
+                    echo "date=${{ github.event.inputs.release_date }}" >> $GITHUB_OUTPUT
+                  fi
+
+            - name: Extract unreleased section
+              id: changelog
+              run: |
+                  awk '/## \[Unreleased\]/,/^---/' CHANGELOG.md | sed '1d;$d' > unreleased_changes.md
+                  echo "content<<EOF" >> $GITHUB_OUTPUT
+                  cat unreleased_changes.md >> $GITHUB_OUTPUT
+                  echo "EOF" >> $GITHUB_OUTPUT
+
+            - name: Update CHANGELOG.md
+              run: |
+                  version=${{ github.event.inputs.version }}
+                  date=${{ steps.date.outputs.date }}
+                  tmpfile=$(mktemp)
+
+                  awk -v ver="$version" -v d="$date" '
+                    BEGIN { unreleased_found=0 }
+                    /^## \[Unreleased\]/ {
+                      unreleased_found=1
+                      print
+                      print ""
+                      print "## [" ver "] - " d
+                      next
+                    }
+                    { print }
+                  ' CHANGELOG.md > "$tmpfile"
+
+                  mv "$tmpfile" CHANGELOG.md
+
+                  git config user.name "github-actions"
+                  git config user.email "github-actions@github.com"
+                  git add CHANGELOG.md
+                  git commit -m "chore(release): $version"
+                  git push
+
+            - name: Create GitHub Release
+              uses: actions/create-release@v1
+              env:
+                  GITHUB_TOKEN: ${{ secrets.CHANGELOG_RELEASE }}
+              with:
+                  tag_name: v${{ github.event.inputs.version }}
+                  release_name: v${{ github.event.inputs.version }}
+                  body: ${{ steps.changelog.outputs.content }}
