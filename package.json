@@ -1,63 +1,65 @@
 {
  "name": "sheetdeck",
  "description": "Developer-friendly cheat sheets for HTML, CSS, JavaScript and more. Simple. Fast. Reference-ready.",
-  "keywords": [
-        "cheat sheets",
-        "web development",
-        "html cheat sheet",
-        "css cheat sheet",
-        "javascript cheat sheet",
-        "react cheat sheet",
-        "react reference",
-        "programming shortcuts",
-        "quick reference",
-        "quick notes"
-    ],
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier --write .",
-    "prepare": "husky"
-  },
-  "dependencies": {
-    "@vercel/analytics": "^1.5.0",
-    "clsx": "^2.1.1",
-    "framer-motion": "^12.15.0",
-    "jotai": "^2.12.5",
-    "next": "15.3.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-icons": "^5.5.0",
-    "zod": "^3.25.48"
-  },
-  "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9.28.0",
-    "eslint-config-next": "15.3.3",
-    "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-prettier": "^5.4.1",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.1.0",
-    "prettier": "^3.5.3",
-    "tailwindcss": "^4",
-    "typescript": "^5"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,css,md}": [
-      "prettier --write"
-    ]
-  }
+ "keywords": [
+  "cheat sheets",
+  "web development",
+  "html cheat sheet",
+  "css cheat sheet",
+  "javascript cheat sheet",
+  "react cheat sheet",
+  "react reference",
+  "programming shortcuts",
+  "quick reference",
+  "quick notes"
+ ],
+ "version": "1.0.0",
+ "private": true,
+ "scripts": {
+  "dev": "next dev --turbopack",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint",
+  "lint:fix": "eslint . --fix",
+  "format": "prettier --write .",
+  "prepare": "husky"
+ },
+ "dependencies": {
+  "@tanstack/react-query": "^5.87.4",
+  "@vercel/analytics": "^1.5.0",
+  "axios": "^1.12.2",
+  "clsx": "^2.1.1",
+  "framer-motion": "^12.15.0",
+  "jotai": "^2.12.5",
+  "next": "15.3.3",
+  "react": "^19.0.0",
+  "react-dom": "^19.0.0",
+  "react-icons": "^5.5.0",
+  "zod": "^3.25.48"
+ },
+ "devDependencies": {
+  "@eslint/eslintrc": "^3",
+  "@tailwindcss/postcss": "^4",
+  "@types/node": "^20",
+  "@types/react": "^19",
+  "@types/react-dom": "^19",
+  "eslint": "^9.28.0",
+  "eslint-config-next": "15.3.3",
+  "eslint-config-prettier": "^10.1.5",
+  "eslint-plugin-prettier": "^5.4.1",
+  "husky": "^9.1.7",
+  "lint-staged": "^16.1.0",
+  "prettier": "^3.5.3",
+  "tailwindcss": "^4",
+  "typescript": "^5"
+ },
+ "lint-staged": {
+  "*.{js,jsx,ts,tsx}": [
+   "eslint --fix",
+   "prettier --write"
+  ],
+  "*.{json,css,md}": [
+   "prettier --write"
+  ]
+ }
 }
