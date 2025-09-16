@@ -1,8 +1,10 @@
 'use client';
 
 import clsx from 'clsx';
+import { useEffect } from 'react';
 
 import { castoro } from '../font';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 // components
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -10,6 +12,15 @@ import { MdEmail } from 'react-icons/md';
 import Icon from '@/components/ui/Icon';
 
 export default function TermsAndConditionsPage() {
+    const { recordPageView } = useAnalytics();
+
+    useEffect(() => {
+        recordPageView({
+            route: window.location.pathname,
+            referrer: document.referrer,
+        });
+    }, [recordPageView]);
+
     return (
         <main className={clsx('w-11/12 2xl:w-[85%] 3xl:w-4/5 max-w-screen-3xl mx-auto', 'space-y-16 px-4')}>
             <SectionHeading content="Terms and Conditions" />
