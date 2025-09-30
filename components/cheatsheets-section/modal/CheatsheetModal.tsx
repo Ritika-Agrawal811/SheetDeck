@@ -1,8 +1,11 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 
 import type { Cheatsheet } from '@/types/cheatsheets';
 import { TAGS_INFO } from '@/lib/cheatsheets/constants';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 // components
 import Modal from '@/components/ui/Modal';
@@ -21,6 +24,7 @@ interface CheatsheetModalProps {
 
 const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClose }) => {
     const [isLoading, setIsLoading] = useState(true);
+    const { recordEvent } = useAnalytics();
 
     useEffect(() => {
         if (details) {
@@ -28,6 +32,17 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
             setTimeout(() => setIsLoading(false), 300);
         }
     }, [details]);
+
+    const onDownloadHandler = (event: React.MouseEvent<HTMLAnchorElement>) => {
+        if (!details) return;
+
+        event.stopPropagation();
+        recordEvent({
+            route: window.location.pathname,
+            cheatsheetSlug: details?.id,
+            eventType: 'download',
+        });
+    };
 
     return (
         <>
@@ -73,7 +88,7 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                                     <a
                                         href={details.image}
                                         download={details.image.split('/').pop()}
-                                        onClick={(event) => event.stopPropagation()}
+                                        onClick={onDownloadHandler}
                                         className={clsx('flex gap-3 items-center', 'px-3', 'py-2')}
                                     >
                                         <span className="hidden md:inline">Download</span>

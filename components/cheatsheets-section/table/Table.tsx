@@ -53,7 +53,7 @@ const Table: React.FC<TableProps> = ({ cheatsheets }) => {
                 </thead>
                 <tbody>
                     {paginatedData.map((data) => {
-                        return <Row key={data.id} {...data} onClick={() => setModal({ open: true, details: data })} />;
+                        return <Row key={data.id} {...data} viewDetails={() => setModal({ open: true, details: data })} />;
                     })}
                 </tbody>
             </table>

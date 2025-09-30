@@ -1,5 +1,5 @@
 import { useMutation } from '@tanstack/react-query';
-import { trackPageview } from '@/lib/api/analytics';
+import { trackPageview, trackEvent } from '@/lib/api/analytics';
 
 export const useAnalytics = () => {
     // Pageview tracking
@@ -13,5 +13,16 @@ export const useAnalytics = () => {
         },
     });
 
-    return { recordPageView };
+    // Event tracking
+    const { mutate: recordEvent } = useMutation({
+        mutationFn: trackEvent,
+        retry: 6,
+        retryDelay: (attemptIndex) => {
+            // Render-optimized delays for free tier
+            const delays = [3000, 8000, 15000, 25000, 45000, 60000];
+            return delays[attemptIndex] || 60000;
+        },
+    });
+
+    return { recordPageView, recordEvent };
 };

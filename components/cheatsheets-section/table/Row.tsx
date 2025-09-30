@@ -3,6 +3,7 @@ import clsx from 'clsx';
 
 import type { Cheatsheet } from '@/types/cheatsheets';
 import { TAGS_INFO } from '@/lib/cheatsheets/constants';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 // components
 import Badge from '@/components/ui/Badge';
@@ -10,11 +11,31 @@ import { IoMdDownload, IoMdEye } from 'react-icons/io';
 import Icon from '@/components/ui/Icon';
 
 type RowProps = {
-    onClick: () => void;
+    viewDetails: () => void;
 } & Cheatsheet;
 
-const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
+const Row: React.FC<RowProps> = ({ id, title, tag, image, viewDetails }) => {
+    const { recordEvent } = useAnalytics();
+
     const downloadFileName = image.split('/').pop();
+
+    const onClickHandler = () => {
+        viewDetails();
+        recordEvent({
+            route: window.location.pathname,
+            cheatsheetSlug: id,
+            eventType: 'click',
+        });
+    };
+
+    const onDownloadHandler = (event: React.MouseEvent<HTMLAnchorElement>) => {
+        event.stopPropagation();
+        recordEvent({
+            route: window.location.pathname,
+            cheatsheetSlug: id,
+            eventType: 'download',
+        });
+    };
 
     return (
         <tr className="border-b border-gray-200 dark:border-gray-600 sm:border-none">
@@ -24,7 +45,7 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
                     'cursor-pointer hover:text-purple-800 dark:hover:text-purple-300',
                     'text-base 4xl:text-lg'
                 )}
-                onClick={onClick}
+                onClick={onClickHandler}
             >
                 {title}
                 <Badge size="tiny" color={TAGS_INFO[tag].color} shape="pill" className="mt-2 sm:hidden">
@@ -50,7 +71,7 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
                     <a
                         href={image}
                         download={downloadFileName}
-                        onClick={(event) => event.stopPropagation()}
+                        onClick={onDownloadHandler}
                         className={clsx('flex gap-2 items-center', 'p-2 xl:p-2.5 shadow')}
                         tabIndex={-1}
                     >
@@ -67,7 +88,7 @@ const Row: React.FC<RowProps> = ({ title, tag, image, onClick }) => {
                         'flex gap-2 items-center',
                         'focus:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-blue-400'
                     )}
-                    onClick={onClick}
+                    onClick={onClickHandler}
                 >
                     <span className="sr-only">View details for cheat sheet: {title}</span>
                     <Icon
