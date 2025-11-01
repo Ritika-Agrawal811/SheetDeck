@@ -258,49 +258,49 @@
     "javascript": {
         "concepts": [
             {
-                "id": "js-primitive-data-types",
+                "id": "javascript-primitive-data-types",
                 "title": "Primitive Data Types",
                 "tag": "javascript",
                 "category": "concepts",
                 "image": "/js-cheatsheets/concepts/primitive-data-types.webp"
             },
             {
-                "id": "js-non-primitive-data-types",
+                "id": "javascript-non-primitive-data-types",
                 "title": "Non-Primitive Data Types",
                 "tag": "javascript",
                 "category": "concepts",
                 "image": "/js-cheatsheets/concepts/non-primitive-data-types.webp"
             },
             {
-                "id": "js-scopes",
+                "id": "javascript-scopes",
                 "title": "Scopes",
                 "tag": "javascript",
                 "category": "concepts",
                 "image": "/js-cheatsheets/concepts/scopes.webp"
             },
             {
-                "id": "js-hoisting",
+                "id": "javascript-hoisting",
                 "title": "Hoisting",
                 "tag": "javascript",
                 "category": "concepts",
                 "image": "/js-cheatsheets/concepts/hoisting.webp"
             },
             {
-                "id": "js-closures",
+                "id": "javascript-closures",
                 "title": "Closures",
                 "tag": "javascript",
                 "category": "concepts",
                 "image": "/js-cheatsheets/concepts/closures.webp"
             },
             {
-                "id": "js-call-by-value-and-reference",
+                "id": "javascript-call-by-value-vs-call-by-reference",
                 "title": "Call by Value VS Call by Reference",
                 "tag": "javascript",
                 "category": "concepts",
                 "image": "/js-cheatsheets/concepts/call-by-value-and-reference.webp"
             },
             {
-                "id": "js-default-parameters",
+                "id": "javascript-default-parameters",
                 "title": "Default Parameters",
                 "tag": "javascript",
                 "category": "concepts",
@@ -309,35 +309,35 @@
         ],
         "advanced-syntax": [
             {
-                "id": "js-for-of-loop",
+                "id": "javascript-for-of-loop",
                 "title": "for...of Loop",
                 "tag": "javascript",
                 "category": "advanced-syntax",
                 "image": "/js-cheatsheets/advanced-syntax/for-of-loop.webp"
             },
             {
-                "id": "js-for-in-loop",
+                "id": "javascript-for-in-loop",
                 "title": "for...in Loop",
                 "tag": "javascript",
                 "category": "advanced-syntax",
                 "image": "/js-cheatsheets/advanced-syntax/for-in-loop.webp"
             },
             {
-                "id": "js-arrow-functions",
+                "id": "javascript-arrow-functions",
                 "title": "Arrow Functions",
                 "tag": "javascript",
                 "category": "advanced-syntax",
                 "image": "/js-cheatsheets/advanced-syntax/arrow-functions.webp"
             },
             {
-                "id": "js-destructuring",
+                "id": "javascript-destructuring-assignment",
                 "title": "Destructuring",
                 "tag": "javascript",
                 "category": "advanced-syntax",
                 "image": "/js-cheatsheets/advanced-syntax/destructuring-assignment.webp"
             },
             {
-                "id": "js-template-literal",
+                "id": "javascript-template-literal",
                 "title": "Template Literal",
                 "tag": "javascript",
                 "category": "advanced-syntax",
@@ -346,21 +346,21 @@
         ],
         "dom-manipulation": [
             {
-                "id": "js-dom",
+                "id": "javascript-document-object-model",
                 "title": "Document Object Model",
                 "tag": "javascript",
                 "category": "dom-manipulation",
                 "image": "/js-cheatsheets/dom-manipulation/document-object-model.webp"
             },
             {
-                "id": "js-event-propagation",
+                "id": "javascript-event-propagation",
                 "title": "Event Propagation",
                 "tag": "javascript",
                 "category": "dom-manipulation",
                 "image": "/js-cheatsheets/dom-manipulation/event-propagation.webp"
             },
             {
-                "id": "js-event-target",
+                "id": "javascript-event-target",
                 "title": "event.target",
                 "tag": "javascript",
                 "category": "dom-manipulation",
@@ -369,49 +369,49 @@
         ],
         "operators": [
             {
-                "id": "js-spread-operator",
+                "id": "javascript-spread-operator",
                 "title": "Spread Operator",
                 "tag": "javascript",
                 "category": "operators",
                 "image": "/js-cheatsheets/operators/spread.webp"
             },
             {
-                "id": "js-ternary-operator",
+                "id": "javascript-ternary-operator",
                 "title": "Ternary Operator",
                 "tag": "javascript",
                 "category": "operators",
                 "image": "/js-cheatsheets/operators/ternary.webp"
             },
             {
-                "id": "js-optional-chaining-operator",
+                "id": "javascript-optional-chaining-operator",
                 "title": "Optional Chaining Operator",
                 "tag": "javascript",
                 "category": "operators",
                 "image": "/js-cheatsheets/operators/optional-chaining.webp"
             },
             {
-                "id": "js-nullish-coalescing-operator",
+                "id": "javascript-nullish-coalescing-operator",
                 "title": "Nullish Coalescing Operator",
                 "tag": "javascript",
                 "category": "operators",
                 "image": "/js-cheatsheets/operators/nullish-coalescing.webp"
             },
             {
-                "id": "js-increment-and-decrement-operator",
+                "id": "javascript-increment-and-decrement-operators",
                 "title": "Increment And Decrement Operators",
                 "tag": "javascript",
                 "category": "operators",
                 "image": "/js-cheatsheets/operators/increment-and-decrement.webp"
             },
             {
-                "id": "js-equality-vs-strict-equality",
+                "id": "javascript-equality-vs-strict-equality",
                 "title": "Equality VS Strict Equality",
                 "tag": "javascript",
                 "category": "operators",
                 "image": "/js-cheatsheets/operators/equality-vs-strict-equality.webp"
             },
             {
-                "id": "js-rest-operator",
+                "id": "javascript-rest-operator",
                 "title": "Rest Operator",
                 "tag": "javascript",
                 "category": "operators",
@@ -420,63 +420,63 @@
         ],
         "methods": [
             {
-                "id": "js-every-array-method",
+                "id": "javascript-every-array-method",
                 "title": "every() Array Method",
                 "tag": "javascript",
                 "category": "methods",
                 "image": "/js-cheatsheets/methods/array-every.webp"
             },
             {
-                "id": "js-filter-array-method",
+                "id": "javascript-filter-array-method",
                 "title": "filter() Array Method",
                 "tag": "javascript",
                 "category": "methods",
                 "image": "/js-cheatsheets/methods/array-filter.webp"
             },
             {
-                "id": "js-find-array-method",
+                "id": "javascript-find-array-method",
                 "title": "find() Array Method",
                 "tag": "javascript",
                 "category": "methods",
                 "image": "/js-cheatsheets/methods/array-find.webp"
             },
             {
-                "id": "js-includes-array-method",
+                "id": "javascript-includes-array-method",
                 "title": "includes() Array Method",
                 "tag": "javascript",
                 "category": "methods",
                 "image": "/js-cheatsheets/methods/array-includes.webp"
             },
             {
-                "id": "js-index-of-array-method",
+                "id": "javascript-indexof-array-method",
                 "title": "indexOf() Array Method",
                 "tag": "javascript",
                 "category": "methods",
                 "image": "/js-cheatsheets/methods/array-index-of.webp"
             },
             {
-                "id": "js-reduce-array-method",
+                "id": "javascript-reduce-array-method",
                 "title": "reduce() Array Method",
                 "tag": "javascript",
                 "category": "methods",
                 "image": "/js-cheatsheets/methods/array-reduce.webp"
             },
             {
-                "id": "js-reverse-array-method",
+                "id": "javascript-reverse-array-method",
                 "title": "reverse() Array Method",
                 "tag": "javascript",
                 "category": "methods",
                 "image": "/js-cheatsheets/methods/array-reverse.webp"
             },
             {
-                "id": "js-some-array-method",
+                "id": "javascript-some-array-method",
                 "title": "reverse() Array Method",
                 "tag": "javascript",
                 "category": "methods",
                 "image": "/js-cheatsheets/methods/array-some.webp"
             },
             {
-                "id": "js-sort-array-method",
+                "id": "javascript-sort-array-method",
                 "title": "sort() Array Method",
                 "tag": "javascript",
                 "category": "methods",

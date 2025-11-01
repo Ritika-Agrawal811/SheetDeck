@@ -5,6 +5,7 @@ import clsx from 'clsx';
 
 import { motion } from 'framer-motion';
 import { useTheme } from '@/hooks/useTheme';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 import type { Cheatsheet } from '@/types/cheatsheets';
 import { TAGS_INFO } from '@/lib/cheatsheets/constants';
@@ -33,6 +34,7 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) => {
     const { isDark } = useTheme();
+    const { recordEvent } = useAnalytics();
 
     const [isLoading, setIsLoading] = useState(true);
     const downloadFileName = image.split('/').pop();
@@ -40,8 +42,26 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
     const onKeyDownHandler = (event: React.KeyboardEvent<HTMLElement>) => {
         if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
-            viewCardDetails();
+            onClickHandler();
         }
+    };
+
+    const onClickHandler = () => {
+        viewCardDetails();
+        recordEvent({
+            route: window.location.pathname,
+            cheatsheetSlug: id,
+            eventType: 'click',
+        });
+    };
+
+    const onDownloadHandler = (event: React.MouseEvent<HTMLAnchorElement>) => {
+        event.stopPropagation();
+        recordEvent({
+            route: window.location.pathname,
+            cheatsheetSlug: id,
+            eventType: 'download',
+        });
     };
 
     useEffect(() => {
@@ -69,7 +89,7 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
                     initial="initial"
                     animate="animate"
                     variants={cardVariants}
-                    onClick={viewCardDetails}
+                    onClick={onClickHandler}
                     onKeyDown={onKeyDownHandler}
                 >
                     <Badge size="small" color={TAGS_INFO[tag].color} shape="pill" className="absolute left-2 top-2 dark:top-3">
@@ -89,7 +109,7 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
                         )}
                         download={downloadFileName}
                         tabIndex={0}
-                        onClick={(event) => event.stopPropagation()}
+                        onClick={onDownloadHandler}
                     >
                         <span className="sr-only">Download the {title} cheatsheet</span>
                         <Icon
