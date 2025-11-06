@@ -243,6 +243,20 @@
                 "tag": "css",
                 "category": "pseudo-classes",
                 "image": "/css-cheatsheets/pseudo-classes/nth-child.webp"
+            },
+            {
+                "id": "css-first-child-pseudo-class",
+                "title": ":first-child Pseudo Class",
+                "tag": "css",
+                "category": "pseudo-classes",
+                "image": "/css-cheatsheets/pseudo-classes/first-child.webp"
+            },
+            {
+                "id": "css-target-pseudo-class",
+                "title": ":target Pseudo Class",
+                "tag": "css",
+                "category": "pseudo-classes",
+                "image": "/css-cheatsheets/pseudo-classes/target.webp"
             }
         ],
         "selectors": [

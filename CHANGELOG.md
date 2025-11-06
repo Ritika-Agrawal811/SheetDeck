@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added
+
+- 2025-11-06 CSS cheat sheets: first-child and target pseudo classes
+
+---
+
 ## [1.1.0] - 2025-09-03
 
 ### Added
@@ -23,8 +29,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ### Fixed
 
 - 2025-08-29 Updated CSS cheat sheets: border and box-shadow
-
----
 
 ## [1.0.0] - 2025-07-22
 
