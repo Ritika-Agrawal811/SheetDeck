@@ -12,7 +12,6 @@ type Data = {
 };
 
 interface SearchListProps {
-    className?: string;
     data: Data;
     setDataHandler: (result: Cheatsheet[]) => void;
     resetInputValueHandler: () => void;
@@ -22,7 +21,6 @@ interface SearchListProps {
 }
 
 const SearchList: React.FC<SearchListProps> = ({
-    className,
     data,
     setDataHandler,
     resetInputValueHandler,
@@ -35,7 +33,9 @@ const SearchList: React.FC<SearchListProps> = ({
         orientation: 'vertical',
     });
 
-    // sets the search results list
+    /**
+     * Updates the search results when the search value changes.
+     */
     useEffect(() => {
         if (data.value === '') {
             setDataHandler([]);
@@ -46,21 +46,22 @@ const SearchList: React.FC<SearchListProps> = ({
         setDataHandler(filteredCheatsheets);
     }, [data.value, getResultsList, setDataHandler]);
 
-    // handle closing of list when document is clicked
+    /**
+     * Closes the search list when clicking outside of it.
+     */
     useEffect(() => {
         if (!data.openList) return;
 
-        const timeout = setTimeout(() => {
-            document.addEventListener('click', closeSearchList);
-        }, 0);
+        document.addEventListener('click', closeSearchList);
 
         return () => {
-            clearTimeout(timeout);
             document.removeEventListener('click', closeSearchList);
         };
     }, [data.openList, closeSearchList]);
 
-    // focus the first item for arrow key navigation
+    /**
+     * Focuses the first search item when required for arrow key navigation.
+     */
     useEffect(() => {
         if (focusFirstSearchItem) {
             focusFirstItem();
@@ -69,11 +70,20 @@ const SearchList: React.FC<SearchListProps> = ({
         }
     }, [focusFirstSearchItem, focusFirstItem, setActiveIndex, resetFocusFirstSearchItem]);
 
+    /**
+     * Handles the selection of a search option and displays its results.
+     * @param title - cheat sheet title
+     */
     const selectSearchOptionHandler = (title: string) => {
         displaySearchResultsHandler(title);
         resetInputValueHandler();
     };
 
+    /**
+     * Handles keyboard events on each search item.
+     * @param event - keyboard event
+     * @param title - cheat sheet title
+     */
     const itemKeyDownHandler = (event: React.KeyboardEvent, title: string) => {
         if (event.key === 'Enter' || event.key === ' ') {
             event.stopPropagation();
@@ -86,10 +96,10 @@ const SearchList: React.FC<SearchListProps> = ({
             id="cheatsheet-search-options"
             tabIndex={-1}
             className={clsx(
+                'absolute top-[120%] w-full z-50',
                 'bg-white dark:bg-neutral-800 rounded-md',
                 'border border-gray-200 dark:border-none',
                 'divide-y divide-gray-200 dark:divide-gray-700',
-                className,
                 data.openList && data.results.length > 0 ? 'block' : 'hidden'
             )}
             onKeyDown={handleKeysNavigation}

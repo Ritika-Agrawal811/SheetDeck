@@ -20,26 +20,39 @@ type SearchData = {
 const SearchBox = () => {
     const { displaySearchResultsHandler } = useSearch();
 
+    const [focusFirstSearchItem, setFocusFirstSearchItem] = useState(false);
     const [searchData, setSearchData] = useState<SearchData>({
         openList: false,
         value: '',
         results: [],
     });
-    const [focusFirstSearchItem, setFocusFirstSearchItem] = useState(false);
 
+    /**
+     * Sets the search results in the state.
+     * @param results - list of filtered cheatsheets
+     */
     const setSearchResultsHandler = useCallback((results: Cheatsheet[]) => {
         setSearchData((prev) => ({ ...prev, results }));
     }, []);
 
+    /**
+     * Resets the search input value.
+     */
     const resetInputValueHandler = useCallback(() => {
         setSearchData((prev) => ({ ...prev, value: '' }));
     }, []);
 
+    /**
+     * Closes the search results list.
+     */
     const closeSearchList = useCallback(() => {
         setSearchData((prev) => ({ ...prev, openList: false }));
     }, []);
 
-    // triggered on change event of input field -- when a value is entered
+    /**
+     * Handles the search input change event.
+     * @param event - input change event
+     */
     const searchCheatsheetHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.value === '') setSearchData((prev) => ({ ...prev, openList: false }));
 
@@ -50,27 +63,13 @@ const SearchBox = () => {
         }));
     };
 
-    // triggered when input field is on focus to show the results list
-    const onFocusHandler = () => {
-        setSearchData((prev) => ({ ...prev, openList: true }));
-    };
-
-    const onKeyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (searchData.results.length === 0) return;
-
-        if (e.key === 'ArrowDown') {
-            e.preventDefault();
-            setFocusFirstSearchItem(true);
-        }
-    };
-
-    const resetFocusFirstSearchItem = useCallback(() => {
-        setFocusFirstSearchItem(false);
-    }, []);
-
-    // triggered on form submit to show the search results
+    /**
+     * Handles the form submit event to show search results.
+     * @param event - form submit event
+     */
     const showSearchResultsHandler = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+
         displaySearchResultsHandler(searchData.value);
         setSearchData({
             openList: false,
@@ -78,6 +77,33 @@ const SearchBox = () => {
             results: [],
         });
     };
+
+    /**
+     * Handles the input focus event to open the search list.
+     */
+    const onFocusHandler = () => {
+        setSearchData((prev) => ({ ...prev, openList: true }));
+    };
+
+    /**
+     * Handles the key down event for arrow key navigation.
+     * @param event - key down event
+     */
+    const onKeyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (searchData.results.length === 0) return;
+
+        if (event.key === 'ArrowDown') {
+            event.preventDefault();
+            setFocusFirstSearchItem(true);
+        }
+    };
+
+    /**
+     * Resets the focus to the first search item.
+     */
+    const resetFocusFirstSearchItem = useCallback(() => {
+        setFocusFirstSearchItem(false);
+    }, []);
 
     return (
         <form
@@ -113,13 +139,12 @@ const SearchBox = () => {
             />
 
             <SearchList
-                className="absolute top-[120%] w-full z-50"
                 data={searchData}
                 setDataHandler={setSearchResultsHandler}
                 resetInputValueHandler={resetInputValueHandler}
+                closeSearchList={closeSearchList}
                 focusFirstSearchItem={focusFirstSearchItem}
                 resetFocusFirstSearchItem={resetFocusFirstSearchItem}
-                closeSearchList={closeSearchList}
             />
 
             <button

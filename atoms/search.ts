@@ -2,6 +2,14 @@ import { atom } from 'jotai';
 
 import type { Cheatsheet } from '@/types/cheatsheets';
 
-export const showResultsAtom = atom<boolean>(false);
-export const searchValueAtom = atom<string>('');
-export const searchResultsAtom = atom<Cheatsheet[] | null>(null);
+type SearchData = {
+    available: boolean;
+    value: string;
+    results: Cheatsheet[];
+};
+
+export const searchData = atom<SearchData>({
+    available: false,
+    value: '',
+    results: [],
+});
