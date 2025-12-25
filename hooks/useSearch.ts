@@ -1,29 +1,36 @@
 import { useAtom } from 'jotai';
 import { useCallback, useMemo } from 'react';
 
-import { searchValueAtom, searchResultsAtom, showResultsAtom } from '@/atoms/search';
+import { searchData } from '@/atoms/search';
 import { getAllCheatsheets } from '@/utils/getAllCheatsheets';
 
 export const useSearch = () => {
-    const [searchValue, setSearchValue] = useAtom(searchValueAtom);
-    const [searchResults, setSearchResults] = useAtom(searchResultsAtom);
-    const [showSearchResults, setShowSearchResults] = useAtom(showResultsAtom);
+    const [searchDetails, setSearchDetails] = useAtom(searchData);
 
     const allCheatsheets = useMemo(() => getAllCheatsheets(), []);
 
+    /**
+     * Displays search results based on the input value.
+     * @param value - search input value
+     */
     const displaySearchResultsHandler = (value: string) => {
         if (value === '') return;
 
-        // set search value
-        setSearchValue(value);
-
-        // set search results
         const filteredCheatsheets = getResultsList(value);
-        setSearchResults(filteredCheatsheets);
 
-        setShowSearchResults(true);
+        setSearchDetails((prev) => ({
+            ...prev,
+            available: filteredCheatsheets.length > 0,
+            value,
+            results: filteredCheatsheets,
+        }));
     };
 
+    /**
+     * Gets the list of results matching the search value.
+     * @param value - search input value
+     * @returns filtered list of cheatsheets
+     */
     const getResultsList = useCallback(
         (value: string) => {
             return allCheatsheets.filter((item) => {
@@ -35,18 +42,23 @@ export const useSearch = () => {
         [allCheatsheets]
     );
 
+    /**
+     * Resets the search details to initial state.
+     */
     const reset = () => {
-        setSearchValue('');
-        setShowSearchResults(false);
-        setSearchResults(null);
+        setSearchDetails({
+            available: false,
+            value: '',
+            results: [],
+        });
     };
 
     return {
-        searchValue,
-        searchResults,
-        getResultsList,
-        showSearchResults,
+        searchValue: searchDetails.value,
+        searchResults: searchDetails.results,
+        showSearchResults: searchDetails.available,
         displaySearchResultsHandler,
+        getResultsList,
         reset,
     };
 };
