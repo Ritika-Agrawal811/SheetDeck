@@ -14,21 +14,30 @@ interface LayoutControlsProps {
 }
 
 const LayoutControls: React.FC<LayoutControlsProps> = ({ view, setViewHandler }) => {
-    const { registerItemRef, handleKeysNavigation, setActiveIndex } = useArrowKeyNavigation(2);
+    const { registerItemRef, handleKeysNavigation, setCurrentIndex } = useArrowKeyNavigation(2);
 
+    /**
+     * Handles arrow key navigation. 0 index => grid view and 1 index => list view
+     * @param event - keyboard event
+     */
     const parentKeyDownHandler = (event: React.KeyboardEvent) => {
         if (event.key === 'Tab') {
-            /* set the current active view index as active index */
-            setActiveIndex(view === 'grid' ? 0 : 1);
+            setCurrentIndex(view === 'grid' ? 0 : 1);
         }
         handleKeysNavigation(event);
     };
 
+    /**
+     * Handles key down event on individual items.
+     * @param event - keyboard event
+     * @param view - view to set
+     * @param index - index of the item
+     */
     const itemKeyDownHandler = (event: React.KeyboardEvent<HTMLLIElement>, view: 'grid' | 'list', index: number) => {
         if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
             setViewHandler(view);
-            setActiveIndex(index);
+            setCurrentIndex(index);
         }
     };
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import clsx from 'clsx';
 
 import type { IconType } from 'react-icons';
@@ -17,6 +16,10 @@ interface CategoryCardProps {
 }
 
 const CategoryCard = ({ title, color, icon, ref, active, setActiveCategory }: CategoryCardProps) => {
+    /**
+     * Sets the active category on key down event.
+     * @param event - keyboard event
+     */
     const keyDownHandler = (event: React.KeyboardEvent<HTMLLIElement>) => {
         if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
@@ -44,10 +47,16 @@ const CategoryCard = ({ title, color, icon, ref, active, setActiveCategory }: Ca
             onKeyDown={keyDownHandler}
             ref={ref}
         >
+            {/* category icon */}
             {icon && <Icon icon={icon} size="text-5xl lg:text-6xl 3xl:text-7xl" className="mb-4 xl:mb-6" aria-hidden={true} />}
+
+            {/* category title */}
             {title}
 
+            {/* right border */}
             <div className={clsx('absolute right-0 top-0', 'h-full w-px')} style={{ background: color }} aria-hidden={true}></div>
+
+            {/* active category background indicator */}
             <div
                 className={clsx(
                     'absolute -z-10 rounded-full',

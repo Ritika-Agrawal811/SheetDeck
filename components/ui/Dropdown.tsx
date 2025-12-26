@@ -10,24 +10,29 @@ import Icon from './Icon';
 
 interface DropdownProps {
     label: string;
+    data: string[];
     selectedOption: string;
     setSelectedOption: (option: string) => void;
-    data: string[];
     labelStyle?: React.CSSProperties;
     labelClassname?: string;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedOption, data, labelStyle, labelClassname }) => {
-    const { registerItemRef, handleKeysNavigation, focusFirstItem, setActiveIndex } = useArrowKeyNavigation(data.length, {
+    const [open, setOpen] = useState(false);
+    const { registerItemRef, handleKeysNavigation, focusFirstItem, setCurrentIndex } = useArrowKeyNavigation(data.length, {
         orientation: 'vertical',
     });
-    const [open, setOpen] = useState(false);
 
+    /**
+     * Closes the expanded options list.
+     */
     const closeExpandedOptions = useCallback(() => {
         setOpen(false);
     }, []);
 
-    // add click event to document to close the expanded options
+    /**
+     * Closes the dropdown when clicking outside the component.
+     */
     useEffect(() => {
         if (!open) return;
 
@@ -38,17 +43,33 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
         };
     }, [open, closeExpandedOptions]);
 
+    /**
+     * Sets the selected option and closes the dropdown.
+     * @param event - mouse event
+     * @param option - selected option
+     */
     const setSelectedOptionHandler = (event: React.MouseEvent<HTMLLIElement>, option: string) => {
         event.stopPropagation();
         setSelectedOption(option);
         setOpen(false);
     };
 
-    const parentKeyDownHandler = () => {
-        focusFirstItem();
-        setActiveIndex(0);
+    /**
+     * Handles arrow key navigation on the dropdown list activated via parent button.
+     * @param event - keyboard event
+     */
+    const parentKeyDownHandler = (event: React.KeyboardEvent) => {
+        if ((event.key === 'Tab' || event.key === 'ArrowDown') && open) {
+            focusFirstItem();
+            setCurrentIndex(0);
+        }
     };
 
+    /**
+     * Handles key down event on individual items.
+     * @param event - keyboard event
+     * @param option - selected option
+     */
     const itemKeyDownHandler = (event: React.KeyboardEvent, option: string) => {
         if (event.key === 'Enter' || event.key === ' ') {
             event.stopPropagation();
@@ -59,6 +80,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
 
     return (
         <div className="relative" aria-label={`Select a ${label} for cheatsheet`}>
+            {/* Dropdown button */}
             <button
                 aria-haspopup="listbox"
                 aria-expanded={open}
@@ -98,6 +120,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, selectedOption, setSelectedO
                 </span>
             </button>
 
+            {/* Dropdown options list */}
             <ul
                 id={`${label}-dropdown-options`}
                 role="listbox"

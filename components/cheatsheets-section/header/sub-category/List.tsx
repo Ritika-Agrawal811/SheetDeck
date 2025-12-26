@@ -4,10 +4,10 @@ import clsx from 'clsx';
 
 import type { Categories } from '@/types/cheatsheets';
 
-import { useCategory } from '@/hooks/useCategory';
-import { usePagination } from '@/hooks/usePagination';
 import { useSearch } from '@/hooks/useSearch';
 import { useTheme } from '@/hooks/useTheme';
+import { useCategory } from '@/hooks/useCategory';
+import { usePagination } from '@/hooks/usePagination';
 import { useQueryParams } from '@/hooks/useQueryParams';
 import { useArrowKeyNavigation } from '@/hooks/useArrowKeyNavigation';
 import { fetchSubCategories } from '@/utils/fetchSubCategories';
@@ -25,39 +25,66 @@ interface ListProps {
 const List: React.FC<ListProps> = ({ className, size = 'default', showImage = true }) => {
     const { activeCategory, setActiveSubCategoryHandler, cheatsheets } = useCategory();
     const { resetCurrentPage } = usePagination({ data: cheatsheets });
-    const { clearQueryParams } = useQueryParams();
+
     const { reset } = useSearch();
     const { isDark, hasMounted } = useTheme();
+    const { clearQueryParams } = useQueryParams();
 
     const subCategories = fetchSubCategories(activeCategory.topic);
-    const { registerItemRef, handleKeysNavigation, setActiveIndex } = useArrowKeyNavigation(subCategories.length);
+    const { registerItemRef, handleKeysNavigation, setCurrentIndex } = useArrowKeyNavigation(subCategories.length);
 
+    /**
+     * Reset current index for arrow navigation
+     * when active category topic changes
+     */
     useEffect(() => {
-        setActiveIndex(0);
-    }, [activeCategory.topic, setActiveIndex]);
+        setCurrentIndex(0);
+    }, [activeCategory.topic, setCurrentIndex]);
 
+    /**
+     * Handle arrow navigation and set current index for it
+     * @param event - keyboard event
+     */
     const parentKeyDownHandler = (event: React.KeyboardEvent) => {
         if (event.key === 'Tab') {
-            /* set the current active sub category index as active index */
             const index = subCategories.findIndex((item) => item.title === activeCategory.category);
-            setActiveIndex(index);
+            setCurrentIndex(index);
         }
+
         handleKeysNavigation(event);
     };
 
+    /**
+     * Sets the sub category
+     * @param title - active sub category
+     * @param index - index of active sub category
+     */
     const setSubCategoryHandler = (title: Categories, index: number) => {
         setActiveSubCategoryHandler(title);
-        setActiveIndex(index);
+        setCurrentIndex(index);
+
         resetCurrentPage();
         clearQueryParams();
         reset();
     };
 
-    const clickHandler = (event: React.MouseEvent<HTMLElement>, title: Categories, index: number) => {
+    /**
+     *
+     * @param event - mouse event
+     * @param title - active sub category
+     * @param index - index of active sub category
+     */
+    const itemClickHandler = (event: React.MouseEvent<HTMLElement>, title: Categories, index: number) => {
         event.stopPropagation();
         setSubCategoryHandler(title, index);
     };
 
+    /**
+     *
+     * @param event - keyboard event
+     * @param title - active sub category
+     * @param index - index of active sub category
+     */
     const itemKeyDownHandler = (event: React.KeyboardEvent<HTMLLIElement>, title: Categories, index: number) => {
         if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
@@ -76,7 +103,7 @@ const List: React.FC<ListProps> = ({ className, size = 'default', showImage = tr
                         aria-selected={activeCategory.category === category.title}
                         aria-controls="cheatsheets-panel"
                         tabIndex={activeCategory.category === category.title ? 0 : -1}
-                        onClick={(event) => clickHandler(event, category.title, index)}
+                        onClick={(event) => itemClickHandler(event, category.title, index)}
                         onKeyDown={(event) => itemKeyDownHandler(event, category.title, index)}
                         ref={(elem) => registerItemRef(elem, index)}
                         className={clsx(

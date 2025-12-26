@@ -10,6 +10,9 @@ export const useQueryParams = () => {
     const subtab = (searchParams.get('subtab') || '') as Categories | '';
     const id = searchParams.get('id') || '';
 
+    /**
+     * Clear the query params from the URL
+     */
     const clearQueryParams = () => {
         if (typeof window !== 'undefined') {
             const newUrl = `${window.location.origin}${window.location.pathname}`;

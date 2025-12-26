@@ -26,6 +26,9 @@ const Grid: React.FC<GridProps> = ({ cheatsheets }) => {
     const gridRef = useRef<HTMLElement>(null);
     const hasMounted = useRef(false);
 
+    /**
+     * Scrolls the grid into view when goToPageTop changes
+     */
     useEffect(() => {
         if (!hasMounted.current) {
             hasMounted.current = true;
@@ -37,6 +40,7 @@ const Grid: React.FC<GridProps> = ({ cheatsheets }) => {
                 gridRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }, 200);
+
         return () => clearTimeout(timeout);
     }, [goToPageTop]);
 

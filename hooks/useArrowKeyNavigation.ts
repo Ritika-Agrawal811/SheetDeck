@@ -12,17 +12,36 @@ export const useArrowKeyNavigation = (itemsCount: number, options?: Option) => {
     const [activeIndex, setActiveIndex] = useState(initialIndex);
     const itemRefs = useRef<HTMLElement[]>([]);
 
-    /* a function to set the ref for the component */
+    /**
+     * Registers item refs for navigation.
+     * @param elem - HTML element reference
+     * @param index - index of the item
+     */
     const registerItemRef = useCallback((elem: HTMLLIElement | null, index: number) => {
         if (!elem) return;
 
         itemRefs.current[index] = elem;
     }, []);
 
+    /**
+     * Focuses the first item in the list.
+     */
     const focusFirstItem = useCallback(() => {
         itemRefs.current?.[0]?.focus();
     }, []);
 
+    /**
+     * Sets the current active index.
+     * @param index - index to set as active
+     */
+    const setCurrentIndex = useCallback((index: number) => {
+        setActiveIndex(index);
+    }, []);
+
+    /**
+     * Handles keyboard navigation for arrow keys.
+     * @param event - keyboard event
+     */
     const handleKeysNavigation = (event: React.KeyboardEvent) => {
         const key = event.key;
         const isHorizontal = orientation === 'horizontal';
@@ -72,7 +91,7 @@ export const useArrowKeyNavigation = (itemsCount: number, options?: Option) => {
     return {
         registerItemRef,
         handleKeysNavigation,
-        setActiveIndex,
+        setCurrentIndex,
         focusFirstItem,
     };
 };
