@@ -29,7 +29,7 @@ const SearchList: React.FC<SearchListProps> = ({
     resetFocusFirstSearchItem,
 }) => {
     const { getResultsList, displaySearchResultsHandler } = useSearch();
-    const { registerItemRef, handleKeysNavigation, focusFirstItem, setActiveIndex } = useArrowKeyNavigation(data.results.length, {
+    const { registerItemRef, handleKeysNavigation, focusFirstItem, setCurrentIndex } = useArrowKeyNavigation(data.results.length, {
         orientation: 'vertical',
     });
 
@@ -65,10 +65,10 @@ const SearchList: React.FC<SearchListProps> = ({
     useEffect(() => {
         if (focusFirstSearchItem) {
             focusFirstItem();
-            setActiveIndex(0);
+            setCurrentIndex(0);
             resetFocusFirstSearchItem();
         }
-    }, [focusFirstSearchItem, focusFirstItem, setActiveIndex, resetFocusFirstSearchItem]);
+    }, [focusFirstSearchItem, focusFirstItem, resetFocusFirstSearchItem]);
 
     /**
      * Handles the selection of a search option and displays its results.

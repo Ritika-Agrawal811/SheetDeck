@@ -11,38 +11,57 @@ export const useCategory = () => {
     const [activeCategory, setActiveCategory] = useAtom(activeCategoryAtom);
     const [cheatsheets, setCheatsheets] = useAtom(activeCheatsheetsAtom);
 
+    /**
+     * Updates the active category and cheatsheets.
+     * @param updatedCategory - new active category and sub category object
+     */
     const updateCategoryAndCheatsheets = useCallback(
         (updatedCategory: { topic: Tags; category: Categories }) => {
             setActiveCategory(updatedCategory);
 
-            // update the active cheatsheets
             const updatedCheatsheets = fetchSelectedCheatsheets(updatedCategory);
             setCheatsheets(updatedCheatsheets);
         },
+
         [setActiveCategory, setCheatsheets]
     );
 
-    // update the selected topic
+    /**
+     * Sets the active topic and updates the category and cheatsheets accordingly.
+     * @param topic - the selected topic
+     */
     const setActiveTopicHandler = (topic: Tags) => {
         if (topic) {
             const updatedCategory = {
                 topic,
                 category: fetchSubCategories(topic)[0].title,
             };
+
             updateCategoryAndCheatsheets(updatedCategory);
         }
     };
 
-    // update the selected sub category
+    /**
+     * Sets the active sub category and updates the category and cheatsheets accordingly.
+     * @param category - the selected sub category
+     */
     const setActiveSubCategoryHandler = (category: Categories) => {
         if (category) {
             const updatedCategory = {
                 topic: activeCategory.topic,
                 category,
             };
+
             updateCategoryAndCheatsheets(updatedCategory);
         }
     };
 
-    return { activeCategory, cheatsheets, setActiveTopicHandler, setActiveSubCategoryHandler, updateCategoryAndCheatsheets, topics };
+    return {
+        topics,
+        cheatsheets,
+        activeCategory,
+        setActiveTopicHandler,
+        setActiveSubCategoryHandler,
+        updateCategoryAndCheatsheets,
+    };
 };

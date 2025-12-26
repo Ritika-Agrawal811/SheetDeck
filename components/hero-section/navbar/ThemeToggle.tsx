@@ -14,6 +14,7 @@ const ThemeToggle = () => {
 
     return (
         <div role="radiogroup" aria-label="Toggle Light/Dark Mode">
+            {/* Light mode button */}
             <button
                 role="radio"
                 aria-checked={!isDark}
@@ -35,6 +36,7 @@ const ThemeToggle = () => {
                 />
             </button>
 
+            {/* Dark mode button */}
             <button
                 role="radio"
                 aria-checked={isDark}

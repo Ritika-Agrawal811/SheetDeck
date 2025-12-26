@@ -6,15 +6,20 @@ export const useTheme = () => {
     const [isDark, setIsDark] = useAtom(darkThemeAtom);
     const hasMounted = useRef(false);
 
-    // On first client-side load, sync from localStorage
+    /**
+     * Get the theme mode from the local storage and set it
+     */
     useEffect(() => {
         const storedTheme = localStorage.getItem('theme');
+
         if (storedTheme) {
             setIsDark(storedTheme === 'dark');
         }
     }, [setIsDark]);
 
-    /* set the theme when the state changes */
+    /**
+     * Handle theme change when the state changes
+     */
     useEffect(() => {
         if (!hasMounted.current) {
             hasMounted.current = true;
@@ -25,6 +30,10 @@ export const useTheme = () => {
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
     }, [isDark]);
 
+    /**
+     * Sets the theme mode state - true for dark and false for light
+     * @param setDark boolean
+     */
     const toggleTheme = (setDark: boolean) => setIsDark(setDark);
 
     return {

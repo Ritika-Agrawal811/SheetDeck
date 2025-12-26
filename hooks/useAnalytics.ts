@@ -2,7 +2,9 @@ import { useMutation } from '@tanstack/react-query';
 import { trackPageview, trackEvent } from '@/lib/api/analytics';
 
 export const useAnalytics = () => {
-    // Pageview tracking
+    /**
+     * Mutation to send a pageview api call
+     */
     const { mutate: recordPageView } = useMutation({
         mutationFn: trackPageview,
         retry: 6,
@@ -13,7 +15,9 @@ export const useAnalytics = () => {
         },
     });
 
-    // Event tracking
+    /**
+     * Mutation to send an event api call - click, download etc
+     */
     const { mutate: recordEvent } = useMutation({
         mutationFn: trackEvent,
         retry: 6,

@@ -4,20 +4,26 @@ export const useHorizontalScroll = (breakpoint: string | null) => {
     const scrollContainerRef = useRef<HTMLUListElement | null>(null);
     const [scrollButton, setScrollButton] = useState({ left: false, right: false });
 
+    /**
+     * Registers the scrollable container reference.
+     * @param elem - the element to scroll
+     */
     const registerScrollRef = (elem: HTMLUListElement | null) => {
         scrollContainerRef.current = elem;
     };
 
-    /* 
-        scrollLeft: numbers of pixels by which the element has been scrolled to the left
-        clientWidth: visible width of the scrollable area
-        scrollWidth: total scrollable width of the element
-
-        Hence maximum value of clientWidth + scrollLeft represents the rightmost edge of the element
-    */
+    /**
+     * Checks and sets the visibility of scroll buttons.
+     * scrollLeft: numbers of pixels by which the element has been scrolled to the left
+     * clientWidth: visible width of the scrollable area
+     * scrollWidth: total scrollable width of the element
+     *
+     * Hence maximum value of clientWidth + scrollLeft represents the rightmost edge of the element
+     */
     const checkButtonVisibility = useCallback(() => {
         if (scrollContainerRef.current) {
             const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+
             setScrollButton({
                 left: scrollLeft > 0,
                 right: scrollLeft + clientWidth < scrollWidth - 1,
@@ -25,6 +31,10 @@ export const useHorizontalScroll = (breakpoint: string | null) => {
         }
     }, []);
 
+    /**
+     * Scrolls the container in the specified direction.
+     * @param direction - direction for the scroll
+     */
     const scroll = (direction: 'left' | 'right') => {
         if (scrollContainerRef.current) {
             const scrollAmount = scrollContainerRef.current.clientWidth * getScrollAmount(breakpoint ?? '');
@@ -32,6 +42,11 @@ export const useHorizontalScroll = (breakpoint: string | null) => {
         }
     };
 
+    /**
+     * Returns the scroll amount based on the screen breakpoint.
+     * @param breakpoint
+     * @returns scroll %
+     */
     const getScrollAmount = (breakpoint: string) => {
         switch (breakpoint) {
             case 'xs':
@@ -45,18 +60,23 @@ export const useHorizontalScroll = (breakpoint: string | null) => {
         }
     };
 
+    /**
+     * Sets up event listeners for scroll and resize to manage button visibility.
+     *
+     * The currentRef variable creates a closure that "remembers" which exact DOM element
+     * the listener was added to, ensuring cleanup targets the correct element. Hence
+     * we avoid memory leaks or unintended behavior if the ref changes.
+     */
     useEffect(() => {
         const currentRef = scrollContainerRef.current;
-
         checkButtonVisibility();
 
-        // add event listners for scroll and resize
         if (currentRef) {
             currentRef.addEventListener('scroll', checkButtonVisibility);
         }
+
         window.addEventListener('resize', checkButtonVisibility);
 
-        // cleanup function
         return () => {
             if (currentRef) {
                 currentRef.removeEventListener('scroll', checkButtonVisibility);

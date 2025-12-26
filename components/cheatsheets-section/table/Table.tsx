@@ -26,6 +26,9 @@ const Table: React.FC<TableProps> = ({ cheatsheets }) => {
     const tableRef = useRef<HTMLTableElement>(null);
     const hasMounted = useRef(false);
 
+    /**
+     * Scrolls the list into view when goToPageTop changes
+     */
     useEffect(() => {
         if (!hasMounted.current) {
             hasMounted.current = true;
@@ -37,6 +40,7 @@ const Table: React.FC<TableProps> = ({ cheatsheets }) => {
                 tableRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }, 200);
+
         return () => clearTimeout(timeout);
     }, [goToPageTop]);
 

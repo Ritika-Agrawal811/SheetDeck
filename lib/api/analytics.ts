@@ -3,7 +3,7 @@ import type { PageView, Event } from '@/types/analytics';
 
 /**
  * Record a page view
- * @param data - PageView data
+ * @param data - pageView data
  * @return Promise<any>
  */
 export async function trackPageview(payload: PageView) {
@@ -13,7 +13,7 @@ export async function trackPageview(payload: PageView) {
 
 /**
  * Record a event - click, download etc
- * @param data - Event data
+ * @param data - event data
  * @return Promise<any>
  */
 export async function trackEvent(payload: Event) {
