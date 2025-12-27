@@ -11,17 +11,22 @@ export type ActiveCategory = {
     category: Categories;
 };
 
-// all topics array
+/**
+ * Available topics array
+ */
 export const topics = Object.keys(TAGS_INFO) as Tags[];
 
-// initial active category
+/**
+ * Sets initial active topic and category
+ */
 const initialTopic = topics[0];
 const initialSubTopic = fetchSubCategories(initialTopic)[0].title;
 const initialActiveCategory = { topic: initialTopic, category: initialSubTopic };
 
-// initial cheatsheets
+/**
+ * Fetches cheat sheets for initial topic and category
+ */
 const initialCheatsheets = fetchSelectedCheatsheets(initialActiveCategory);
 
-// jotai atoms for active category and cheatsheets
 export const activeCategoryAtom = atom<ActiveCategory>(initialActiveCategory);
 export const activeCheatsheetsAtom = atom<Cheatsheet[]>(initialCheatsheets);

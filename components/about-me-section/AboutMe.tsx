@@ -1,18 +1,15 @@
-'use client';
-
-import React from 'react';
 import clsx from 'clsx';
 
 // components
-import IntroCard from './cards/IntroCard';
+import SectionHeading from '@/components/ui/SectionHeading';
 import BackgroundSoftGradient from '@/components/ui/BackgroundGradient';
+import IntroCard from './cards/IntroCard';
 import GitHubCard from './cards/GitHubCard';
 import BlogCards from './cards/BlogCards';
 import BuyMeACoffeeCard from './cards/BuyMeACoffeeCard';
 import CodePenCard from './cards/CodePenCard';
 import TwitterCard from './cards/TwitterCard';
 import GumroadCard from './cards/GumroadCard';
-import SectionHeading from '@/components/ui/SectionHeading';
 
 const AboutMe = () => {
     return (
@@ -23,9 +20,9 @@ const AboutMe = () => {
                 <div className={clsx('flex flex-col sm:flex-row', 'gap-4 3xl:gap-6 relative')}>
                     <BackgroundSoftGradient />
 
-                    {/* left container */}
+                    {/* Left Container */}
                     <div className="space-y-4 3xl:space-y-6">
-                        {/* upper row */}
+                        {/* Upper Row */}
                         <div className={clsx('flex flex-col-reverse sm:flex-row', 'gap-4 3xl:gap-6 items-center sm:items-end')}>
                             <GitHubCard />
 
@@ -35,13 +32,15 @@ const AboutMe = () => {
                             </div>
                         </div>
 
-                        {/* lower row */}
+                        {/* Lower Row */}
                         <div className={clsx('flex flex-row', 'gap-4 3xl:gap-6 items-start sm:justify-end')}>
                             <div className={clsx('flex flex-col', 'gap-4 3xl:gap-6 items-end')}>
                                 <div className="sm:hidden">
                                     <GumroadCard />
                                 </div>
+
                                 <BuyMeACoffeeCard />
+
                                 <div className="hidden sm:block">
                                     <CodePenCard />
                                 </div>
@@ -49,6 +48,7 @@ const AboutMe = () => {
 
                             <div className={clsx('flex flex-col-reverse', 'gap-4', 'items-start')}>
                                 <TwitterCard />
+
                                 <div className="block sm:hidden">
                                     <CodePenCard />
                                 </div>
@@ -56,7 +56,7 @@ const AboutMe = () => {
                         </div>
                     </div>
 
-                    {/* right container */}
+                    {/* Right Container */}
                     <div className="hidden sm:flex items-center">
                         <GumroadCard />
                     </div>

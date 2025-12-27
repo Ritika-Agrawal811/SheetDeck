@@ -3,7 +3,7 @@ import { trackPageview, trackEvent } from '@/lib/api/analytics';
 
 export const useAnalytics = () => {
     /**
-     * Mutation to send a pageview api call
+     * Mutation to make a pageview api call
      */
     const { mutate: recordPageView } = useMutation({
         mutationFn: trackPageview,
@@ -16,7 +16,7 @@ export const useAnalytics = () => {
     });
 
     /**
-     * Mutation to send an event api call - click, download etc
+     * Mutation to make an event api call - click, download etc
      */
     const { mutate: recordEvent } = useMutation({
         mutationFn: trackEvent,

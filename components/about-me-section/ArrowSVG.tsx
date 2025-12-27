@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface ArrowSVGProps {
     color: string;
     className?: string;

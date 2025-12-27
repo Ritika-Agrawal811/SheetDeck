@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import clsx from 'clsx';
 
 import { castoro } from '@/app/font';
@@ -14,8 +13,8 @@ const IntroCard = () => {
 
     return (
         <>
-            {/* Intro card */}
             <article className="flex gap-2 3xl:gap-4">
+                {/* Author Picture */}
                 <figure>
                     <img
                         alt="creator's picture"
@@ -25,12 +24,15 @@ const IntroCard = () => {
                         className={clsx('rounded-full', 'w-20 md:w-24 3xl:w-28', 'h-20 md:h-24 3xl:h-28')}
                     />
                 </figure>
+
+                {/* Curved Arrow SVG */}
                 <ArrowSVG
                     color={isDark ? '#d8b4fe' : '#6d11af'}
                     className={clsx('scale-x-[-1] rotate-60', 'w-20 h-20 3xl:w-24 3xl:h-24')}
                 />
             </article>
 
+            {/* Author two-line intro */}
             <div className="text-right sm:-mt-4">
                 <p className={clsx('text-xl md:text-2xl 3xl:text-3xl', 'pr-4 3xl:pr-2')}>
                     Hey, I&apos;m <span className={clsx(`${castoro.variable} font-castoro font-bold`)}>Ritika</span>
