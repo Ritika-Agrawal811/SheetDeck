@@ -1,6 +1,3 @@
-'use client';
-
-import React from 'react';
 import clsx from 'clsx';
 
 import type { IconType } from 'react-icons';
@@ -69,7 +66,10 @@ const SocialCard = ({ label, icon, size = 'default', orientation = 'vertical', c
             )}
             aria-label={`Visit my ${profile} account`}
         >
+            {/* Social Label */}
             {label && <span className={clsx('text-center', cardVariants.size[size].label)}>{label}</span>}
+
+            {/* Social Icon */}
             <Icon
                 icon={icon}
                 size={cardVariants.size[size].icon}

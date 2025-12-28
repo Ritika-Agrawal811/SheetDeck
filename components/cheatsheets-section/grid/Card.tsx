@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import clsx from 'clsx';
 
 import { motion } from 'framer-motion';
@@ -15,6 +15,7 @@ import Badge from '@/components/ui/Badge';
 import { IoMdDownload } from 'react-icons/io';
 import Icon from '@/components/ui/Icon';
 import CardSkeleton from './CardSkeleton';
+import Image from 'next/image';
 
 const cardVariants = {
     initial: {
@@ -37,8 +38,13 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
     const { recordEvent } = useAnalytics();
 
     const [isLoading, setIsLoading] = useState(true);
+
     const downloadFileName = image.split('/').pop();
 
+    /**
+     * Handles keyboard event to open the cheat sheet modal and makes an event api call for 'click'
+     * @param event - keyboard event
+     */
     const onKeyDownHandler = (event: React.KeyboardEvent<HTMLElement>) => {
         if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
@@ -46,8 +52,12 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
         }
     };
 
+    /**
+     * Handles mouse click to open the cheat sheet modal and makes an event api call for 'click'
+     */
     const onClickHandler = () => {
         viewCardDetails();
+
         recordEvent({
             route: window.location.pathname,
             cheatsheetSlug: id,
@@ -55,8 +65,13 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
         });
     };
 
+    /**
+     * Sends an event api call for 'download'
+     * @param event - mouse event
+     */
     const onDownloadHandler = (event: React.MouseEvent<HTMLAnchorElement>) => {
         event.stopPropagation();
+
         recordEvent({
             route: window.location.pathname,
             cheatsheetSlug: id,
@@ -64,6 +79,9 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
         });
     };
 
+    /**
+     * Set a slight loading time using setTimeout to let images load
+     */
     useEffect(() => {
         setTimeout(() => setIsLoading(false), 350);
     }, []);
@@ -92,11 +110,12 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
                     onClick={onClickHandler}
                     onKeyDown={onKeyDownHandler}
                 >
+                    {/* Topic Badge */}
                     <Badge size="small" color={TAGS_INFO[tag].color} shape="pill" className="absolute left-2 top-2 dark:top-3">
                         {TAGS_INFO[tag].title}
                     </Badge>
 
-                    {/* download button */}
+                    {/* Download Button */}
                     <a
                         role="button"
                         href={image}
@@ -120,17 +139,18 @@ const Card: React.FC<CardProps> = ({ id, title, tag, image, viewCardDetails }) =
                         />
                     </a>
 
+                    {/* Cheat sheet Image */}
                     <figure className="mt-8 mb-8 3xl:mt-10 3xl:mb-10 overflow-hidden dark:rounded-lg">
-                        <img
+                        <Image
                             src={image}
                             alt={title}
                             width={300}
                             height={350}
-                            loading="lazy"
                             className="transition duration-300 group-hover/card:scale-105 group-hover/card:translate-y-3 dark:rounded-lg dark:scale-95 dark:group-hover/card:scale-100 dark:group-hover/card:translate-y-1"
                         />
                     </figure>
 
+                    {/* Cheat sheet Title */}
                     <div
                         className={clsx(
                             'bg-slate-50 dark:bg-zinc-900',

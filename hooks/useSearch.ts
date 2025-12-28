@@ -20,7 +20,7 @@ export const useSearch = () => {
 
         setSearchDetails((prev) => ({
             ...prev,
-            available: filteredCheatsheets.length > 0,
+            show: true,
             value,
             results: filteredCheatsheets,
         }));
@@ -47,7 +47,7 @@ export const useSearch = () => {
      */
     const reset = () => {
         setSearchDetails({
-            available: false,
+            show: false,
             value: '',
             results: [],
         });
@@ -56,7 +56,7 @@ export const useSearch = () => {
     return {
         searchValue: searchDetails.value,
         searchResults: searchDetails.results,
-        showSearchResults: searchDetails.available,
+        showSearchResults: searchDetails.show,
         displaySearchResultsHandler,
         getResultsList,
         reset,

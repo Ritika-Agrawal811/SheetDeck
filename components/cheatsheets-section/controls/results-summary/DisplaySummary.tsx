@@ -1,11 +1,11 @@
-import React from 'react';
+'use client';
 
 import { useCategory } from '@/hooks/useCategory';
 import { usePagination } from '@/hooks/usePagination';
 
 // components
-import ResultsIndex from './ResultsIndex';
 import Total from './Total';
+import ResultsIndex from './ResultsIndex';
 
 const DisplaySummary = () => {
     const { cheatsheets } = useCategory();

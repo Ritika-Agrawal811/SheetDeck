@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import clsx from 'clsx';
 
 import { useTheme } from '@/hooks/useTheme';
@@ -14,7 +13,7 @@ const ThemeToggle = () => {
 
     return (
         <div role="radiogroup" aria-label="Toggle Light/Dark Mode">
-            {/* Light mode button */}
+            {/* Light Mode Button */}
             <button
                 role="radio"
                 aria-checked={!isDark}
@@ -36,7 +35,7 @@ const ThemeToggle = () => {
                 />
             </button>
 
-            {/* Dark mode button */}
+            {/* Dark Mode Button */}
             <button
                 role="radio"
                 aria-checked={isDark}

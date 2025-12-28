@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import clsx from 'clsx';
 
 import type { Tags } from '@/types/cheatsheets';
@@ -21,15 +21,22 @@ const CategoriesModal = () => {
 
     const [open, setOpen] = useState(false);
 
+    /**
+     * Sets the active topic
+     * @param event - mouse event
+     * @param tag - selected topic
+     */
     const setCategoryHandler = (event: React.MouseEvent<HTMLElement>, tag: Tags) => {
         event.stopPropagation();
         setActiveTopicHandler(tag);
+
         resetCurrentPage();
         reset();
     };
 
     return (
         <div className="lg:hidden" aria-label="Select a category for a cheat sheet">
+            {/* Categories Modal Button */}
             <button
                 aria-haspopup="dialog"
                 aria-expanded={open}
@@ -47,6 +54,7 @@ const CategoriesModal = () => {
                 Category
             </button>
 
+            {/* Categories Modal */}
             <Modal backdrop="light" open={open} onClose={() => setOpen(false)}>
                 <section className="flex items-center justify-center h-full" onClick={() => setOpen(false)}>
                     <div className={clsx('bg-white dark:bg-zinc-800', 'rounded-xl shadow', 'p-4 w-11/12')}>

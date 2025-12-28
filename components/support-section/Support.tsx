@@ -1,8 +1,4 @@
-'use client';
-
-import React from 'react';
 import clsx from 'clsx';
-
 import { platypi } from '@/app/font';
 
 // components
@@ -17,9 +13,8 @@ const Support = () => {
                 <h2 className="text-3xl sm:text-4xl 2xl:text-5xl 3xl:text-6xl">
                     Show your{' '}
                     <span className={clsx('font-medium text-purple-800 dark:text-purple-400', `${platypi.variable} font-platypi`)}>
-                        support
+                        support.
                     </span>
-                    .{' '}
                 </h2>
 
                 {/* Subtitle */}
@@ -29,8 +24,16 @@ const Support = () => {
                         ?
                     </span>
                     <span className="flex gap-1 items-center">
-                        A <img alt="star gif" src="/assets/star.gif" width={50} height={50} className="w-10 h-10 3xl:w-12 3xl:h-12" /> on
-                        GitHub goes a long way!
+                        A{' '}
+                        <Image
+                            alt="star gif"
+                            src="/assets/star.gif"
+                            width={50}
+                            height={50}
+                            unoptimized
+                            className="w-10 h-10 3xl:w-12 3xl:h-12"
+                        />{' '}
+                        on GitHub goes a long way!
                     </span>
                 </p>
 

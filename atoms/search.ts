@@ -3,13 +3,13 @@ import { atom } from 'jotai';
 import type { Cheatsheet } from '@/types/cheatsheets';
 
 type SearchData = {
-    available: boolean;
+    show: boolean;
     value: string;
     results: Cheatsheet[];
 };
 
 export const searchData = atom<SearchData>({
-    available: false,
+    show: false,
     value: '',
     results: [],
 });

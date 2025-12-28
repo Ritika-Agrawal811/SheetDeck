@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react';
+'use client';
+
+import { useEffect } from 'react';
 import clsx from 'clsx';
 
 import type { Cheatsheet } from '@/types/cheatsheets';
@@ -68,7 +70,7 @@ const SearchList: React.FC<SearchListProps> = ({
             setCurrentIndex(0);
             resetFocusFirstSearchItem();
         }
-    }, [focusFirstSearchItem, focusFirstItem, resetFocusFirstSearchItem]);
+    }, [focusFirstSearchItem, focusFirstItem, resetFocusFirstSearchItem, setCurrentIndex]);
 
     /**
      * Handles the selection of a search option and displays its results.

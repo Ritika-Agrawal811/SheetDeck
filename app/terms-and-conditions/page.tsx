@@ -1,81 +1,74 @@
-'use client';
-
 import clsx from 'clsx';
-import { useEffect } from 'react';
-
 import { castoro } from '../font';
-import { useAnalytics } from '@/hooks/useAnalytics';
 
 // components
-import SectionHeading from '@/components/ui/SectionHeading';
 import { MdEmail } from 'react-icons/md';
 import Icon from '@/components/ui/Icon';
+import SectionHeading from '@/components/ui/SectionHeading';
+import Pageview from '@/components/analytics/Pageview';
 
 export default function TermsAndConditionsPage() {
-    const { recordPageView } = useAnalytics();
-
-    useEffect(() => {
-        recordPageView({
-            route: window.location.pathname,
-            referrer: document.referrer,
-        });
-    }, [recordPageView]);
-
     return (
-        <main className={clsx('w-11/12 2xl:w-[85%] 3xl:w-4/5 max-w-screen-3xl mx-auto', 'space-y-16 px-4')}>
-            <SectionHeading content="Terms and Conditions" />
+        <>
+            <Pageview />
+            <main className={clsx('w-11/12 2xl:w-[85%] 3xl:w-4/5 max-w-screen-3xl mx-auto', 'space-y-16 px-4')}>
+                <SectionHeading content="Terms and Conditions" />
 
-            <section className="space-y-4">
-                <p className="text-lg font-medium">Last updated: July 20, 2025</p>
+                {/* intro  */}
+                <section className="space-y-4">
+                    <p className="text-lg font-medium">Last updated: July 20, 2025</p>
 
-                <p>
-                    Welcome to SheetDeck (
-                    <a
-                        href="https://sheetdeck.vercel.app"
-                        className="text-purple-800 dark:text-purple-300 hover:underline underline-offset-4"
-                    >
-                        https://sheetdeck.vercel.app
-                    </a>
-                    ) (the &quot;Website&quot;). By accessing or using the Website, you agree to be bound by these Terms, which constitute a
-                    legally binding agreement between you and the Website&apos;s owner, Ritika Agrawal (&quot;Owner&quot;). If you do not
-                    agree with any part of these Terms, please do not use the Website.
-                </p>
-            </section>
-
-            {terms.map((item, index) => {
-                return (
-                    <section key={`term-${index}`} className="space-y-4">
-                        <h3
-                            className={clsx(
-                                `${castoro.variable} font-castoro`,
-                                'font-bold text-xl',
-                                'text-purple-800 dark:text-purple-300'
-                            )}
+                    <p>
+                        Welcome to SheetDeck (
+                        <a
+                            href="https://sheetdeck.vercel.app"
+                            className="text-purple-800 dark:text-purple-300 hover:underline underline-offset-4"
                         >
-                            {index + 1}. {item.heading}
-                        </h3>
-                        <p>{item.content}</p>
-                    </section>
-                );
-            })}
-            <section className="space-y-4">
-                <h3 className={clsx(`${castoro.variable} font-castoro`, 'font-bold text-xl', 'text-purple-800 dark:text-purple-300')}>
-                    {terms.length}. Contact Us
-                </h3>
-                <p>If you have any questions or concerns about these Terms, please contact us at: </p>
-                <p
-                    className={clsx(
-                        'flex items-center gap-2',
-                        'text-emerald-700 dark:text-emerald-400',
-                        'font-medium hover:underline underline-offset-4 cursor-pointer'
-                    )}
-                >
-                    {' '}
-                    <Icon icon={MdEmail} size="text-xl" className="inline" />{' '}
-                    <a href="mailto:ritikaagrawal0811@gmail.com">ritikaagrawal0811@gmail.com</a>
-                </p>
-            </section>
-        </main>
+                            https://sheetdeck.vercel.app
+                        </a>
+                        ) (the &quot;Website&quot;). By accessing or using the Website, you agree to be bound by these Terms, which
+                        constitute a legally binding agreement between you and the Website&apos;s owner, Ritika Agrawal (&quot;Owner&quot;).
+                        If you do not agree with any part of these Terms, please do not use the Website.
+                    </p>
+                </section>
+
+                {/* terms and conditions points */}
+                {terms.map((item, index) => {
+                    return (
+                        <section key={`term-${index}`} className="space-y-4">
+                            <h3
+                                className={clsx(
+                                    `${castoro.variable} font-castoro`,
+                                    'font-bold text-xl',
+                                    'text-purple-800 dark:text-purple-300'
+                                )}
+                            >
+                                {index + 1}. {item.heading}
+                            </h3>
+                            <p>{item.content}</p>
+                        </section>
+                    );
+                })}
+
+                <section className="space-y-4">
+                    <h3 className={clsx(`${castoro.variable} font-castoro`, 'font-bold text-xl', 'text-purple-800 dark:text-purple-300')}>
+                        {terms.length}. Contact Us
+                    </h3>
+                    <p>If you have any questions or concerns about these Terms, please contact us at: </p>
+                    <p
+                        className={clsx(
+                            'flex items-center gap-2',
+                            'text-emerald-700 dark:text-emerald-400',
+                            'font-medium hover:underline underline-offset-4 cursor-pointer'
+                        )}
+                    >
+                        {' '}
+                        <Icon icon={MdEmail} size="text-xl" className="inline" />{' '}
+                        <a href="mailto:ritikaagrawal0811@gmail.com">ritikaagrawal0811@gmail.com</a>
+                    </p>
+                </section>
+            </main>
+        </>
     );
 }
 

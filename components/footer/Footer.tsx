@@ -1,4 +1,3 @@
-import React from 'react';
 import clsx from 'clsx';
 
 // components
@@ -23,12 +22,12 @@ const Footer = () => {
         >
             <Logo />
             <p className="mt-1">
+                {/* copy right year and author */}
                 &copy; {currentYear} <span className="text-purple-800 dark:text-purple-300">Ritika Agrawal</span>. All rights reserved{' '}
                 <br className="md:hidden" />|{' '}
                 <Link href="/terms-and-conditions" className="text-purple-800 dark:text-purple-300 hover:underline underline-offset-4">
-                    Terms and Conditions
+                    Terms and Conditions.
                 </Link>
-                .
             </p>
         </footer>
     );

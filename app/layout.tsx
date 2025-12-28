@@ -15,7 +15,23 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
+            {/* Script to set the theme immediately before the page renders
+             to prevent a "flash of unstyled content" (FOUC). */}
+            <head>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            try {
+                                const theme = localStorage.getItem('theme');
+                                if (theme === 'dark') {
+                                    document.documentElement.classList.add('dark');
+                                }
+                            } catch(e) {}
+                        `,
+                    }}
+                />
+            </head>
             <body className={`${inter.variable} antialiased overflow-x-hidden text-gray-800`}>
                 <Providers>
                     <Navbar />

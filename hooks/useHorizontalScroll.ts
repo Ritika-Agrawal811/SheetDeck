@@ -38,7 +38,10 @@ export const useHorizontalScroll = (breakpoint: string | null) => {
     const scroll = (direction: 'left' | 'right') => {
         if (scrollContainerRef.current) {
             const scrollAmount = scrollContainerRef.current.clientWidth * getScrollAmount(breakpoint ?? '');
-            scrollContainerRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+            scrollContainerRef.current.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth',
+            });
         }
     };
 

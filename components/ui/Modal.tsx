@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import clsx from 'clsx';
 
 const variants = {
@@ -18,10 +18,11 @@ const Modal: React.FC<ModalProps> = ({ children, backdrop = 'dark', open, onClos
     const previouslyFocusedElement = useRef<HTMLElement | null>(null);
 
     useEffect(() => {
-        // modal is not open, then return
         if (!open) return;
 
-        // set the ref for previous focus element
+        /**
+         * Sets the ref for previous focus element to re-focus it when modal closes
+         */
         previouslyFocusedElement.current = document.activeElement as HTMLElement;
 
         const modal = modalRef.current;
@@ -30,6 +31,9 @@ const Modal: React.FC<ModalProps> = ({ children, backdrop = 'dark', open, onClos
         const first = focusableElements?.[0];
         const last = focusableElements?.[focusableElements.length - 1];
 
+        /**
+         * Focus the appropriate action elements in order when 'Tab' is clicked
+         */
         const keyDownHandler = (event: KeyboardEvent) => {
             if (event.key === 'Tab' && focusableElements && first && last) {
                 if (event.shiftKey) {
@@ -45,17 +49,18 @@ const Modal: React.FC<ModalProps> = ({ children, backdrop = 'dark', open, onClos
                 }
             }
 
+            /**
+             * Close the modal when 'Escape' button in clicked
+             */
             if (event.key === 'Escape') {
                 event.preventDefault();
                 onClose();
             }
         };
 
-        // handle initial focus
         first?.focus();
         document.addEventListener('keydown', keyDownHandler);
 
-        // clean up function
         return () => {
             document.removeEventListener('keydown', keyDownHandler);
             previouslyFocusedElement.current?.focus();
@@ -67,7 +72,7 @@ const Modal: React.FC<ModalProps> = ({ children, backdrop = 'dark', open, onClos
             role="dialog"
             aria-modal="true"
             ref={modalRef}
-            className={clsx('fixed h-screen w-screen', '', 'z-50 top-0 left-0', open ? 'block' : 'hidden')}
+            className={clsx('fixed h-screen w-screen', 'z-50 top-0 left-0', open ? 'block' : 'hidden')}
         >
             <div className={clsx('absolute w-full h-full -z-10 cursor-pointer', variants[backdrop])} onClick={onClose}></div>
             {children}

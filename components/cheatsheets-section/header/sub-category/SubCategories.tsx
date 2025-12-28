@@ -1,7 +1,8 @@
 'use client';
-import React from 'react';
+
 import clsx from 'clsx';
 
+// component
 import List from './List';
 
 const SubCategories = () => {

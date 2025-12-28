@@ -1,5 +1,6 @@
 'use client';
-import React, { useEffect } from 'react';
+
+import { useEffect } from 'react';
 import clsx from 'clsx';
 
 import type { Categories } from '@/types/cheatsheets';
@@ -15,6 +16,7 @@ import { formatLabels } from '@/utils/formatLabels';
 
 // components
 import Badge from '@/components/ui/Badge';
+import Image from 'next/image';
 
 interface ListProps {
     size?: 'big' | 'small' | 'tiny' | 'default';
@@ -126,7 +128,7 @@ const List: React.FC<ListProps> = ({ className, size = 'default', showImage = tr
                                 active={activeCategory.category === category.title}
                             >
                                 {showImage && (
-                                    <img
+                                    <Image
                                         src={category.image}
                                         alt={`sub category: ${category.title}`}
                                         width={35}

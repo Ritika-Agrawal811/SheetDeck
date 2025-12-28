@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+
 import clsx from 'clsx';
 
 import { useSearch } from '@/hooks/useSearch';
@@ -18,8 +19,8 @@ const ControlsMobile: React.FC<ControlsMobileProps> = ({ view, setViewHandler })
 
     return (
         <>
+            {/* for mobile screens only */}
             <nav className="px-4 -mt-8 sm:hidden">
-                {/* for mobile screens */}
                 <div className={clsx('flex flex-col', 'gap-5')}>
                     <SearchBox />
                     <div className="flex justify-between items-center">

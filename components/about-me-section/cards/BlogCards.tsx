@@ -1,5 +1,3 @@
-import React from 'react';
-
 // components
 import SocialCard from './SocialCard';
 import { FaDev, FaMedium } from 'react-icons/fa6';

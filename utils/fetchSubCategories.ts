@@ -3,10 +3,16 @@ import { CATEGORIES_INFO } from '@/lib/cheatsheets/constants';
 
 import type { Tags, Categories } from '@/types/cheatsheets';
 
+/**
+ * Returns the sub categories for a topic
+ * @param topic
+ * @returns sub categories[]
+ */
 export const fetchSubCategories = (topic: Tags) => {
     const topicCategories = (
         topic === 'all' ? Object.keys(CATEGORIES_INFO) : Object.keys(cheatSheets[topic.toLowerCase()])
     ) as Categories[];
+
     const subCategories = topicCategories.map((item) => CATEGORIES_INFO[item]);
 
     return subCategories;

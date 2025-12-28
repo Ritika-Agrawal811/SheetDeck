@@ -1,6 +1,4 @@
-import React from 'react';
 import clsx from 'clsx';
-
 import { platypi } from '@/app/font';
 
 interface SectionHeadingProps {
@@ -17,24 +15,32 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({ content }) => {
                 `${platypi.variable} font-platypi`
             )}
         >
-            {/* circles on left */}
-            <span aria-hidden={true} className={clsx('inline-block rounded-full', 'w-1 h-1', 'bg-emerald-700 dark:bg-emerald-400')}></span>
-            <span
-                aria-hidden={true}
-                className={clsx('inline-block rounded-full', 'w-1.5 h-1.5', 'bg-emerald-700 dark:bg-emerald-400')}
-            ></span>
-            <span aria-hidden={true} className={clsx('inline-block rounded-full', 'w-2 h-2', 'bg-emerald-700 dark:bg-emerald-400')}></span>
+            {/* Circles on left */}
+            {[4, 6, 8].map((size, index) => {
+                return (
+                    <span
+                        key={`circle-${index}`}
+                        aria-hidden={true}
+                        className={clsx('inline-block rounded-full', 'bg-emerald-700 dark:bg-emerald-400')}
+                        style={{ width: `${size}px`, height: `${size}px` }}
+                    ></span>
+                );
+            })}
 
-            {/* content */}
+            {/* Title */}
             <span className="mx-1 md:mx-2 -mt-1.5 whitespace-nowrap">{content}</span>
 
-            {/* circles on right */}
-            <span aria-hidden={true} className={clsx('inline-block rounded-full', 'w-2 h-2', 'bg-emerald-700 dark:bg-emerald-400')}></span>
-            <span
-                aria-hidden={true}
-                className={clsx('inline-block rounded-full', 'w-1.5 h-1.5', 'bg-emerald-700 dark:bg-emerald-400')}
-            ></span>
-            <span aria-hidden={true} className={clsx('inline-block rounded-full', 'w-1 h-1', 'bg-emerald-700 dark:bg-emerald-400')}></span>
+            {/* Circles on right */}
+            {[8, 6, 4].map((size, index) => {
+                return (
+                    <span
+                        key={`circle-${index}`}
+                        aria-hidden={true}
+                        className={clsx('inline-block rounded-full', 'bg-emerald-700 dark:bg-emerald-400')}
+                        style={{ width: `${size}px`, height: `${size}px` }}
+                    ></span>
+                );
+            })}
         </h2>
     );
 };

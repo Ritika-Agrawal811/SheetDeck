@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import clsx from 'clsx';
 
 import { useAtom } from 'jotai';
@@ -30,6 +29,8 @@ const ExploreButton = () => {
                 onClick={() => setScroll(true)}
             >
                 <span className="sr-only">Explore the cheat sheets</span>
+
+                {/* Circular Wheel of the letters of label */}
                 {label.split('').map((letter, index) => {
                     return (
                         <span
@@ -50,6 +51,7 @@ const ExploreButton = () => {
                     );
                 })}
 
+                {/* Down Arrow */}
                 <span
                     aria-hidden="true"
                     className={clsx(

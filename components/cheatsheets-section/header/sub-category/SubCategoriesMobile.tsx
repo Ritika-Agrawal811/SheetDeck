@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+'use client';
+
+import { useState } from 'react';
 import clsx from 'clsx';
 
 import { useCategory } from '@/hooks/useCategory';
@@ -12,12 +14,13 @@ import List from './List';
 import CloseBtn from '@/components/ui/CloseBtn';
 
 const SubCategoriesMobile = () => {
-    const { activeCategory } = useCategory();
-
     const [open, setOpen] = useState(false);
+
+    const { activeCategory } = useCategory();
 
     return (
         <div className="sm:hidden mx-4" aria-label="Select a sub category for a cheat sheet">
+            {/* Sub Categories Modal Button */}
             <button
                 aria-haspopup="dialog"
                 aria-expanded={open}
@@ -26,6 +29,8 @@ const SubCategoriesMobile = () => {
                 onClick={() => setOpen(true)}
             >
                 <span className="font-medium text-lg">Category</span>
+
+                {/* Selected Sub Category + Down Chevron Icon */}
                 <div className={clsx('flex items-center justify-between w-full')}>
                     <span className="capitalize" aria-label={`selected category is ${formatLabels(activeCategory.category)}`}>
                         {formatLabels(activeCategory.category)}
@@ -34,6 +39,7 @@ const SubCategoriesMobile = () => {
                 </div>
             </button>
 
+            {/* Sub categories Modal */}
             <Modal backdrop="light" open={open} onClose={() => setOpen(false)}>
                 <section className="flex items-center justify-center h-full" onClick={() => setOpen(false)}>
                     <div className={clsx('bg-white dark:bg-zinc-800', 'rounded-xl shadow', 'p-4 w-11/12')}>
@@ -41,6 +47,7 @@ const SubCategoriesMobile = () => {
                             <h3 className="text-lg font-medium">Select a category</h3>
                             <CloseBtn onClose={() => setOpen(false)} />
                         </header>
+
                         <hr className="h-px border-primary my-4" />
                         <List className={clsx('flex flex-wrap justify-center gap-3')} size="tiny" showImage={false} />
                     </div>

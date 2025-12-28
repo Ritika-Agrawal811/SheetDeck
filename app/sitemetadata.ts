@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 
 export const siteMetadata: Metadata = {
+    metadataBase: new URL('https://sheetdeck.vercel.app'),
     title: 'SheetDeck | Master the Web One Sheet at a Time',
     description: 'Developer-friendly cheat sheets for HTML, CSS, JavaScript and more. Simple. Fast. Reference-ready.',
+    applicationName: 'SheetDeck',
+    authors: [{ name: 'Ritika Agrawal', url: 'https://x.com/RitikaAgrawal08' }],
     keywords: [
         'cheat sheets',
         'web development',
@@ -15,8 +18,6 @@ export const siteMetadata: Metadata = {
         'quick reference',
         'quick notes',
     ],
-    authors: [{ name: 'Ritika Agrawal', url: 'https://sheetdeck.vercel.app' }],
-    metadataBase: new URL('https://sheetdeck.vercel.app'),
     openGraph: {
         title: 'SheetDeck | Master the Web One Sheet at a Time',
         description: 'Developer-friendly cheat sheets for HTML, CSS, JavaScript and more. Simple. Fast. Reference-ready.',
@@ -44,4 +45,13 @@ export const siteMetadata: Metadata = {
         index: true,
         follow: true,
     },
+    icons: {
+        icon: [
+            { url: '/favicon.ico' },
+            { url: '/assets/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+            { url: '/assets/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+        ],
+        apple: '/assets/favicon/apple-touch-icon.png',
+    },
+    manifest: '/assets/favicon/site.webmanifest',
 };

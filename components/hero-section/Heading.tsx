@@ -1,6 +1,3 @@
-'use client';
-
-import React from 'react';
 import clsx from 'clsx';
 
 import { anta } from '@/app/font';
@@ -11,6 +8,9 @@ import Icon from '@/components/ui/Icon';
 
 const Heading = () => {
     return (
+        /**
+         * Hero Section Heading - "Code Faster. Learn Smarter. Concise Cheat Sheets for instant code reference."
+         */
         <div className={clsx('flex items-center justify-center', 'transition duration-300')}>
             <h1 className={clsx('text-3xl sm:text-4xl 3xl:text-5xl', 'leading-12 xl:leading-14 3xl:leading-16')}>
                 <span className="w-fit mx-auto sm:mx-0 block">

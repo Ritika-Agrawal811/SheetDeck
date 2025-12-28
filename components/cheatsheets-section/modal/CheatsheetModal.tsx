@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import clsx from 'clsx';
 
 import type { Cheatsheet } from '@/types/cheatsheets';
@@ -8,13 +8,13 @@ import { TAGS_INFO } from '@/lib/cheatsheets/constants';
 import { useAnalytics } from '@/hooks/useAnalytics';
 
 // components
+import Image from 'next/image';
+import Icon from '@/components/ui/Icon';
 import Modal from '@/components/ui/Modal';
 import Badge from '@/components/ui/Badge';
 import { IoMdDownload } from 'react-icons/io';
-import Icon from '@/components/ui/Icon';
-import Image from 'next/image';
-import CircularLoader from '@/components/ui/CircularLoader';
 import CloseBtn from '@/components/ui/CloseBtn';
+import CircularLoader from '@/components/ui/CircularLoader';
 
 interface CheatsheetModalProps {
     open: boolean;
@@ -26,6 +26,10 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
     const [isLoading, setIsLoading] = useState(true);
     const { recordEvent } = useAnalytics();
 
+    /**
+     * Set a slight loading time using setTimeout to
+     * let correct details load for the modal
+     */
     useEffect(() => {
         if (details) {
             setIsLoading(true);
@@ -33,6 +37,10 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
         }
     }, [details]);
 
+    /**
+     * Sends an event api call for 'download'
+     * @param event - mouse event
+     */
     const onDownloadHandler = (event: React.MouseEvent<HTMLAnchorElement>) => {
         if (!details) return;
 
@@ -52,6 +60,7 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                         <header
                             className={clsx('w-full lg:w-[30%]', 'border-b lg:border-l border-b-gray-800 lg:border-l-gray-800 bg-black/10')}
                         >
+                            {/* Close Button */}
                             <div className="flex justify-end p-2 md:p-4 xl:p-6">
                                 <CloseBtn onClose={onClose} theme="light" />
                             </div>
@@ -63,9 +72,12 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                                 )}
                             >
                                 <div className="space-y-2 lg:space-y-3 3xl:space-y-4">
+                                    {/* Cheat sheet Title */}
                                     <h3 className="text-white text-lg sm:text-xl md:text-2xl lg:text-xl xl:text-2xl 3xl:text-[28px]">
                                         {details.title}
                                     </h3>
+
+                                    {/* Topic Badge */}
                                     <Badge
                                         size="small"
                                         color={TAGS_INFO[details.tag].color}
@@ -76,6 +88,7 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                                     </Badge>
                                 </div>
 
+                                {/* Download Button */}
                                 <button
                                     className={clsx(
                                         'bg-purple-800 3xl:text-xl text-white',
@@ -97,6 +110,8 @@ const CheatsheetModal: React.FC<CheatsheetModalProps> = ({ open, details, onClos
                                 </button>
                             </div>
                         </header>
+
+                        {/* Cheat sheet Image */}
                         <div className={clsx('grow overflow-hidden', 'flex justify-center')}>
                             <figure
                                 className={clsx(

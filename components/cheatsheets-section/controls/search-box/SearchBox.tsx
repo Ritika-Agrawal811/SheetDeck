@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useCallback, useState } from 'react';
 import clsx from 'clsx';
+import { useCallback, useState } from 'react';
 
 import type { Cheatsheet } from '@/types/cheatsheets';
 import { useSearch } from '@/hooks/useSearch';

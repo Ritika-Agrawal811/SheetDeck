@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
 import clsx from 'clsx';
+import { useState, useEffect, useRef } from 'react';
 
 import { useAtom } from 'jotai';
 import { useSearch } from '@/hooks/useSearch';
@@ -19,21 +19,27 @@ import ControlsMobile from './controls/ControlsMobile';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 const CheatsheetsSection = () => {
-    const { showSearchResults } = useSearch();
-    const { breakpoint } = useScreenBreakpoint();
     const { activeCategory, updateCategoryAndCheatsheets } = useCategory();
+    const { breakpoint } = useScreenBreakpoint();
     const { tab, subtab, id } = useQueryParams();
+    const { showSearchResults } = useSearch();
 
     const [view, setView] = useState<'grid' | 'list'>('grid');
     const [hasInitialized, setHasInitialized] = useState(false);
     const [scroll, setScroll] = useAtom(scrollToCheatsheetAtom);
     const cheatsheetsRef = useRef<HTMLDivElement>(null);
 
+    /**
+     * Sets the view for the cheat sheets layout
+     * @param view - layout view
+     */
     const setViewHandler = (view: 'grid' | 'list') => {
         setView(view);
     };
 
-    // set the active topic and sub category from the query params if available
+    /**
+     * Sets the active topic and sub cateogry from the query params if available
+     */
     useEffect(() => {
         if (!hasInitialized && tab && subtab) {
             updateCategoryAndCheatsheets({ topic: tab, category: subtab });
@@ -41,7 +47,9 @@ const CheatsheetsSection = () => {
         }
     }, [tab, subtab, hasInitialized, updateCategoryAndCheatsheets]);
 
-    // scroll to the cheat sheet card whose id is mentioned in the query params
+    /**
+     * Scrolls to the cheat sheet card that matches the id from the query params
+     */
     useEffect(() => {
         if (!id) return;
 
@@ -56,7 +64,9 @@ const CheatsheetsSection = () => {
         return () => clearTimeout(timeout);
     }, [activeCategory, id]);
 
-    // scroll to cheat sheets section when explore button is clicked
+    /**
+     * Scrolls to the cheat sheets section when Explore Button is clicked
+     */
     useEffect(() => {
         if (scroll) {
             cheatsheetsRef?.current?.scrollIntoView({ behavior: 'smooth' });
@@ -70,13 +80,17 @@ const CheatsheetsSection = () => {
             className={clsx('w-full md:w-11/12 2xl:w-[85%] 3xl:w-4/5 max-w-screen-3xl mx-auto', 'my-20 xl:my-28 space-y-16', 'scroll-m-4')}
         >
             <SectionHeading content="Cheat Sheets" />
+
+            {/* Tabs to select topic and category */}
             <Header />
+
             {breakpoint === 'xs' ? (
                 <ControlsMobile view={view} setViewHandler={setViewHandler} />
             ) : (
                 <Controls view={view} setViewHandler={setViewHandler} />
             )}
 
+            {/* Cheat Sheets Display */}
             <div
                 role="tabpanel"
                 id="cheatsheets-panel"
