@@ -15,9 +15,14 @@ const SubCategoriesDropdown = () => {
 
     const subCategories = fetchSubCategories(activeCategory.topic).map((item) => item.title);
 
+    /**
+     * Sets the active sub category
+     * @param option - selected sub category
+     */
     const setSelectedOptionHandler = (option: string) => {
         const category = option as Categories;
         setActiveSubCategoryHandler(category);
+
         resetCurrentPage();
         scrollToPageTop();
     };

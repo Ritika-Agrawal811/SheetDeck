@@ -4,12 +4,12 @@ import clsx from 'clsx';
 import { useSearch } from '@/hooks/useSearch';
 
 // components
-import ResultsSummary from '@/components/cheatsheets-section/controls/results-summary/ResultsSummary';
-import LayoutControls from '@/components/cheatsheets-section/controls/LayoutControls';
-import SearchBox from '@/components/cheatsheets-section/controls/search-box/SearchBox';
-import SubCategoriesDropdown from './SubCategoriesDropdown';
 import TopicsDropdown from './TopicsDropdown';
 import CategoriesModal from './CategoriesModal';
+import SubCategoriesDropdown from './SubCategoriesDropdown';
+import LayoutControls from '@/components/cheatsheets-section/controls/LayoutControls';
+import SearchBox from '@/components/cheatsheets-section/controls/search-box/SearchBox';
+import ResultsSummary from '@/components/cheatsheets-section/controls/results-summary/ResultsSummary';
 
 interface ControlsProps {
     view: 'grid' | 'list';
@@ -17,14 +17,19 @@ interface ControlsProps {
 }
 
 const Controls: React.FC<ControlsProps> = ({ view, setViewHandler }) => {
-    const { showSearchResults } = useSearch();
-
     const [showSticky, setShowSticky] = useState(false);
     const sentinelRef = useRef<HTMLDivElement | null>(null);
 
+    const { showSearchResults } = useSearch();
+
+    /**
+     * Checks when the component is in view and update the state accordingly
+     */
     useEffect(() => {
         const target = sentinelRef.current;
-        const observer = new IntersectionObserver(([entry]) => setShowSticky(!entry.isIntersecting), { threshold: 0.1 });
+        const observer = new IntersectionObserver(([entry]) => setShowSticky(!entry.isIntersecting), {
+            threshold: 0.1,
+        });
 
         if (target) observer.observe(target);
 
@@ -47,17 +52,22 @@ const Controls: React.FC<ControlsProps> = ({ view, setViewHandler }) => {
                         'before:bg-[#f7ece0] dark:before:bg-neutral-800 before:border-b before:border-[var(--color-border-primary)] dark:before:border-gray-600'
                 )}
             >
-                {/* for tablets and laptops */}
+                {/* for tablets and laptops only */}
                 <div className={clsx('hidden sm:flex', 'items-center justify-between')}>
+                    {/* Topics and sub categories dropdowns */}
                     {showSticky && !showSearchResults && (
                         <div className="hidden lg:flex gap-2 3xl:gap-3 items-center">
                             <TopicsDropdown />
                             <SubCategoriesDropdown />
                         </div>
                     )}
+
+                    {/* Results and search summary */}
                     <div className={clsx('grow-2', showSticky && 'lg:text-center')}>
                         <ResultsSummary />
                     </div>
+
+                    {/* View controls and Search Box */}
                     <div className={clsx('flex gap-2 3xl:gap-3 items-center justify-end', !showSticky && 'grow')}>
                         <LayoutControls view={view} setViewHandler={setViewHandler} />
 
@@ -65,6 +75,7 @@ const Controls: React.FC<ControlsProps> = ({ view, setViewHandler }) => {
                             <SearchBox />
                         </div>
 
+                        {/* Categories Modal for tablets */}
                         {showSticky && <CategoriesModal />}
                     </div>
                 </div>

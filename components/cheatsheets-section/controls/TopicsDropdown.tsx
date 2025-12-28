@@ -14,9 +14,14 @@ const TopicsDropdown = () => {
 
     const formattedTopics = topics.map((item) => TAGS_INFO[item].title);
 
+    /**
+     * Sets the active topic
+     * @param option - selected topic
+     */
     const setSelectedOptionHandler = (option: string) => {
         const topic = option.toLowerCase() as Tags;
         setActiveTopicHandler(topic);
+
         resetCurrentPage();
         scrollToPageTop();
     };

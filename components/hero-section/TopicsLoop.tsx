@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import clsx from 'clsx';
 
 import { castoro } from '@/app/font';
@@ -18,6 +18,11 @@ const TopicsLoop = () => {
 
     const [animateNow, setAnimateNow] = useState(false);
 
+    /**
+     * Returns the % by which animation should move the element on X Axis for a breakpoint
+     * @param breakpoint
+     * @return string
+     */
     const xValue = (breakpoint: string) => {
         switch (breakpoint) {
             case 'xs':
@@ -31,6 +36,9 @@ const TopicsLoop = () => {
         }
     };
 
+    /**
+     * Animate object for the framer-motion animation
+     */
     const animate: TargetAndTransition = {
         x: xValue(breakpoint ?? ''),
         transition: {
@@ -40,6 +48,9 @@ const TopicsLoop = () => {
         },
     };
 
+    /**
+     * Starts the animation
+     */
     useEffect(() => {
         const timeout = setTimeout(() => setAnimateNow(true), 100);
         return () => clearTimeout(timeout);
@@ -69,8 +80,13 @@ const TopicsLoop = () => {
                                 )}
                                 style={{ color: TAGS_INFO[topic].color }}
                             >
+                                {/* Left Border */}
                                 <span className={clsx('w-px h-8 lg:h-10 2xl:h-12', 'inline-block rounded-full bg-zinc-400')}></span>
+
+                                {/* Topic Label */}
                                 {topic}
+
+                                {/* Right Border */}
                                 <span className={clsx('w-px h-8 lg:h-10 2xl:h-12', 'inline-block rounded-full bg-zinc-400')}></span>
                             </p>
                         );

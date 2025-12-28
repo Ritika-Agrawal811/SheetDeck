@@ -1,4 +1,3 @@
-import React from 'react';
 import clsx from 'clsx';
 
 import type { Cheatsheet } from '@/types/cheatsheets';
@@ -19,8 +18,12 @@ const Row: React.FC<RowProps> = ({ id, title, tag, image, viewDetails }) => {
 
     const downloadFileName = image.split('/').pop();
 
+    /**
+     * Handles mouse click to open the cheat sheet modal and makes an event api call for 'click'
+     */
     const onClickHandler = () => {
         viewDetails();
+
         recordEvent({
             route: window.location.pathname,
             cheatsheetSlug: id,
@@ -28,8 +31,13 @@ const Row: React.FC<RowProps> = ({ id, title, tag, image, viewDetails }) => {
         });
     };
 
+    /**
+     * Sends an event api call for 'download'
+     * @param event - mouse event
+     */
     const onDownloadHandler = (event: React.MouseEvent<HTMLAnchorElement>) => {
         event.stopPropagation();
+
         recordEvent({
             route: window.location.pathname,
             cheatsheetSlug: id,
@@ -39,6 +47,7 @@ const Row: React.FC<RowProps> = ({ id, title, tag, image, viewDetails }) => {
 
     return (
         <tr className="border-b border-gray-200 dark:border-gray-600 sm:border-none">
+            {/* Cheat sheet Title */}
             <td
                 className={clsx(
                     'px-4 py-5 lg:p-4 4xl:px-6 font-medium',
@@ -48,16 +57,23 @@ const Row: React.FC<RowProps> = ({ id, title, tag, image, viewDetails }) => {
                 onClick={onClickHandler}
             >
                 {title}
+
+                {/* Topic Badge for mobiles and tablets only */}
                 <Badge size="tiny" color={TAGS_INFO[tag].color} shape="pill" className="mt-2 sm:hidden">
                     {TAGS_INFO[tag].title}
                 </Badge>
             </td>
+
+            {/* Topic Badge */}
             <td className={clsx('px-4 py-5 sm:p-4 4xl:px-6', 'hidden sm:table-cell')}>
                 <Badge size="small" color={TAGS_INFO[tag].color} shape="pill" className="4xl:text-base">
                     {TAGS_INFO[tag].title}
                 </Badge>
             </td>
+
+            {/* Actions Column */}
             <td className={clsx('px-4 py-5 sm:p-4 4xl:px-6', 'flex items-center justify-start', 'gap-3 sm:gap-4 4xl:gap-5')}>
+                {/* Download Button */}
                 <button
                     className={clsx(
                         'bg-white dark:bg-neutral-900 text-purple-800 dark:text-purple-300',
@@ -79,6 +95,8 @@ const Row: React.FC<RowProps> = ({ id, title, tag, image, viewDetails }) => {
                         <Icon icon={IoMdDownload} aria-hidden={true} size="text-xl xs:text-[22px] lg:text-xl 3xl:text-2xl" />
                     </a>
                 </button>
+
+                {/* View Cheat sheet Details Button */}
                 <button
                     className={clsx(
                         'p-2 xl:p-2.5 shadow',

@@ -7,6 +7,7 @@ import { useTheme } from '@/hooks/useTheme';
 
 // components
 import ArrowSVG from '../ArrowSVG';
+import Image from 'next/image';
 
 const IntroCard = () => {
     const { isDark } = useTheme();
@@ -16,7 +17,7 @@ const IntroCard = () => {
             <article className="flex gap-2 3xl:gap-4">
                 {/* Author Picture */}
                 <figure>
-                    <img
+                    <Image
                         alt="creator's picture"
                         src="https://pbs.twimg.com/profile_images/1536045260253515776/BNiSS_c1_400x400.jpg"
                         width={400}

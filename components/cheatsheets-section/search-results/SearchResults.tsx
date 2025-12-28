@@ -1,7 +1,10 @@
-import React from 'react';
+'use client';
+
+import { useEffect } from 'react';
 import clsx from 'clsx';
 
 import { useSearch } from '@/hooks/useSearch';
+import { usePagination } from '@/hooks/usePagination';
 
 // components
 import Grid from '../grid/Grid';
@@ -15,6 +18,15 @@ interface SearchResultsProps {
 
 const SearchResults: React.FC<SearchResultsProps> = ({ view }) => {
     const { searchResults, reset } = useSearch();
+    const { resetCurrentPage } = usePagination({ data: searchResults });
+
+    /**
+     * Reset pagination page number to 1
+     */
+    useEffect(() => {
+        resetCurrentPage();
+    }, [resetCurrentPage]);
+
     return (
         <section className="space-y-16">
             {searchResults && searchResults.length > 0 ? (
@@ -24,6 +36,9 @@ const SearchResults: React.FC<SearchResultsProps> = ({ view }) => {
                     <Pagination data={searchResults} />
                 </>
             ) : (
+                /**
+                 * No results found component
+                 */
                 <div className="flex flex-col items-center">
                     <Image src="/assets/no-results.webp" alt="no search results found" width={300} height={300} />
                     <h3 className="font-medium text-xl sm:text-2xl xl:text-3xl dark:text-purple-300">No results found.</h3>

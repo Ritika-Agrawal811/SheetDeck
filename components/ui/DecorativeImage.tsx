@@ -1,5 +1,5 @@
-import React from 'react';
 import clsx from 'clsx';
+import Image from 'next/image';
 
 const sizeVariants = {
     small: 'w-1/2 lg:w-3/5 2xl:w-3/4',
@@ -31,7 +31,7 @@ const DecorativeImage = ({ image, title, position, size, className }: Decorative
                     position === 'left' ? 'before:rotate-10 before:left-0' : 'before:-rotate-5 before:right-3'
                 )}
             >
-                <img
+                <Image
                     src={image}
                     alt={title}
                     width={300}

@@ -15,7 +15,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({ content }) => {
                 `${platypi.variable} font-platypi`
             )}
         >
-            {/* circles on left */}
+            {/* Circles on left */}
             {[4, 6, 8].map((size, index) => {
                 return (
                     <span
@@ -27,10 +27,10 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({ content }) => {
                 );
             })}
 
-            {/* content */}
+            {/* Title */}
             <span className="mx-1 md:mx-2 -mt-1.5 whitespace-nowrap">{content}</span>
 
-            {/* circles on right */}
+            {/* Circles on right */}
             {[8, 6, 4].map((size, index) => {
                 return (
                     <span

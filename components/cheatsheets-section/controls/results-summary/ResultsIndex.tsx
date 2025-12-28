@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface ResultsIndexProps {
     startIndex: number;
     endIndex: number;

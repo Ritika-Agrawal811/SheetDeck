@@ -1,18 +1,17 @@
 'use client';
 
-import React from 'react';
-
 import { useTheme } from '@/hooks/useTheme';
 
 // components
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Logo = () => {
     const { isDark } = useTheme();
 
     return (
         <Link href="/">
-            <img
+            <Image
                 src={isDark ? '/assets/logo-dark.webp' : '/assets/logo-light.webp'}
                 alt="website logo for sheetdeck"
                 width={200}

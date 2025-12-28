@@ -1,5 +1,6 @@
+'use client';
+
 import clsx from 'clsx';
-import React from 'react';
 
 import { usePagination } from '@/hooks/usePagination';
 
@@ -22,7 +23,7 @@ function Pagination<T>({ data }: PaginationProps<T>) {
 
     return (
         <nav role="navigation" aria-label="Pagination" className={clsx('flex items-center justify-center gap-6')}>
-            {/* prev button */}
+            {/* Prev Button */}
             <button
                 className={clsx(
                     'p-2 xl:p-2.5 shadow',
@@ -46,7 +47,7 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                 />
             </button>
 
-            {/* page numbers */}
+            {/* Page Numbers */}
             <ul className={clsx('flex gap-4', 'relative')}>
                 {pages.map((number) => {
                     return (
@@ -70,7 +71,7 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                     );
                 })}
 
-                {/* indicator */}
+                {/* Indicator */}
                 <div
                     className={clsx(
                         'absolute top-1/2 -translate-y-1/2',
@@ -83,7 +84,7 @@ function Pagination<T>({ data }: PaginationProps<T>) {
                 ></div>
             </ul>
 
-            {/* next button */}
+            {/* Next Button */}
             <button
                 className={clsx(
                     'p-2 xl:p-2.5 shadow',

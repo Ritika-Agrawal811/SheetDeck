@@ -20,12 +20,20 @@ const Support = () => {
                 {/* Subtitle */}
                 <p className={clsx('sm:text-lg 2xl:text-xl 3xl:text-2xl', 'flex flex-col sm:flex-row items-center gap-1')}>
                     <span className="font-medium">
-                        Found these cheat sheets
-                        <span className={clsx('text-emerald-600 dark:text-emerald-400 font-medium')}>helpful</span>?
+                        Found these cheat sheets <span className={clsx('text-emerald-600 dark:text-emerald-400 font-medium')}>helpful</span>
+                        ?
                     </span>
                     <span className="flex gap-1 items-center">
-                        A <img alt="star gif" src="/assets/star.gif" width={50} height={50} className="w-10 h-10 3xl:w-12 3xl:h-12" /> on
-                        GitHub goes a long way!
+                        A{' '}
+                        <Image
+                            alt="star gif"
+                            src="/assets/star.gif"
+                            width={50}
+                            height={50}
+                            unoptimized
+                            className="w-10 h-10 3xl:w-12 3xl:h-12"
+                        />{' '}
+                        on GitHub goes a long way!
                     </span>
                 </p>
 
