@@ -45,9 +45,10 @@ I'm NOT accepting pull requests, issues, or external contributions.
 <p align="center">• • •</p>
 
 ## ☕️ Support Me
+Give a ⭐ if you like this project, and share it with your friends. Your support means a lot and helps me create more useful resources!
 
-Stay updated with my latest cheat sheets and web development tips by following me on [X (Twitter) @RitikaAgrawal08](https://x.com/RitikaAgrawal08).
-
-If you enjoy my content and would like to support my work, feel free to [buy me a coffee](https://buymeacoffee.com/ritikaagrawal08). Your support means a lot and helps me create more useful resources!
+<p align="left">
+  <a href="https://buymeacoffee.com/ritikaagrawal08"><img alt="Buy me a coffee" title="Buy me a coffee" src="https://img.shields.io/badge/-Buy%20me%20a%20coffee-yellow?style=for-the-badge&logo=buymeacoffee&logoColor=white"/></a>
+</p>
 
 **Thanks so much! Happy Coding!** :sparkles:
