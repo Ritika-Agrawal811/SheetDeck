@@ -2,7 +2,7 @@ import clsx from 'clsx';
 
 // components
 import SectionHeading from '@/components/ui/SectionHeading';
-import BackgroundSoftGradient from '@/components/ui/BackgroundGradient';
+import BackgroundGradient from '@/components/ui/BackgroundGradient';
 import IntroCard from './cards/IntroCard';
 import GitHubCard from './cards/GitHubCard';
 import BlogCards from './cards/BlogCards';
@@ -10,15 +10,17 @@ import BuyMeACoffeeCard from './cards/BuyMeACoffeeCard';
 import CodePenCard from './cards/CodePenCard';
 import TwitterCard from './cards/TwitterCard';
 import GumroadCard from './cards/GumroadCard';
+import Waves from '@/components/ui/Waves';
 
 const AboutMe = () => {
     return (
-        <section className="my-20 3xl:my-28">
+        <section className="pt-24 3xl:pt-32 pb-12 relative">
+            <Waves classes={clsx('absolute top-0 left-0 w-full', 'scale-y-[-1]', ' h-18 md:h-22 xl:h-24 3xl:h-44')} />
             <div className={clsx('flex flex-col items-center gap-16')}>
                 <SectionHeading content="About Me" />
 
                 <div className={clsx('flex flex-col sm:flex-row', 'gap-4 3xl:gap-6 relative')}>
-                    <BackgroundSoftGradient />
+                    <BackgroundGradient />
 
                     {/* Left Container */}
                     <div className="space-y-4 3xl:space-y-6">

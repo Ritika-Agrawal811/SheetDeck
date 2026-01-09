@@ -9,11 +9,11 @@ const VisitRepositoryButton = () => {
             role="button"
             aria-label="Visit SheetDeck GitHub Repository"
             className={clsx(
-                'mt-8 px-5 py-2.5 3xl:px-7 3xl:py-3.5',
+                'mt-8 px-6 py-3 3xl:px-8 3xl:py-4',
                 'text-base 2xl:text-lg 3xl:text-xl',
-                'border-2 border-purple-800 rounded-full',
+                'rounded-full',
                 'focus:outline-none focus-visible:border-transparent focus-visible:ring-3 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-offset-[var(--ring-offset)]',
-                'bg-purple-800 dark:bg-purple-500 text-white dark:text-gray-900',
+                'bg-purple-800 dark:bg-purple-400 text-white dark:text-gray-900',
                 'font-platypi dark:font-medium',
                 'relative overflow-hidden cursor-pointer',
                 'hover:scale-105 transition duration-300 ease-in-out',

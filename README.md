@@ -45,6 +45,7 @@ I'm NOT accepting pull requests, issues, or external contributions.
 <p align="center">• • •</p>
 
 ## ☕️ Support Me
+
 Give a ⭐ if you like this project, and share it with your friends. Your support means a lot and helps me create more useful resources!
 
 <p align="left">
