@@ -7,7 +7,10 @@ import VisitRepositoryButton from './VisitRepositoryButton';
 
 const Support = () => {
     return (
-        <section className={clsx('py-20 bg-primary', 'relative')}>
+        <section className={clsx('py-20', 'relative bg-bricks')}>
+            {/* Background radial gradient */}
+            <div className={clsx('bg-soft-radial', 'w-full h-[120%] xl:h-[150%] left-0 top-1/2 -translate-y-1/2 absolute')}></div>
+
             <div className={clsx('flex flex-col gap-4 items-center', 'relative z-20')}>
                 {/* Title */}
                 <h2 className="text-3xl sm:text-4xl 2xl:text-5xl 3xl:text-6xl">

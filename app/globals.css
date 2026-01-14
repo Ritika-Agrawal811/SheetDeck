@@ -7,6 +7,7 @@
     --foreground: #171717;
     --ring-offset: #ffffff;
     --color-primary: #fffae2;
+    --color-secondary: #f7eed3;
     --color-border-primary: #c19a6b;
 }
 
@@ -15,6 +16,7 @@
     --foreground: #ededed;
     --ring-offset: #151515;
     --color-primary: #262626;
+    --color-secondary: #26231b;
     --color-border-primary: #4a5565;
 }
 
@@ -40,8 +42,46 @@ body {
     background-color: var(--color-primary);
 }
 
+.bg-secondary {
+    background-color: var(--color-secondary);
+}
+
 .border-primary {
     border-color: var(--color-border-primary);
+}
+
+.border-secondary {
+    border-color: var(--color-secondary);
+}
+
+.bg-bricks {
+    --s: 50px;
+    --c1: var(--color-secondary);
+    --c2: var(--background);
+
+    --c: #0000 75%, var(--c1) 0;
+    --g1: conic-gradient(at 78% 1%, var(--c));
+    --g2: conic-gradient(at 1% 78%, var(--c));
+    background:
+        var(--g1),
+        var(--g1) var(--s) var(--s),
+        var(--g1) calc(2 * var(--s)) calc(2 * var(--s)),
+        var(--g1) calc(3 * var(--s)) calc(3 * var(--s)),
+        var(--g2) 0 calc(3 * var(--s)),
+        var(--g2) var(--s) 0,
+        var(--g2) calc(2 * var(--s)) var(--s),
+        var(--g2) calc(3 * var(--s)) calc(2 * var(--s)) var(--c2);
+    background-size: calc(4 * var(--s)) calc(4 * var(--s));
+}
+
+.bg-stripes {
+    background:
+        repeating-linear-gradient(-45deg, var(--color-secondary), var(--color-secondary) 2px, transparent 2px 10px) top / 100% 94% no-repeat,
+        linear-gradient(to bottom, var(--background), var(--background)) bottom / 100% 10% no-repeat;
+}
+
+.bg-soft-radial {
+    background: radial-gradient(85% 85% at 50% 50%, var(--background), transparent 90%);
 }
 
 .font-anta {

@@ -15,7 +15,7 @@ const CheatsheetsDisplay: React.FC<CheatsheetsDisplayProps> = ({ view }) => {
     const { cheatsheets } = useCategory();
 
     return (
-        <section className="space-y-16">
+        <section className="space-y-16 ">
             {view === 'grid' && <Grid cheatsheets={cheatsheets} />}
             {view === 'list' && <Table cheatsheets={cheatsheets} />}
             <Pagination data={cheatsheets} />

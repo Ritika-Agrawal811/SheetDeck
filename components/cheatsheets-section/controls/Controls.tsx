@@ -46,14 +46,20 @@ const Controls: React.FC<ControlsProps> = ({ view, setViewHandler }) => {
                     'sticky top-0 z-50 -mt-8',
                     'px-4 md:px-0 py-5',
                     'transition-all duration-150',
-                    'sm:before:absolute before:content-[""] before:w-[125%] md:before:w-[130%] 2xl:before:w-[150%] before:h-full before:-left-1/4 before:top-0',
+                    'sm:before:absolute before:content-[""] before:w-full before:h-full before:left-0 before:top-0',
                     'before:-z-10',
                     showSticky &&
                         'before:bg-[#f7ece0] dark:before:bg-neutral-800 before:border-b before:border-[var(--color-border-primary)] dark:before:border-gray-600'
                 )}
             >
                 {/* for tablets and laptops only */}
-                <div className={clsx('hidden sm:flex', 'items-center justify-between')}>
+                <div
+                    className={clsx(
+                        'hidden sm:flex',
+                        'items-center justify-between',
+                        'w-full md:w-11/12 2xl:w-[85%] 3xl:w-4/5 max-w-screen-3xl mx-auto'
+                    )}
+                >
                     {/* Topics and sub categories dropdowns */}
                     {showSticky && !showSearchResults && (
                         <div className="hidden lg:flex gap-2 3xl:gap-3 items-center">

@@ -75,10 +75,7 @@ const CheatsheetsSection = () => {
     }, [scroll, setScroll]);
 
     return (
-        <section
-            ref={cheatsheetsRef}
-            className={clsx('w-full md:w-11/12 2xl:w-[85%] 3xl:w-4/5 max-w-screen-3xl mx-auto', 'my-20 xl:my-28 space-y-16', 'scroll-m-4')}
-        >
+        <section ref={cheatsheetsRef} className={clsx('my-20 xl:my-28 space-y-16', 'scroll-m-4')}>
             <SectionHeading content="Cheat Sheets" />
 
             {/* Tabs to select topic and category */}
@@ -94,6 +91,7 @@ const CheatsheetsSection = () => {
             <div
                 role="tabpanel"
                 id="cheatsheets-panel"
+                className="w-full md:w-11/12 2xl:w-[85%] 3xl:w-4/5 max-w-screen-3xl mx-auto"
                 aria-labelledby={`subtab-${activeCategory.topic.toLowerCase()}-${activeCategory.category.toLowerCase()}`}
             >
                 {showSearchResults ? <SearchResults view={view} /> : <CheatsheetsDisplay view={view} />}
