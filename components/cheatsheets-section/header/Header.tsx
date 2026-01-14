@@ -6,7 +6,7 @@ import SubCategories from './sub-category/SubCategories';
 const Header = () => {
     return (
         <header>
-            <nav className="space-y-10">
+            <nav className="space-y-10 w-full md:w-11/12 2xl:w-[85%] 3xl:w-4/5 max-w-screen-3xl mx-auto">
                 <Categories />
                 <SubCategories />
                 <SubCategoriesMobile />

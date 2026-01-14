@@ -11,11 +11,11 @@ const Footer = () => {
         <footer
             role="contentinfo"
             className={clsx(
-                'py-3 mt-16',
-                'border-t border-b border-secondary',
+                'pt-3 md:py-2 lg:pb-0 mt-16',
+                'border-t border-secondary',
                 'relative',
-                'before:absolute before:content-[""] before:w-px before:h-[150%] before:bg-[var(--color-secondary)] before:left-10 before:-top-10',
-                'after:absolute after:content-[""] after:w-px after:h-[150%] after:bg-[var(--color-secondary)] after:right-10 after:-top-10'
+                'lg:before:absolute before:content-[""] before:w-px before:h-[150%] before:bg-[var(--color-secondary)] before:left-4 xl:before:left-10 before:-top-10',
+                'lg:after:absolute after:content-[""] after:w-px after:h-[150%] after:bg-[var(--color-secondary)] after:right-4 xl:after:right-10 after:-top-10'
             )}
         >
             <div

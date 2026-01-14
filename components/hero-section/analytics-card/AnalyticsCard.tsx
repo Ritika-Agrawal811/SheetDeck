@@ -4,12 +4,18 @@ import DownloadsStatCard from './DownloadsStatCard';
 
 const AnalyticsCard = () => {
     return (
-        <div className={clsx('w-1/2 relative overflow-y-hidden', 'flex flex-col items-center')}>
-            <div className={clsx('mr-20', '-rotate-10')}>
+        <div
+            className={clsx(
+                'h-[250px] 2xl:h-full relative overflow-hidden',
+                'flex flex-col items-center',
+                'border-b border-secondary lg:border-0'
+            )}
+        >
+            <div className={clsx('xs:mr-14 sm:mr-20 md:mr-16', '-rotate-8 md:-rotate-10')}>
                 <VisitorsStatCard />
             </div>
 
-            <div className={clsx('ml-20', 'absolute -bottom-14', 'rotate-10')}>
+            <div className={clsx('ml-8 xs:ml-22 sm:ml-28', 'absolute -bottom-16 xs:-bottom-15', 'rotate-8 sm:rotate-10')}>
                 <DownloadsStatCard />
             </div>
         </div>
