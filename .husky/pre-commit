@@ -1,4 +1,4 @@
 #!/bin/sh
 
 cd "$(git rev-parse --show-toplevel)"
-bun run lint-staged
+npm run lint-staged
