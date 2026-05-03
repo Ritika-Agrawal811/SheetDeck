@@ -21,13 +21,14 @@
   "build": "next build",
   "start": "next start",
   "lint": "next lint",
+  "lint-staged": "lint-staged",
   "lint:fix": "eslint . --fix",
   "format": "prettier --write .",
   "prepare": "husky"
  },
  "dependencies": {
   "@tanstack/react-query": "^5.87.4",
-  "@vercel/analytics": "^1.5.0",
+  "gitel/analytics": "^1.5.0",
   "axios": "^1.12.2",
   "clsx": "^2.1.1",
   "framer-motion": "^12.15.0",
